@@ -11,9 +11,9 @@ def pomConfig = {
     }
     developers {
         developer {
-            id "melaasar"
-            name "Maged Elaasar"
-            email "melaasar@gmail.com"
+            id "NicolasRouquette"
+            name "Nicolas Rouquette"
+            email "nicolas.rouquette@me.com"
         }
     }
     scm {
