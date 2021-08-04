@@ -14,7 +14,7 @@ vocabulary <http://iso.org/80000-6-magnitudes-2> with # as 80000-6-magnitudes-2 
 		from ampere-magnitude
 		to metrology:UnitaryQuantity
 		forward isAmpereMagnitudeOf
-		restricts relation metrology:hasReference to 80000-6-instances:ampere
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-6-instances:ampere
 	]
 
 	// 6-2
@@ -23,7 +23,7 @@ vocabulary <http://iso.org/80000-6-magnitudes-2> with # as 80000-6-magnitudes-2 
 		from coulomb-magnitude
 		to metrology:UnitaryQuantity
 		forward isCoulombMagnitudeOf
-		restricts relation metrology:hasReference to 80000-6-instances:coulomb
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-6-instances:coulomb
 	]
 
 	// 6-10
@@ -32,7 +32,7 @@ vocabulary <http://iso.org/80000-6-magnitudes-2> with # as 80000-6-magnitudes-2 
 		from newton-per-coulomb-magnitude
 		to metrology:UnitaryQuantity
 		forward isNewtonPerCoulombMagnitudeOf
-		restricts relation metrology:hasReference to 80000-6-instances:newton-per-coulomb
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-6-instances:newton-per-coulomb
 	]
 
 	// 6-11
@@ -41,7 +41,7 @@ vocabulary <http://iso.org/80000-6-magnitudes-2> with # as 80000-6-magnitudes-2 
 		from volt-magnitude
 		to metrology:UnitaryQuantity
 		forward isVoltMagnitudeOf
-		restricts relation metrology:hasReference to 80000-6-instances:volt
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-6-instances:volt
 	]
 
 	// 6-46
@@ -50,6 +50,6 @@ vocabulary <http://iso.org/80000-6-magnitudes-2> with # as 80000-6-magnitudes-2 
 		from ohm-magnitude
 		to metrology:UnitaryQuantity
 		forward isOhmMagnitudeOf
-		restricts relation metrology:hasReference to 80000-6-instances:ohm
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-6-instances:ohm
 	]
 }

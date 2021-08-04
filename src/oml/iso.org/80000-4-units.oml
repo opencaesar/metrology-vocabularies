@@ -15,7 +15,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	@dc:^source "4-1"
 	aspect MassMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to MassUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to MassUnit
 	]
 
 	concept MassUnit :> metrology:MeasurementUnit
@@ -33,7 +33,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	@dc:^source "4-8"
 	aspect MomentumMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to MomentumUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to MomentumUnit
 	]
 
 	concept MomentumUnit :> metrology:MeasurementUnit
@@ -60,7 +60,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	@dc:^source "4-9"
 	aspect ForceMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to ForceUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to ForceUnit
 	]
 
 	concept ForceUnit :> metrology:MeasurementUnit
@@ -87,7 +87,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	@dc:^source "4-10"
 	aspect ImpulseMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to ImpulseUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to ImpulseUnit
 	]
 
 	concept ImpulseUnit :> metrology:MeasurementUnit
@@ -130,7 +130,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	@dc:^source "4-27"
 	aspect PowerMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to PowerUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to PowerUnit
 	]
 
 	concept PowerUnit :> metrology:MeasurementUnit

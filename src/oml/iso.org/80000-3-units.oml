@@ -15,7 +15,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	@dc:^source "3-1"
 	aspect LengthMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to LengthUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to LengthUnit
 	]
 
 	concept LengthUnit :> metrology:MeasurementUnit
@@ -33,7 +33,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	@dc:^source "3-5"
 	aspect AngularMeasureMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to AngularMeasureUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to AngularMeasureUnit
 	]
 
 	concept AngularMeasureUnit :> metrology:CoherentMeasurementUnit [
@@ -58,7 +58,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	@dc:^source "3-9"
 	aspect TimeMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to TimeUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to TimeUnit
 	]
 
 	concept TimeUnit :> metrology:MeasurementUnit
@@ -86,7 +86,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	@dc:^source "3-10"
 	aspect VelocityMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to VelocityUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to VelocityUnit
 	]
 
 	concept VelocityUnit :> metrology:MeasurementUnit
@@ -129,7 +129,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	@dc:^source "3-16"
 	aspect RotationMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to RotationUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to RotationUnit
 	]
 
 	concept RotationUnit :> metrology:MeasurementUnit
@@ -149,7 +149,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
 	@dc:^source "3-17"
 	aspect FrequencyMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to FrequencyUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to FrequencyUnit
 	]
 
 	concept FrequencyUnit :> metrology:MeasurementUnit

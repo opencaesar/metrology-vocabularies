@@ -197,6 +197,17 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 		irreflexive
 	]
 
+	@rdfs:label "Has Factor For Unitary Magnitude"
+	@dc:^description "In dimensional calculus, a metrology:DerivedUnitaryQuantity algebraically depends on the metrology:UnitaryQuantity of a metrology:UnitaryMagnitude as a product factor raised to a rational exponent."
+	@dc:^source "derived quantity [https://jcgm.bipm.org/vim/en/1.5.html]"
+	@dc:^source "derived unitary kind-of-quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 13.12.5, p. 133]"
+	relation entity HasFactorForUnitaryMagnitude :> ExponentFactor [
+		from DerivedUnitaryQuantity
+		to UnitaryMagnitude
+		forward hasFactorForUnitaryMagnitude
+		irreflexive
+	]
+
 	@rdfs:label "is dimensionless quantity"
 	@dc:^description "metrology:isDimensionlessQuantity specifies whether the definition of a metrology:UnitaryQuantity has dimension 'one',
 	    either intrisically as an metrology:IndependentUnitaryQuantity 
@@ -261,7 +272,9 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	@dc:^description "metrology:Magnitude is the magnitude of a metrology:Quantity represented by a number and a reference."
 	@dc:^source "quantity value [https://jcgm.bipm.org/vim/en/1.19.html]"
 	@dc:^source "quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.7 and 16.8, p 162]"
-	aspect Magnitude :> MetrologicalEntity
+	aspect Magnitude :> MetrologicalEntity [
+		restricts relation hasReferenceToMeasurementUnit to min 1
+	]
 
 	@rdfs:label "has double number"
 	@dc:^description "metrology:hasDoubleNumber provides the capability to specify the number of a metrology:Magnitude as an IEEE 64-bit floating-point number.
@@ -272,26 +285,56 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 		functional
 	]
 
-	@rdfs:label "Has Reference"
-	@dc:^description "metrology:HasReference provides the capability to specify the reference involved in measuring the magnitue of a metrology:Quantity."
+
+	@rdfs:label "Has Reference to Measurement Procedure"
+	@dc:^description "metrology:hasReference provides the capability to specify the reference(s) involved in measuring the magnitue of a metrology:Quantity."
 	relation entity HasReference [
 		from Magnitude
 		to Reference
-		@rdfs:label "has reference"
+		@rdfs:label "has reference to measurement procedure"
 		forward hasReference
+	]
+
+	@rdfs:label "Has Reference to Measurement Procedure"
+	@dc:^description "metrology:hasReferenceToMeasurementProcedure provides the capability to specify the reference material reference involved in measuring the magnitue of a metrology:Quantity."
+	relation entity HasReferenceToReferenceMaterial :> HasReference [
+		from Magnitude
+		to ReferenceMaterial
+		@rdfs:label "has reference to measurement procedure"
+		forward hasReferenceToReferenceMaterial
+		functional
+	]
+
+	@rdfs:label "Has Reference to Measurement Procedure"
+	@dc:^description "metrology:hasReferenceToMeasurementProcedure provides the capability to specify the measurement procedure reference involved in measuring the magnitue of a metrology:Quantity."
+	relation entity HasReferenceToMeasurementProcedure :> HasReference [
+		from Magnitude
+		to MeasurementProcedure
+		@rdfs:label "has reference to measurement procedure"
+		forward hasReferenceToMeasurementProcedure
+		functional
+	]
+
+	@rdfs:label "Has Reference to Measurement Unit"
+	@dc:^description "metrology:hasReferenceToMeasurementUnit provides the capability to specify the measurement unit reference involved in measuring the magnitue of a metrology:Quantity."
+	relation entity HasReferenceToMeasurementUnit :> HasReference [
+		from Magnitude
+		to MeasurementUnit
+		@rdfs:label "has reference to measurement unit"
+		forward hasReferenceToMeasurementUnit
 		functional
 	]
 
 	@rdfs:label "Ordinal Magnitude"
 	@dc:^source "ordinal quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.9, p 163]"
 	aspect OrdinalMagnitude :> Magnitude [
-		restricts all relation hasReference to MeasurementProcedure
+		restricts relation hasReferenceToMeasurementProcedure to exactly 1
 	]
 
 	@rdfs:label "Unitary Magnitude"
 	@dc:^source "unitary quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.10, p 163]"
 	aspect UnitaryMagnitude :> Magnitude [
-		restricts all relation hasReference to MeasurementUnit
+		restricts relation hasReferenceToMeasurementUnit to exactly 1
 	]
 
 	// Definitions from Chapter 17: None

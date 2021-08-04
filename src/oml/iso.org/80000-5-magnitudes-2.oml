@@ -14,7 +14,7 @@ vocabulary <http://iso.org/80000-5-magnitudes-2> with # as 80000-5-magnitudes-2 
 		from kelvin-magnitude
 		to metrology:UnitaryQuantity
 		forward isKelvinMagnitudeOf
-		restricts relation metrology:hasReference to 80000-5-instances:kelvin
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-5-instances:kelvin
 	]
 
 	// 5-2
@@ -23,6 +23,6 @@ vocabulary <http://iso.org/80000-5-magnitudes-2> with # as 80000-5-magnitudes-2 
 		from degreeCelsius-magnitude
 		to metrology:UnitaryQuantity
 		forward isDegreeCelsiusMagnitudeOf
-		restricts relation metrology:hasReference to 80000-5-instances:degreeCelsius
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-5-instances:degreeCelsius
 	]
 }

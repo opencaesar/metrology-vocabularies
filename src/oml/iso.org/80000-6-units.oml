@@ -11,7 +11,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 
 	@dc:^source "6-1"
 	aspect ElectricCurrentMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to ElectricCurrentUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to ElectricCurrentUnit
 	]
 
 	concept ElectricCurrentUnit :> metrology:MeasurementUnit
@@ -24,7 +24,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 
 	@dc:^source "6-2"
 	aspect ElectricChargeMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to ElectricChargeUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to ElectricChargeUnit
 	]
 
 	concept ElectricChargeUnit :> metrology:MeasurementUnit
@@ -51,7 +51,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 
 	@dc:^source "6-10"
 	aspect ElectricFieldStrengthMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to ElectricFieldStrengthUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to ElectricFieldStrengthUnit
 	]
 
 	concept ElectricFieldStrengthUnit :> metrology:MeasurementUnit
@@ -78,7 +78,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 
 	@dc:^source "6-11"
 	aspect ElectricPotentialMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to ElectricPotentialUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to ElectricPotentialUnit
 	]
 
 	concept ElectricPotentialUnit :> metrology:MeasurementUnit
@@ -105,7 +105,7 @@ vocabulary <http://iso.org/80000-6-units> with # as 80000-6-units {
 
 	@dc:^source "6-46"
 	aspect ResistanceMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to ResistanceUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to ResistanceUnit
 	]
 
 	concept ResistanceUnit :> metrology:MeasurementUnit

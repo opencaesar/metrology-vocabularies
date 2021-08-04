@@ -13,14 +13,14 @@ vocabulary <http://iso.org/80000-3-magnitudes-2> with # as 80000-3-magnitudes-2 
 		from metre-magnitude
 		to metrology:UnitaryQuantity
 		forward isMetreMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:metre
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:metre
 	]
 
 	relation entity kilometre-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-3-units:LengthMagnitude [
 		from kilometre-magnitude
 		to metrology:UnitaryQuantity
 		forward isKilometreMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:kilometre
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:kilometre
 	]
 
 	// 3-5
@@ -28,7 +28,7 @@ vocabulary <http://iso.org/80000-3-magnitudes-2> with # as 80000-3-magnitudes-2 
 		from radian-magnitude
 		to metrology:UnitaryQuantity
 		forward isRadianMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:radian
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:radian
 	]
 
 	// 3-9
@@ -36,28 +36,28 @@ vocabulary <http://iso.org/80000-3-magnitudes-2> with # as 80000-3-magnitudes-2 
 		from second-magnitude
 		to metrology:UnitaryQuantity
 		forward isSecondMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:second
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:second
 	]
 
 	relation entity millisecond-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-3-units:TimeMagnitude [
 		from millisecond-magnitude
 		to metrology:UnitaryQuantity
 		forward isMillisecondMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:millisecond
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:millisecond
 	]
 
 	relation entity minute-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-3-units:TimeMagnitude [
 		from minute-magnitude
 		to metrology:UnitaryQuantity
 		forward isMinuteMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:minute
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:minute
 	]
 
 	relation entity hour-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-3-units:TimeMagnitude [
 		from hour-magnitude
 		to metrology:UnitaryQuantity
 		forward isHourMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:hour
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:hour
 	]
 
 	// 3-10
@@ -65,14 +65,14 @@ vocabulary <http://iso.org/80000-3-magnitudes-2> with # as 80000-3-magnitudes-2 
 		from metre-per-second-magnitude
 		to metrology:UnitaryQuantity
 		forward isMetrePer-SecondMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:metre-per-second
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:metre-per-second
 	]
 
 	relation entity kilometre-per-second-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-3-units:VelocityMagnitude [
 		from kilometre-per-second-magnitude
 		to metrology:UnitaryQuantity
 		forward isKilometrePerSecondMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:kilometre-per-second
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:kilometre-per-second
 	]
 
 	// 3-16
@@ -80,7 +80,7 @@ vocabulary <http://iso.org/80000-3-magnitudes-2> with # as 80000-3-magnitudes-2 
 		from revolution-magnitude
 		to metrology:UnitaryQuantity
 		forward isRevolutionMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:revolution
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:revolution
 	]
 
 	// 3-17
@@ -88,6 +88,6 @@ vocabulary <http://iso.org/80000-3-magnitudes-2> with # as 80000-3-magnitudes-2 
 		from hertz-magnitude
 		to metrology:UnitaryQuantity
 		forward isHertzMagnitudeOf
-		restricts relation metrology:hasReference to 80000-3-instances:hertz
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:hertz
 	]
 }

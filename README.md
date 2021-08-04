@@ -56,6 +56,7 @@ Organizing a vocabulary of quantities and units involves several OML files as de
 
 </details>
 
+
 ## Defining quantities
 
 Note that the difference between kind-of-quantity and quantity is that a kind-of-quantity is a class-level definition in a vocabulary independent of any physical object whereas a quantity is a particular instance of a kind-of-quantity associated to a particular physical object.
@@ -104,11 +105,11 @@ vocabulary <http://iso.org/80000-3-quantities> with # as 80000-3-quantities {
 ```
 
 The last restriction above says that the `metrology:hasMagnitude` of every `80000-3-quantities:length` must
-be a `metrology:Magnitude` whose `metrology:hasReference` must be a `metrology:MeasurementUnit` that is a `80000-3-units:LengthMagnitude`.
+be a `metrology:Magnitude` whose `metrology:hasReferenceToMeasurementUnit` must be a `metrology:MeasurementUnit` that is a `80000-3-units:LengthMagnitude`.
 
 </details>
 
-### Step 1: Defining a derived quantity
+### Step 2: Defining a derived quantity
 
 <details>
 <summary>Details</summary>
@@ -171,9 +172,15 @@ vocabulary <http://iso.org/80000-4-quantities> with # as 80000-4-quantities {
 }
 ```
 
+Note that it is possible to define the factors for a derived unitary quantity in terms of unitary magnitudes instead of unitary quantities.
+This capability is useful for defining, for example, quotient rational derived unitary quantities (see [Ontology on Property](https://ontology.iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf), definition 13.12.3, page 132).
+
 </details>
 
-### Step 2: Defining a derived quantity consistency rule
+### Step 3: Defining a derived quantity consistency rule
+
+<details>
+<summary>Details</summary>
 
 A derivation consistency rule facilitates detecting incorrect usage of 
 derived quantities with respect to its dependency on other quantities.
@@ -228,7 +235,9 @@ vocabulary <http://iso.org/80000-3-derivation-consistency> with # as 80000-3-der
 In practice, it is helpful to use SPARQL rules to find consistent and inconsistent instances of
 derived quantities. For example, see [src/sparql/velocity-consistent-derivation.sparql](src/sparql/velocity-consistent-derivation.sparql) and [src/sparql/velocity-inconsistent-derivation.sparql](src/sparql/velocity-inconsistent-derivation.sparql).
 
-### Step 3: Defining instances
+</details>
+
+### Step 4: Defining instances
 
 Note that such instances are kind-of-quantities in the sense of Prof. Dybkaer's ontology
 because they are unrelated to any `metrology:Object`.
@@ -307,7 +316,7 @@ vocabulary <http://iso.org/80000-3-units> with # as 80000-3-units {
 
     -- step 1
     aspect LengthMagnitude :> metrology:UnitaryMagnitude [
-        restricts all relation metrology:hasReference to UnitOfLength
+        restricts all relation metrology:hasReferenceToMeasurementUnit to UnitOfLength
     ]
     
     -- step 2
@@ -352,7 +361,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
     -- step 1
     aspect ImpulseMagnitude :> metrology:UnitaryMagnitude [
-        restricts all relation metrology:hasReference to UnitOfImpulse
+        restricts all relation metrology:hasReferenceToMeasurementUnit to UnitOfImpulse
     ]
 
     -- step 2
@@ -449,14 +458,14 @@ vocabulary <http://iso.org/80000-3-magnitudes> with # as 80000-3-magnitudes {
      from metrology:UnitaryQuantity
      to metre-magnitude
      forward hasMetreMagnitude
-     restricts relation metrology:hasReference to 80000-3-instances:metre
+     restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:metre
   ]
 
   relation entity kilometre-magnitude :> metrology:IsMagnitudeOfQuantity, 80000-3-units:LengthMagnitude [
      from metrology:UnitaryQuantity
      to kilometre-magnitude
      forward hasKilometreMagnitude
-     restricts relation metrology:hasReference to 80000-3-instances:kilometre
+     restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:kilometre
   ]
 
   ...
@@ -465,14 +474,14 @@ vocabulary <http://iso.org/80000-3-magnitudes> with # as 80000-3-magnitudes {
      from metrology:UnitaryQuantity
      to metre-per-second-magnitude
      forward hasMetrePer-SecondMagnitude
-     restricts relation metrology:hasReference to 80000-3-instances:metre-per-second
+     restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:metre-per-second
   ]
 
   relation entity kilometre-per-second-magnitude :> metrology:IsMagnitudeOfQuantity, 80000-3-units:VelocityMagnitude [
      from metrology:UnitaryQuantity
      to kilometre-per-second-magnitude
      forward hasKilometrePerSecondMagnitude
-     restricts relation metrology:hasReference to 80000-3-instances:kilometre-per-second
+     restricts relation metrology:hasReferenceToMeasurementUnit to 80000-3-instances:kilometre-per-second
   ]
 
   ...

@@ -13,7 +13,7 @@ vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
 
 	@dc:^source "5-1"
 	aspect ThermodynamicTemperatureMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to ThermodynamicTemperatureUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to ThermodynamicTemperatureUnit
 	]
 
 	concept ThermodynamicTemperatureUnit :> metrology:MeasurementUnit
@@ -26,7 +26,7 @@ vocabulary <http://iso.org/80000-5-units> with # as 80000-5-units {
 
 	@dc:^source "5-2"
 	aspect CelsiusTemperatureMagnitude :> metrology:UnitaryMagnitude [
-		restricts all relation metrology:hasReference to CelsiusTemperatureUnit
+		restricts all relation metrology:hasReferenceToMeasurementUnit to CelsiusTemperatureUnit
 	]
 
 	concept CelsiusTemperatureUnit :> ThermodynamicTemperatureUnit, metrology:NonCoherentDerivedMeasurementUnit

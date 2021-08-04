@@ -14,14 +14,14 @@ vocabulary <http://iso.org/80000-4-magnitudes-2> with # as 80000-4-magnitudes-2 
 		from gram-magnitude
 		to metrology:UnitaryQuantity
 		forward isGramMagnitudeOf
-		restricts relation metrology:hasReference to 80000-4-instances:gram
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-4-instances:gram
 	]
 
 	relation entity kilogram-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-4-units:MassMagnitude [
 		from kilogram-magnitude
 		to metrology:UnitaryQuantity
 		forward isKilogramMagnitudeOf
-		restricts relation metrology:hasReference to 80000-4-instances:kilogram
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-4-instances:kilogram
 	]
 	
 	// 4-8
@@ -30,7 +30,7 @@ vocabulary <http://iso.org/80000-4-magnitudes-2> with # as 80000-4-magnitudes-2 
 		from kilogram-metre-per-second-magnitude
 		to metrology:UnitaryQuantity
 		forward isKilogramMetrePerSecondMagnitudeOf
-		restricts relation metrology:hasReference to 80000-4-instances:kilogram-metre-per-second
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-4-instances:kilogram-metre-per-second
 	]
 
 	// 4-9
@@ -39,7 +39,7 @@ vocabulary <http://iso.org/80000-4-magnitudes-2> with # as 80000-4-magnitudes-2 
 		from newton-magnitude
 		to metrology:UnitaryQuantity
 		forward isNewtonMagnitudeOf
-		restricts relation metrology:hasReference to 80000-4-instances:newton
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-4-instances:newton
 	]
 
 	// 4-10
@@ -48,14 +48,14 @@ vocabulary <http://iso.org/80000-4-magnitudes-2> with # as 80000-4-magnitudes-2 
 		from newton-second-magnitude
 		to metrology:UnitaryQuantity
 		forward isNewtonSecondMagnitudeOf
-		restricts relation metrology:hasReference to 80000-4-instances:newton-second
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-4-instances:newton-second
 	]
 
 	relation entity newton-millisecond-magnitude :> metrology:IsReflexiveMagnitudeOf, 80000-4-units:ImpulseMagnitude [
 		from newton-millisecond-magnitude
 		to metrology:UnitaryQuantity
 		forward isNewtonMilliSecondMagnitudeOf
-		restricts relation metrology:hasReference to 80000-4-instances:newton-second
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-4-instances:newton-second
 	]
 
 	// 4-27
@@ -64,6 +64,6 @@ vocabulary <http://iso.org/80000-4-magnitudes-2> with # as 80000-4-magnitudes-2 
 		from watt-magnitude
 		to metrology:UnitaryQuantity
 		forward isWattMagnitudeOf
-		restricts relation metrology:hasReference to 80000-4-instances:watt
+		restricts relation metrology:hasReferenceToMeasurementUnit to 80000-4-instances:watt
 	]
 }
