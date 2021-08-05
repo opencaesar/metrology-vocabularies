@@ -50,13 +50,17 @@ configurations {
 repositories {
 	mavenLocal()
   mavenCentral()
+	// Until this PR is merged: https://github.com/opencaesar/core-vocabularies/pull/26
+	maven { url 'https://jitpack.io' }
 }
 
 /*
  * The OML dependencies
  */
 dependencies {
-	oml "io.opencaesar.ontologies:core-vocabularies:$coreVersion@zip"
+	// Until this PR is merged: https://github.com/opencaesar/core-vocabularies/pull/26
+	// oml "io.opencaesar.ontologies:core-vocabularies:$coreVersion"
+	oml "com.github.NicolasRouquette:core-vocabularies:$coreVersion"
 }
 
 /*
