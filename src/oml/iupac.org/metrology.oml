@@ -302,7 +302,6 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 		to ReferenceMaterial
 		@rdfs:label "has reference to measurement procedure"
 		forward hasReferenceToReferenceMaterial
-		functional
 	]
 
 	@rdfs:label "Has Reference to Measurement Procedure"
@@ -312,7 +311,6 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 		to MeasurementProcedure
 		@rdfs:label "has reference to measurement procedure"
 		forward hasReferenceToMeasurementProcedure
-		functional
 	]
 
 	@rdfs:label "Has Reference to Measurement Unit"
