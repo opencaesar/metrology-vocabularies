@@ -7,6 +7,8 @@ the [ISO/IEC 80000 collection of metrology standards](https://en.wikipedia.org/w
 The same patterns should be applicable for modeling project-specific quantities and units as well as off-system quantities and units such as 
 the [English Engineering Units](https://en.wikipedia.org/wiki/English_Engineering_Units).
 
+![](diagrams/Metrology.png)
+
 ## Organizing a vocabulary of quantities and units
 
 <details>
