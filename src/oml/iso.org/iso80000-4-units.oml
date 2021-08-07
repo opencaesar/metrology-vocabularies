@@ -1,17 +1,17 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^source "ISO 80000-4:2019(en)"
+@dc:^source "ISO iso80000-4:2019(en)"
 @dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-4:ed-2:v1:en"
-@dc:^description "The ISO 80000-4 units vocabulary."
-@dc:title "ISO 80000-4 Units"
-vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
+@dc:^description "The ISO iso80000-4 units vocabulary."
+@dc:title "ISO iso80000-4 Units"
+vocabulary <http://iso.org/iso80000-4-units> with # as iso80000-4-units {
 
-	extends <http://iso.org/80000-3-units>
+	extends <http://iso.org/iso80000-3-units>
 
-	uses <http://iso.org/80000-4-instances>
+	uses <http://iso.org/iso80000-4-instances>
 
-	uses <http://iso.org/80000-1>
+	uses <http://iso.org/iso80000-1>
 
 	@dc:^source "4-1"
 	aspect MassMagnitude :> metrology:UnitaryMagnitude [
@@ -27,8 +27,8 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 	concept gram :> MassUnit, metrology:IndependentMeasurementUnit
 
 	concept kilogram :> CoherentMassUnit, metrology:PrefixedMeasurementUnit [
-		restricts relation metrology:hasPrefix to 80000-1:kilo
-		restricts relation metrology:prefixesMeasurementUnit to 80000-4-instances:gram
+		restricts relation metrology:hasPrefix to iso80000-1:kilo
+		restricts relation metrology:prefixesMeasurementUnit to iso80000-4-instances:gram
 	]
 
 	@dc:^source "4-8"
@@ -53,7 +53,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	relation entity Kilogram-Metre-Per-Second-Has-Metre-Per-Second :> metrology:HasFactorForMeasurementUnit [
 		from kilogram-metre-per-second
-		to 80000-3-units:metre-per-second
+		to iso80000-3-units:metre-per-second
 		forward kilogram-metre-per-second-has-metre-per-second
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
@@ -80,7 +80,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	relation entity Newton-Has-Metre-Per-Second :> metrology:HasFactorForMeasurementUnit [
 		from newton
-		to 80000-3-units:metre-per-second
+		to iso80000-3-units:metre-per-second
 		forward newton-has-metre-per-second
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
@@ -107,7 +107,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	relation entity Newton-Second-Has-Second :> metrology:HasFactorForMeasurementUnit [
 		from newton-second
-		to 80000-3-units:second
+		to iso80000-3-units:second
 		forward newton-second-has-second
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
@@ -123,7 +123,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	relation entity Newton-Millisecond-Has-Millisecond :> metrology:HasFactorForMeasurementUnit [
 		from newton-millisecond
-		to 80000-3-units:millisecond
+		to iso80000-3-units:millisecond
 		forward newton-millisecond-has-millisecond
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
@@ -150,7 +150,7 @@ vocabulary <http://iso.org/80000-4-units> with # as 80000-4-units {
 
 	relation entity Watt-Has-Metre-Per-Second :> metrology:HasFactorForMeasurementUnit [
 		from watt
-		to 80000-3-units:metre-per-second
+		to iso80000-3-units:metre-per-second
 		forward watt-has-metre-per-second
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]

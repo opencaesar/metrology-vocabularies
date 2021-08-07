@@ -24,7 +24,7 @@ plugins {
 }
 
 ext.title="Metrology Vocabularies"
-description='Metrology from iupac.org, iso/iec 80000 and NIST Special publication 811'
+description='Metrology from iupac.org, iso/iec iso80000 and NIST Special publication 811'
 group='io.opencaesar.ontologies'
 version gitVersion()
 
@@ -106,17 +106,17 @@ task owlReasonISO80000(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: o
 	// OWL catalog
 	catalogPath = file('build/rdf/catalog.xml')
 	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://iso.org/80000-bundle'
+	inputOntologyIri = 'http://iso.org/iso80000-bundle'
   inputFileExtensions = ['rdf']
 	outputFileExtension = 'rdf'
 	// Entailment statements to generate and the ontologies to persist them in
 	specs = [
-		'http://iso.org/80000-bundle/classes = ALL_SUBCLASS',
-		'http://iso.org/80000-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://iso.org/80000-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+		'http://iso.org/iso80000-bundle/classes = ALL_SUBCLASS',
+		'http://iso.org/iso80000-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+		'http://iso.org/iso80000-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
 	]
 	// Junit error report
-	reportPath = file('build/reports/80000-bundle/reasoning.xml')
+	reportPath = file('build/reports/iso80000-bundle/reasoning.xml')
 }
 
 task owlReasonNistSP811(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
@@ -147,9 +147,9 @@ task owlLoad(type:io.opencaesar.owl.load.OwlLoadTask, dependsOn: [owlReasonMetro
 		'http://iupac.org/metrology-bundle/classes',
 		'http://iupac.org/metrology-bundle/properties',
 		'http://iupac.org/metrology-bundle/individuals',
-		'http://iso.org/80000-bundle/classes',
-		'http://iso.org/80000-bundle/properties',
-		'http://iso.org/80000-bundle/individuals',
+		'http://iso.org/iso80000-bundle/classes',
+		'http://iso.org/iso80000-bundle/properties',
+		'http://iso.org/iso80000-bundle/individuals',
 		'http://nist.gov/pml/special-publication-811-bundle/classes',
 	  'http://nist.gov/pml/special-publication-811-bundle/properties',
 	  'http://nist.gov/pml/special-publication-811-bundle/individuals'

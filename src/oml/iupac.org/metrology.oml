@@ -97,7 +97,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 		relationship between, respectively, an instance of metrology:Quantity and a specialization of metrology:Quantity.
 		
 		Defining metrology:Quantity as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure 
-		algorithm to infer disjunctions for specializations of metrology:Quantity such as the ISO 80000 libraries
+		algorithm to infer disjunctions for specializations of metrology:Quantity such as the ISO iso80000 libraries
 		or user-defined vocabularies."
 	@dc:^source "quantity [https://jcgm.bipm.org/vim/en/1.1.html]"
 	@dc:^source "quantity [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 12.13, p 115]"
@@ -340,7 +340,7 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 	
 	@rdfs:label "Measurement Unit"
 	@dc:^description "Defining metrology:MeasurementUnit as an OML Concept instead of an OML Aspect or Relation, enables the bundle closure 
-		algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO 80000 libraries
+		algorithm to infer disjunctions for specializations of metrology:MeasurementUnit such as the ISO iso80000 libraries
 		or user-defined vocabularies."
 	@dc:^source "measurement unit [https://jcgm.bipm.org/vim/en/1.9.html]"
 	@dc:^source "metrological unit, measurement unit [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 18.12, p 189]"
