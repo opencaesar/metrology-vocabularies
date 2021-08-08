@@ -325,9 +325,57 @@ vocabulary <http://iupac.org/metrology> with # as metrology {
 
 	@rdfs:label "Ordinal Magnitude"
 	@dc:^source "ordinal quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.9, p 163]"
-	aspect OrdinalMagnitude :> Magnitude [
-		restricts relation hasReferenceToMeasurementProcedure to exactly 1
+	aspect OrdinalMagnitude :> Magnitude
+
+	@rdfs:label "Ordinal Magnitude Comparison"
+	@dc:^source "ordinal quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.9, p 163]"
+	relation entity OrdinalMagnitudeComparison [
+		from OrdinalMagnitude
+		to OrdinalMagnitude
+		forward ordinalMagnitudeComparison
 	]
+	
+	@rdfs:label "Less Than Ordinal Magnitude Comparison"
+	@dc:^description "Asserted when the source is less than the target."
+	@dc:^source "ordinal quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.9, p 163]"
+	relation entity LessThanOrdinalMagnitudeComparison :> OrdinalMagnitudeComparison [
+		from OrdinalMagnitude
+		to OrdinalMagnitude
+		forward lessThan
+		asymmetric
+		irreflexive
+	]
+
+	rule LessThanTransitivity [ lessThan(m1, m2) ^ lessThan(m2, m3) -> lessThan(m1, m3) ]
+	
+	@rdfs:label "Greater Than Ordinal Magnitude Comparison"
+	@dc:^description "Asserted when the source is greater than the target."
+	@dc:^source "ordinal quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.9, p 163]"
+	relation entity GreaterThanOrdinalMagnitudeComparison :> OrdinalMagnitudeComparison [
+		from OrdinalMagnitude
+		to OrdinalMagnitude
+		forward greaterThan
+		asymmetric
+		irreflexive
+	]
+
+	rule GreaterThanTransitivity [ greaterThan(m1, m2) ^ greaterThan(m2, m3) -> greaterThan(m1, m3) ]
+
+	@rdfs:label "Equal Ordinal Magnitude Comparison"
+	@dc:^source "ordinal quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.9, p 163]"
+	relation entity EqualOrdinalMagnitudeComparison :> OrdinalMagnitudeComparison [
+		from OrdinalMagnitude
+		to OrdinalMagnitude
+		forward equals
+		symmetric
+		reflexive
+	]
+
+	rule EqualsTransitivity [ equals(m1, m2) ^ equals(m2, m3) -> equals(m1, m3) ]
+	rule LessThanEqualsTransitivity [ lessThan(m1, m2) ^ equals(m2, m3) -> lessThan(m1, m3) ]
+	rule EqualsLessThanTransitivity [ equals(m1, m2) ^ lessThan(m2, m3) -> lessThan(m1, m3) ]
+	rule GreaterThanEqualsTransitivity [ greaterThan(m1, m2) ^ equals(m2, m3) -> greaterThan(m1, m3) ]
+	rule EqualsGreaterThanTransitivity [ equals(m1, m2) ^ greaterThan(m2, m3) -> greaterThan(m1, m3) ]
 
 	@rdfs:label "Unitary Magnitude"
 	@dc:^source "unitary quantity value [https://iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf, 16.10, p 163]"
