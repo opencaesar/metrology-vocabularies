@@ -1,11 +1,11 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^description "Optional consistency rules for iso80000-3-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors."
-@dc:title "ISO iso80000-3 Rules"
-vocabulary <http://iso.org/iso80000-3-rules> with # as iso80000-3-rules {
+@dc:^description "Optional consistency rules for iso-80000-3-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors."
+@dc:title "ISO iso-80000-3 Rules"
+vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 	
-	extends <http://iso.org/iso80000-3-quantities>
+	extends <http://iso.org/iso-80000-3-quantities>
 
 	@dc:^description "
 	If an angular-measure, x, is derived from an arc-length, y, and a radius, z,
@@ -13,19 +13,19 @@ vocabulary <http://iso.org/iso80000-3-rules> with # as iso80000-3-rules {
 	rule angular-measure-derivation-consistency [
 		// x is the angular-measure quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-3-quantities:angular-measure(x) ^
+		iso-80000-3-quantities:angular-measure(x) ^
 
 		// y is the arc-length quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-3-quantities:arc-length(y) ^
+		iso-80000-3-quantities:arc-length(y) ^
 
 		// z is the radius quantity of an object, zo. 
 		metrology:isQuantityOf(z,zo) ^
-		iso80000-3-quantities:radius(z) ^
+		iso-80000-3-quantities:radius(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		iso80000-3-quantities:angular-measure-has-arc-length(x,y) ^
-		iso80000-3-quantities:angular-measure-has-radius(x,z)
+		iso-80000-3-quantities:angular-measure-has-arc-length(x,y) ^
+		iso-80000-3-quantities:angular-measure-has-radius(x,z)
 	
 		->
 
@@ -39,19 +39,19 @@ vocabulary <http://iso.org/iso80000-3-rules> with # as iso80000-3-rules {
 	rule rotational-displacement-derivation-consistency [
 		// x is the rotational-displacement quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-3-quantities:rotational-displacement(x) ^
+		iso-80000-3-quantities:rotational-displacement(x) ^
 
 		// y is the path-length quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-3-quantities:path-length(y) ^
+		iso-80000-3-quantities:path-length(y) ^
 
 		// z is the distance quantity of an object, zo. 
 		metrology:isQuantityOf(z,zo) ^
-		iso80000-3-quantities:distance(z) ^
+		iso-80000-3-quantities:distance(z) ^
 
 		// if there is a dimensional calculus constraint relating x as derived from y and z
-		iso80000-3-quantities:rotational-displacement-has-path-length(x,y) ^
-		iso80000-3-quantities:rotational-displacement-has-distance(x,z)
+		iso-80000-3-quantities:rotational-displacement-has-path-length(x,y) ^
+		iso-80000-3-quantities:rotational-displacement-has-distance(x,z)
 	
 		->
 
@@ -65,19 +65,19 @@ vocabulary <http://iso.org/iso80000-3-rules> with # as iso80000-3-rules {
 	rule velocity-derivation-consistency [
 		// x is the velocity quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-3-quantities:velocity(x) ^
+		iso-80000-3-quantities:velocity(x) ^
 
 		// y is the position-vector quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-3-quantities:position-vector(y) ^
+		iso-80000-3-quantities:position-vector(y) ^
 
 		// z is the duration quantity of an object, zo.
 		metrology:isQuantityOf(z,zo) ^
-		iso80000-3-quantities:duration(z) ^
+		iso-80000-3-quantities:duration(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		iso80000-3-quantities:velocity-has-position-vector(x,y) ^
-		iso80000-3-quantities:velocity-has-duration(x,z)
+		iso-80000-3-quantities:velocity-has-position-vector(x,y) ^
+		iso-80000-3-quantities:velocity-has-duration(x,z)
 	
 		->
 
@@ -91,14 +91,14 @@ vocabulary <http://iso.org/iso80000-3-rules> with # as iso80000-3-rules {
 	rule rotation-derivation-consistency [
 		// x is the rotation quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-3-quantities:velocity(x) ^
+		iso-80000-3-quantities:velocity(x) ^
 
 		// y is the rotational-displacement quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-3-quantities:position-vector(y) ^
+		iso-80000-3-quantities:position-vector(y) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y
-		iso80000-3-quantities:rotation-has-rotational-displacement(x,y)
+		iso-80000-3-quantities:rotation-has-rotational-displacement(x,y)
 	
 		->
 
@@ -112,14 +112,14 @@ vocabulary <http://iso.org/iso80000-3-rules> with # as iso80000-3-rules {
 	rule frequency-derivation-consistency [
 		// x is the frequency quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-3-quantities:frequency(x) ^
+		iso-80000-3-quantities:frequency(x) ^
 
 		// y is the period-duration quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-3-quantities:period-duration(y) ^
+		iso-80000-3-quantities:period-duration(y) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y
-		iso80000-3-quantities:rotation-has-rotational-displacement(x,y)
+		iso-80000-3-quantities:rotation-has-rotational-displacement(x,y)
 	
 		->
 
@@ -133,19 +133,19 @@ vocabulary <http://iso.org/iso80000-3-rules> with # as iso80000-3-rules {
 	rule rotational-frequency-derivation-consistency [
 		// x is the rotational-frequency quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-3-quantities:rotational-frequency(x) ^
+		iso-80000-3-quantities:rotational-frequency(x) ^
 
 		// y is the rotation quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-3-quantities:rotation(y) ^
+		iso-80000-3-quantities:rotation(y) ^
 
 		// z is the duration quantity of an object, zo.
 		metrology:isQuantityOf(z,zo) ^
-		iso80000-3-quantities:duration(z) ^
+		iso-80000-3-quantities:duration(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		iso80000-3-quantities:rotational-frequency-has-rotation(x,y) ^
-		iso80000-3-quantities:rotational-frequency-has-duration(x,z)
+		iso-80000-3-quantities:rotational-frequency-has-rotation(x,y) ^
+		iso-80000-3-quantities:rotational-frequency-has-duration(x,z)
 	
 		->
 

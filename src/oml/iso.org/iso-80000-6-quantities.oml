@@ -1,26 +1,26 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^source "IEC iso80000-6:2008"
+@dc:^source "IEC iso-80000-6:2008"
 @dc:^source "https://www.iso.org/standard/31891.html"
-@dc:^description "The ISO iso80000-6 quantities vocabulary."
-@dc:title "ISO iso80000-6 Quantities"
-vocabulary <http://iso.org/iso80000-6-quantities> with # as iso80000-6-quantities {
+@dc:^description "The ISO iso-80000-6 quantities vocabulary."
+@dc:title "ISO iso-80000-6 Quantities"
+vocabulary <http://iso.org/iso-80000-6-quantities> with # as iso-80000-6-quantities {
 
-    extends <http://iso.org/iso80000-6-units>
+    extends <http://iso.org/iso-80000-6-units>
 
-    extends <http://iso.org/iso80000-5-quantities>
+    extends <http://iso.org/iso-80000-5-quantities>
 
     @dc:^source "6-1"
     concept electric-current :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to iso80000-6-units:ElectricCurrentMagnitude
+        restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ElectricCurrentMagnitude
     ]
 
     @dc:^source "6-2"
     concept electric-charge :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to iso80000-6-units:ElectricChargeMagnitude
+        restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ElectricChargeMagnitude
     ]
 
     relation entity Electric-Charge-Has-Electric-Current :> metrology:HasFactorForUnitaryQuantity [
@@ -33,7 +33,7 @@ vocabulary <http://iso.org/iso80000-6-quantities> with # as iso80000-6-quantitie
 
     relation entity Electric-Charge-Has-Duration :> metrology:HasFactorForUnitaryQuantity [
         from electric-charge
-        to iso80000-3-quantities:duration
+        to iso-80000-3-quantities:duration
         forward electric-charge-has-duration
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
@@ -42,12 +42,12 @@ vocabulary <http://iso.org/iso80000-6-quantities> with # as iso80000-6-quantitie
     @dc:^source "6-10"
     concept electric-field-strength :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to iso80000-6-units:ElectricFieldStrengthMagnitude
+        restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ElectricFieldStrengthMagnitude
     ]
 
     relation entity Electric-Field-Strength-Has-Force :> metrology:HasFactorForUnitaryQuantity [
         from electric-field-strength
-        to iso80000-4-quantities:force
+        to iso-80000-4-quantities:force
         forward electric-field-strength-has-force
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
@@ -64,7 +64,7 @@ vocabulary <http://iso.org/iso80000-6-quantities> with # as iso80000-6-quantitie
     @dc:^source "6-11"
     concept electric-potential :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to iso80000-6-units:ElectricPotentialMagnitude
+        restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ElectricPotentialMagnitude
     ]
 
     relation entity Electric-Potential-Has-Electric-Field-Strength :> metrology:HasFactorForUnitaryQuantity [
@@ -77,7 +77,7 @@ vocabulary <http://iso.org/iso80000-6-quantities> with # as iso80000-6-quantitie
 
     relation entity Electric-Potential-Has-Path-Length :> metrology:HasFactorForUnitaryQuantity [
         from electric-potential
-        to iso80000-3-quantities:path-length
+        to iso-80000-3-quantities:path-length
         forward electric-potential-has-path-length
         functional
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
@@ -86,7 +86,7 @@ vocabulary <http://iso.org/iso80000-6-quantities> with # as iso80000-6-quantitie
     @dc:^source "6-46"
     concept resistance :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-        restricts all relation  metrology:hasMagnitude to iso80000-6-units:ResistanceMagnitude
+        restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ResistanceMagnitude
     ]
 
     relation entity Resistance-Has-Electric-Potential :> metrology:HasFactorForUnitaryQuantity [

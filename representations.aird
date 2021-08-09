@@ -2,34 +2,34 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:oml="http://opencaesar.io/oml" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_aQ-R4PFeEeuj8eTvNPv4mQ" selectedViews="_zkwDQPFeEeuj8eTvNPv4mQ _zlGokPFeEeuj8eTvNPv4mQ" version="14.5.0.202104161500">
     <semanticResources>gradle/wrapper/gradle-wrapper.properties</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-1-decimalPrefix.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-1-decimalPrefix.oml</semanticResources>
     <semanticResources>src/oml/iupac.org/metrology.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-1.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-3-instances.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-3-quantities.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-3-units.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-instances.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-3-magnitudes-1.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-3-magnitudes-2.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-3-rules.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-4-instances.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-4-quantities.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-4-units.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-4-magnitudes-1.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-4-magnitudes-2.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-4-rules.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-5-instances.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-5-quantities.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-5-units.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-5-magnitudes-1.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-5-magnitudes-2.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-5-rules.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-6-instances.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-6-quantities.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-6-units.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-6-magnitudes-1.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-6-rules.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-bundle.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-1.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-3-instances.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-3-quantities.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-3-units.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-instances.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-3-magnitudes-1.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-3-magnitudes-2.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-3-rules.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-4-instances.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-4-quantities.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-4-units.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-4-magnitudes-1.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-4-magnitudes-2.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-4-rules.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-5-instances.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-5-quantities.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-5-units.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-5-magnitudes-1.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-5-magnitudes-2.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-5-rules.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-6-instances.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-6-quantities.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-6-units.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-6-magnitudes-1.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-6-rules.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-bundle.oml</semanticResources>
     <semanticResources>src/oml/iupac.org/metrology-bundle.oml</semanticResources>
     <semanticResources>src/oml/nist.gov/pml/special-publication-811-bundle.oml</semanticResources>
     <semanticResources>src/oml/nist.gov/pml/special-publication-811-instances.oml</semanticResources>
@@ -43,7 +43,7 @@
     <semanticResources>build/oml/www.w3.org/2000/01/rdf-schema.oml</semanticResources>
     <semanticResources>build/oml/opencaesar.io/viewpoint.oml</semanticResources>
     <semanticResources>build/oml/www.w3.org/1999/02/22-rdf-syntax-ns.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso80000-6-magnitudes-2.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-6-magnitudes-2.oml</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_zkwDQPFeEeuj8eTvNPv4mQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/io.opencaesar.rosetta.sirius.viewpoint/description/oml.odesign#//@ownedViewpoints[name='Vocabularies']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_28VqIPFeEeuj8eTvNPv4mQ" name="Metrology" repPath="#_28UcAPFeEeuj8eTvNPv4mQ" changeId="4fcd176d-5a7c-4507-88d3-4749768af9da">

@@ -7,27 +7,27 @@ vocabulary <http://nist.gov/pml/special-publication-811-magnitudes-1> with # as 
 
 	uses <http://nist.gov/pml/special-publication-811-instances>
 
-	concept foot-magnitude :> iso80000-3-units:LengthMagnitude [
+	concept foot-magnitude :> iso-80000-3-units:LengthMagnitude [
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:foot
 	]
 
-	concept pound-mass-magnitude :> iso80000-4-units:MassMagnitude [
+	concept pound-mass-magnitude :> iso-80000-4-units:MassMagnitude [
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:pound-mass
 	]
 
-	concept pound-force-magnitude :> iso80000-4-units:ForceMagnitude [
+	concept pound-force-magnitude :> iso-80000-4-units:ForceMagnitude [
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:pound-force
 	]
 
-	concept pound-force-second-magnitude :> iso80000-4-units:ImpulseMagnitude [
+	concept pound-force-second-magnitude :> iso-80000-4-units:ImpulseMagnitude [
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:pound-force-second
 	]
 
-	concept degreeFahrenheit-magnitude :> iso80000-5-units:CelsiusTemperatureMagnitude [
+	concept degreeFahrenheit-magnitude :> iso-80000-5-units:CelsiusTemperatureMagnitude [
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:degreeFahrenheit
 	]
 
-	concept degreeRankine-magnitude :> iso80000-5-units:ThermodynamicTemperatureMagnitude [
+	concept degreeRankine-magnitude :> iso-80000-5-units:ThermodynamicTemperatureMagnitude [
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:degreeRankine
 	]
 }

@@ -9,9 +9,9 @@ description <http://nist.gov/pml/special-publication-811-instances> with # as sp
 
 	uses <http://nist.gov/pml/special-publication-811-units>
 
-	extends <http://iso.org/iso80000-3-instances>
+	extends <http://iso.org/iso-80000-3-instances>
 
-	extends <http://iso.org/iso80000-4-instances>
+	extends <http://iso.org/iso-80000-4-instances>
 
 	@dc:^description "The System of English Engineering Units"
 	@dc:^source "https://en.wikipedia.org/wiki/English_Engineering_Units"
@@ -19,7 +19,7 @@ description <http://nist.gov/pml/special-publication-811-instances> with # as sp
 
 	ri englishEngineeringUnits-second : metrology:SystemHasMetrologicalUnit [
 		from englishEngineeringUnits
-		to iso80000-3-instances:second
+		to iso-80000-3-instances:second
 		metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
 	]
 

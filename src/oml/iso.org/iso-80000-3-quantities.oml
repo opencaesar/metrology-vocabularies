@@ -1,18 +1,18 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^source "ISO iso80000-3:2019(en)"
+@dc:^source "ISO iso-80000-3:2019(en)"
 @dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
-@dc:^description "The ISO iso80000-3 quantities vocabulary."
-@dc:title "ISO iso80000-3 Quantities"
-vocabulary <http://iso.org/iso80000-3-quantities> with # as iso80000-3-quantities {
+@dc:^description "The ISO iso-80000-3 quantities vocabulary."
+@dc:title "ISO iso-80000-3 Quantities"
+vocabulary <http://iso.org/iso-80000-3-quantities> with # as iso-80000-3-quantities {
 
-	extends <http://iso.org/iso80000-3-units>
+	extends <http://iso.org/iso-80000-3-units>
 
 	@dc:^source "3-1"
 	concept ^length :> metrology:IndependentUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-		restricts all relation metrology:hasMagnitude to iso80000-3-units:LengthMagnitude
+		restricts all relation metrology:hasMagnitude to iso-80000-3-units:LengthMagnitude
 	]
 
 	concept width :> ^length
@@ -48,7 +48,7 @@ vocabulary <http://iso.org/iso80000-3-quantities> with # as iso80000-3-quantitie
 	@dc:^source "3-5"
 	concept angular-measure :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "true"^^xsd:boolean
-		restricts all relation metrology:hasMagnitude to iso80000-3-units:AngularMeasureMagnitude
+		restricts all relation metrology:hasMagnitude to iso-80000-3-units:AngularMeasureMagnitude
 	]
 
 	relation entity Angular-Measure-Has-Arc-Length :> metrology:HasFactorForUnitaryQuantity [
@@ -70,7 +70,7 @@ vocabulary <http://iso.org/iso80000-3-quantities> with # as iso80000-3-quantitie
 	@dc:^source "3-6"
 	concept rotational-displacement :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "true"^^xsd:boolean
-		restricts all relation metrology:hasMagnitude to iso80000-3-units:AngularMeasureMagnitude
+		restricts all relation metrology:hasMagnitude to iso-80000-3-units:AngularMeasureMagnitude
 	]
 
 	relation entity Rotational-Displacement-Has-Path-Length :> metrology:HasFactorForUnitaryQuantity [
@@ -92,13 +92,13 @@ vocabulary <http://iso.org/iso80000-3-quantities> with # as iso80000-3-quantitie
 	@dc:^source "3-9"
 	concept duration :> metrology:IndependentUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-		restricts all relation metrology:hasMagnitude to iso80000-3-units:TimeMagnitude
+		restricts all relation metrology:hasMagnitude to iso-80000-3-units:TimeMagnitude
 	]
 
 	@dc:^source "3-10"
 	concept velocity :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-		restricts all relation metrology:hasMagnitude to iso80000-3-units:VelocityMagnitude
+		restricts all relation metrology:hasMagnitude to iso-80000-3-units:VelocityMagnitude
 	]
 
 	relation entity Velocity-Has-Position-Vector :> metrology:HasFactorForUnitaryQuantity [
@@ -123,7 +123,7 @@ vocabulary <http://iso.org/iso80000-3-quantities> with # as iso80000-3-quantitie
 	@dc:^source "3-16"
 	concept rotation :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "true"^^xsd:boolean
-		restricts all relation metrology:hasMagnitude to iso80000-3-units:RotationMagnitude
+		restricts all relation metrology:hasMagnitude to iso-80000-3-units:RotationMagnitude
 	]
 
 	relation entity Rotation-Has-Rotational-Displacement :> metrology:HasFactorForUnitaryQuantity [
@@ -137,7 +137,7 @@ vocabulary <http://iso.org/iso80000-3-quantities> with # as iso80000-3-quantitie
 	@dc:^source "3-17"
 	concept frequency :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-		restricts all relation metrology:hasMagnitude to iso80000-3-units:FrequencyMagnitude
+		restricts all relation metrology:hasMagnitude to iso-80000-3-units:FrequencyMagnitude
 	]
 
 	relation entity Frequency-Has-Period-Duration :> metrology:HasFactorForUnitaryQuantity [
@@ -150,7 +150,7 @@ vocabulary <http://iso.org/iso80000-3-quantities> with # as iso80000-3-quantitie
 
 	concept rotational-frequency :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
-		restricts all relation metrology:hasMagnitude to iso80000-3-units:FrequencyMagnitude
+		restricts all relation metrology:hasMagnitude to iso-80000-3-units:FrequencyMagnitude
 	]
 
 	relation entity Rotational-Frequency-Has-Rotation :> metrology:HasFactorForUnitaryQuantity [

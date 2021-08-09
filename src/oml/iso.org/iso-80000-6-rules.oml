@@ -1,13 +1,13 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^description "Optional consistency rules for iso80000-6-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors."
-@dc:title "ISO iso80000-6 Rules"
-vocabulary <http://iso.org/iso80000-6-rules> with # as iso80000-6-rules {
+@dc:^description "Optional consistency rules for iso-80000-6-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors."
+@dc:title "ISO iso-80000-6 Rules"
+vocabulary <http://iso.org/iso-80000-6-rules> with # as iso-80000-6-rules {
 
-	extends <http://iso.org/iso80000-6-quantities>
+	extends <http://iso.org/iso-80000-6-quantities>
 
-	extends <http://iso.org/iso80000-5-rules>
+	extends <http://iso.org/iso-80000-5-rules>
 
 	@dc:^description "
 	If an electric-charge, x, is derived from a electric-current, y, and a duration, z,
@@ -15,19 +15,19 @@ vocabulary <http://iso.org/iso80000-6-rules> with # as iso80000-6-rules {
 	rule electric-charge-derivation-consistency [
 		// x is the electric-charge quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-6-quantities:electric-charge(x) ^
+		iso-80000-6-quantities:electric-charge(x) ^
 
 		// y is the electric-current quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-6-quantities:electric-current(y) ^
+		iso-80000-6-quantities:electric-current(y) ^
 
 		// z is the duration quantity of an object, zo. 
 		metrology:isQuantityOf(z,zo) ^
-		iso80000-3-quantities:duration(z) ^
+		iso-80000-3-quantities:duration(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		iso80000-6-quantities:electric-charge-has-electric-current(x,y) ^
-		iso80000-6-quantities:electric-charge-has-duration(x,z)
+		iso-80000-6-quantities:electric-charge-has-electric-current(x,y) ^
+		iso-80000-6-quantities:electric-charge-has-duration(x,z)
 	
 		->
 
@@ -41,19 +41,19 @@ vocabulary <http://iso.org/iso80000-6-rules> with # as iso80000-6-rules {
 	rule electric-field-strength-derivation-consistency [
 		// x is the electric-field-strength quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-6-quantities:electric-field-strength(x) ^
+		iso-80000-6-quantities:electric-field-strength(x) ^
 
 		// y is the force quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-4-quantities:force(y) ^
+		iso-80000-4-quantities:force(y) ^
 
 		// z is the electric-charge quantity of an object, zo. 
 		metrology:isQuantityOf(z,zo) ^
-		iso80000-6-quantities:electric-charge(z) ^
+		iso-80000-6-quantities:electric-charge(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		iso80000-6-quantities:electric-field-strength-has-force(x,y) ^
-		iso80000-6-quantities:electric-field-strength-has-electric-charge(x,z)
+		iso-80000-6-quantities:electric-field-strength-has-force(x,y) ^
+		iso-80000-6-quantities:electric-field-strength-has-electric-charge(x,z)
 	
 		->
 
@@ -67,19 +67,19 @@ vocabulary <http://iso.org/iso80000-6-rules> with # as iso80000-6-rules {
 	rule electric-potential-derivation-consistency [
 		// x is the electric-potential quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-6-quantities:electric-potential(x) ^
+		iso-80000-6-quantities:electric-potential(x) ^
 
 		// y is the electric-field-strength quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-6-quantities:electric-field-strength(y) ^
+		iso-80000-6-quantities:electric-field-strength(y) ^
 
 		// z is the path-length quantity of an object, zo. 
 		metrology:isQuantityOf(z,zo) ^
-		iso80000-3-quantities:path-length(z) ^
+		iso-80000-3-quantities:path-length(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		iso80000-6-quantities:electric-potential-has-electric-field-strength(x,y) ^
-		iso80000-6-quantities:electric-potential-has-path-length(x,z)
+		iso-80000-6-quantities:electric-potential-has-electric-field-strength(x,y) ^
+		iso-80000-6-quantities:electric-potential-has-path-length(x,z)
 	
 		->
 
@@ -93,19 +93,19 @@ vocabulary <http://iso.org/iso80000-6-rules> with # as iso80000-6-rules {
 	rule resistance-derivation-consistency [
 		// x is the resistance quantity of an object, xo.
 		metrology:isQuantityOf(x,xo) ^
-		iso80000-6-quantities:resistance(x) ^
+		iso-80000-6-quantities:resistance(x) ^
 
 		// y is the electric-potential quantity of an object, yo.
 		metrology:isQuantityOf(y,yo) ^
-		iso80000-6-quantities:electric-potential(y) ^
+		iso-80000-6-quantities:electric-potential(y) ^
 
 		// z is the electric-current quantity of an object, zo. 
 		metrology:isQuantityOf(z,zo) ^
-		iso80000-6-quantities:electric-current(z) ^
+		iso-80000-6-quantities:electric-current(z) ^
 
 		// if there is a dimensional calculus constraint relating x as a derived from y and z
-		iso80000-6-quantities:resistance-has-electric-potential(x,y) ^
-		iso80000-6-quantities:resistance-has-electric-current(x,z)
+		iso-80000-6-quantities:resistance-has-electric-potential(x,y) ^
+		iso-80000-6-quantities:resistance-has-electric-current(x,z)
 	
 		->
 

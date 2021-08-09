@@ -7,42 +7,42 @@ vocabulary <http://nist.gov/pml/special-publication-811-magnitudes2> with # as s
 
 	uses <http://nist.gov/pml/special-publication-811-instances>
 
-	relation entity foot-magnitude :> metrology:IsReflexiveMagnitudeOf, iso80000-3-units:LengthMagnitude [
+	relation entity foot-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-3-units:LengthMagnitude [
 		from foot-magnitude
 		to metrology:UnitaryQuantity
 		forward isFootMagnitudeOf
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:foot
 	]
 
-	relation entity pound-mass-magnitude :> metrology:IsReflexiveMagnitudeOf, iso80000-4-units:MassMagnitude [
+	relation entity pound-mass-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-4-units:MassMagnitude [
 		from pound-mass-magnitude
 		to metrology:UnitaryQuantity
 		forward isPoundMassMagnitudeOf
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:pound-mass
 	]
 
-	relation entity pound-force-magnitude :> metrology:IsReflexiveMagnitudeOf, iso80000-4-units:ForceMagnitude [
+	relation entity pound-force-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-4-units:ForceMagnitude [
 		from pound-force-magnitude
 		to metrology:UnitaryQuantity
 		forward isPoundForceMagnitudeOf
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:pound-force
 	]
 
-	relation entity pound-force-second-magnitude :> metrology:IsReflexiveMagnitudeOf, iso80000-4-units:ImpulseMagnitude [
+	relation entity pound-force-second-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-4-units:ImpulseMagnitude [
 		from pound-force-second-magnitude
 		to metrology:UnitaryQuantity
 		forward isPoundForceSecondMagnitudeOf
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:pound-force-second
 	]
 
-	relation entity degreeFahrenheit-magnitude :> metrology:IsReflexiveMagnitudeOf, iso80000-5-units:CelsiusTemperatureMagnitude [
+	relation entity degreeFahrenheit-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-5-units:CelsiusTemperatureMagnitude [
 		from degreeFahrenheit-magnitude
 		to metrology:UnitaryQuantity
 		forward isDegreeFahrenheitMagnitudeOf
 		restricts relation metrology:hasReferenceToMeasurementUnit to special-publication-811-instances:degreeFahrenheit
 	]
 
-	relation entity degreeRankine-magnitude :> metrology:IsReflexiveMagnitudeOf, iso80000-5-units:ThermodynamicTemperatureMagnitude [
+	relation entity degreeRankine-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-5-units:ThermodynamicTemperatureMagnitude [
 		from degreeRankine-magnitude
 		to metrology:UnitaryQuantity
 		forward isDegreeRankineMagnitudeOf
