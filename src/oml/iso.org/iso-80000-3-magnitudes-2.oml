@@ -30,6 +30,12 @@ vocabulary <http://iso.org/iso-80000-3-magnitudes-2> with # as iso-80000-3-magni
 		forward isRadianMagnitudeOf
 		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:radian
 	]
+	relation entity degree-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-3-units:AngularMeasureMagnitude [
+		from degree-magnitude
+		to metrology:UnitaryQuantity
+		forward isDegreeMagnitudeOf
+		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:degree
+	]
 
 	// 3-9
 	relation entity second-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-3-units:TimeMagnitude [

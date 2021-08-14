@@ -36,11 +36,13 @@ vocabulary <http://iso.org/iso-80000-3-units> with # as iso-80000-3-units {
 		restricts all relation metrology:hasReferenceToMeasurementUnit to AngularMeasureUnit
 	]
 
-	concept AngularMeasureUnit :> metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
+	concept AngularMeasureUnit :> metrology:MeasurementUnit 
+	
+	concept CoherentAngularMeasureUnit :> AngularMeasureUnit, metrology:CoherentMeasurementUnit [
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "true"^^xsd:boolean
 	]
 
-	concept radian :> AngularMeasureUnit, metrology:DerivedMeasurementUnit
+	concept radian :> CoherentAngularMeasureUnit, metrology:DerivedMeasurementUnit
 
 	relation entity Radian-Has-Metre-Numerator :> metrology:HasFactorForMeasurementUnit [
 		from radian
@@ -54,6 +56,11 @@ vocabulary <http://iso.org/iso-80000-3-units> with # as iso-80000-3-units {
 		to metre
 		forward radian-has-metre-denominator
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
+
+	concept degree :> AngularMeasureUnit, metrology:NonCoherentDerivedMeasurementUnit [
+		restricts scalar property metrology:nonCoherentRelationship to "1 degree = Pi/180 radians"
+		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to iso-80000-3-instances:radian
 	]
 
 	@dc:^source "3-9"

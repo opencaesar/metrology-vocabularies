@@ -22,6 +22,10 @@ vocabulary <http://iso.org/iso-80000-3-magnitudes-1> with # as iso-80000-3-magni
 		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:radian
 	]
 
+	concept degree-magnitude :> iso-80000-3-units:AngularMeasureMagnitude [
+		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:degree
+	]
+
 	// 3-9
 	concept second-magnitude :> iso-80000-3-units:TimeMagnitude [
 		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:second

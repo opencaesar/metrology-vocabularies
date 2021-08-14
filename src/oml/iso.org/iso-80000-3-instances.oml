@@ -182,6 +182,8 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 
+	ci degree : iso-80000-3-units:degree
+
 	@dc:^source "3-6"
 	ci rotational-displacement : iso-80000-3-quantities:rotational-displacement
 
