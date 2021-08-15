@@ -9,12 +9,13 @@ usage() {
   exit 255
 }
 
-if [ -n "$(git status --porcelain)" ]; then
-  echo "# There are uncommitted changes!"
-  exit 255
-fi
+# if [ -n "$(git status --porcelain)" ]; then
+#   echo "# There are uncommitted changes!"
+#   exit 255
+# fi
 
-test $# -eq 1 || usage
+USAGE=0
+test $# -eq 1 || USAGE=1
 
 PREFIX=""
 
@@ -31,11 +32,12 @@ while [[ $# -gt 0 ]]; do
       ;;
     -prefix)
       shift
-      if [[ $# -eq 0 ]]; usage; fi
+      if [[ $# -eq 0 ]]; then usage; fi
       PREFIX="$1"
+      ;;
     *)
       echo "# Unrecognized option: $1"
-      usage
+      USAGE=1
       ;;
   esac
 done
@@ -55,9 +57,9 @@ if [[ $? -ne 0 ]]; then
   exit 255
 fi
 
-MAJOR0=$(echo $CURRENT | sed -e 's/^v@\([0-9]*\)\.[0-9]*\.[0-9]*\-.*$/\1/')
-MINOR0=$(echo $CURRENT | sed -e 's/^v@[0-9]*\.\([0-9]*\)\.[0-9]*\-.*$/\1/')
-PATCH0=$(echo $CURRENT | sed -e 's/^v@[0-9]*\.[0-9]*\.\([0-9]*\)\-.*$/\1/')
+MAJOR0=$(echo $CURRENT | sed -e "s/^$PREFIX\([0-9]*\)\.[0-9]*\.[0-9]*.*$/\1/")
+MINOR0=$(echo $CURRENT | sed -e "s/^$PREFIX[0-9]*\.\([0-9]*\)\.[0-9]*.*$/\1/")
+PATCH0=$(echo $CURRENT | sed -e "s/^$PREFIX[0-9]*\.[0-9]*\.\([0-9]*\).*$/\1/")
 
 MAJOR1=$(( 1 + $MAJOR0 ))
 MINOR1=$(( 1 + $MINOR0 ))
@@ -66,6 +68,8 @@ PATCH1=$(( 1 + $PATCH0 ))
 NEXT_MAJOR="$PREFIX$MAJOR1.0.0"
 NEXT_MINOR="$PREFIX$MAJOR0.$MINOR1.0"
 NEXT_PATCH="$PREFIX$MAJOR0.$MINOR0.$PATCH1"
+
+if [[ $USAGE -eq 1 ]]; then usage; fi
 
 echo    "# Current git description: $CURRENT"
 echo -n "# OK to tag and push : $NEXT (y/n) ? "

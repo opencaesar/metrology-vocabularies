@@ -69,7 +69,7 @@ $next_patch="$prefix$major0.$minor0.$patch1"
 
 
 if (!$major -and !$minor -and !$patch) {
-  Get-Help $^ -full 
+  Get-Help $PSCommandPath -full 
   throw "Specify one of the following options:`n-major for $next_major`n-minor for $next_minor`n-patch for $next_patch"
 } elseif ($major -and !$minor -and !$patch) {
   CreateAndPushTag $repository $next_major
