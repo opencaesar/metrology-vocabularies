@@ -38,6 +38,11 @@ function CreateAndPushTag {
   }
 }
 
+$status=$(git status --porcelain)
+if (![string]::IsNullOrEmpty($status)) {
+  throw "There are uncommitted changes:`n$status"
+}
+
 $glob="${prefix}[0-9].[0-9].[0-9]*"
 $version=git describe --match "$glob"
 

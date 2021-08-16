@@ -9,10 +9,10 @@ usage() {
   exit 255
 }
 
-# if [ -n "$(git status --porcelain)" ]; then
-#   echo "# There are uncommitted changes!"
-#   exit 255
-# fi
+if [ -n "$(git status --porcelain)" ]; then
+  echo "# There are uncommitted changes!"
+  exit 255
+fi
 
 USAGE=0
 test $# -eq 1 || USAGE=1
