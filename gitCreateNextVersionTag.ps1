@@ -32,7 +32,7 @@ function CreateAndPushTag {
   if (!$?) {
     throw "Cannot create tag: $tag"
   }
-  git push $repository tag $tag
+  git push $repository HEAD tag $tag
   if (!$?) {
     throw "Cannot push tag: $tag to repository $repository"
   }

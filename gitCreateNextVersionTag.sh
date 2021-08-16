@@ -83,7 +83,7 @@ case ${yn:0:1} in
       exit 255
     fi
 
-    git push $REPOSITORY tag $NEXT
+    git push $REPOSITORY HEAD tag $NEXT
     if [[ $? -ne 0 ]]; then
       echo "Cannot push tag: $NEXT to repository $REPOSITORY"
       exit 255
