@@ -237,6 +237,17 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 
 	ci kilometre-per-second : iso-80000-3-units:kilometre-per-second
 
+	@dc:^source "3-12"
+	ci radian-per-second : iso-80000-3-units:radian-per-second
+
+	ri systemOfUnits-radian-per-second : metrology:SystemHasMetrologicalUnit [
+		from iso-80000-instances:systemOfUnits
+		to radian-per-second
+		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
+	]
+
+	ci degree-per-second : iso-80000-3-units:radian-per-second
+
 	@dc:^source "3-14"
 	ci period-duration : iso-80000-3-quantities:period-duration
 

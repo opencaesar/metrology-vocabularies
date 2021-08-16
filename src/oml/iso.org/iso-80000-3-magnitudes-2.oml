@@ -70,7 +70,7 @@ vocabulary <http://iso.org/iso-80000-3-magnitudes-2> with # as iso-80000-3-magni
 	relation entity metre-per-second-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-3-units:VelocityMagnitude [
 		from metre-per-second-magnitude
 		to metrology:UnitaryQuantity
-		forward isMetrePer-SecondMagnitudeOf
+		forward isMetrePerSecondMagnitudeOf
 		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:metre-per-second
 	]
 
@@ -80,6 +80,22 @@ vocabulary <http://iso.org/iso-80000-3-magnitudes-2> with # as iso-80000-3-magni
 		forward isKilometrePerSecondMagnitudeOf
 		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:kilometre-per-second
 	]
+
+	// 3-12
+	relation entity radian-per-second-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-3-units:AngularVelocityMagnitude [
+		from radian-per-second-magnitude
+		to metrology:UnitaryQuantity
+		forward isRadianPerSecondMagnitudeOf
+		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:radian-per-second
+	]
+	
+	relation entity degree-per-second-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-3-units:AngularVelocityMagnitude [
+		from degree-per-second-magnitude
+		to metrology:UnitaryQuantity
+		forward isDegreePerSecondMagnitudeOf
+		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:degree-per-second
+	]
+
 
 	// 3-16
 	relation entity revolution-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-3-units:RotationMagnitude [

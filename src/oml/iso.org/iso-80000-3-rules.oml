@@ -7,6 +7,8 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 	
 	extends <http://iso.org/iso-80000-3-quantities>
 
+	// 3-5
+
 	@dc:^description "
 	If an angular-measure, x, is derived from an arc-length, y, and a radius, z,
 	then x, y, and z must be quantities about the same object."
@@ -30,8 +32,10 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 		->
 
 		// then all the quantities must be about the same object.
-		sameAs(xo,yo) ^ sameAs(xo,yo)
+		sameAs(xo,yo) ^ sameAs(xo,zo)
 	]
+
+	// 3-6
 
 	@dc:^description "
 	If a rotational-displacement, x, is derived from a path-length, y, and a distance, z,
@@ -59,6 +63,8 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 		sameAs(xo,yo) ^ sameAs(xo,zo)
 	]
 	
+	// 3-10
+
 	@dc:^description "
 	If a velocity, x, is derived from a position-vector, y, and a duration, z,
 	then x, y, and z must be quantities of the same object."
@@ -84,6 +90,36 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 		// then all the quantities must be of the same object.
 		sameAs(xo,yo) ^ sameAs(xo,zo)
 	]
+	
+	// 3-12
+
+	@dc:^description "
+	If an angular-velocity, x, is derived from a rotational-displacement, y, and a duration, z,
+	then x, y, and z must be quantities of the same object."
+	rule angular-velocity-derivation-consistency [
+		// x is the velocity quantity of an object, xo.
+		metrology:isQuantityOf(x,xo) ^
+		iso-80000-3-quantities:angular-velocity(x) ^
+
+		// y is the rotational-displacement quantity of an object, yo.
+		metrology:isQuantityOf(y,yo) ^
+		iso-80000-3-quantities:rotational-displacement(y) ^
+
+		// z is the duration quantity of an object, zo.
+		metrology:isQuantityOf(z,zo) ^
+		iso-80000-3-quantities:duration(z) ^
+
+		// if there is a dimensional calculus constraint relating x as a derived from y and z
+		iso-80000-3-quantities:angular-velocity-has-rotational-displacement(x,y) ^
+		iso-80000-3-quantities:angular-velocity-has-duration(x,z)
+	
+		->
+
+		// then all the quantities must be of the same object.
+		sameAs(xo,yo) ^ sameAs(xo,zo)
+	]
+
+	// 3-16
 
 	@dc:^description "
 	If a rotation, x, is derived from a rotational-displacement, y,
@@ -105,6 +141,8 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 		// then all the quantities must be of the same object.
 		sameAs(xo,yo)
 	]
+
+	// 3-17
 
 	@dc:^description "
 	If a frequency, x, is derived from a period-duration, y,

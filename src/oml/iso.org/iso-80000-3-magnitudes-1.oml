@@ -52,6 +52,15 @@ vocabulary <http://iso.org/iso-80000-3-magnitudes-1> with # as iso-80000-3-magni
 		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:kilometre-per-second
 	]
 
+	// 3-12
+	concept radian-per-second-magnitude :> iso-80000-3-units:AngularVelocityMagnitude [
+		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:radian-per-second
+	]
+	
+	concept degree-per-second-magnitude :> iso-80000-3-units:AngularVelocityMagnitude [
+		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:degree-per-second
+	]
+
 	// 3-16
 	concept revolution-magnitude :> iso-80000-3-units:RotationMagnitude [
 		restricts relation metrology:hasReferenceToMeasurementUnit to iso-80000-3-instances:revolution

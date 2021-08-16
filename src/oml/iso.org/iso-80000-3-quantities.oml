@@ -117,6 +117,29 @@ vocabulary <http://iso.org/iso-80000-3-quantities> with # as iso-80000-3-quantit
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 
+	@dc:^source "3-12"
+	concept angular-velocity :> metrology:DerivedUnitaryQuantity [
+		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
+		restricts all relation metrology:hasMagnitude to iso-80000-3-units:AngularVelocityMagnitude
+	]
+
+	relation entity AngularVelocity-Has-RotationalDisplacement :> metrology:HasFactorForUnitaryQuantity [
+		from angular-velocity
+		to rotational-displacement
+		forward angular-velocity-has-rotational-displacement
+		functional
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
+
+	relation entity AngularVelocity-Has-Duration :> metrology:HasFactorForUnitaryQuantity [
+		from angular-velocity
+		to duration
+		forward angular-velocity-has-duration
+		functional
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
+
+
 	@dc:^source "3-14"
 	concept period-duration :> duration
 

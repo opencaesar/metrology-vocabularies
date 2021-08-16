@@ -134,6 +134,49 @@ vocabulary <http://iso.org/iso-80000-3-units> with # as iso-80000-3-units {
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 
+	@dc:^source "3-12"
+	aspect AngularVelocityMagnitude :> metrology:UnitaryMagnitude [
+		restricts all relation metrology:hasReferenceToMeasurementUnit to AngularVelocityUnit
+	]
+
+	concept AngularVelocityUnit :> metrology:MeasurementUnit
+
+	concept CoherentAngularVelocityUnit :> AngularVelocityUnit, metrology:CoherentMeasurementUnit [
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
+	]
+
+	concept radian-per-second :> CoherentAngularVelocityUnit, metrology:DerivedMeasurementUnit
+
+	relation entity Radian-Per-Second-Has-Radian :> metrology:HasFactorForMeasurementUnit [
+		from radian-per-second
+		to radian
+		forward radian-per-second-has-radian
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
+	
+	relation entity Radian-Per-Second-Has-Second :> metrology:HasFactorForMeasurementUnit [
+		from radian-per-second
+		to second
+		forward radian-per-second-has-second
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
+
+	concept degree-per-second :> AngularVelocityUnit, metrology:DerivedMeasurementUnit
+
+	relation entity Degree-Per-Second-Has-Radian :> metrology:HasFactorForMeasurementUnit [
+		from degree-per-second
+		to degree
+		forward degree-per-second-has-radian
+		restricts scalar property metrology:exponent to "1/1"^^owl:rational
+	]
+	
+	relation entity Degree-Per-Second-Has-Second :> metrology:HasFactorForMeasurementUnit [
+		from degree-per-second
+		to second
+		forward degree-per-second-has-second
+		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
+	]
+
 	@dc:^source "3-16"
 	aspect RotationMagnitude :> metrology:UnitaryMagnitude [
 		restricts all relation metrology:hasReferenceToMeasurementUnit to RotationUnit
