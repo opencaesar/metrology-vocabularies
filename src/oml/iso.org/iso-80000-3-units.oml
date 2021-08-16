@@ -142,7 +142,7 @@ vocabulary <http://iso.org/iso-80000-3-units> with # as iso-80000-3-units {
 	concept RotationUnit :> metrology:MeasurementUnit
 
 	concept CoherentRotationUnit :> RotationUnit, metrology:CoherentMeasurementUnit [
-		restricts scalar property metrology:isDimensionlessMeasurementUnit to "false"^^xsd:boolean
+		restricts scalar property metrology:isDimensionlessMeasurementUnit to "true"^^xsd:boolean
 	]
 
 	concept revolution :> CoherentRotationUnit, metrology:DerivedMeasurementUnit
