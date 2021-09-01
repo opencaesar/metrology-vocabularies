@@ -1,15 +1,23 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^source "ISO iso-80000-3:2019(en)"
-@dc:^source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
-@dc:^description "The ISO iso-80000-3 quantities vocabulary."
-@dc:title "ISO iso-80000-3 Quantities"
+@dc:source "ISO-80000-3:2019(en)"
+@dc:source "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
+@dc:description "The ISO-80000-3 quantities vocabulary."
+@dc:title "ISO-80000-3 Quantities"
 vocabulary <http://iso.org/iso-80000-3-quantities> with # as iso-80000-3-quantities {
 
-	extends <http://iso.org/iso-80000-3-units>
+	extends <http://purl.org/dc/elements/1.1> with / as dc
 
-	@dc:^source "3-1"
+	extends <http://www.w3.org/2001/XMLSchema> as xsd
+
+	extends <http://www.w3.org/2002/07/owl> as owl
+
+	extends <http://iupac.org/metrology> as metrology
+
+	extends <http://iso.org/iso-80000-3-units> as iso-80000-3-units
+
+	@dc:source "3-1"
 	concept ^length :> metrology:IndependentUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to iso-80000-3-units:LengthMagnitude
@@ -45,7 +53,7 @@ vocabulary <http://iso.org/iso-80000-3-quantities> with # as iso-80000-3-quantit
 
 	concept radius-of-curvature :> ^length
 
-	@dc:^source "3-5"
+	@dc:source "3-5"
 	concept angular-measure :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "true"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to iso-80000-3-units:AngularMeasureMagnitude
@@ -67,7 +75,7 @@ vocabulary <http://iso.org/iso-80000-3-quantities> with # as iso-80000-3-quantit
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 
-	@dc:^source "3-6"
+	@dc:source "3-6"
 	concept rotational-displacement :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "true"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to iso-80000-3-units:AngularMeasureMagnitude
@@ -89,13 +97,13 @@ vocabulary <http://iso.org/iso-80000-3-quantities> with # as iso-80000-3-quantit
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 
-	@dc:^source "3-9"
+	@dc:source "3-9"
 	concept duration :> metrology:IndependentUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to iso-80000-3-units:TimeMagnitude
 	]
 
-	@dc:^source "3-10"
+	@dc:source "3-10"
 	concept velocity :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to iso-80000-3-units:VelocityMagnitude
@@ -117,7 +125,7 @@ vocabulary <http://iso.org/iso-80000-3-quantities> with # as iso-80000-3-quantit
 		restricts scalar property metrology:exponent to "-1/1"^^owl:rational
 	]
 
-	@dc:^source "3-12"
+	@dc:source "3-12"
 	concept angular-velocity :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to iso-80000-3-units:AngularVelocityMagnitude
@@ -140,10 +148,10 @@ vocabulary <http://iso.org/iso-80000-3-quantities> with # as iso-80000-3-quantit
 	]
 
 
-	@dc:^source "3-14"
+	@dc:source "3-14"
 	concept period-duration :> duration
 
-	@dc:^source "3-16"
+	@dc:source "3-16"
 	concept rotation :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "true"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to iso-80000-3-units:RotationMagnitude
@@ -157,7 +165,7 @@ vocabulary <http://iso.org/iso-80000-3-quantities> with # as iso-80000-3-quantit
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
 
-	@dc:^source "3-17"
+	@dc:source "3-17"
 	concept frequency :> metrology:DerivedUnitaryQuantity [
 		restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
 		restricts all relation metrology:hasMagnitude to iso-80000-3-units:FrequencyMagnitude

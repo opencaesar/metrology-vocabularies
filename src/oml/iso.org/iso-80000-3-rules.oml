@@ -1,15 +1,21 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^description "Optional consistency rules for iso-80000-3-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors."
-@dc:title "ISO iso-80000-3 Rules"
+@dc:description "Optional consistency rules for iso-80000-3-quantities to enforce that derived quantities are about the same object as the objects of their quantity factors."
+@dc:title "ISO-80000-3 Rules"
 vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 	
-	extends <http://iso.org/iso-80000-3-quantities>
+	extends <http://purl.org/dc/elements/1.1> with / as dc
+
+	extends <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	extends <http://iupac.org/metrology> as metrology
+
+	extends <http://iso.org/iso-80000-3-quantities> as iso-80000-3-quantities
 
 	// 3-5
 
-	@dc:^description "
+	@rdfs:comment "
 	If an angular-measure, x, is derived from an arc-length, y, and a radius, z,
 	then x, y, and z must be quantities about the same object."
 	rule angular-measure-derivation-consistency [
@@ -37,7 +43,7 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 
 	// 3-6
 
-	@dc:^description "
+	@rdfs:comment "
 	If a rotational-displacement, x, is derived from a path-length, y, and a distance, z,
 	then x, y, and z must be quantities about the same object."
 	rule rotational-displacement-derivation-consistency [
@@ -65,7 +71,7 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 	
 	// 3-10
 
-	@dc:^description "
+	@rdfs:comment "
 	If a velocity, x, is derived from a position-vector, y, and a duration, z,
 	then x, y, and z must be quantities of the same object."
 	rule velocity-derivation-consistency [
@@ -93,7 +99,7 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 	
 	// 3-12
 
-	@dc:^description "
+	@rdfs:comment "
 	If an angular-velocity, x, is derived from a rotational-displacement, y, and a duration, z,
 	then x, y, and z must be quantities of the same object."
 	rule angular-velocity-derivation-consistency [
@@ -121,7 +127,7 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 
 	// 3-16
 
-	@dc:^description "
+	@rdfs:comment "
 	If a rotation, x, is derived from a rotational-displacement, y,
 	then x and y must be quantities of the same object."
 	rule rotation-derivation-consistency [
@@ -144,7 +150,7 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 
 	// 3-17
 
-	@dc:^description "
+	@rdfs:comment "
 	If a frequency, x, is derived from a period-duration, y,
 	then x and y must be quantities of the same object."
 	rule frequency-derivation-consistency [
@@ -165,7 +171,7 @@ vocabulary <http://iso.org/iso-80000-3-rules> with # as iso-80000-3-rules {
 		sameAs(xo,yo)
 	]
 
-	@dc:^description "
+	@rdfs:comment "
 	If a rotational-frequency, x, is derived from a rotation, y, and a duration, z,
 	then x, y, and z must be quantities of the same object."
 	rule rotational-frequency-derivation-consistency [

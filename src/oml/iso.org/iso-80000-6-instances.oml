@@ -1,15 +1,23 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^description "The ISO iso-80000-6 instances library."
-@dc:title "ISO iso-80000-6 Instances"
+@dc:description "The ISO-80000-6 instances library."
+@dc:title "ISO-80000-6 Instances"
 description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instances {
 
-	uses <http://iso.org/iso-80000-6-quantities>
+	extends <http://iso.org/iso-80000-instances> as iso-80000-instances
 
-	extends <http://iso.org/iso-80000-instances>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	@dc:^source "6-1"
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://iso.org/iso-80000-6-units> as iso-80000-6-units
+
+	uses <http://iso.org/iso-80000-6-quantities> as iso-80000-6-quantities
+
+	@dc:source "6-1"
 	ci electric-current : iso-80000-6-quantities:electric-current
 
 	ri systemOfQuantities-electric-current : metrology:SystemHasUnitaryQuantity [
@@ -18,7 +26,7 @@ description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instanc
 		metrology:isBaseQuantity "true"^^xsd:boolean
 	]
 
-	@dc:^source "6-1"
+	@dc:source "6-1"
 	ci ampere : iso-80000-6-units:ampere
 
 	ri systemOfUnits-ampere : metrology:SystemHasMetrologicalUnit [
@@ -27,7 +35,7 @@ description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instanc
 		metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
 	]
 
-	@dc:^source "6-2"
+	@dc:source "6-2"
 	ci electric-charge : iso-80000-6-quantities:electric-charge
 
 	ri systemOfQuantities-electric-charge : metrology:SystemHasUnitaryQuantity [
@@ -36,7 +44,7 @@ description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "6-2"
+	@dc:source "6-2"
 	ci coulomb : iso-80000-6-units:coulomb
 
 	ri systemOfUnits-coulomb : metrology:SystemHasMetrologicalUnit [
@@ -45,7 +53,7 @@ description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instanc
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 
-	@dc:^source "6-10"
+	@dc:source "6-10"
 	ci electric-field-strength : iso-80000-6-quantities:electric-field-strength
 
 	ri systemOfQuantities-electric-field-strength : metrology:SystemHasUnitaryQuantity [
@@ -54,7 +62,7 @@ description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "6-10"
+	@dc:source "6-10"
 	ci newton-per-coulomb : iso-80000-6-units:newton-per-coulomb
 
 	ri systemOfUnits-newton-per-coulomb : metrology:SystemHasMetrologicalUnit [
@@ -63,7 +71,7 @@ description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instanc
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 
-	@dc:^source "6-11"
+	@dc:source "6-11"
 	ci electric-potential : iso-80000-6-quantities:electric-potential
 
 	ri systemOfQuantities-electric-potential : metrology:SystemHasUnitaryQuantity [
@@ -72,7 +80,7 @@ description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "6-11"
+	@dc:source "6-11"
 	ci volt : iso-80000-6-units:volt
 
 	ri systemOfUnits-volt : metrology:SystemHasMetrologicalUnit [
@@ -81,7 +89,7 @@ description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instanc
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 
-	@dc:^source "6-46"
+	@dc:source "6-46"
 	ci resistance : iso-80000-6-quantities:resistance
 
 	ri systemOfQuantities-resistance : metrology:SystemHasUnitaryQuantity [
@@ -90,7 +98,7 @@ description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "6-46"
+	@dc:source "6-46"
 	ci ohm : iso-80000-6-units:ohm
 
 	ri systemOfUnits-ohm : metrology:SystemHasMetrologicalUnit [

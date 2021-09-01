@@ -1,23 +1,33 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^source "IEC iso-80000-6:2008"
-@dc:^source "https://www.iso.org/standard/31891.html"
-@dc:^description "The ISO iso-80000-6 quantities vocabulary."
-@dc:title "ISO iso-80000-6 Quantities"
+@dc:source "IEC iso-80000-6:2008"
+@dc:source "https://www.iso.org/standard/31891.html"
+@dc:description "The ISO-80000-6 quantities vocabulary."
+@dc:title "ISO-80000-6 Quantities"
 vocabulary <http://iso.org/iso-80000-6-quantities> with # as iso-80000-6-quantities {
 
-    extends <http://iso.org/iso-80000-6-units>
+	extends <http://purl.org/dc/elements/1.1> with / as dc
 
-    extends <http://iso.org/iso-80000-5-quantities>
+	extends <http://www.w3.org/2001/XMLSchema> as xsd
 
-    @dc:^source "6-1"
+	extends <http://www.w3.org/2002/07/owl> as owl
+
+	extends <http://iupac.org/metrology> as metrology
+
+	extends <http://iso.org/iso-80000-6-units> as iso-80000-6-units
+
+	extends <http://iso.org/iso-80000-3-quantities> as iso-80000-3-quantities
+
+	extends <http://iso.org/iso-80000-4-quantities> as iso-80000-4-quantities
+
+    @dc:source "6-1"
     concept electric-current :> metrology:IndependentUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ElectricCurrentMagnitude
     ]
 
-    @dc:^source "6-2"
+    @dc:source "6-2"
     concept electric-charge :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ElectricChargeMagnitude
@@ -39,7 +49,7 @@ vocabulary <http://iso.org/iso-80000-6-quantities> with # as iso-80000-6-quantit
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:^source "6-10"
+    @dc:source "6-10"
     concept electric-field-strength :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ElectricFieldStrengthMagnitude
@@ -61,7 +71,7 @@ vocabulary <http://iso.org/iso-80000-6-quantities> with # as iso-80000-6-quantit
         restricts scalar property metrology:exponent to "-1/1"^^owl:rational
     ]
 
-    @dc:^source "6-11"
+    @dc:source "6-11"
     concept electric-potential :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ElectricPotentialMagnitude
@@ -83,7 +93,7 @@ vocabulary <http://iso.org/iso-80000-6-quantities> with # as iso-80000-6-quantit
         restricts scalar property metrology:exponent to "1/1"^^owl:rational
     ]
 
-    @dc:^source "6-46"
+    @dc:source "6-46"
     concept resistance :> metrology:DerivedUnitaryQuantity [
         restricts scalar property metrology:isDimensionlessQuantity to "false"^^xsd:boolean
         restricts all relation  metrology:hasMagnitude to iso-80000-6-units:ResistanceMagnitude

@@ -1,16 +1,24 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^description "The ISO iso-80000-3 instances library."
-@dc:title "ISO iso-80000-3 Instances"
+@dc:description "The ISO-80000-3 instances library."
+@dc:title "ISO-80000-3 Instances"
 description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instances {
 
-	uses <http://iso.org/iso-80000-3-quantities>
+	extends <http://iso.org/iso-80000-instances> as iso-80000-instances
 
-	extends <http://iso.org/iso-80000-instances>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	@dc:^source "3-1.1"
-	ci ^length : iso-80000-3-quantities:^length
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
+
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://iso.org/iso-80000-3-quantities> as iso-80000-3-quantities
+
+	uses <http://iso.org/iso-80000-3-units> as iso-80000-3-units
+
+	@dc:source "3-1.1"
+	ci ^length : iso-80000-3-quantities:length
 
 	ri systemOfQuantities-length : metrology:SystemHasUnitaryQuantity [
 		from iso-80000-instances:systemOfQuantities
@@ -18,7 +26,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "true"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.2"
+	@dc:source "3-1.2"
 	ci width : iso-80000-3-quantities:width
 
 	ri systemOfQuantities-width : metrology:SystemHasUnitaryQuantity [
@@ -27,7 +35,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.2"
+	@dc:source "3-1.2"
 	ci breadth : iso-80000-3-quantities:breadth
 
 	ri systemOfQuantities-breadth : metrology:SystemHasUnitaryQuantity [
@@ -36,7 +44,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.3"
+	@dc:source "3-1.3"
 	ci height : iso-80000-3-quantities:height
 
 	ri systemOfQuantities-height : metrology:SystemHasUnitaryQuantity [
@@ -45,7 +53,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.3"
+	@dc:source "3-1.3"
 	ci depth : iso-80000-3-quantities:depth
 
 	ri systemOfQuantities-depth : metrology:SystemHasUnitaryQuantity [
@@ -54,7 +62,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.3"
+	@dc:source "3-1.3"
 	ci altitude : iso-80000-3-quantities:altitude
 
 	ri systemOfQuantities-altitude : metrology:SystemHasUnitaryQuantity [
@@ -63,7 +71,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.4"
+	@dc:source "3-1.4"
 	ci thickness : iso-80000-3-quantities:thickness
 
 	ri systemOfQuantities-thickness : metrology:SystemHasUnitaryQuantity [
@@ -72,7 +80,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.5"
+	@dc:source "3-1.5"
 	ci diameter : iso-80000-3-quantities:diameter
 
 	ri systemOfQuantities-diameter : metrology:SystemHasUnitaryQuantity [
@@ -81,7 +89,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.6"
+	@dc:source "3-1.6"
 	ci radius : iso-80000-3-quantities:radius
 
 	ri systemOfQuantities-radius : metrology:SystemHasUnitaryQuantity [
@@ -90,7 +98,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.7"
+	@dc:source "3-1.7"
 	ci path-length : iso-80000-3-quantities:path-length
 
 	ri systemOfQuantities-path-length : metrology:SystemHasUnitaryQuantity [
@@ -99,7 +107,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.7"
+	@dc:source "3-1.7"
 	ci arc-length : iso-80000-3-quantities:arc-length
 
 	ri systemOfQuantities-arc-length : metrology:SystemHasUnitaryQuantity [
@@ -108,7 +116,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.8"
+	@dc:source "3-1.8"
 	ci distance : iso-80000-3-quantities:distance
 
 	ri systemOfQuantities-distance : metrology:SystemHasUnitaryQuantity [
@@ -117,7 +125,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.9"
+	@dc:source "3-1.9"
 	ci radial-distance : iso-80000-3-quantities:radial-distance
 
 	ri systemOfQuantities-radial-distance : metrology:SystemHasUnitaryQuantity [
@@ -126,7 +134,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.10"
+	@dc:source "3-1.10"
 	ci position-vector : iso-80000-3-quantities:position-vector
 
 	ri systemOfQuantities-position-vector : metrology:SystemHasUnitaryQuantity [
@@ -135,7 +143,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.11"
+	@dc:source "3-1.11"
 	ci displacement : iso-80000-3-quantities:displacement
 
 	ri systemOfQuantities-displacement : metrology:SystemHasUnitaryQuantity [
@@ -144,7 +152,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.12"
+	@dc:source "3-1.12"
 	ci radius-of-curvature : iso-80000-3-quantities:radius-of-curvature
 
 	ri systemOfQuantities-radius-of-curvature : metrology:SystemHasUnitaryQuantity [
@@ -153,7 +161,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-1.1"
+	@dc:source "3-1.1"
 	ci metre : iso-80000-3-units:metre
 
 	ri systemOfUnits-metre : metrology:SystemHasMetrologicalUnit [
@@ -164,7 +172,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 
 	ci kilometre : iso-80000-3-units:kilometre
 
-	@dc:^source "3-5"
+	@dc:source "3-5"
 	ci angular-measure : iso-80000-3-quantities:angular-measure
 
 	ri systemOfQuantities-angular-measure : metrology:SystemHasUnitaryQuantity [
@@ -173,7 +181,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-5"
+	@dc:source "3-5"
 	ci radian : iso-80000-3-units:radian
 
 	ri systemOfUnits-radian : metrology:SystemHasMetrologicalUnit [
@@ -184,7 +192,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 
 	ci degree : iso-80000-3-units:degree
 
-	@dc:^source "3-6"
+	@dc:source "3-6"
 	ci rotational-displacement : iso-80000-3-quantities:rotational-displacement
 
 	ri systemOfQuantities-rotational-displacement : metrology:SystemHasUnitaryQuantity [
@@ -193,7 +201,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-9"
+	@dc:source "3-9"
 	ci duration : iso-80000-3-quantities:duration
 
 	ri systemOfQuantities-duration : metrology:SystemHasUnitaryQuantity [
@@ -202,7 +210,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "true"^^xsd:boolean
 	]
 
-	@dc:^source "3-9"
+	@dc:source "3-9"
 	ci second : iso-80000-3-units:second
 
 	ri systemOfUnits-second : metrology:SystemHasMetrologicalUnit [
@@ -217,7 +225,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 
 	ci hour : iso-80000-3-units:hour
 
-	@dc:^source "3-10"
+	@dc:source "3-10"
 	ci velocity : iso-80000-3-quantities:velocity
 
 	ri systemOfQuantities-velocity : metrology:SystemHasUnitaryQuantity [
@@ -226,7 +234,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-10"
+	@dc:source "3-10"
 	ci metre-per-second : iso-80000-3-units:metre-per-second
 
 	ri systemOfUnits-metre-per-second : metrology:SystemHasMetrologicalUnit [
@@ -237,7 +245,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 
 	ci kilometre-per-second : iso-80000-3-units:kilometre-per-second
 
-	@dc:^source "3-12"
+	@dc:source "3-12"
 	ci radian-per-second : iso-80000-3-units:radian-per-second
 
 	ri systemOfUnits-radian-per-second : metrology:SystemHasMetrologicalUnit [
@@ -248,7 +256,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 
 	ci degree-per-second : iso-80000-3-units:radian-per-second
 
-	@dc:^source "3-14"
+	@dc:source "3-14"
 	ci period-duration : iso-80000-3-quantities:period-duration
 
 	ri systemOfQuantities-period-duration : metrology:SystemHasUnitaryQuantity [
@@ -257,7 +265,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-16"
+	@dc:source "3-16"
 	ci rotation : iso-80000-3-quantities:rotation
 
 	ri systemOfQuantities-rotation : metrology:SystemHasUnitaryQuantity [
@@ -266,7 +274,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-16"
+	@dc:source "3-16"
 	ci revolution : iso-80000-3-units:revolution
 
 	ri systemOfUnits-revolution : metrology:SystemHasMetrologicalUnit [
@@ -275,7 +283,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-17.1"
+	@dc:source "3-17.1"
 	ci frequency : iso-80000-3-quantities:frequency
 
 	ri systemOfQuantities-frequency : metrology:SystemHasUnitaryQuantity [
@@ -284,7 +292,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-17.2"
+	@dc:source "3-17.2"
 	ci rotational-frequency : iso-80000-3-quantities:rotational-frequency
 
 	ri systemOfQuantities-rotational-frequency : metrology:SystemHasUnitaryQuantity [
@@ -293,7 +301,7 @@ description <http://iso.org/iso-80000-3-instances> with # as iso-80000-3-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "3-17"
+	@dc:source "3-17"
 	ci hertz : iso-80000-3-units:hertz
 
 	ri systemOfUnits-hertz : metrology:SystemHasMetrologicalUnit [

@@ -1,15 +1,23 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^description "The ISO iso-80000-4 instances library."
-@dc:title "ISO iso-80000-4 Instances"
+@dc:description "The ISO-80000-4 instances library."
+@dc:title "ISO-80000-4 Instances"
 description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instances {
 
-	uses <http://iso.org/iso-80000-4-quantities>
+	uses <http://purl.org/dc/elements/1.1> with / as dc
 
-	extends <http://iso.org/iso-80000-instances>
+	uses <http://www.w3.org/2001/XMLSchema> as xsd
 
-	@dc:^source "4-1"
+	uses <http://iupac.org/metrology> as metrology
+
+	uses <http://iso.org/iso-80000-4-quantities> as iso-80000-4-quantities
+
+	uses <http://iso.org/iso-80000-4-units> as iso-80000-4-units
+
+	extends <http://iso.org/iso-80000-instances> as iso-80000-instances
+
+	@dc:source "4-1"
 	ci mass : iso-80000-4-quantities:mass
 
 	ri systemOfQuantities-mass : metrology:SystemHasUnitaryQuantity [
@@ -18,7 +26,7 @@ description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instanc
 		metrology:isBaseQuantity "true"^^xsd:boolean
 	]
 
-	@dc:^source "4-1"
+	@dc:source "4-1"
 	ci gram : iso-80000-4-units:gram
 
 	ci kilogram : iso-80000-4-units:kilogram
@@ -29,7 +37,7 @@ description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instanc
 		metrology:isBaseMetrologicalUnit "true"^^xsd:boolean
 	]
 
-	@dc:^source "4-8"
+	@dc:source "4-8"
 	ci momentum : iso-80000-4-quantities:momentum
 
 	ri systemOfQuantities-momentum : metrology:SystemHasUnitaryQuantity [
@@ -38,7 +46,7 @@ description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "4-8"
+	@dc:source "4-8"
 	ci kilogram-metre-per-second : iso-80000-4-units:kilogram-metre-per-second
 
 	ri systemOfUnits-kilogram-metre-per-second : metrology:SystemHasMetrologicalUnit [
@@ -47,7 +55,7 @@ description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instanc
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 
-	@dc:^source "4-9"
+	@dc:source "4-9"
 	ci force : iso-80000-4-quantities:force
 
 	ri systemOfQuantities-force : metrology:SystemHasUnitaryQuantity [
@@ -56,7 +64,7 @@ description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "4-9"
+	@dc:source "4-9"
 	ci newton : iso-80000-4-units:newton
 
 	ri systemOfUnits-newton : metrology:SystemHasMetrologicalUnit [
@@ -65,7 +73,7 @@ description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instanc
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 
-	@dc:^source "4-10"
+	@dc:source "4-10"
 	ci impulse : iso-80000-4-quantities:impulse
 
 	ri systemOfQuantities-impulse : metrology:SystemHasUnitaryQuantity [
@@ -74,7 +82,7 @@ description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "4-10"
+	@dc:source "4-10"
 	ci newton-second : iso-80000-4-units:newton-second
 
 	ri systemOfUnits-newton-second : metrology:SystemHasMetrologicalUnit [
@@ -91,7 +99,7 @@ description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instanc
 		metrology:isBaseMetrologicalUnit "false"^^xsd:boolean
 	]
 
-	@dc:^source "4-27"
+	@dc:source "4-27"
 	ci power : iso-80000-4-quantities:power
 
 	ri systemOfQuantities-power : metrology:SystemHasUnitaryQuantity [
@@ -100,7 +108,7 @@ description <http://iso.org/iso-80000-4-instances> with # as iso-80000-4-instanc
 		metrology:isBaseQuantity "false"^^xsd:boolean
 	]
 
-	@dc:^source "4-27"
+	@dc:source "4-27"
 	ci watt : iso-80000-4-units:watt
 
 	ri systemOfUnits-watt : metrology:SystemHasMetrologicalUnit [

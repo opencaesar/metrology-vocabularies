@@ -1,33 +1,49 @@
 @dc:creator "Jet Propulsion Laboratory"
 @dc:rights """Copyright 2010-2020, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
-@dc:^source "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
-@dc:^source "https://en.wikipedia.org/wiki/English_Engineering_Units"
-@dc:^description "English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8"
+@dc:source "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+@dc:source "https://en.wikipedia.org/wiki/English_Engineering_Units"
+@dc:description "English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8"
 @dc:title "Special Publication 811 Units"
 vocabulary <http://nist.gov/pml/special-publication-811-units> with # as special-publication-811-units {
 
-	extends <http://iso.org/iso-80000-5-units>
+	extends <http://purl.org/dc/elements/1.1> with / as dc
 
-	@dc:^description "1 foot = 3.048 E-01 metre"
-	@dc:^source "https://en.wikipedia.org/wiki/Foot_(unit)"
+	extends <http://www.w3.org/2001/XMLSchema> as xsd
+
+	extends <http://www.w3.org/2002/07/owl> as owl
+
+	extends <http://iupac.org/metrology> as metrology
+
+	extends <http://iso.org/iso-80000-3-units> as iso-80000-3-units
+
+	extends <http://iso.org/iso-80000-4-units> as iso-80000-4-units
+
+	extends <http://iso.org/iso-80000-5-units> as iso-80000-5-units
+
+	uses <http://iso.org/iso-80000-5-instances> as iso-80000-5-instances
+
+	extends <http://www.w3.org/2000/01/rdf-schema> as rdfs
+
+	@rdfs:comment "1 foot = 3.048 E-01 metre"
+	@dc:source "https://en.wikipedia.org/wiki/Foot_(unit)"
 	concept foot :> iso-80000-3-units:LengthUnit, metrology:NonCoherentDerivedMeasurementUnit [
 		restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to iso-80000-3-units:metre
 	]
 
-	@dc:^description "1 pound-mass = 4.535 923 7 E-01 kilogram"
-	@dc:^source "https://en.wikipedia.org/wiki/Pound_(mass)"
+	@rdfs:comment "1 pound-mass = 4.535 923 7 E-01 kilogram"
+	@dc:source "https://en.wikipedia.org/wiki/Pound_(mass)"
 	concept pound-mass :> iso-80000-4-units:MassUnit, metrology:NonCoherentDerivedMeasurementUnit [
 		restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to iso-80000-4-units:kilogram
 	]
 
-	@dc:^description "1 pound-force = 4.448 221 615 260 5 E+00 newton"
-	@dc:^source "https://en.wikipedia.org/wiki/Pound_(force)"
+	@rdfs:comment "1 pound-force = 4.448 221 615 260 5 E+00 newton"
+	@dc:source "https://en.wikipedia.org/wiki/Pound_(force)"
 	concept pound-force :> iso-80000-4-units:ForceUnit, metrology:NonCoherentDerivedMeasurementUnit [
 		restricts all relation metrology:nonCoherentDerivedMeasurementUnitOf to iso-80000-4-units:newton
 	]
 
-	@dc:^description "1 pound-force-second = 4.448 221 615 260 5 E+00 newton-second"
+	@rdfs:comment "1 pound-force-second = 4.448 221 615 260 5 E+00 newton-second"
 	concept pound-force-second :> iso-80000-4-units:ImpulseUnit, metrology:DerivedMeasurementUnit
 
 	relation entity Pound-Force-Second-Has-Pound-Force :> metrology:HasFactorForMeasurementUnit [
@@ -44,13 +60,13 @@ vocabulary <http://nist.gov/pml/special-publication-811-units> with # as special
 		restricts scalar property metrology:exponent to "1/1"^^owl:rational
 	]
  
-	@dc:^source "https://en.wikipedia.org/wiki/Fahrenheit"
+	@dc:source "https://en.wikipedia.org/wiki/Fahrenheit"
 	concept degreeFahrenheit :> iso-80000-5-units:CelsiusTemperatureUnit [
 		restricts scalar property metrology:nonCoherentRelationship to "t/°C = (t/°F - 32)/1.8"^^xsd:string 
 		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to iso-80000-5-instances:degreeCelsius
 	]
  
-	@dc:^source "https://en.wikipedia.org/wiki/Rankine_scale"
+	@dc:source "https://en.wikipedia.org/wiki/Rankine_scale"
 	concept degreeRankine :> iso-80000-5-units:ThermodynamicTemperatureUnit, metrology:NonCoherentDerivedMeasurementUnit [
 		restricts scalar property metrology:nonCoherentRelationship to "T/K = (T/°R)/1.8"^^xsd:string 
 		restricts relation metrology:nonCoherentDerivedMeasurementUnitOf to iso-80000-5-instances:kelvin
