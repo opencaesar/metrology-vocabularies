@@ -3,30 +3,30 @@
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
 @dc:description "This is the Special Publication 811 vocabulary bundle."
 @dc:title "Special Publication 811 Bundle"
-vocabulary bundle <http://nist.gov/pml/special-publication-811-bundle> with # as special-publication-811-bundle {
+vocabulary bundle <http://nist.gov/pml/special-publication-811-bundle#> as special-publication-811-bundle {
 
 	// Cannot extend the iso-80000 bundle because it makes <http://iso.org/iso-80000-4-units#ForceUnit> and <http://iupac.org/metrology#NonCoherentDerivedMeasurementUnit> disjoint.
 	// This prevents defining <http://nist.gov/pml/special-publication-811-units#pound-force> as a specialization of both.
 	// extends <http://iso.org/iso-80000-bundle>
 	
-	includes <http://purl.org/dc/elements/1.1> with / as dc
+	includes <http://purl.org/dc/elements/1.1/> as dc
 
-	includes <http://iso.org/iso-80000-3-magnitudes-1>
+	includes <http://iso.org/iso-80000-3-magnitudes-1#>
 
-	includes <http://iso.org/iso-80000-4-magnitudes-1>
+	includes <http://iso.org/iso-80000-4-magnitudes-1#>
 
-	includes <http://iso.org/iso-80000-5-magnitudes-1>
+	includes <http://iso.org/iso-80000-5-magnitudes-1#>
 
-	includes <http://iso.org/iso-80000-6-magnitudes-1>
+	includes <http://iso.org/iso-80000-6-magnitudes-1#>
 
-	includes <http://iso.org/iso-80000-3-magnitudes-2>
+	includes <http://iso.org/iso-80000-3-magnitudes-2#>
 
-	includes <http://iso.org/iso-80000-5-magnitudes-2>
+	includes <http://iso.org/iso-80000-5-magnitudes-2#>
 
-	includes <http://iso.org/iso-80000-6-magnitudes-2>
+	includes <http://iso.org/iso-80000-6-magnitudes-2#>
 
-	includes <http://nist.gov/pml/special-publication-811-magnitudes-1>
+	includes <http://nist.gov/pml/special-publication-811-magnitudes-1#>
 
-	includes <http://nist.gov/pml/special-publication-811-magnitudes-2>
+	includes <http://nist.gov/pml/special-publication-811-magnitudes-2#>
 
 }

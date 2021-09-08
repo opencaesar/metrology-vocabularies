@@ -5,21 +5,21 @@ This software may be subject to U.S. export control laws. By accepting this soft
 @dc:source "https://www.iso.org/standard/31891.html"
 @dc:description "The ISO-80000-6 quantities vocabulary."
 @dc:title "ISO-80000-6 Quantities"
-vocabulary <http://iso.org/iso-80000-6-quantities> with # as iso-80000-6-quantities {
+vocabulary <http://iso.org/iso-80000-6-quantities#> as iso-80000-6-quantities {
 
-	extends <http://purl.org/dc/elements/1.1> with / as dc
+	extends <http://purl.org/dc/elements/1.1/> as dc
 
-	extends <http://www.w3.org/2001/XMLSchema> as xsd
+	extends <http://www.w3.org/2001/XMLSchema#> as xsd
 
-	extends <http://www.w3.org/2002/07/owl> as owl
+	extends <http://www.w3.org/2002/07/owl#> as owl
 
-	extends <http://iupac.org/metrology> as metrology
+	extends <http://iupac.org/metrology#> as metrology
 
-	extends <http://iso.org/iso-80000-6-units> as iso-80000-6-units
+	extends <http://iso.org/iso-80000-6-units#> as iso-80000-6-units
 
-	extends <http://iso.org/iso-80000-3-quantities> as iso-80000-3-quantities
+	extends <http://iso.org/iso-80000-3-quantities#> as iso-80000-3-quantities
 
-	extends <http://iso.org/iso-80000-4-quantities> as iso-80000-4-quantities
+	extends <http://iso.org/iso-80000-4-quantities#> as iso-80000-4-quantities
 
     @dc:source "6-1"
     concept electric-current :> metrology:IndependentUnitaryQuantity [

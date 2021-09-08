@@ -5,19 +5,19 @@ This software may be subject to U.S. export control laws. By accepting this soft
 @dc:source "https://en.wikipedia.org/wiki/English_Engineering_Units"
 @dc:description "English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8"
 @dc:title "Special Publication 811 Instances"
-description <http://nist.gov/pml/special-publication-811-instances> with # as special-publication-811-instances {
+description <http://nist.gov/pml/special-publication-811-instances#> as special-publication-811-instances {
 
-	extends <http://iso.org/iso-80000-3-instances> as iso-80000-3-instances
+	extends <http://iso.org/iso-80000-3-instances#> as iso-80000-3-instances
 
-	uses <http://purl.org/dc/elements/1.1> with / as dc
+	uses <http://purl.org/dc/elements/1.1/> as dc
 
-	uses <http://www.w3.org/2001/XMLSchema> as xsd
+	uses <http://www.w3.org/2001/XMLSchema#> as xsd
 
-	uses <http://www.w3.org/2000/01/rdf-schema> as rdfs
+	uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
 
-	uses <http://iupac.org/metrology> as metrology
+	uses <http://iupac.org/metrology#> as metrology
 
-	uses <http://nist.gov/pml/special-publication-811-units> as special-publication-811-units
+	uses <http://nist.gov/pml/special-publication-811-units#> as special-publication-811-units
 
 	@rdfs:comment "The System of English Engineering Units"
 	@dc:source "https://en.wikipedia.org/wiki/English_Engineering_Units"

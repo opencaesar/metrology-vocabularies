@@ -5,25 +5,25 @@ This software may be subject to U.S. export control laws. By accepting this soft
 @dc:source "https://en.wikipedia.org/wiki/English_Engineering_Units"
 @dc:description "English Engineering Units defined in NIST PML Special Publication 811, Appendix B.8"
 @dc:title "Special Publication 811 Units"
-vocabulary <http://nist.gov/pml/special-publication-811-units> with # as special-publication-811-units {
+vocabulary <http://nist.gov/pml/special-publication-811-units#> as special-publication-811-units {
 
-	extends <http://purl.org/dc/elements/1.1> with / as dc
+	extends <http://purl.org/dc/elements/1.1/> as dc
 
-	extends <http://www.w3.org/2001/XMLSchema> as xsd
+	extends <http://www.w3.org/2001/XMLSchema#> as xsd
 
-	extends <http://www.w3.org/2002/07/owl> as owl
+	extends <http://www.w3.org/2002/07/owl#> as owl
 
-	extends <http://iupac.org/metrology> as metrology
+	extends <http://iupac.org/metrology#> as metrology
 
-	extends <http://iso.org/iso-80000-3-units> as iso-80000-3-units
+	extends <http://iso.org/iso-80000-3-units#> as iso-80000-3-units
 
-	extends <http://iso.org/iso-80000-4-units> as iso-80000-4-units
+	extends <http://iso.org/iso-80000-4-units#> as iso-80000-4-units
 
-	extends <http://iso.org/iso-80000-5-units> as iso-80000-5-units
+	extends <http://iso.org/iso-80000-5-units#> as iso-80000-5-units
 
-	uses <http://iso.org/iso-80000-5-instances> as iso-80000-5-instances
+	uses <http://iso.org/iso-80000-5-instances#> as iso-80000-5-instances
 
-	extends <http://www.w3.org/2000/01/rdf-schema> as rdfs
+	extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
 
 	@rdfs:comment "1 foot = 3.048 E-01 metre"
 	@dc:source "https://en.wikipedia.org/wiki/Foot_(unit)"

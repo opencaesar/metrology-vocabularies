@@ -5,19 +5,19 @@ This software may be subject to U.S. export control laws. By accepting this soft
 @dc:source "https://www.iso.org/standard/31891.html"
 @dc:description "The ISO-80000-6 units vocabulary."
 @dc:title "ISO-80000-6 Units"
-vocabulary <http://iso.org/iso-80000-6-units> with # as iso-80000-6-units {
+vocabulary <http://iso.org/iso-80000-6-units#> as iso-80000-6-units {
 
-	extends <http://purl.org/dc/elements/1.1> with / as dc
+	extends <http://purl.org/dc/elements/1.1/> as dc
 
-	extends <http://www.w3.org/2002/07/owl> as owl
+	extends <http://www.w3.org/2002/07/owl#> as owl
 
-	extends <http://www.w3.org/2001/XMLSchema> as xsd
+	extends <http://www.w3.org/2001/XMLSchema#> as xsd
 
-	extends <http://iupac.org/metrology> as metrology
+	extends <http://iupac.org/metrology#> as metrology
 
-	extends <http://iso.org/iso-80000-3-units> as iso-80000-3-units
+	extends <http://iso.org/iso-80000-3-units#> as iso-80000-3-units
 
-	extends <http://iso.org/iso-80000-4-units> as iso-80000-4-units
+	extends <http://iso.org/iso-80000-4-units#> as iso-80000-4-units
 
 	@dc:source "6-1"
 	aspect ElectricCurrentMagnitude :> metrology:UnitaryMagnitude [

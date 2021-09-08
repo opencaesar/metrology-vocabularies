@@ -4,15 +4,15 @@ This software may be subject to U.S. export control laws. By accepting this soft
 @dc:description "The ISO-80000-3 magnitudes-2 vocabulary. It provides convenience specializations of every metrology:IsReflexiveMagnitudeOf as relation entities for every metrology:MeasurementUnit defined in http://iso.org/iso-80000-3-unit. 
 Note that this vocabulary is an alternative to http://iso.org/iso-80000-3-magnitudes-1."
 @dc:title "ISO-80000-3 Magnitudes-2"
-vocabulary <http://iso.org/iso-80000-3-magnitudes-2> with # as iso-80000-3-magnitudes-2 {
+vocabulary <http://iso.org/iso-80000-3-magnitudes-2#> as iso-80000-3-magnitudes-2 {
 
-	extends <http://purl.org/dc/elements/1.1> with / as dc
+	extends <http://purl.org/dc/elements/1.1/> as dc
 
-	extends <http://iupac.org/metrology> as metrology
+	extends <http://iupac.org/metrology#> as metrology
 
-	extends <http://iso.org/iso-80000-3-units> as iso-80000-3-units
+	extends <http://iso.org/iso-80000-3-units#> as iso-80000-3-units
 
-	uses <http://iso.org/iso-80000-3-instances> as iso-80000-3-instances
+	uses <http://iso.org/iso-80000-3-instances#> as iso-80000-3-instances
 
 	// 3-1
 	relation entity metre-magnitude :> metrology:IsReflexiveMagnitudeOf, iso-80000-3-units:LengthMagnitude [

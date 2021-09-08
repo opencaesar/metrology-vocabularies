@@ -1,5 +1,9 @@
 # Metrology Vocabulary
 
+[![Build Status](https://app.travis-ci.com/opencaesar/metrology-vocabularies.svg?branch=master)](https://app.travis-ci.com/github/opencaesar/metrology-vocabularies)
+[![Release](https://img.shields.io/github/v/tag/opencaesar/metrology-vocabularies?label=release)](https://github.com/opencaesar/metrology-vocabularies/releases/latest)
+[![Documentation](https://img.shields.io/badge/Documentation-HTML-orange)](https://opencaesar.github.io/metrology-vocabularies/) 
+
 The metrology vocabulary is based on Prof. Rene Dybkaer's seminal work, [An ontology on property](http://ontology.iupac.org/), that influenced the work of the 3rd revision of the International Vocabulary of Metrology, VIM, see: https://www.bipm.org/en/publications/guides/rationale-vim3.html
 
 The following describes the Patterns involved in applying the metrology vocabulary for modeling a subset of 

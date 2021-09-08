@@ -3,19 +3,19 @@
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
 @dc:description "The ISO-80000-6 instances library."
 @dc:title "ISO-80000-6 Instances"
-description <http://iso.org/iso-80000-6-instances> with # as iso-80000-6-instances {
+description <http://iso.org/iso-80000-6-instances#> as iso-80000-6-instances {
 
-	extends <http://iso.org/iso-80000-instances> as iso-80000-instances
+	extends <http://iso.org/iso-80000-instances#> as iso-80000-instances
 
-	uses <http://purl.org/dc/elements/1.1> with / as dc
+	uses <http://purl.org/dc/elements/1.1/> as dc
 
-	uses <http://www.w3.org/2001/XMLSchema> as xsd
+	uses <http://www.w3.org/2001/XMLSchema#> as xsd
 
-	uses <http://iupac.org/metrology> as metrology
+	uses <http://iupac.org/metrology#> as metrology
 
-	uses <http://iso.org/iso-80000-6-units> as iso-80000-6-units
+	uses <http://iso.org/iso-80000-6-units#> as iso-80000-6-units
 
-	uses <http://iso.org/iso-80000-6-quantities> as iso-80000-6-quantities
+	uses <http://iso.org/iso-80000-6-quantities#> as iso-80000-6-quantities
 
 	@dc:source "6-1"
 	ci electric-current : iso-80000-6-quantities:electric-current

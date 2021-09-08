@@ -3,11 +3,11 @@
 This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
 @dc:description "The ISO-80000-1 decimal prefix vocabulary."
 @dc:title "ISO-80000-1 Decimal Prefix"
-vocabulary <http://iso.org/iso-80000-1-decimalPrefix> with # as iso-80000-1-decimalPrefix {
+vocabulary <http://iso.org/iso-80000-1-decimalPrefix#> as iso-80000-1-decimalPrefix {
 
-	extends <http://purl.org/dc/elements/1.1> with / as dc
+	extends <http://purl.org/dc/elements/1.1/> as dc
 
-	extends <http://iupac.org/metrology> as metrology
+	extends <http://iupac.org/metrology#> as metrology
 
 	concept DecimalPrefix :> metrology:Prefix
 }

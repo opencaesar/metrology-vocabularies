@@ -19,15 +19,15 @@ References to definitions in the ontology are indicated via a reference
 in parentheses with a chapter and section and a page number;
 for example, (S.2.23, p. 33) refers to the definition of 'object' on page 33."
 @dc:title "Metrology"
-vocabulary <http://iupac.org/metrology> with # as metrology {
+vocabulary <http://iupac.org/metrology#> as metrology {
 
-	extends <http://purl.org/dc/elements/1.1> with / as dc
+	extends <http://purl.org/dc/elements/1.1/> as dc
 
-	extends <http://www.w3.org/2000/01/rdf-schema> as rdfs
+	extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
 
-	extends <http://www.w3.org/2002/07/owl> as owl
+	extends <http://www.w3.org/2002/07/owl#> as owl
 
-	extends <http://www.w3.org/2001/XMLSchema> as xsd
+	extends <http://www.w3.org/2001/XMLSchema#> as xsd
 
 	@rdfs:label "Thing"
 	@rdfs:comment "metrology:Thing is the root of the taxonomy of OML entities involved in metrological modeling either as an object
