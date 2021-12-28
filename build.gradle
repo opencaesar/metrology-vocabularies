@@ -28,8 +28,6 @@ plugins {
   id 'com.palantir.git-version' version '0.12.3'
 }
 
-apply from: "${rootDir}/gradle/maven-deployment.gradle"
-
 /* 
  * Dataset maven coordinates
  */
@@ -54,18 +52,13 @@ configurations {
 }
 
 /*
- * Dependency versions
- */
-ext { 
-    coreVersion = '3.+'
-}
-
-/*
  * The OML dependencies
  */
 dependencies {
     oml "io.opencaesar.ontologies:core-vocabularies:$coreVersion"
 }
+
+apply from: "${rootDir}/gradle/maven-deployment.gradle"
 
 /*
  * A task to extract and merge the OML dependencies
