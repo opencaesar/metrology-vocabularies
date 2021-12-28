@@ -1,0 +1,162 @@
+@dc:creator "Jet Propulsion Laboratory"
+@dc:rights """Copyright 2021, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
+This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
+@dc:source "[VIM4 CD] https://www.bipm.org/documents/20126/54468589/VIM4_CD_210111c.pdf/a57419b7-790f-2cca-f7c9-25d54d049bf6"
+@dc:^description "OML encoding of the VIM4 Committee Draft of 11 January 2021"
+@dc:source "[OonP] https://ontology.iupac.org/wp-content/uploads/2016/01/ontology-on-Property-Division-VII.pdf"
+vocabulary <http://bipm.org/jcgm/vim4a#> as vim4a {
+
+  extends <http://purl.org/dc/elements/1.1/> as dc
+  extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+  extends <http://www.w3.org/2002/07/owl#> as owl
+  extends <http://www.w3.org/2001/XMLSchema#> as xsd
+  
+  @rdfs:label "IdentifiedElement"
+  aspect IdentifiedElement [
+    key id
+  ]
+  
+  @rdfs:label "id"
+  scalar property id [
+    domain IdentifiedElement
+    range xsd:string
+    functional
+  ]
+  
+  @rdfs:label "general quantity"
+  @rdfs:label "kind of quantity"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.1]"
+  @dc:^description "property whose instances can be compared by ratio or only by order"
+  @rdfs:comment """General quantity in [VIM4 CD: 1.1] corresponds precisely to kind-of-quantity in [OonP: S.13.3.1].
+  The ISO/IEC-80000 collection defines general quantities in the sense of VIM4. 
+  In principle, such general quantities could be modeled as specializations or instances of GeneralQuantity.
+  In practice, which of the two approaches is preferable from the standpoint of modeling in OML?
+  Modeling with specializations corresponds to the taxonomic intent of the concept of general quantity (see VIM4, 1.1, Note 1) whereas 
+  modeling with instances would introduce two problems: a) this approach would a new relationship for representing taxonomic classification of GeneralQuantity instances
+  and b) this approach would create confusion since VIM4 defines individual quantity as an instance of a general quantity.
+  Consequently, the recommended methodology for modeling ISO/IEC-80000 quantity definitions in OML involves 
+  OML concepts that directly or indirectly specialize GeneralQuantity.
+  """
+  aspect GeneralQuantity :> IdentifiedElement
+  
+  @rdfs:label "general unitary quantity"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.1 - 1.30]"
+  @dc:^description "general quantity whose instances can be compared by ratio"
+  concept GeneralUnitaryQuantity :> GeneralQuantity
+  
+  @rdfs:label "general ordinal quantity"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.30]"
+  @dc:^description "general quantity whose instances can be compared by order but not by ratio"
+  concept GeneralOrdinalQuantity :> GeneralQuantity
+  
+  @rdfs:label "individual quantity"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.2]"
+  @dc:^description "instance of a general quantity"
+  @rdfs:comment """Individual quantity in [VIM4 CD: 1.2] corresponds precisely to quantity in [OonP: S.12.13].
+  [OonP: S.5.5] defines property as an 'inherent state- or process-descriptive feature of a system (S.3.3) including any pertinent components (S.3.4)'.
+  The recommended methodology for modeling individual quantities in OML involves OML instances that are classified by
+  their appropriate GeneralQuantity OML concept and by IndividualQuantity.
+  """
+  aspect IndividualQuantity :> IdentifiedElement
+  
+  @rdfs:label "individual unitary quantity"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.1 - 1.26]"
+  @dc:^description "instance of a general unitary quantity"
+  aspect IndividualUnitaryQuantity :> IndividualQuantity
+  
+  @rdfs:label "individual ordinal quantity"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.26]"
+  @dc:^description "instance of a general ordinal quantity"
+  aspect IndividualOrdinalQuantity :> IndividualQuantity
+  
+  @rdfs:label "system of quantities"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.3]"
+  @dc:^description "set of quantities together with a set of non-contradictory equations relating those quantities."
+  @rdfs:comment """system of quantities in [VIM4 CD: 1.3, Note 2] corresponds precisely to system of unitary kinds-ef-quantity in [OonP: S.13.7]."""
+  concept SystemOfQuantities :> IdentifiedElement
+  
+  @rdfs:label "System Has Unitary Quantity"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.3 Note 1]"
+  @dc:source "system of unitary kinds-of-quantity [OonP: S.13.7, p 129]"
+  relation entity SystemHasUnitaryQuantity [
+    from SystemOfQuantities
+    to GeneralUnitaryQuantity
+    @rdfs:label "system has unitary quantity"
+    forward systemHasUnitaryQuantity
+  ]
+  
+  @rdfs:label "System Has Base Unitary Quantity"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.4]"
+  @dc:^description """quantity in a conventionally chosen subset of a given system of quantities,
+  where no quantity in the set of base quantities can be expressed in terms of the others."""
+  @dc:source "system of unitary kinds-of-quantity [OonP: S.13.7, p 129]"
+  relation entity SystemHasBaseUnitaryQuantity :> SystemHasUnitaryQuantity [
+    from SystemOfQuantities
+    to GeneralUnitaryQuantity
+    @rdfs:label "system has base unitary quantity"
+    forward systemHasBaseUnitaryQuantity
+  ]
+  
+  @rdfs:label "System Has Derived Unitary Quantity"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.5]"
+  @dc:^description """quantity, in a system of quantities, defined in terms of the base quantities of that system."""
+  @dc:source "base unitary kind-of-quantity [OonP: S.13.11]"
+  relation entity SystemHasDerivedUnitaryQuantity :> SystemHasUnitaryQuantity [
+    from SystemOfQuantities
+    to GeneralUnitaryQuantity
+    @rdfs:label "system has derived unitary quantity"
+    forward systemHasDerivedUnitaryQuantity
+  ]
+  
+  @rdfs:label "Rational Exponent"
+  aspect RationalExponent
+
+  @rdfs:label "exponent"
+  scalar property exponent [
+    domain RationalExponent
+    range owl:rational
+    functional
+  ]
+  
+  @rdfs:label "Has Power Of Unitary Quantity Factor"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.5]"
+  relation entity HasPowerOfUnitaryQuantityFactor :> RationalExponent [
+    from SystemHasDerivedUnitaryQuantity
+    to SystemHasUnitaryQuantity
+    @rdfs:label "has Power Of Unitary Quantity Factor"
+    forward hasPowerOfUnitaryQuantityFactor
+  ]
+  
+  rule DerivationDefinedWithinTheSameSystemOfQuantities [
+    hasPowerOfUnitaryQuantityFactor(d, f) ^
+    SystemHasDerivedUnitaryQuantity(ds, d, dq) ^
+    SystemHasUnitaryQuantity(fs, f, fq)
+    ->
+    sameAs(ds, fs)
+  ]
+
+  @rdfs:label "system of units"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.13]"
+  @dc:^description """set of base units and derived units, together with their multiples and submultiples, 
+  defined in accordance with given rules, for a given system of quantities."""
+  relation entity SystemOfUnits :> IdentifiedElement [
+    from SystemOfUnits
+    to SystemOfQuantities
+    forward systemOfUnits
+    functional
+  ]
+  
+  @rdfs:label "measurement unit"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.9]"
+  @dc:^description """real scalar individual quantity, defined and adopted by convention, 
+  with which any other quantity of the same kind can be compared by ratio, resulting in a number"""
+  @rdfs:comment """Usage: as a classification for an instance of GeneralUnitaryQuantity and IndividualUnitaryQuantity
+  """
+  aspect MeasurementUnit :> IdentifiedElement
+  
+  
+  relation entity BaseUnit [
+    from MeasurementUnit
+    to SystemHasBaseUnitaryQuantity
+  ]
+}

@@ -1,0 +1,21 @@
+vocabulary <http://bipm.org/jcgm/example#> as example {
+  
+concept A
+
+concept B
+
+relation entity C [
+  from A
+  to B
+  forward c
+]
+
+concept D
+
+relation entity E [
+  from C
+  to D
+  forward e
+]
+
+}

@@ -1,5 +1,6 @@
 <?xml version='1.0'?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+  <rewriteURI uriStartString="http://bipm.org/" rewritePrefix="src/oml/bipm.org/" />
 	<rewriteURI uriStartString="http://iso.org/" rewritePrefix="src/oml/iso.org/" />
 	<rewriteURI uriStartString="http://iupac.org/" rewritePrefix="src/oml/iupac.org/" />
 	<rewriteURI uriStartString="http://nist.gov/" rewritePrefix="src/oml/nist.gov/" />

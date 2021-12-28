@@ -38,14 +38,6 @@ description ='Metrology vocabularies from iupac.org, iso/iec iso-80000 and NIST 
 group = 'io.opencaesar.ontologies'
 version = gitVersion()
 
-// Dataset-specific variables
-ext.dataset = [
-    // Name of dataset (matches one used in .fuseki.ttl file)
-    name: 'metrology-vocabularies',
-    // URL for publishing dataset documentation
-    publishUrl: 'https://opencaesar.github.io/metrology-vocabularies'
-]
-
 /*
  * The repositories to look up OML dependencies in
  */
@@ -96,7 +88,7 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, group:"oml
     // OWL folder
     outputFolderPath = file('build/bikeshed')
     // Publish URL
-    publishUrl = "$dataset.publishUrl".toString()
+    publishUrl = "$dataset_publishUrl".toString()
 }
 
 /*
@@ -184,6 +176,22 @@ task owlReasonNistSP811(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: 
 	reportPath = file('build/reports/special-publication-811-bundle/reasoning.xml')
 }
 
+
+task owlReasonVIM4(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
+  // OWL catalog
+  catalogPath = file('build/owl/catalog.xml')
+  // Input ontology IRI to reason on
+  inputOntologyIri = 'http://bipm.org/jcgm/vim4-bundle'
+  // Entailment statements to generate and the ontologies to persist them in
+  specs = [
+    'http://bipm.org/jcgm/vim4-bundle/classes = ALL_SUBCLASS',
+    'http://bipm.org/jcgm/vim4-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+    'http://bipm.org/jcgm/vim4-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+  ]
+  // Junit error report
+  reportPath = file('build/reports/vim4-bundle/reasoning.xml')
+}
+
 /*
  * Start the headless Fuseki server
  */
@@ -204,7 +212,7 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group:"oml") {
  */
 task owlLoadMetrology(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonMetrology) {
     catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset.name".toString()
+    endpointURL = "http://localhost:3030/$dataset_name".toString()
     fileExtensions = ['owl', 'ttl']
     iris = [
 		'http://iupac.org/metrology-bundle/classes',
@@ -218,7 +226,7 @@ task owlLoadMetrology(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", depe
  */
 task owlLoadIso80000(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonIso80000) {
     catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset.name".toString()
+    endpointURL = "http://localhost:3030/$dataset_name".toString()
     fileExtensions = ['owl', 'ttl']
     iris = [
 		'http://iso.org/iso-80000-bundle/classes',
@@ -232,7 +240,7 @@ task owlLoadIso80000(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", depen
  */
 task owlLoadNistSP811(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonNistSP811) {
     catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset.name".toString()
+    endpointURL = "http://localhost:3030/$dataset_name".toString()
     fileExtensions = ['owl', 'ttl']
     iris = [
 		'http://nist.gov/pml/special-publication-811-bundle/classes',
@@ -245,7 +253,7 @@ task owlLoadNistSP811(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", depe
  * A task to run a set of SPARQL queries on a Fuseki dataset endpoint
  */
 /*task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, group:"oml", dependsOn: owlLoad) {
-    endpointURL = "http://localhost:3030/$dataset.name".toString()
+    endpointURL = "http://localhost:3030/$dataset_name".toString()
     queryPath = file('src/sparql')
     resultPath = file('build/frames')
 }*/
@@ -258,6 +266,7 @@ tasks.named('build') {
     dependsOn owlReasonMetrology
     dependsOn owlReasonIso80000
     dependsOn owlReasonNistSP811
+    dependsOn owlReasonVIM4
 }
 
 /*

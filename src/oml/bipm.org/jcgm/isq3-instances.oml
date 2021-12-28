@@ -1,0 +1,64 @@
+description <http://bipm.org/jcgm/isq3-instances#> as isq3-instances {
+  uses <http://bipm.org/jcgm/isq3-vocabulary#> as isq3-vocabulary
+  uses <http://bipm.org/jcgm/vim4a#> as vim4
+  
+  ci time : isq3-vocabulary:time 
+  [ vim4:id "time" ]
+  
+  ci ^length : isq3-vocabulary:^length
+  [ vim4:id "length" ]
+  
+  ci mass : isq3-vocabulary:mass
+  [ vim4:id "mass" ]
+  
+  ci electric-current : isq3-vocabulary:electric-current
+  [ vim4:id "electric-current" ]
+  
+  ci thermodynamic-temperature : isq3-vocabulary:thermodynamic-temperature
+  [ vim4:id "thermodynamic-temperature" ]
+  
+  ci amount-of-substance : isq3-vocabulary:amount-of-substance
+  [ vim4:id "amount-of-substance" ]
+  
+  ci luminous-intensity : isq3-vocabulary:luminous-intensity
+  [ vim4:id "luminous-intensity" ]
+  
+  ci ISQ : isq3-vocabulary:ISQ
+  
+  ri ISQ-time 
+  : isq3-vocabulary:ISQ-time
+  [ from ISQ to time ]
+  
+  ri ISQ-length 
+  : isq3-vocabulary:ISQ-length
+  [ from ISQ to ^length ]
+  
+  ri ISQ-mass 
+  : isq3-vocabulary:ISQ-mass
+  [ from ISQ to mass ]
+  
+  ri ISQ-electric-current 
+  : isq3-vocabulary:ISQ-electric-current 
+  [ from ISQ to electric-current ]
+  
+  ri ISQ-thermodynamic-temperature 
+  : isq3-vocabulary:ISQ-thermodynamic-temperature
+  [ from ISQ to thermodynamic-temperature ]
+  
+  ri ISQ-amount-of-substance 
+  : isq3-vocabulary:ISQ-amount-of-substance 
+  [ from ISQ to amount-of-substance ]
+  
+  ri ISQ-luminous-intensity 
+  : isq3-vocabulary:ISQ-luminous-intensity 
+  [ from ISQ to luminous-intensity ]
+  
+  ci volume : isq3-vocabulary:volume
+  [ vim4:id "volume" ]
+  
+  ri ISQ-volume : isq3-vocabulary:ISQ-volume
+  [ from ISQ to volume ]
+  
+  ri ISQ-volume-length : isq3-vocabulary:ISQ-volume-length
+  [ from ISQ-volume to ISQ-length ]
+}

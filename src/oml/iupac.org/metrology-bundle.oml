@@ -4,7 +4,7 @@ This software may be subject to U.S. export control laws. By accepting this soft
 @dc:description "This is the metrology vocabulary bundle."
 @dc:title "Metrology Bundle"
 vocabulary bundle <http://iupac.org/metrology-bundle#> as metrology-bundle {
-	
+
 	includes <http://purl.org/dc/elements/1.1/> as dc
 
 	includes <http://iupac.org/metrology#>

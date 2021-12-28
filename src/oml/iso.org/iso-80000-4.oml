@@ -1,0 +1,41 @@
+@dc:title "ISO-80000-4"
+description <http://iso.org/iso-80000-4#> as iso-80000-4 {
+
+  uses <http://purl.org/dc/elements/1.1/> as dc
+  uses <http://bipm.org/jcgm/vim4#> as vim4
+  
+  
+  
+  @dc:source "4-4"
+  ci specific-volume : vim4:GeneralUnitaryQuantity 
+  [ vim4:id "specific-volume" ]
+  
+  @dc:source "4-4.a"
+  ci cubic_metre-per-kilogram : vim4:GeneralUnitaryQuantity 
+  [ vim4:id "cubic_metre-per-kilogram" ]
+  
+  @dc:source "4-5"
+  ci surface-density : vim4:GeneralUnitaryQuantity 
+  [ vim4:id "surface-density" ]
+  
+  @dc:source "4-5.a"
+  ci kilogram-per-square_metre : vim4:GeneralUnitaryQuantity 
+  [ vim4:id "kilogram-per-square_metre" ]
+  
+  @dc:source "4-6"
+  ci linear-density : vim4:GeneralUnitaryQuantity 
+  [ vim4:id "linear-density" ]
+  
+  @dc:source "4-6.a"
+  ci kilogram-per-metre : vim4:GeneralUnitaryQuantity 
+  [ vim4:id "kilogram-per-metre" ]
+  
+  @dc:source "4-7"
+  ci mass-moment-of-inertia : vim4:GeneralUnitaryQuantity 
+  [ vim4:id "mass-moment-of-inertia" ]
+  
+  @dc:source "4-6.a"
+  ci kilogram-metre_squared : vim4:GeneralUnitaryQuantity 
+  [ vim4:id "kilogram-metre_squared" ]
+  
+}
