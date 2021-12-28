@@ -3,12 +3,6 @@
   <viewpoint:DAnalysis uid="_aQ-R4PFeEeuj8eTvNPv4mQ" selectedViews="_zkwDQPFeEeuj8eTvNPv4mQ _zlGokPFeEeuj8eTvNPv4mQ" version="14.3.1.202003261200">
     <semanticResources>src/oml/iupac.org/metrology.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-1.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso-80000-3-instances.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso-80000-3-quantities.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso-80000-3-units.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso-80000-3-magnitudes-1.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso-80000-3-magnitudes-2.oml</semanticResources>
-    <semanticResources>src/oml/iso.org/iso-80000-3-rules.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-4-instances.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-4-quantities.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-4-units.oml</semanticResources>
@@ -34,17 +28,8 @@
     <semanticResources>src/oml/nist.gov/pml/special-publication-811-magnitudes-1.oml</semanticResources>
     <semanticResources>src/oml/nist.gov/pml/special-publication-811-magnitudes-2.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-6-magnitudes-2.oml</semanticResources>
-    <semanticResources>src/oml/bipm.org/jcgm/example.oml</semanticResources>
     <semanticResources>src/oml/bipm.org/jcgm/isq.oml</semanticResources>
-    <semanticResources>src/oml/bipm.org/jcgm/isq1.oml</semanticResources>
-    <semanticResources>src/oml/bipm.org/jcgm/vim4-bundle.oml</semanticResources>
     <semanticResources>src/oml/bipm.org/jcgm/isq2.oml</semanticResources>
-    <semanticResources>src/oml/bipm.org/jcgm/isq2-vocabulary.oml</semanticResources>
-    <semanticResources>src/oml/bipm.org/jcgm/isq2-instances.oml</semanticResources>
-    <semanticResources>src/oml/bipm.org/jcgm/isq3-vocabulary.oml</semanticResources>
-    <semanticResources>src/oml/bipm.org/jcgm/isq3-instances.oml</semanticResources>
-    <semanticResources>src/oml/bipm.org/jcgm/vim4a.oml</semanticResources>
-    <semanticResources>src/oml/bipm.org/jcgm/vim4a-inheres.oml</semanticResources>
     <semanticResources>src/oml/bipm.org/jcgm/isq4.oml</semanticResources>
     <semanticResources>src/oml/bipm.org/jcgm/vim4.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-3.oml</semanticResources>
@@ -76,6 +61,8 @@
     <semanticResources>build/oml/www.w3.org/2002/07/owl.oml</semanticResources>
     <semanticResources>src/oml/bipm.org/jcgm/jcgm-bundle.oml</semanticResources>
     <semanticResources>src/oml/example.org/system.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-4.8.oml</semanticResources>
+    <semanticResources>src/oml/iso.org/iso-80000-4.9.oml</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_zkwDQPFeEeuj8eTvNPv4mQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/io.opencaesar.rosetta.sirius.viewpoint/description/oml.odesign#//@ownedViewpoints[name='Vocabularies']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_28VqIPFeEeuj8eTvNPv4mQ" name="Metrology" repPath="#_28UcAPFeEeuj8eTvNPv4mQ" changeId="02f391e8-2acb-4289-a31f-6024e9eeef4e">

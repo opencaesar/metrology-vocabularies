@@ -32,10 +32,16 @@ function CreateAndPushTag {
   if (!$?) {
     throw "Cannot create tag: $tag"
   }
-  git push $repository HEAD tag $tag
-  if (!$?) {
-    throw "Cannot push tag: $tag to repository $repository"
-  }
+  $choices = [Management.Automation.Host.ChoiceDescription[]] ( `
+      (new-Object Management.Automation.Host.ChoiceDescription "&Y","Yes"), `
+      (new-Object Management.Automation.Host.ChoiceDescription "&N","No"));
+	$answer = $host.ui.PromptForChoice("push","push git tag?",$choices,0)
+  if ($answer -eq 0) {
+	  git push $repository HEAD tag $tag
+	  if (!$?) {
+	    throw "Cannot push tag: $tag to repository $repository"
+	  }
+	}
 }
 
 $status=$(git status --porcelain)
