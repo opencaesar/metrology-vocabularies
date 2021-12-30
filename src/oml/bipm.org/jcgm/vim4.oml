@@ -433,4 +433,122 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
     sameAs(ds, fs)
   ]
   
+  @rdfs:label "Measurement"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.1]"
+  concept Measurement :> IdentifiedElement
+  
+  @rdfs:label "MeasurementPrinciple"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.4]"
+  concept MeasurementPrinciple :> IdentifiedElement
+  
+  @rdfs:label "MeasurementMethod"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.5]"
+  concept MeasurementMethod :> IdentifiedElement
+  
+  @rdfs:label "MeasurementProcedure"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.7]"
+  concept MeasurementProcedure :> IdentifiedElement
+  
+  @rdfs:label "Describes"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.7]"
+  relation entity Describes [
+    from MeasurementProcedure
+    to Measurement
+    @rdfs:label "describes"
+    forward describes
+    functional
+  ]
+  
+  @rdfs:label "MeasurementModel"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.12]"
+  concept MeasurementModel :> IdentifiedElement
+  
+  @rdfs:label "Per"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.4, 2.7]"
+  relation entity Per [
+    from MeasurementProcedure
+    to MeasurementPrinciple 
+    @rdfs:label "per"
+    forward per
+  ]
+  
+  @rdfs:label "UsesOperationsOf"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.5]"
+  relation entity UsesOperationsOf [
+    from MeasurementProcedure
+    to MeasurementMethod 
+    @rdfs:label "usesOperationsOf"
+    forward usesOperationsOf
+    functional
+  ]
+  
+  @rdfs:label "IsBasedOn"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.7]"
+  relation entity IsBasedOn [
+    from MeasurementProcedure
+    to MeasurementModel 
+    @rdfs:label "isBasedOn"
+    forward isBasedOn
+    functional
+  ]
+  
+  @rdfs:label "HasInput"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.14]"
+  relation entity HasInput [
+    from MeasurementModel
+    to IndividualQuantity
+    @rdfs:label "hasInput"
+    forward hasInput
+  ]
+  
+  @rdfs:label "Measures"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.3, 2.15]"
+  relation entity Measures [
+    from MeasurementModel
+    to IndividualQuantity
+    @rdfs:label "measures"
+    forward measures
+    functional
+  ]
+
+  @rdfs:label "IsInfluencedBy"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.16]"
+  relation entity IsInfluencedBy [
+    from MeasurementModel
+    to IndividualQuantity
+    @rdfs:label "isInfluencedBy"
+    forward isInfluencedBy
+  ]
+  
+  @rdfs:label "UsesCorrection"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.17]"
+  relation entity UsesCorrection [
+    from MeasurementModel
+    to IndividualQuantity
+    @rdfs:label "usesCorrection"
+    forward usesCorrection
+  ]
+  
+  @rdfs:label "YieldsMeasuredValue"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.14]"
+  relation entity YieldsMeasuredValue [
+    from MeasurementModel
+    to QuantityValue
+    @rdfs:label "yieldsMeasuredValue"
+    forward yieldsMeasuredValue
+  ]
+  
+  @rdfs:label "MeasurementUncertainty"
+  @rdfs:isDefinedBy "[VIM4 CD: 3.1]"
+  concept MeasurementUncertainty
+  
+  @rdfs:label "YieldsMeasurementUncertainty"
+  @rdfs:isDefinedBy "[VIM4 CD: 3.1]"
+  relation entity YieldsMeasurementUncertainty [
+    from MeasurementModel
+    to MeasurementUncertainty
+    @rdfs:label "yieldsMeasurementUncertainty"
+    forward yieldsMeasurementUncertainty
+    functional
+  ]
 }

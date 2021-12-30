@@ -19,9 +19,15 @@ available with the objective of providing additional input to the upcoming
 to publication options considered for VIM4 (see 'Development Line 2: adding machine readability' in Report from WG2 [JCGM/2020-07](https://www.bipm.org/en/search?p_p_id=search_portlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=%2Fdownload%2Fpublication&p_p_cacheability=cacheLevelPage&_search_portlet_dlFileId=53507162&p_p_lifecycle=1&_search_portlet_javax.portlet.action=search&_search_portlet_page=next&_search_portlet_operation=changePage)).
 
 
-The following diagram summarizes the formalization of VIM4 CD section 1; Quantities and Units
+The following diagram summarizes the formalization of VIM4 CD section 1: Quantities and Units
 
-![](diagrams/VIM4CD.png)
+![](diagrams/VIM4-CD-QuantitiesUnits.png)
+
+
+The following diagram summarizes the formalization of VIM4 CD section 2: Measurement
+
+![](diagrams/VIM4-CD-Measurement.png)
+
 
 ## Important note about this repository
 
