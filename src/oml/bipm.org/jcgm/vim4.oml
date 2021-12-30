@@ -273,6 +273,21 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
     functional
   ]
   
+  
+  @rdfs:label "QuantityValue"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.20]"
+  aspect QuantityValue
+  
+  @rdfs:label "IsAttributedTo"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.23, 2.1, 2.8, 2.10, 3.1, 6.5, 6.10]"
+  relation entity IsAttributedTo [
+    from QuantityValue
+    to InherentQuantity
+    @rdfs:label "isAttributedTo"
+    forward isAttributedTo
+    functional
+  ]
+  
   @rdfs:label "InherentOrdinalQuantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.31]"
   concept InherentOrdinalQuantity :> IndividualOrdinalQuantity, InherentQuantity [
@@ -281,7 +296,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "OrdinalQuantityValue"
   @rdfs:isDefinedBy "[VIM4 CD: 1.33]"
-  concept OrdinalQuantityValue :> IndividualOrdinalQuantity 
+  concept OrdinalQuantityValue :> IndividualOrdinalQuantity, QuantityValue
   
   scalar property ordinalPosition [
     domain OrdinalQuantityValue
@@ -297,7 +312,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "UnitaryQuantityValue"
   @rdfs:isDefinedBy "[VIM4 CD: 1.20 for an IndividualUnitaryQuantity]"
-  concept UnitaryQuantityValue :> IndividualUnitaryQuantity [
+  concept UnitaryQuantityValue :> IndividualUnitaryQuantity, QuantityValue [
     restricts relation unit to exactly 1 MeasurementUnit
   ]
   
