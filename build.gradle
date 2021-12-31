@@ -8,19 +8,19 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-		// https://github.com/opencaesar/owl-adapter/tags
-		classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
+	// https://github.com/opencaesar/owl-adapter/tags
+	classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
 		
-		// https://github.com/opencaesar/oml-tools/tags
+	// https://github.com/opencaesar/oml-tools/tags
     classpath 'io.opencaesar.oml:oml-merge-gradle:1.0.+'
-		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
+	classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
 		
-		// https://github.com/opencaesar/owl-tools/tags
-		classpath 'io.opencaesar.owl:owl-load-gradle:+'
-		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
-		classpath 'io.opencaesar.owl:owl-fuseki:+'
-		classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
-		classpath 'io.opencaesar.owl:owl-query-gradle:+'
+	// https://github.com/opencaesar/owl-tools/tags
+	classpath 'io.opencaesar.owl:owl-load-gradle:+'
+	classpath 'io.opencaesar.owl:owl-reason-gradle:+'
+	classpath 'io.opencaesar.owl:owl-fuseki:+'
+	classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
+	classpath 'io.opencaesar.owl:owl-query-gradle:+'
   }
 }
 
@@ -42,6 +42,8 @@ version = gitVersion()
 repositories {
     mavenLocal()
     mavenCentral()
+  	// Until this PR is merged: https://github.com/opencaesar/core-vocabularies/pull/29
+	maven { url 'https://jitpack.io' }
 }
 
 /*
@@ -55,7 +57,9 @@ configurations {
  * The OML dependencies
  */
 dependencies {
-    oml "io.opencaesar.ontologies:core-vocabularies:$coreVersion"
+    // Until this PR is merged: https://github.com/opencaesar/core-vocabularies/pull/29
+	// oml "io.opencaesar.ontologies:core-vocabularies:$coreVersion"
+	oml "com.github.NicolasRouquette:core-vocabularies:$coreVersion"
 }
 
 apply from: "${rootDir}/gradle/maven-deployment.gradle"
@@ -154,35 +158,19 @@ task owlReasonIso80000(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: o
 	reportPath = file('build/reports/iso-80000-bundle/reasoning.xml')
 }
 
-task owlReasonNistSP811(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
-	// OWL catalog
-	catalogPath = file('build/owl/catalog.xml')
-	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://nist.gov/pml/special-publication-811-bundle'
-	// Entailment statements to generate and the ontologies to persist them in
-	specs = [
-		'http://nist.gov/pml/special-publication-811-bundle/classes = ALL_SUBCLASS',
-		'http://nist.gov/pml/special-publication-811-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://nist.gov/pml/special-publication-811-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
-	]
-	// Junit error report
-	reportPath = file('build/reports/special-publication-811-bundle/reasoning.xml')
-}
-
-
 task owlReasonVIM4(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
   // OWL catalog
   catalogPath = file('build/owl/catalog.xml')
   // Input ontology IRI to reason on
-  inputOntologyIri = 'http://bipm.org/jcgm/vim4-bundle'
+  inputOntologyIri = 'http://bipm.org/jcgm/jcgm-bundle'
   // Entailment statements to generate and the ontologies to persist them in
   specs = [
-    'http://bipm.org/jcgm/vim4-bundle/classes = ALL_SUBCLASS',
-    'http://bipm.org/jcgm/vim4-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-    'http://bipm.org/jcgm/vim4-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+    'http://bipm.org/jcgm/jcgm-bundle/classes = ALL_SUBCLASS',
+    'http://bipm.org/jcgm/jcgm-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+    'http://bipm.org/jcgm/jcgm-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
   ]
   // Junit error report
-  reportPath = file('build/reports/vim4-bundle/reasoning.xml')
+  reportPath = file('build/reports/jcgm-bundle/reasoning.xml')
 }
 
 /*
@@ -228,19 +216,6 @@ task owlLoadIso80000(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", depen
     ]
 }
 
-/*
- * A task to load the nistsp811 dataset to a Fuseki dataset endpoint
- */
-task owlLoadNistSP811(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonNistSP811) {
-    catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset_name".toString()
-    fileExtensions = ['owl', 'ttl']
-    iris = [
-		'http://nist.gov/pml/special-publication-811-bundle/classes',
-	  	'http://nist.gov/pml/special-publication-811-bundle/properties',
-	  	'http://nist.gov/pml/special-publication-811-bundle/individuals'
-    ]
-}
 
 /*
  * A task to run a set of SPARQL queries on a Fuseki dataset endpoint
@@ -258,7 +233,6 @@ tasks.named('build') {
     group "oml"
     dependsOn owlReasonMetrology
     dependsOn owlReasonIso80000
-    dependsOn owlReasonNistSP811
     dependsOn owlReasonVIM4
 }
 
