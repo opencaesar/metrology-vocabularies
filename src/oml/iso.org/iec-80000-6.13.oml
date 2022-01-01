@@ -1,0 +1,49 @@
+@dc:creator "Jet Propulsion Laboratory"
+@dc:rights """Copyright 2021, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. 
+This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons."""
+@dc:description "The IEC-80000-6 library."
+@dc:title "IEC-80000-6"
+description <http://iso.org/iec-80000-6.13#> as iec-80000-6.13 {
+  
+  uses <http://purl.org/dc/elements/1.1/> as dc
+  uses <http://www.w3.org/2002/07/owl#> as owl
+  uses <http://bipm.org/jcgm/vim4#> as vim4
+  extends <http://iso.org/iso-80000-1#> as iso-80000-1
+  extends <http://iso.org/iec-80000-6.2#> as iec-80000-6.2
+  extends <http://iso.org/iec-80000-6.11#> as iec-80000-6.11
+  
+  @dc:source "6-13"
+  ci capacitance : vim4:GeneralUnitaryQuantity 
+  [ vim4:id "capacitance" ]
+  
+  ri ISQ-capacitance 
+  : vim4:SystemHasDerivedUnitaryQuantity 
+  [ from iso-80000-1:ISQ to capacitance ]
+  
+  ri ISQ-electric-field-strength.electric-charge
+  : vim4:HasPowerOfUnitaryQuantityFactor
+  [ from ISQ-capacitance to iec-80000-6.2:ISQ-electric-charge vim4:exponent "1/1"^^owl:rational ]
+  
+  ri ISQ-electric-field-strength.per.electric-potential
+  : vim4:HasPowerOfUnitaryQuantityFactor
+  [ from ISQ-capacitance to iec-80000-6.11:ISQ-electric-potential vim4:exponent "-1/1"^^owl:rational ]
+  
+  // -------------------------------------------------------
+  
+  @dc:source "6-13.a"
+  ci farad : vim4:UnprefixedMeasurementUnit
+  [ vim4:id "farad" vim4:instantiates capacitance ]
+  
+  ri SI-farad : vim4:SystemHasDerivedUnit
+  [ from iso-80000-1:SI to farad ]
+  
+  ri SI-farad.coulomb
+  : vim4:HasPowerOfUnitFactor
+  [ from SI-farad to iec-80000-6.2:SI-coulomb vim4:exponent "1/1"^^owl:rational ]
+
+  ri SI-farad.per.volt
+  : vim4:HasPowerOfUnitFactor
+  [ from SI-farad to iec-80000-6.11:SI-volt vim4:exponent "-1/1"^^owl:rational ]
+
+  
+}

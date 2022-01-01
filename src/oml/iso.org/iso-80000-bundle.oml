@@ -30,9 +30,18 @@ description bundle <http://iso.org/iso-80000-bundle#> as iso-80000-bundle {
   includes <http://iso.org/iso-80000-4.3#>
   includes <http://iso.org/iso-80000-4.8#>
   includes <http://iso.org/iso-80000-4.9#>
+  includes <http://iso.org/iso-80000-4.11#>
+  includes <http://iso.org/iso-80000-4.13#>
+  includes <http://iso.org/iso-80000-4.14#>
+  includes <http://iso.org/iso-80000-4.15#>
+  includes <http://iso.org/iso-80000-4.26#>
   
   includes <http://iso.org/iso-80000-5.1#>
   
   includes <http://iso.org/iec-80000-6.1#>
+  includes <http://iso.org/iec-80000-6.2#>
+  includes <http://iso.org/iec-80000-6.21#>
+  includes <http://iso.org/iec-80000-6.45#>
+  includes <http://iso.org/iec-80000-6.46#>
 
 }
