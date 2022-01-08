@@ -35,5 +35,3 @@ This repository depends on the branch `trig-format` of this fork: https://github
 until this PR is merged: https://github.com/opencaesar/core-vocabularies/pull/26
 
 The [build.gradle](build.gradle) is configured to resolve the `core-vocabularies` from https://jitpack.io/#NicolasRouquette/core-vocabularies/
-
-## Organizing a vocabulary of quantities and units

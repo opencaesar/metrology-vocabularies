@@ -38,13 +38,20 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
     functional
   ]
   
+  @rdfs:label "general property"
+  aspect GeneralProperty :> IdentifiedElement
+  
+  @rdfs:label "general nominal property"
+  @rdfs:isDefinedBy "[VIM4 CD: 6.1]"
+  concept GeneralNominalProperty :> GeneralProperty
+  
   @rdfs:label "general quantity"
   @rdfs:label "kind of quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.1]"
   @dc:^description "property whose instances can be compared by ratio or only by order"
   @rdfs:comment """General quantity in [VIM4 CD: 1.1] corresponds precisely to kind-of-quantity in [OonP: S.13.3.1].
   """
-  aspect GeneralQuantity :> IdentifiedElement
+  aspect GeneralQuantity :> GeneralProperty
   
   @rdfs:label "general unitary quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.1 - 1.30]"
@@ -69,13 +76,19 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   @dc:^description "general quantity whose instances can be compared by order but not by ratio"
   concept GeneralOrdinalQuantity :> GeneralQuantity
   
+  @rdfs:label "IndividualProperty"
+  aspect IndividualProperty :> IdentifiedElement
+  
+  @rdfs:label "IndividualNominalProperty"
+  concept IndividualNominalProperty :> IndividualProperty
+  
   @rdfs:label "individual quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.2]"
   @dc:^description "instance of a general quantity"
   @rdfs:comment """Individual quantity in [VIM4 CD: 1.2] corresponds precisely to quantity in [OonP: S.12.13].
   [OonP: S.5.5] defines property as an 'inherent state- or process-descriptive feature of a system (S.3.3) including any pertinent components (S.3.4)'.
   """
-  aspect IndividualQuantity :> IdentifiedElement
+  aspect IndividualQuantity :> IndividualProperty
   
   @rdfs:label "individual unitary quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.2 - 1.31]"
