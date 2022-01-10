@@ -4,12 +4,15 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
   extends <http://www.w3.org/2002/07/owl#> as owl
   extends <http://www.w3.org/2001/XMLSchema#> as xsd
+  extends <http://iso.org/iso-1087-1#> as iso-1087-1
 
   @rdfs:label "IdentifiedElement"
+  @iso-1087-1:Characteristic
   aspect IdentifiedElement 
   [ key id ]
   
   @rdfs:label "id"
+  @iso-1087-1:Property
   scalar property id [
     domain IdentifiedElement
     range xsd:string
@@ -17,10 +20,12 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
   
   @rdfs:label "Rational Exponent"
+  @iso-1087-1:Characteristic
   aspect RationalExponent 
   [ restricts scalar property exponent to exactly 1 owl:rational ]
 
   @rdfs:label "exponent"
+  @iso-1087-1:Property
   scalar property exponent [
     domain RationalExponent
     range owl:rational
@@ -28,10 +33,13 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
   
   @rdfs:label "HasCoherence"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.14]"
+  @iso-1087-1:Characteristic
   aspect HasCoherence 
   
   @rdfs:label "isCoherent"
-  @rdfs:isDefinedBy "[VIM4 CD: 1.12 and 1.14]"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.14]"
+  @iso-1087-1:Property
   scalar property isCoherent [
     domain HasCoherence
     range xsd:boolean
@@ -39,10 +47,12 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
   
   @rdfs:label "general property"
+  @iso-1087-1:Concept
   aspect GeneralProperty :> IdentifiedElement
   
   @rdfs:label "general nominal property"
   @rdfs:isDefinedBy "[VIM4 CD: 6.1]"
+  @iso-1087-1:Concept
   concept GeneralNominalProperty :> GeneralProperty
   
   @rdfs:label "general quantity"
@@ -51,14 +61,17 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   @dc:^description "property whose instances can be compared by ratio or only by order"
   @rdfs:comment """General quantity in [VIM4 CD: 1.1] corresponds precisely to kind-of-quantity in [OonP: S.13.3.1].
   """
+  @iso-1087-1:Concept
   aspect GeneralQuantity :> GeneralProperty
   
   @rdfs:label "general unitary quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.1 - 1.30]"
   @dc:^description "general quantity whose instances can be compared by ratio"
+  @iso-1087-1:Concept
   concept GeneralUnitaryQuantity :> GeneralQuantity
   
   @rdfs:label "Specializes"
+  @iso-1087-1:GenericRelation
   relation entity Specializes [
     from GeneralUnitaryQuantity
     to GeneralUnitaryQuantity
@@ -74,25 +87,28 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   @rdfs:label "general ordinal quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.30]"
   @dc:^description "general quantity whose instances can be compared by order but not by ratio"
+  @iso-1087-1:Concept
   concept GeneralOrdinalQuantity :> GeneralQuantity
   
   @rdfs:label "IndividualProperty"
+  @iso-1087-1:Concept
   aspect IndividualProperty :> IdentifiedElement
   
   @rdfs:label "IndividualNominalProperty"
+  @rdfs:isDefinedBy "[VIM4 CD: 6.2]"
+  @iso-1087-1:Concept
   concept IndividualNominalProperty :> IndividualProperty
   
   @rdfs:label "individual quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.2]"
   @dc:^description "instance of a general quantity"
-  @rdfs:comment """Individual quantity in [VIM4 CD: 1.2] corresponds precisely to quantity in [OonP: S.12.13].
-  [OonP: S.5.5] defines property as an 'inherent state- or process-descriptive feature of a system (S.3.3) including any pertinent components (S.3.4)'.
-  """
+  @iso-1087-1:Concept
   aspect IndividualQuantity :> IndividualProperty
   
   @rdfs:label "individual unitary quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.2 - 1.31]"
   @dc:^description "instance of a general unitary quantity"
+  @iso-1087-1:Concept
   concept IndividualUnitaryQuantity :> IndividualQuantity [
     restricts all relation instantiates to GeneralUnitaryQuantity
   ]
@@ -100,58 +116,13 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   @rdfs:label "individual ordinal quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.31]"
   @dc:^description "instance of a general ordinal quantity"
+  @iso-1087-1:Concept
   concept IndividualOrdinalQuantity :> IndividualQuantity [
     restricts all relation instantiates to GeneralOrdinalQuantity
   ]
   
-  @rdfs:label "Ordinal Scale Comparison"
-  @rdfs:isDefinedBy "[VIM4 CD: 1.32]"
-  relation entity OrdinalScaleComparison [
-    from IndividualOrdinalQuantity
-    to IndividualOrdinalQuantity
-    forward ordinalScaleComparison
-  ]
-  
-  @rdfs:label "Less Than"
-  @rdfs:comment "Asserted when the source is less than the target."
-  relation entity LessThan :> OrdinalScaleComparison [
-    from IndividualOrdinalQuantity
-    to IndividualOrdinalQuantity
-    forward lessThan
-    asymmetric
-    irreflexive
-  ]
-
-  rule LessThanTransitivity [ lessThan(m1, m2) ^ lessThan(m2, m3) -> lessThan(m1, m3) ]
-  
-  @rdfs:label "Greater Than"
-  @rdfs:comment "Asserted when the source is greater than the target."
-  relation entity GreaterThan :> OrdinalScaleComparison [
-    from IndividualOrdinalQuantity
-    to IndividualOrdinalQuantity
-    forward greaterThan
-    asymmetric
-    irreflexive
-  ]
-
-  rule GreaterThanTransitivity [ greaterThan(m1, m2) ^ greaterThan(m2, m3) -> greaterThan(m1, m3) ]
-
-  @rdfs:label "Equals"
-  relation entity Equals :> OrdinalScaleComparison [
-    from IndividualOrdinalQuantity
-    to IndividualOrdinalQuantity
-    forward equals
-    symmetric
-    reflexive
-  ]
-
-  rule EqualsTransitivity [ equals(m1, m2) ^ equals(m2, m3) -> equals(m1, m3) ]
-  rule LessThanEqualsTransitivity [ lessThan(m1, m2) ^ equals(m2, m3) -> lessThan(m1, m3) ]
-  rule EqualsLessThanTransitivity [ equals(m1, m2) ^ lessThan(m2, m3) -> lessThan(m1, m3) ]
-  rule GreaterThanEqualsTransitivity [ greaterThan(m1, m2) ^ equals(m2, m3) -> greaterThan(m1, m3) ]
-  rule EqualsGreaterThanTransitivity [ equals(m1, m2) ^ greaterThan(m2, m3) -> greaterThan(m1, m3) ]
-  
   @rdfs:label "Instantiates"
+  @iso-1087-1:AssociativeRelation
   relation entity Instantiates [
     from IndividualQuantity
     to GeneralQuantity
@@ -167,11 +138,13 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   @rdfs:isDefinedBy "[VIM4 CD: 1.3]"
   @dc:^description "set of quantities together with a set of non-contradictory equations relating those quantities."
   @rdfs:comment """system of quantities in [VIM4 CD: 1.3, Note 2] corresponds precisely to system of unitary kinds-ef-quantity in [OonP: S.13.7]."""
+  @iso-1087-1:Concept
   concept SystemOfQuantities :> IdentifiedElement
   
   @rdfs:label "System Has Unitary Quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.3 Note 1]"
   @dc:source "system of unitary kinds-of-quantity [OonP: S.13.7, p 129]"
+  @iso-1087-1:PartitiveRelation
   relation entity SystemHasUnitaryQuantity [
     from SystemOfQuantities
     to GeneralUnitaryQuantity
@@ -184,6 +157,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   @dc:^description """quantity in a conventionally chosen subset of a given system of quantities,
   where no quantity in the set of base quantities can be expressed in terms of the others."""
   @dc:source "system of unitary kinds-of-quantity [OonP: S.13.7, p 129]"
+  @iso-1087-1:PartitiveRelation
   relation entity SystemHasBaseUnitaryQuantity :> SystemHasUnitaryQuantity [
     from SystemOfQuantities
     to GeneralUnitaryQuantity
@@ -191,6 +165,9 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
     forward systemHasBaseUnitaryQuantity
   ]
   
+  @rdfs:label "dimension symbol"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.7]"
+  @iso-1087-1:Property
   scalar property dimensionSymbol [
     domain SystemHasBaseUnitaryQuantity
     range xsd:string
@@ -200,8 +177,8 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   @rdfs:label "System Has Derived Unitary Quantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.5]"
   @dc:^description """quantity, in a system of quantities, defined in terms of the base quantities of that system."""
-  @dc:source "base unitary kind-of-quantity [OonP: S.13.11]"
-  relation entity SystemHasDerivedUnitaryQuantity :> SystemHasUnitaryQuantity, HasCoherence [
+  @iso-1087-1:PartitiveRelation
+  relation entity SystemHasDerivedUnitaryQuantity :> SystemHasUnitaryQuantity [
     from SystemOfQuantities
     to GeneralUnitaryQuantity
     @rdfs:label "system has derived unitary quantity"
@@ -210,6 +187,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "Has Power Of Unitary Quantity Factor"
   @rdfs:isDefinedBy "[VIM4 CD: 1.5]"
+  @iso-1087-1:CausalRelation
   relation entity HasPowerOfUnitaryQuantityFactor :> RationalExponent [
     from SystemHasDerivedUnitaryQuantity
     to SystemHasUnitaryQuantity
@@ -227,6 +205,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "Has Quantity Dimension"
   @rdfs:isDefinedBy "[VIM4 CD: 1.7]"
+  @iso-1087-1:AssociativeRelation
   relation entity HasQuantityDimension :> RationalExponent [
     from SystemHasUnitaryQuantity
     to SystemHasBaseUnitaryQuantity
@@ -244,6 +223,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "isDimensionless"
   @rdfs:isDefinedBy "[VIM4 CD: 1.8]"
+  @iso-1087-1:Property
   scalar property isDimensionless [
     domain SystemHasDerivedUnitaryQuantity
     range xsd:boolean
@@ -251,15 +231,17 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
  
   @rdfs:label "system of units"
-  @rdfs:isDefinedBy "[VIM4 CD: 1.13]"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.13, 1.14]"
   @dc:^description """set of base units and derived units, together with their multiples and submultiples, 
   defined in accordance with given rules, for a given system of quantities."""
+  @iso-1087-1:Concept
   concept SystemOfUnits :> IdentifiedElement, HasCoherence [
     restricts relation given to exactly 1 SystemOfQuantities
   ]
   
   @rdfs:label "Given"
   @rdfs:isDefinedBy "[VIM4 CD: 1.13]"
+  @iso-1087-1:AssociativeRelation
   relation entity Given [
     from SystemOfUnits
     to SystemOfQuantities
@@ -268,34 +250,47 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
     functional
   ]
   
-  aspect InherentQuantity
-  
   @rdfs:label "Object"
-  @rdfs:isDefinedBy "[OonP: S.2.23]"
+  @iso-1087-1:Concept
   aspect Object
   
-  @rdfs:label "Inheres"
-  @rdfs:isDefinedBy "[OonP: Figure 2.25]"
-  @rdfs:comment """Inheres corresponds to the associative relationship shown in [OonP: Figure 2.25] between object and property.
-  """
-  relation entity Inheres [
-    from InherentQuantity
+  @rdfs:label "Characterizes"
+  @rdfs:comment """An InherentQuantity characterizes an Object."""
+  relation entity Characterizes [
+    from IndividualQuantity
     to Object
-    @rdfs:label "inheres"
-    forward inheres
+    @rdfs:label "characterizes"
+    forward characterizes
     functional
   ]
   
   
   @rdfs:label "QuantityValue"
   @rdfs:isDefinedBy "[VIM4 CD: 1.20]"
+  @iso-1087-1:Concept
   aspect QuantityValue
   
+  @rdfs:label "isTrueValue"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.22]"
+  scalar property isTrueValue [
+    domain QuantityValue
+    range xsd:boolean
+    functional
+  ]
+  
+  @rdfs:label "isReferenceValue"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.24]"
+  scalar property isReferenceValue [
+    domain QuantityValue
+    range xsd:boolean
+    functional
+  ]
   @rdfs:label "IsAttributedTo"
   @rdfs:isDefinedBy "[VIM4 CD: 1.23, 2.1, 2.8, 2.10, 3.1, 6.5, 6.10]"
+  @iso-1087-1:PartitiveRelation
   relation entity IsAttributedTo [
     from QuantityValue
-    to InherentQuantity
+    to IndividualQuantity
     @rdfs:label "isAttributedTo"
     forward isAttributedTo
     functional
@@ -303,34 +298,36 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "InherentOrdinalQuantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.31]"
-  concept InherentOrdinalQuantity :> IndividualOrdinalQuantity, InherentQuantity [
-    restricts relation inheres to exactly 1 Object
+  @iso-1087-1:Concept
+  concept InherentOrdinalQuantity :> IndividualOrdinalQuantity [
+    restricts relation characterizes to exactly 1 Object
   ]
   
   @rdfs:label "OrdinalQuantityValue"
   @rdfs:isDefinedBy "[VIM4 CD: 1.33]"
-  concept OrdinalQuantityValue :> IndividualOrdinalQuantity, QuantityValue
-  
-  scalar property ordinalPosition [
-    domain OrdinalQuantityValue
-    range xsd:positiveInteger
-    functional
+  @iso-1087-1:Concept
+  concept OrdinalQuantityValue :> IndividualOrdinalQuantity, QuantityValue [
+    restricts all relation isAttributedTo to InherentOrdinalQuantity
   ]
   
   @rdfs:label "InherentUnitaryQuantity"
   @rdfs:isDefinedBy "[VIM4 CD: 1.2 except for the cases of Note 1]"
-  concept InherentUnitaryQuantity :> IndividualUnitaryQuantity, InherentQuantity [
-    restricts relation inheres to exactly 1 Object
+  @iso-1087-1:Concept
+  concept InherentUnitaryQuantity :> IndividualUnitaryQuantity [
+    restricts relation characterizes to exactly 1 Object
   ]
   
   @rdfs:label "UnitaryQuantityValue"
   @rdfs:isDefinedBy "[VIM4 CD: 1.20 for an IndividualUnitaryQuantity]"
+  @iso-1087-1:Concept
   concept UnitaryQuantityValue :> IndividualUnitaryQuantity, QuantityValue [
     restricts relation unit to exactly 1 MeasurementUnit
+    restricts all relation isAttributedTo to InherentUnitaryQuantity
   ]
   
   @rdfs:label "HasUnit"
   @rdfs:isDefinedBy "[VIM4 CD: 1.20 for an IndividualUnitaryQuantity]"
+  @iso-1087-1:AssociativeRelation
   relation entity HasUnit [
     from UnitaryQuantityValue
     to MeasurementUnit
@@ -340,7 +337,8 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
   
   @rdfs:label "hasDoubleNumber"
-  @rdfs:isDefinedBy "[VIM4 CD: 1.20 for an IndividualUnitaryQuantity]"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.21]"
+  @iso-1087-1:Property
   scalar property hasDoubleNumber [
     domain UnitaryQuantityValue
     range xsd:double
@@ -349,14 +347,17 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "MeasurementUnit"
   @rdfs:isDefinedBy "[VIM4 CD: 1.9]"
+  @iso-1087-1:Concept
   concept MeasurementUnit :> IndividualUnitaryQuantity
   
   @rdfs:label "Multiple"
   @rdfs:isDefinedBy "[VIM4 CD: 1.17 and 1.18]"
+  @iso-1087-1:Characteristic
   concept Multiple :> IdentifiedElement
   
   @rdfs:label "HasMultiple"
   @rdfs:isDefinedBy "[VIM4 CD: 1.17, 1.18]"
+  @iso-1087-1:Property
   relation entity HasMultiple [
     from MeasurementUnit
     to Multiple
@@ -367,6 +368,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "IsMultipleOf"
   @rdfs:isDefinedBy "[VIM4 CD: 1.17, 1.18]"
+  @iso-1087-1:AssociativeRelation
   relation entity IsMultipleOf [
     from MeasurementUnit
     to MeasurementUnit
@@ -377,6 +379,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "UnprefixedMeasurementUnit"
   @rdfs:isDefinedBy "[VIM4 CD: 1.9 except for 1.17 and 1.18]"
+  @iso-1087-1:Concept
   concept UnprefixedMeasurementUnit :> MeasurementUnit [
     restricts relation hasMultiple to exactly 0 Multiple
     restricts relation isMultipleOf to exactly 0 MeasurementUnit
@@ -384,6 +387,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "PrefixedMeasurementUnit"
   @rdfs:isDefinedBy "[VIM4 CD: 1.17 or 1.18]"
+  @iso-1087-1:Concept
   concept PrefixedMeasurementUnit :> MeasurementUnit [
     restricts relation hasMultiple to exactly 1 Multiple
     restricts relation isMultipleOf to exactly 1 MeasurementUnit
@@ -391,6 +395,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "System Has Unit"
   @rdfs:isDefinedBy "[VIM4 CD: 1.13]"
+  @iso-1087-1:PartitiveRelation
   relation entity SystemHasUnit [
     from SystemOfUnits
     to MeasurementUnit
@@ -399,7 +404,8 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
   
   @rdfs:label "System Has Base Unit"
-  @rdfs:isDefinedBy "[VIM4 CD: 1.13]"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.10, 1.13]"
+  @iso-1087-1:PartitiveRelation
   relation entity SystemHasBaseUnit :> SystemHasUnit [
     from SystemOfUnits
     to MeasurementUnit
@@ -408,22 +414,20 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
   
   @rdfs:label "System Has Derived Unit"
-  @rdfs:isDefinedBy "[VIM4 CD: 1.13]"
-  relation entity SystemHasDerivedUnit :> SystemHasUnit, SystemDerivedUnitScope [
+  @rdfs:isDefinedBy "[VIM4 CD: 1.11, 1.13]"
+  @iso-1087-1:PartitiveRelation
+  relation entity SystemHasDerivedUnit :> SystemHasUnit, HasCoherence [
     from SystemOfUnits
     to MeasurementUnit
     @rdfs:label "system has derived unit"
     forward systemHasDerivedUnit
   ]
   
-  @rdfs:label "SystemDerivedUnitScope"
-  @rdfs:isDefinedBy "[VIM4 CD: 1.15]"
-  aspect SystemDerivedUnitScope 
-  
   @rdfs:label "Is Off-System Unit"
   @rdfs:isDefinedBy "[VIM4 CD: 1.15]"
+  @iso-1087-1:Property
   scalar property isOffSystemUnit [
-    domain SystemDerivedUnitScope
+    domain SystemHasDerivedUnit
     range xsd:boolean
     functional
   ]
@@ -431,6 +435,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "Has Power Of Unit Factor"
   @rdfs:isDefinedBy "[VIM4 CD: 1.12]"
+  @iso-1087-1:CausalRelation
   relation entity HasPowerOfUnitFactor :> RationalExponent [
     from SystemHasDerivedUnit
     to SystemHasUnit
@@ -446,24 +451,74 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
     sameAs(ds, fs)
   ]
   
+  @rdfs:label "MeasurementScale"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.19]"
+  @iso-1087-1:Concept
+  concept MeasurementScale :> IdentifiedElement
+  
+  @rdfs:label "Includes"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.19]"
+  @iso-1087-1:Property
+  relation entity Includes [
+    from MeasurementScale
+    to IndividualProperty
+    @rdfs:label "includes"
+    forward ^includes
+  ]
+  
+  @rdfs:label "ordinalPosition"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.19]"
+  @iso-1087-1:Property
+  scalar property ordinalPosition [
+    domain Includes
+    range xsd:positiveInteger
+    functional
+  ]
+  
+  @rdfs:label "UnitaryScale"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.19]"
+  @iso-1087-1:Concept
+  concept UnitaryScale :> MeasurementScale [
+    restricts all relation ^includes to UnitaryQuantityValue
+  ]
+  
+  @rdfs:label "OrdinalScale"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.32]"
+  @iso-1087-1:Concept
+  concept OrdinalScale :> MeasurementScale [
+    restricts all relation ^includes to OrdinalQuantityValue
+  ]
+  
+  @rdfs:label "ReferenceSet"
+  @rdfs:isDefinedBy "[VIM4 CD: 6.3]"
+  @iso-1087-1:Concept
+  concept ReferenceSet :> MeasurementScale [
+    restricts all relation ^includes to IndividualNominalProperty
+  ]
+  
   @rdfs:label "Measurement"
   @rdfs:isDefinedBy "[VIM4 CD: 2.1]"
+  @iso-1087-1:Concept
   concept Measurement :> IdentifiedElement
   
   @rdfs:label "MeasurementPrinciple"
   @rdfs:isDefinedBy "[VIM4 CD: 2.4]"
+  @iso-1087-1:Concept
   concept MeasurementPrinciple :> IdentifiedElement
   
   @rdfs:label "MeasurementMethod"
   @rdfs:isDefinedBy "[VIM4 CD: 2.5]"
+  @iso-1087-1:Concept
   concept MeasurementMethod :> IdentifiedElement
   
   @rdfs:label "MeasurementProcedure"
   @rdfs:isDefinedBy "[VIM4 CD: 2.7]"
+  @iso-1087-1:Concept
   concept MeasurementProcedure :> IdentifiedElement
   
   @rdfs:label "Describes"
   @rdfs:isDefinedBy "[VIM4 CD: 2.7]"
+  @iso-1087-1:AssociativeRelation
   relation entity Describes [
     from MeasurementProcedure
     to Measurement
@@ -474,10 +529,12 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "MeasurementModel"
   @rdfs:isDefinedBy "[VIM4 CD: 2.12]"
+  @iso-1087-1:Concept
   concept MeasurementModel :> IdentifiedElement
   
   @rdfs:label "Per"
   @rdfs:isDefinedBy "[VIM4 CD: 2.4, 2.7]"
+  @iso-1087-1:AssociativeRelation
   relation entity Per [
     from MeasurementProcedure
     to MeasurementPrinciple 
@@ -487,6 +544,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "UsesOperationsOf"
   @rdfs:isDefinedBy "[VIM4 CD: 2.5]"
+  @iso-1087-1:AssociativeRelation
   relation entity UsesOperationsOf [
     from MeasurementProcedure
     to MeasurementMethod 
@@ -497,6 +555,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "IsBasedOn"
   @rdfs:isDefinedBy "[VIM4 CD: 2.7]"
+  @iso-1087-1:AssociativeRelation
   relation entity IsBasedOn [
     from MeasurementProcedure
     to MeasurementModel 
@@ -507,6 +566,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "HasInput"
   @rdfs:isDefinedBy "[VIM4 CD: 2.14]"
+  @iso-1087-1:CausalRelation
   relation entity HasInput [
     from MeasurementModel
     to IndividualQuantity
@@ -515,7 +575,8 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
   
   @rdfs:label "Measures"
-  @rdfs:isDefinedBy "[VIM4 CD: 2.3, 2.15]"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.15]"
+  @iso-1087-1:CausalRelation
   relation entity Measures [
     from MeasurementModel
     to IndividualQuantity
@@ -526,6 +587,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 
   @rdfs:label "IsInfluencedBy"
   @rdfs:isDefinedBy "[VIM4 CD: 2.16]"
+  @iso-1087-1:CausalRelation
   relation entity IsInfluencedBy [
     from MeasurementModel
     to IndividualQuantity
@@ -535,6 +597,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "UsesCorrection"
   @rdfs:isDefinedBy "[VIM4 CD: 2.17]"
+  @iso-1087-1:CausalRelation
   relation entity UsesCorrection [
     from MeasurementModel
     to IndividualQuantity
@@ -543,7 +606,8 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
   
   @rdfs:label "YieldsMeasuredValue"
-  @rdfs:isDefinedBy "[VIM4 CD: 2.14]"
+  @rdfs:isDefinedBy "[VIM4 CD: 2.11]"
+  @iso-1087-1:CausalRelation
   relation entity YieldsMeasuredValue [
     from MeasurementModel
     to QuantityValue
@@ -553,10 +617,12 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   
   @rdfs:label "MeasurementUncertainty"
   @rdfs:isDefinedBy "[VIM4 CD: 3.1]"
+  @iso-1087-1:Concept
   concept MeasurementUncertainty
   
   @rdfs:label "YieldsMeasurementUncertainty"
   @rdfs:isDefinedBy "[VIM4 CD: 3.1]"
+  @iso-1087-1:CausalRelation
   relation entity YieldsMeasurementUncertainty [
     from MeasurementModel
     to MeasurementUncertainty

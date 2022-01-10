@@ -72,97 +72,9 @@ description <http://iso.org/iso-80000-1#> as iso-80000-1 {
   ci ISQ : vim4:SystemOfQuantities 
   [ vim4:id "ISQ" ]
   
-//  ri ISQ-mass 
-//  : vim4:SystemHasBaseUnitaryQuantity 
-//  [ from ISQ to iso-80000-4:mass ]
-  
-//  ri ISQ-electric-current 
-//  : vim4:SystemHasBaseUnitaryQuantity 
-//  [ from ISQ to electric-current ]
-  
-//  ri ISQ-thermodynamic-temperature 
-//  : vim4:SystemHasBaseUnitaryQuantity 
-//  [ from ISQ to thermodynamic-temperature ]
-  
-//  ri ISQ-amount-of-substance 
-//  : vim4:SystemHasBaseUnitaryQuantity 
-//  [ from ISQ to amount-of-substance ]
-  
-//  ri ISQ-luminous-intensity 
-//  : vim4:SystemHasBaseUnitaryQuantity 
-//  [ from ISQ to luminous-intensity ]
-  
   ci SI : vim4:SystemOfUnits 
   [ vim4:id "SI" vim4:given ISQ ]
   
-//  ri SI-kilogram : vim4:SystemHasBaseUnit
-//  [ from SI to iso-80000-4:kilogram ]
-  
-//  ri SI-kilogram-per-cubic_metre : vim4:SystemHasDerivedUnit 
-//  [ from SI to iso-80000-4:kilogram-per-cubic_metre ]
-//
-//  ri SI-kilogram-per-cubic_metre.kilogram : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-per-cubic_metre to SI-kilogram vim4:exponent "1/1"^^owl:rational ]
-//
-//  ri SI-kilogram-per-cubic_metre.per.cubic_metre : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-per-cubic_metre to SI-cubic_metre vim4:exponent "-1/1"^^owl:rational ]
-  
-//  ri SI-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre : vim4:SystemHasDerivedUnit 
-//  [ from SI to iso-80000-4:kilogram-per-cubic_metre-over-kilogram-per-cubic_metre ]
-//
-//  ri SI-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.kilogram-per-cubic_metre-over-kilogram-per-cubic_metre : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre to SI-kilogram-per-cubic_metre vim4:exponent "1/1"^^owl:rational ]
-//
-//  ri SI-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre.per.kilogram-per-cubic_metre-over-kilogram-per-cubic_metre : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-per-cubic_metre-over-kilogram-per-cubic_metre to SI-kilogram-per-cubic_metre vim4:exponent "-1/1"^^owl:rational ]
-  
-//  ri SI-cubic_metre-per-kilogram : vim4:SystemHasDerivedUnit 
-//  [ from SI to iso-80000-4:cubic_metre-per-kilogram ]
-//
-//  ri SI-cubic_metre-per-kilogram.cubic_metre : vim4:HasPowerOfUnitFactor
-//  [ from SI-cubic_metre-per-kilogram to iso-80000-3:cubic_metre vim4:exponent "1/1"^^owl:rational ]
-//
-//  ri SI-cubic_metre-per-kilogram.per.kilogram : vim4:HasPowerOfUnitFactor
-//  [ from SI-cubic_metre-per-kilogram to iso-80000-4:kilogram vim4:exponent "-1/1"^^owl:rational ]
-  
-//  ri SI-kilogram-per-square_metre : vim4:SystemHasDerivedUnit 
-//  [ from SI to iso-80000-4:kilogram-per-square_metre ]
-//
-//  ri SI-kilogram-per-square_metre.kilogram : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-per-square_metre to SI-kilogram vim4:exponent "1/1"^^owl:rational ]
-//
-//  ri SI-kilogram-per-square_metre.per.square_metre : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-per-square_metre to SI-square_metre vim4:exponent "-1/1"^^owl:rational ]
-  
-//  ri SI-kilogram-per-metre : vim4:SystemHasDerivedUnit 
-//  [ from SI to iso-80000-4:kilogram-per-metre ]
-//
-//  ri SI-kilogram-per-metre.kilogram : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-per-metre to SI-kilogram vim4:exponent "1/1"^^owl:rational ]
-//
-//  ri SI-kilogram-per-metre.per.metre : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-per-metre to SI-metre vim4:exponent "-1/1"^^owl:rational ]
-  
-//  ri SI-kilogram-metre_squared : vim4:SystemHasDerivedUnit 
-//  [ from SI to iso-80000-4:kilogram-metre_squared ]
-//  
-//  ri SI-kilogram-per-metre_squared.kilogram : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-metre_squared to SI-kilogram vim4:exponent "1/1"^^owl:rational ]
-//  
-//  ri SI-kilogram-per-metre_squared.metre_squared : vim4:HasPowerOfUnitFactor
-//  [ from SI-kilogram-metre_squared to SI-square_metre vim4:exponent "1/1"^^owl:rational ]
-  
-//  ri SI-ampere : vim4:SystemHasBaseUnit
-//  [ from SI to ampere ]
-  
-//  ri SI-kelvin : vim4:SystemHasBaseUnit
-//  [ from SI to kelvin ]
-  
-//  ri SI-mole : vim4:SystemHasBaseUnit
-//  [ from SI to mole ]
-  
-//  ri SI-candela : vim4:SystemHasBaseUnit
-//  [ from SI to candela ]
  
   @rdfs:comment "60"
   ci sixty : vim4:Multiple
