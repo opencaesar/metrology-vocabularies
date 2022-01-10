@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:oml="http://opencaesar.io/oml" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_aQ-R4PFeEeuj8eTvNPv4mQ" selectedViews="_zkwDQPFeEeuj8eTvNPv4mQ _zlGokPFeEeuj8eTvNPv4mQ" version="14.3.1.202003261200">
-    <semanticResources>src/oml/iupac.org/metrology.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-1.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-4-instances.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-4-quantities.oml</semanticResources>
@@ -21,7 +20,6 @@
     <semanticResources>src/oml/iso.org/iso-80000-6-magnitudes-1.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-6-rules.oml</semanticResources>
     <semanticResources>src/oml/iso.org/iso-80000-bundle.oml</semanticResources>
-    <semanticResources>src/oml/iupac.org/metrology-bundle.oml</semanticResources>
     <semanticResources>src/oml/nist.gov/pml/special-publication-811-bundle.oml</semanticResources>
     <semanticResources>src/oml/nist.gov/pml/special-publication-811-instances.oml</semanticResources>
     <semanticResources>src/oml/nist.gov/pml/special-publication-811-units.oml</semanticResources>
@@ -78,6 +76,7 @@
     <semanticResources>src/oml/iso.org/iso-1087-1.oml</semanticResources>
     <semanticResources>src/oml/bipm.org/jcgm/vim4-terminological-analysis.oml</semanticResources>
     <semanticResources>src/oml/bipm.org/jcgm/vim4.1-systems-diagram.oml</semanticResources>
+    <semanticResources>src/oml/bipm.org/jcgm/vim4-annotations.oml</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_zkwDQPFeEeuj8eTvNPv4mQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/io.opencaesar.rosetta.sirius.viewpoint/description/oml.odesign#//@ownedViewpoints[name='Vocabularies']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_28VqIPFeEeuj8eTvNPv4mQ" name="Metrology" repPath="#_28UcAPFeEeuj8eTvNPv4mQ" changeId="02f391e8-2acb-4289-a31f-6024e9eeef4e">
