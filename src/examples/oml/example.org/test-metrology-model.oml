@@ -1,0 +1,62 @@
+description <http://example.org/test-metrology-model#> as test-metrology-model {
+  
+  uses <http://www.w3.org/2001/XMLSchema#> as xsd
+
+  uses <http://example.org/some-domain-with-metrology#>
+  uses <http://example.org/some-domain#> as some-domain
+  uses <http://bipm.org/jcgm/vim4#> as vim4
+  extends <http://iso.org/iso-80000-4.1#> as iso-80000-4.1
+  extends <http://iso.org/iso-80000-4.2#> as iso-80000-4.2
+  
+  extends <http://example.org/simple-mass-management#> as simple-mass-management
+  
+  ci camera1 : some-domain:Component 
+  [ some-domain:name "camera1" ]
+  
+  ci camera1.mass.basic : vim4:IndividualUnitaryQuantity [
+    vim4:instantiates simple-mass-management:mass.basic
+    vim4:characterizes camera1
+  ]
+  
+  ci camera1.mass.basic.manufacturer : vim4:UnitaryQuantityValue [
+    vim4:hasDoubleNumber "0.3"^^xsd:double
+    vim4:isReferenceValue "true"^^xsd:boolean
+    vim4:isAttributedTo camera1.mass.basic
+    vim4:unit iso-80000-4.1:kilogram
+  ]
+  
+  ci camera1.mass.basic.value : vim4:UnitaryQuantityValue [
+    vim4:hasDoubleNumber "0.31"^^xsd:double
+    vim4:isReferenceValue "false"^^xsd:boolean
+    vim4:isAttributedTo camera1.mass.basic
+    vim4:unit iso-80000-4.1:kilogram
+  ]
+  
+  ci camera1.mass.allocation : vim4:IndividualUnitaryQuantity [
+    vim4:instantiates simple-mass-management:mass.allocation
+    vim4:characterizes camera1
+  ]
+  
+  ci camera2 : some-domain:Component
+  [ some-domain:name "camera2" ]
+  
+  ci camera2.mass.basic : vim4:IndividualUnitaryQuantity [
+    vim4:instantiates simple-mass-management:mass.basic
+    vim4:characterizes camera1
+  ]
+  
+  ci camera2.mass.basic.value : vim4:UnitaryQuantityValue [
+    vim4:hasDoubleNumber "0.31"^^xsd:double
+    vim4:isReferenceValue "false"^^xsd:boolean
+    vim4:isAttributedTo camera2.mass.basic
+    vim4:unit iso-80000-4.2:kilogram-per-cubic_metre
+  ]
+  
+  ci camera2.mass.allocation : vim4:IndividualUnitaryQuantity [
+    vim4:instantiates simple-mass-management:mass.allocation
+    vim4:characterizes camera2
+  ]
+  
+  
+}
+  

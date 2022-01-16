@@ -1,0 +1,16 @@
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+PREFIX oml:   <http://opencaesar.io/oml#>
+
+SELECT DISTINCT ?sq ?bq ?d
+WHERE {
+  ?sq 
+    a vim4:SystemOfQuantities .
+  
+  ?sbq
+    a vim4:SystemHasBaseUnitaryQuantity ;
+    oml:hasSource ?sq ;
+    oml:hasTarget ?bq ;
+    vim4:dimensionSymbol ?d .
+
+}
+ORDER BY ?sq ?bq

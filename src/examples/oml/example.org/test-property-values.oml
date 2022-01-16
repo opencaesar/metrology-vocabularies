@@ -1,0 +1,17 @@
+description <http://example.org/test-property-values#> as test-property-values {
+  
+  uses <http://www.w3.org/2001/XMLSchema#> as xsd
+
+	uses <http://example.org/some-domain#> as some-domain
+  
+  ci camera1 : some-domain:Component 
+  [ some-domain:name "camera1" 
+    some-domain:mass.basic "0.31"^^xsd:double
+    some-domain:mass.allocation "0.5"^^xsd:double ]
+  
+  ci camera2 : some-domain:Component
+  [ some-domain:name "camera2" 
+    some-domain:mass.basic "0.5"^^xsd:double
+    some-domain:mass.allocation "0.8"^^xsd:double ] 
+
+}

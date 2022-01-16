@@ -1,0 +1,119 @@
+# Run this query *after* 0-base-quantity-dimension.sparql
+
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+PREFIX oml:   <http://opencaesar.io/oml#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+ 
+# The SELECT below produces the expected data but the corresponding INSERT does not seem to work
+# (i.e. there are no new triples even though the server it succeeded).
+#
+# { "head": {
+#    "vars": [ "bq1dim" , "sdq" , "sqb1" , "dim" ]
+#  } ,
+#  "results": {
+#    "bindings": [
+#      { 
+#        "bq1dim": { "type": "uri" , "value": "http://iso.org/iso-80000-3.12#ISQ8-period-duration.dim.time" } ,
+#        "sdq": { "type": "uri" , "value": "http://iso.org/iso-80000-3.12#ISQ8-period-duration" } ,
+#        "sqb1": { "type": "uri" , "value": "http://iso.org/iso-80000-3.7#ISQ8-time" } ,
+#        "dim": { "type": "literal" , "datatype": "http://www.w3.org/2002/07/owl#rational" , "value": "1/1" }
+#      } ,
+#      { 
+#        "bq1dim": { "type": "uri" , "value": "http://iso.org/iso-80000-3.12#ISQ7-period-duration.dim.time" } ,
+#        "sdq": { "type": "uri" , "value": "http://iso.org/iso-80000-3.12#ISQ7-period-duration" } ,
+#        "sqb1": { "type": "uri" , "value": "http://iso.org/iso-80000-3.7#ISQ7-time" } ,
+#        "dim": { "type": "literal" , "datatype": "http://www.w3.org/2002/07/owl#rational" , "value": "1/1" }
+#      } ,
+#      { 
+#        "bq1dim": { "type": "uri" , "value": "http://iso.org/iso-80000-3.2#ISQ8-curvature.dim.length" } ,
+#        "sdq": { "type": "uri" , "value": "http://iso.org/iso-80000-3.2#ISQ8-curvature" } ,
+#        "sqb1": { "type": "uri" , "value": "http://iso.org/iso-80000-3.1#ISQ8-length" } ,
+#        "dim": { "type": "literal" , "datatype": "http://www.w3.org/2002/07/owl#rational" , "value": "-1/1" }
+#      } ,
+#      { 
+#        "bq1dim": { "type": "uri" , "value": "http://iso.org/iso-80000-3.2#ISQ7-curvature.dim.length" } ,
+#        "sdq": { "type": "uri" , "value": "http://iso.org/iso-80000-3.2#ISQ7-curvature" } ,
+#        "sqb1": { "type": "uri" , "value": "http://iso.org/iso-80000-3.1#ISQ7-length" } ,
+#        "dim": { "type": "literal" , "datatype": "http://www.w3.org/2002/07/owl#rational" , "value": "-1/1" }
+#      } ,
+#      { 
+#        "bq1dim": { "type": "uri" , "value": "http://iso.org/iso-80000-3.6#ISQ8-solid-angle.dim.plane-angle" } ,
+#        "sdq": { "type": "uri" , "value": "http://iso.org/iso-80000-3.6#ISQ8-solid-angle" } ,
+#        "sqb1": { "type": "uri" , "value": "http://iso.org/iso-80000-3.5#ISQ8-plane-angle" } ,
+#        "dim": { "type": "literal" , "datatype": "http://www.w3.org/2002/07/owl#rational" , "value": "2/1" }
+#      } ,
+#      { 
+#        "bq1dim": { "type": "uri" , "value": "http://iso.org/iso-80000-3.4#ISQ8-volume.dim.length" } ,
+#        "sdq": { "type": "uri" , "value": "http://iso.org/iso-80000-3.4#ISQ8-volume" } ,
+#        "sqb1": { "type": "uri" , "value": "http://iso.org/iso-80000-3.1#ISQ8-length" } ,
+#        "dim": { "type": "literal" , "datatype": "http://www.w3.org/2002/07/owl#rational" , "value": "3/1" }
+#      } ,
+#      { 
+#        "bq1dim": { "type": "uri" , "value": "http://iso.org/iso-80000-3.4#ISQ7-volume.dim.length" } ,
+#        "sdq": { "type": "uri" , "value": "http://iso.org/iso-80000-3.4#ISQ7-volume" } ,
+#        "sqb1": { "type": "uri" , "value": "http://iso.org/iso-80000-3.1#ISQ7-length" } ,
+#        "dim": { "type": "literal" , "datatype": "http://www.w3.org/2002/07/owl#rational" , "value": "3/1" }
+#      } ,
+#      { 
+#        "bq1dim": { "type": "uri" , "value": "http://iso.org/iso-80000-3.3#ISQ8-area.dim.length" } ,
+#        "sdq": { "type": "uri" , "value": "http://iso.org/iso-80000-3.3#ISQ8-area" } ,
+#        "sqb1": { "type": "uri" , "value": "http://iso.org/iso-80000-3.1#ISQ8-length" } ,
+#        "dim": { "type": "literal" , "datatype": "http://www.w3.org/2002/07/owl#rational" , "value": "2/1" }
+#      } ,
+#      { 
+#        "bq1dim": { "type": "uri" , "value": "http://iso.org/iso-80000-3.3#ISQ7-area.dim.length" } ,
+#        "sdq": { "type": "uri" , "value": "http://iso.org/iso-80000-3.3#ISQ7-area" } ,
+#        "sqb1": { "type": "uri" , "value": "http://iso.org/iso-80000-3.1#ISQ7-length" } ,
+#        "dim": { "type": "literal" , "datatype": "http://www.w3.org/2002/07/owl#rational" , "value": "2/1" }
+#      }
+#    ]
+#  }
+#}
+
+# Based on the select results above, the following INSERT should work, alas, there are no triples actually inserted.
+
+#INSERT {
+#  GRAPH ?gd {
+#    ?bqdim
+#      a vim4:HasQuantityDimensionFactor ;
+#      oml:hasSource ?sdq ;
+#      oml:hasTarget ?sqb1 ;
+#      vim4:exponent ?dim .
+#  }
+#}
+
+SELECT ?bq1dim ?sdq ?sqb1 ?dim 
+
+WHERE {
+  ?sq a vim4:SystemOfQuantities .
+  GRAPH ?gd {
+    ?sdq a vim4:SystemHasDerivedUnitaryQuantity; oml:hasSource ?sq; oml:hasTarget ?dq .
+    ?hasP1 a vim4:HasPowerOfUnitaryQuantityFactor; oml:hasSource ?sdq; oml:hasTarget ?sq1; vim4:exponent ?ed1 .
+    FILTER NOT EXISTS {
+      ?pf a vim4:HasPowerOfUnitaryQuantityFactor; oml:hasSource ?sdq.
+      FILTER(?pf != ?hasP1)
+    }
+  }
+  GRAPH ?gd1 {
+    { ?sq1 a vim4:SystemHasBaseUnitaryQuantity } UNION { ?sq1 a vim4:SystemHasDerivedUnitaryQuantity }
+    ?sq1 oml:hasSource ?sq.
+    ?qf1 a vim4:HasQuantityDimensionFactor; oml:hasSource ?sq1; oml:hasTarget ?sqb1; vim4:exponent ?eb1 .
+  }
+  GRAPH ?gb1 {
+    ?sqb1 a vim4:SystemHasBaseUnitaryQuantity; oml:hasSource ?sq; oml:hasTarget ?qb1 .
+  }
+  GRAPH ?gd {
+    FILTER NOT EXISTS {
+      ?any a vim4:HasQuantityDimensionFactor; oml:hasSource ?sdq; oml:hasTarget ?sqb1 .
+    }
+  }
+  BIND (iri( concat( concat(str(?sdq),".dim."), strafter(str(?qb1),"#") ) ) as ?bq1dim)
+  BIND (xsd:integer(strbefore(str(?ed1),"/")) as ?ed1num)
+  BIND (xsd:integer(strafter(str(?ed1),"/")) as ?ed1den)
+  BIND (xsd:integer(strbefore(str(?eb1),"/")) as ?eb1num)
+  BIND (xsd:integer(strafter(str(?eb1),"/")) as ?eb1den)
+  BIND (?ed1num * ?eb1num as ?num)
+  BIND (?ed1den * ?eb1den as ?den)
+  BIND (strdt(concat(concat(str(?num),"/"),str(?den)), owl:rational) as ?dim)
+}

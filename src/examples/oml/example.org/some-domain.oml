@@ -1,0 +1,44 @@
+vocabulary <http://example.org/some-domain#> as some-domain {
+  
+  extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+  extends <http://www.w3.org/2001/XMLSchema#> as xsd
+  
+  extends <http://bipm.org/jcgm/vim4-annotations#> as vim4-annotations
+  
+  @rdfs:label "mass.basic"
+  @vim4-annotations:generalQuantity "http://iso.org/iso-80000-4.1#mass"
+  @vim4-annotations:measurementUnit "http://iso.org/iso-80000-4.1#kilogram"
+  scalar property mass.basic [ domain Component range xsd:double functional ]
+  
+  @rdfs:label "mass.allocation"
+  @vim4-annotations:generalQuantity "http://iso.org/iso-80000-4.1#mass"
+  @vim4-annotations:measurementUnit "http://iso.org/iso-80000-4.1#kilogram"
+  scalar property mass.allocation [ domain Component range xsd:double functional ]
+  
+  @rdfs:comment "Unique Name Assumption (UNA)"
+  aspect IdentifiedElement [ key name ]
+  
+  @rdfs:label "name"
+  scalar property name [ domain IdentifiedElement range xsd:string functional ]
+  
+  @rdfs:label "Component"
+  concept Component :> IdentifiedElement
+  
+  concept Function :> IdentifiedElement
+  
+  relation entity Performs :> IdentifiedElement [
+    from Component
+    to Function
+    forward performs
+    inverse functional
+  ]
+  
+  relation entity IsPerformedBy  [
+    from Function 
+    to Component
+    forward isPerformedBy
+    functional
+  ]
+  
+  
+}

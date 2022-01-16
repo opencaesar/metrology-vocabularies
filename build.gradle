@@ -8,19 +8,19 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-	// https://github.com/opencaesar/owl-adapter/tags
-	classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
-		
-	// https://github.com/opencaesar/oml-tools/tags
+  	// https://github.com/opencaesar/owl-adapter/tags
+  	classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
+  		
+  	// https://github.com/opencaesar/oml-tools/tags
     classpath 'io.opencaesar.oml:oml-merge-gradle:1.0.+'
-	classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
-		
-	// https://github.com/opencaesar/owl-tools/tags
-	classpath 'io.opencaesar.owl:owl-load-gradle:+'
-	classpath 'io.opencaesar.owl:owl-reason-gradle:+'
-	classpath 'io.opencaesar.owl:owl-fuseki:+'
-	classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
-	classpath 'io.opencaesar.owl:owl-query-gradle:+'
+  	classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
+  		
+  	// https://github.com/opencaesar/owl-tools/tags
+  	classpath 'io.opencaesar.owl:owl-load-gradle:+'
+  	classpath 'io.opencaesar.owl:owl-reason-gradle:+'
+  	classpath 'io.opencaesar.owl:owl-fuseki:+'
+  	classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
+  	classpath 'io.opencaesar.owl:owl-query-gradle:+'
   }
 }
 
@@ -122,17 +122,17 @@ task omlToOwlRdf(type:io.opencaesar.oml2owl.Oml2OwlTask, group:"oml", dependsOn:
     // OML catalog
     inputCatalogPath = file('catalog.xml')
     // OWL catalog
-    outputCatalogPath = file('build/rdf/catalog.xml')
-    outputFileExtension = 'rdf'
+    outputCatalogPath = file('build/owl/catalog.xml')
+    outputFileExtension = 'owl'
 }
 
 task owlReasonIso80000Rdf(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwlRdf) {
 	// OWL catalog
-	catalogPath = file('build/rdf/catalog.xml')
+	catalogPath = file('build/owl/catalog.xml')
 	// Input ontology IRI to reason on
 	inputOntologyIri = 'http://iso.org/iso-80000-bundle'
-  inputFileExtensions = ['rdf']
-  outputFileExtension = 'rdf'
+  inputFileExtensions = ['owl']
+  outputFileExtension = 'owl'
 	// Entailment statements to generate and the ontologies to persist them in
 	specs = [
 		'http://iso.org/iso-80000-bundle/classes = ALL_SUBCLASS',
@@ -140,16 +140,16 @@ task owlReasonIso80000Rdf(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn
 		'http://iso.org/iso-80000-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
 	]
 	// Junit error report
-	reportPath = file('build/reports/rdf/iso-80000-bundle/reasoning.xml')
+	reportPath = file('build/reports/owl/iso-80000-bundle/reasoning.xml')
 }
 
 task owlReasonVIM4Rdf(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwlRdf) {
   // OWL catalog
-  catalogPath = file('build/rdf/catalog.xml')
+  catalogPath = file('build/owl/catalog.xml')
   // Input ontology IRI to reason on
   inputOntologyIri = 'http://bipm.org/jcgm/jcgm-bundle'
-  inputFileExtensions = ['rdf']
-  outputFileExtension = 'rdf'
+  inputFileExtensions = ['owl']
+  outputFileExtension = 'owl'
   // Entailment statements to generate and the ontologies to persist them in
   specs = [
     'http://bipm.org/jcgm/jcgm-bundle/classes = ALL_SUBCLASS',
@@ -157,7 +157,7 @@ task owlReasonVIM4Rdf(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: om
     'http://bipm.org/jcgm/jcgm-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
   ]
   // Junit error report
-  reportPath = file('build/reports/rdf/jcgm-bundle/reasoning.xml')
+  reportPath = file('build/reports/owl/jcgm-bundle/reasoning.xml')
 }
 
 task omlToOwlTrig(type:io.opencaesar.oml2owl.Oml2OwlTask, dependsOn: downloadDependencies) {
@@ -202,6 +202,95 @@ task owlReasonVIM4Trig(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: o
   reportPath = file('build/reports/trig/jcgm-bundle/reasoning.xml')
 }
 
+task owlReasonSimpleVocabularyTrig(type:io.opencaesar.owl.reason.OwlReasonTask /*, dependsOn: omlToOwlTrig */) {
+  // OWL catalog
+  catalogPath = file('build/trig/catalog.xml')
+  // Input ontology IRI to reason on
+  inputOntologyIri = 'http://example.org/simple-vocabulary-bundle'
+  inputFileExtensions = ['trig']
+  outputFileExtension = 'trig'
+  // Entailment statements to generate and the ontologies to persist them in
+  specs = [
+    'http://example.org/simple-vocabulary-bundle/classes = ALL_SUBCLASS',
+    'http://example.org/simple-vocabulary-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+    'http://example.org/simple-vocabulary-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+  ]
+  // Junit error report
+  reportPath = file('build/reports/trig/simple-vocabulary-bundle/reasoning.xml')
+  
+  
+}
+
+
+task owlReasonSimpleDescriptionTrig(type:io.opencaesar.owl.reason.OwlReasonTask /*, dependsOn: omlToOwlTrig */) {
+  // OWL catalog
+  catalogPath = file('build/trig/catalog.xml')
+  // Input ontology IRI to reason on
+  inputOntologyIri = 'http://example.org/simple-description-bundle'
+  inputFileExtensions = ['trig']
+  outputFileExtension = 'trig'
+  // Entailment statements to generate and the ontologies to persist them in
+  specs = [
+    'http://example.org/simple-description-bundle/classes = ALL_SUBCLASS',
+    'http://example.org/simple-description-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+    'http://example.org/simple-description-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+  ]
+  // Junit error report
+  reportPath = file('build/reports/trig/simple-description-bundle/reasoning.xml')
+}
+
+task owlReasonCompleteVocabularyTrig(type:io.opencaesar.owl.reason.OwlReasonTask /*, dependsOn: omlToOwlTrig */) {
+  // OWL catalog
+  catalogPath = file('build/trig/catalog.xml')
+  // Input ontology IRI to reason on
+  inputOntologyIri = 'http://example.org/complete-vocabulary-bundle'
+  inputFileExtensions = ['trig']
+  outputFileExtension = 'trig'
+  // Entailment statements to generate and the ontologies to persist them in
+  specs = [
+    'http://example.org/complete-vocabulary-bundle/classes = ALL_SUBCLASS',
+    'http://example.org/complete-vocabulary-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+    'http://example.org/complete-vocabulary-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+  ]
+  // Junit error report
+  reportPath = file('build/reports/trig/complete-vocabulary-bundle/reasoning.xml')
+}
+
+
+task owlReasonCompleteDescriptionRdf(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwlRdf) {
+  // OWL catalog
+  catalogPath = file('build/owl/catalog.xml')
+  // Input ontology IRI to reason on
+  inputOntologyIri = 'http://example.org/complete-description-bundle'
+  inputFileExtensions = ['owl']
+  outputFileExtension = 'owl'
+  // Entailment statements to generate and the ontologies to persist them in
+  specs = [
+    'http://example.org/complete-description-bundle/classes = ALL_SUBCLASS',
+    'http://example.org/complete-description-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+    'http://example.org/complete-description-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+  ]
+  // Junit error report
+  reportPath = file('build/reports/owl/complete-description-bundle/reasoning.xml')
+}
+
+task owlReasonCompleteDescriptionTrig(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwlTrig) {
+  // OWL catalog
+  catalogPath = file('build/trig/catalog.xml')
+  // Input ontology IRI to reason on
+  inputOntologyIri = 'http://example.org/complete-description-bundle'
+  inputFileExtensions = ['trig']
+  outputFileExtension = 'trig'
+  // Entailment statements to generate and the ontologies to persist them in
+  specs = [
+    'http://example.org/complete-description-bundle/classes = ALL_SUBCLASS',
+    'http://example.org/complete-description-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+    'http://example.org/complete-description-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+  ]
+  // Junit error report
+  reportPath = file('build/reports/trig/complete-description-bundle/reasoning.xml')
+}
+
 /*
  * Start the headless Fuseki server
  */
@@ -220,26 +309,37 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group:"oml") {
 /*
  * A task to load the iso80000 dataset to a Fuseki dataset endpoint
  */
-task owlLoadIso80000(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonIso80000Rdf) {
+ 
+task owlLoadCompleteDescriptionRdf(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonCompleteDescriptionRdf) {
     catalogPath = file('build/owl/catalog.xml')
     endpointURL = "http://localhost:3030/$dataset_name".toString()
-    fileExtensions = ['owl', 'ttl']
+    fileExtensions = ['owl']
     iris = [
-		'http://iso.org/iso-80000-bundle/classes',
-		'http://iso.org/iso-80000-bundle/properties',
-		'http://iso.org/iso-80000-bundle/individuals',
+    'http://example.org/complete-description-bundle/classes',
+    'http://example.org/complete-description-bundle/properties',
+    'http://example.org/complete-description-bundle/individuals',
     ]
 }
 
+task owlLoadCompleteDescriptionTrig(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonCompleteDescriptionTrig) {
+    catalogPath = file('build/trig/catalog.xml')
+    endpointURL = "http://localhost:3030/$dataset_name".toString()
+    fileExtensions = ['trig']
+    iris = [
+		'http://example.org/complete-description-bundle/classes',
+		'http://example.org/complete-description-bundle/properties',
+		'http://example.org/complete-description-bundle/individuals',
+    ]
+}
 
 /*
  * A task to run a set of SPARQL queries on a Fuseki dataset endpoint
  */
-/*task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, group:"oml", dependsOn: owlLoad) {
+task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, group:"oml", dependsOn: owlLoadCompleteDescriptionTrig) {
     endpointURL = "http://localhost:3030/$dataset_name".toString()
     queryPath = file('src/sparql')
     resultPath = file('build/frames')
-}*/
+}
 
 /*
  * A task to build the project, which executes several tasks together
@@ -250,6 +350,10 @@ tasks.named('build') {
     dependsOn owlReasonVIM4Rdf
     dependsOn owlReasonIso80000Trig
     dependsOn owlReasonVIM4Trig
+    dependsOn owlReasonSimpleVocabularyTrig
+    dependsOn owlReasonSimpleDescriptionTrig
+    dependsOn owlReasonCompleteVocabularyTrig
+    dependsOn owlReasonCompleteDescriptionTrig
 }
 
 /*

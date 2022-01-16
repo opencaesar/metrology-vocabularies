@@ -1,0 +1,10 @@
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+
+SELECT DISTINCT ?su ?bu
+WHERE {
+  ?su 
+    a vim4:SystemOfUnits ;
+    vim4:systemHasBaseUnit ?bu .
+
+}
+ORDER BY ?su ?bu
