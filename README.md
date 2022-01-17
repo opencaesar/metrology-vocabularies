@@ -19,14 +19,56 @@ available with the objective of providing additional input to the upcoming
 to publication options considered for VIM4 (see 'Development Line 2: adding machine readability' in Report from WG2 [JCGM/2020-07](https://www.bipm.org/en/search?p_p_id=search_portlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=%2Fdownload%2Fpublication&p_p_cacheability=cacheLevelPage&_search_portlet_dlFileId=53507162&p_p_lifecycle=1&_search_portlet_javax.portlet.action=search&_search_portlet_page=next&_search_portlet_operation=changePage)).
 
 
-The following diagram summarizes the formalization of VIM4 CD section 1: Quantities and Units
+## The following diagrams summarize the formalization of VIM4
 
-![](diagrams/VIM4-CD-QuantitiesUnits.png)
+### Taxonomy of properties
 
+[VIM4.1-properties](diagrams/VIM4.1-properties.svg)
 
-The following diagram summarizes the formalization of VIM4 CD section 2: Measurement
+### Quantities, Units and Values
 
-![](diagrams/VIM4-CD-Measurement.png)
+[VIM4.1-general,individual,units,values](diagrams/VIM4.1-general,individual,units,values.svg)
+
+### Systems of Quantities and Units
+
+[VIM4.1-systems](diagrams/VIM4.1-systems.svg)
+
+Note that this representation supports multiple `SystemsOfQuantities` and `SystemsOfUnits`.
+The formalization ensures that the following turtle pattern must be consistent
+for all tuples of `SQ, SU, Q, M`:
+
+```turtle
+SQ a vim4:SystemOfQuantities ; vim4:systemHasUnitaryQuantity Q .
+SU a vim4:SystemOfUnits ; vim4:given SQ ; vim4:systemHasUnit M .
+M vim4:instantiates Q .
+```
+
+### Measurement Units
+
+[VIM4.1-units](diagrams/VIM4.1-units.svg)
+
+### Scales
+
+[VIM4.1-scales](diagrams/VIM4.1-scales.svg)
+
+### Measurement
+
+[VIM4.2-Measurement](diagrams/VIM4.2.svg)
+
+## OWL2-DL Unit Consistency Checking
+
+[VIM4.1-unit consistency](diagrams/VIM4.1-unit-consistency.svg)
+
+The formalization ensures that any `UnitaryQuantityValue` must be consistent 
+in the sense that the following paths must lead to pairs of `GeneralUnitaryQuantity`, (`uq`, `aq`),
+defined as follows:
+
+- `uq` is any `GeneralUnitaryQuantity` reachable via the following SPARQL expression: `unit.isMultipleOf*.instantiates`
+
+- `aq` is the `GeneralUnitaryQuantity` reachable via the following SPARQL expression:
+`isAttributedTo.instantiates`
+
+Then for each such pair, one of `uq.specializes*` must be the same as `aq`.
 
 
 ## Important note about this repository
