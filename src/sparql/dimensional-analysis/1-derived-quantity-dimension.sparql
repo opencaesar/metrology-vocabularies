@@ -73,18 +73,16 @@ PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
 
 # Based on the select results above, the following INSERT should work, alas, there are no triples actually inserted.
 
-#INSERT {
-#  GRAPH ?gd {
-#    ?bqdim
-#      a vim4:HasQuantityDimensionFactor ;
-#      oml:hasSource ?sdq ;
-#      oml:hasTarget ?sqb1 ;
-#      vim4:exponent ?dim .
-#  }
-#}
-
-SELECT ?bq1dim ?sdq ?sqb1 ?dim 
-
+INSERT {
+  GRAPH ?gd {
+    ?bqdim
+      a vim4:HasQuantityDimensionFactor ;
+      oml:hasSource ?sdq ;
+      oml:hasTarget ?sqb1 ;
+      vim4:exponent ?dim .
+  }
+}
+#SELECT ?bq1dim ?sdq ?sqb1 ?dim 
 WHERE {
   ?sq a vim4:SystemOfQuantities .
   GRAPH ?gd {

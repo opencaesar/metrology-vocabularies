@@ -70,6 +70,68 @@ defined as follows:
 
 Then for each such pair, one of `uq.specializes*` must be the same as `aq`.
 
+## Dimensional Analysis
+
+Dimensional analysis is a procedure for determining what VIM4CD: 1.7 quantity dimension defines as the:
+> relation of a quantity to the base quantities of a system of quantities as a product of powers of
+factors corresponding to the base quantities, omitting any numerical factor
+
+This analysis requires closed-world knowledge of the following:
+ 
+- Instances of `SystemOfQuantities` (VIM4CD: 1.6)
+
+- For each such system:
+
+  - Instances of `GeneralUnitaryQuantity` that are its VIM4CD: 1.4 base quantities
+  - Instances of `GeneralUnitaryQuantity` that are its VIM4CD: 1.5 derived quantities
+    Each derivation in turn requires information about the derivation factors w.r.t other `GeneralUnitaryQuantities`
+    
+Formalizing this analysis in SPARQL 1.1 Query and Update should be possible in principle,
+see [src/sparql/dimensional-analysis](src/sparql/dimensional-analysis) for such an attempt.
+
+The strategy involves the following induction principle:
+
+0) The initial step involves the special case of a base quantity, `bq`, for which the dimension is trivially 1 for `bq` and 0 for all other base quantities.
+1) Find a derived quantity, `dq`, whose factors involve quantities with known dimensions. Calculate the dimension of` `dq` by raising the dimension of each dependency according to the corresponding factor and simplifying the resulting product of dimension factors.
+2) Repeat step (1) until all derived quantities have been processed.
+
+Trying to implement this strategy with SPARQL 1.1 queries and updates resulted in a few practical problems
+using Apache Jena 4.3.2 (see: https://jena.apache.org/download/index.cgi):
+
+1) According to the [SPARQL 1.1 Update](https://www.w3.org/TR/2013/REC-sparql11-update-20130321/#updateLanguage),
+an update operation results in either success or failure. However, the specification does not stipulate the exact form of such a result. This makes it difficult to verify whether a particular update produced the desired triples.
+
+For example, the update corresponding to step 0 is here:
+
+[0-base-quantity-dimension.sparql](src/sparql/dimensional-analysis/0-base-quantity-dimension.sparql)
+
+When submitting this update to Jena Fuseki, the server responds simply: `Update succeeded.`
+
+Fortunately, one can easily confirm the update indeed worked with the following query: [quantity-dimensions.sparql](src/sparql/dimensional-analysis/quantity-dimensions.sparql)
+
+For step 1, the following update was intended to handle the case of derived quantities 
+that depend on a single quantity with a dimension: [1-derived-quantity-dimension.sparql](src/sparql/dimensional-analysis/1-derived-quantity-dimension.sparql)
+
+
+When submitting this update to Jena Fuseki, the server responds simply: `Update succeeded.`
+
+However, performing the query again shows that no new triples were inserted!
+Changing the update to a query (see the commented `select` statement) produces
+tuples that confirm the `where` clause is working properly. 
+It is unclear why the `insert` for the same `where` clause does not actually insert these tuples.
+
+2) Even if sparql query/update had worked, this approach for formalizing an inductive algorithm is very awkward.
+
+To encode the closed-world semantics of this analysis in SPARQL, it is necessary to use non-trivial filter clauses to ensure that the `where` clause checks for all relevant cases.
+
+This exercise warrants looking for a different strategy to implement dimensional analysis.
+
+
+
+
+
+  In the case of 
+ 
 
 ## Important note about this repository
 
