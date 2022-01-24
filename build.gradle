@@ -1,50 +1,41 @@
-
-/* 
- * The Gradle task dependencies 
- */
-buildscript {
-	repositories {
-  	mavenLocal()
-    mavenCentral()
-  }
-  dependencies {
-		// https://github.com/opencaesar/owl-adapter/tags
-		classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
-		
-		// https://github.com/opencaesar/oml-tools/tags
-    classpath 'io.opencaesar.oml:oml-merge-gradle:1.0.+'
-		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
-		
-		// https://github.com/opencaesar/owl-tools/tags
-		classpath 'io.opencaesar.owl:owl-load-gradle:+'
-		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
-		classpath 'io.opencaesar.owl:owl-fuseki:+'
-		classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
-		classpath 'io.opencaesar.owl:owl-query-gradle:+'
-  }
-}
-
-plugins {
-  id 'com.palantir.git-version' version '0.12.3'
-}
-
-apply from: "${rootDir}/gradle/maven-deployment.gradle"
-
 /* 
  * Dataset maven coordinates
  */
 ext.title = 'Metrology Vocabularies'
 description ='Metrology vocabularies from iupac.org, iso/iec iso-80000 and NIST Special publication 811'
 group = 'io.opencaesar.ontologies'
-version = gitVersion()
+version = '4.0.2'
 
-// Dataset-specific variables
-ext.dataset = [
+apply from: "${rootDir}/gradle/maven-deployment.gradle"
+
+/* 
+ * The Gradle task dependencies 
+ */
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
+        classpath 'io.opencaesar.owl:owl-query-gradle:+'
+        classpath 'io.opencaesar.owl:owl-load-gradle:+'
+        classpath 'io.opencaesar.owl:owl-reason-gradle:+'
+        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.1.+'
+        classpath 'io.opencaesar.oml:oml-merge-gradle:1.1.+'
+        classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
+    }
+}
+
+// project variables
+ext {
     // Name of dataset (matches one used in .fuseki.ttl file)
-    name: 'metrology-vocabularies',
+    dataset = 'metrology-vocabularies'
     // URL for publishing dataset documentation
-    publishUrl: 'https://opencaesar.github.io/metrology-vocabularies'
-]
+    publishUrl = 'https://opencaesar.github.io/metrology-vocabularies'
+    // Bikeshed folder
+    bikeshed = 'build/bikeshed'
+}
 
 /*
  * The repositories to look up OML dependencies in
@@ -94,34 +85,23 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, group:"oml
     // OML catalog version
     inputCatalogVersion = project.version
     // OWL folder
-    outputFolderPath = file('build/bikeshed')
+    outputFolderPath = file("$bikeshed")
     // Publish URL
-    publishUrl = "$dataset.publishUrl".toString()
+    publishUrl = "$publishUrl".toString()
 }
 
 /*
  * A task to generate the model documentation in HTML
  */
 import org.gradle.internal.os.OperatingSystem
-task generateDocs(dependsOn: omlToBikeshed, group:"oml") {
+task generateDocs(dependsOn: omlToBikeshed) {
+	inputs.files(fileTree("$bikeshed").include('**/*.bs'))
+	outputs.files(fileTree("$bikeshed").include('**/*.html'))
     doLast {
         if (OperatingSystem.current().isWindows()) {
-            exec { 
-                if (project.hasProperty('BIKESHED')) {
-                    environment 'PATH', "${environment.PATH}:${BIKESHED}"
-                }
-                commandLine 'build/bikeshed/publish.bat' 
-            }
+            exec { commandLine "$bikeshed/publish.bat" }
         } else {
-            exec { 
-                commandLine 'chmod', '+x', 'build/bikeshed/publish.sh' 
-            }
-            exec {
-                if (project.hasProperty('BIKESHED')) {
-                    environment 'PATH', "${environment.PATH}:${BIKESHED}"
-                }
-                commandLine 'build/bikeshed/publish.sh'
-            }
+            exec { commandLine "$bikeshed/publish.sh" }
         }
     }
 }
@@ -204,7 +184,7 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group:"oml") {
  */
 task owlLoadMetrology(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonMetrology) {
     catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset.name".toString()
+    endpointURL = "http://localhost:3030/$dataset".toString()
     fileExtensions = ['owl', 'ttl']
     iris = [
 		'http://iupac.org/metrology-bundle/classes',
@@ -218,7 +198,7 @@ task owlLoadMetrology(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", depe
  */
 task owlLoadIso80000(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonIso80000) {
     catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset.name".toString()
+    endpointURL = "http://localhost:3030/$dataset".toString()
     fileExtensions = ['owl', 'ttl']
     iris = [
 		'http://iso.org/iso-80000-bundle/classes',
@@ -232,7 +212,7 @@ task owlLoadIso80000(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", depen
  */
 task owlLoadNistSP811(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonNistSP811) {
     catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset.name".toString()
+    endpointURL = "http://localhost:3030/$dataset".toString()
     fileExtensions = ['owl', 'ttl']
     iris = [
 		'http://nist.gov/pml/special-publication-811-bundle/classes',
@@ -245,7 +225,7 @@ task owlLoadNistSP811(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", depe
  * A task to run a set of SPARQL queries on a Fuseki dataset endpoint
  */
 /*task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, group:"oml", dependsOn: owlLoad) {
-    endpointURL = "http://localhost:3030/$dataset.name".toString()
+    endpointURL = "http://localhost:3030/$dataset".toString()
     queryPath = file('src/sparql')
     resultPath = file('build/frames')
 }*/
