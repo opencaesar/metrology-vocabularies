@@ -137,6 +137,32 @@
     <semanticResources>build/oml/www.w3.org/1999/02/22-rdf-syntax-ns.oml</semanticResources>
     <semanticResources>build/oml/www.w3.org/2001/XMLSchema.oml</semanticResources>
     <semanticResources>build/oml/www.w3.org/2002/07/owl.oml</semanticResources>
+    <semanticResources>.fuseki/META-INF/maven/org.apache.jena/jena-fuseki-war/pom.properties</semanticResources>
+    <semanticResources>.fuseki/css/jquery.dataTables.css</semanticResources>
+    <semanticResources>.fuseki/css/jquery.fileupload-ui.css</semanticResources>
+    <semanticResources>.fuseki/css/jquery.fileupload.css</semanticResources>
+    <semanticResources>.fuseki/css/qonsole.css</semanticResources>
+    <semanticResources>.fuseki/css/yasqe.min.css</semanticResources>
+    <semanticResources>.fuseki/css/yasr.min.css</semanticResources>
+    <semanticResources>.fuseki/log4j2.properties</semanticResources>
+    <semanticResources>.fuseki/webapp/META-INF/maven/org.apache.jena/jena-fuseki-war/pom.properties</semanticResources>
+    <semanticResources>.fuseki/webapp/log4j2.properties</semanticResources>
+    <semanticResources>.fuseki/webapp/css/codemirror.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/codemirror.min.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/font-awesome.min.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/fui.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/jquery.dataTables.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/jquery.fileupload-ui.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/jquery.fileupload.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/qonsole.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/yasqe.min.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/yasr.min.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/bootstrap-select.min.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/bootstrap-theme.min.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/bootstrap.min.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/jquery.fileupload-noscript.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/jquery.fileupload-ui-noscript.css</semanticResources>
+    <semanticResources>.fuseki/webapp/css/pivot.min.css</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_zkwDQPFeEeuj8eTvNPv4mQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/io.opencaesar.rosetta.sirius.viewpoint/description/oml.odesign#//@ownedViewpoints[name='Vocabularies']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_1rHCYHF8EeyrDvJVE3cGEA" name="VIM4.1-unitary quantities" repPath="#_1rF0QHF8EeyrDvJVE3cGEA" changeId="1b0245c8-7481-4e33-b17b-fb05e0d9c7d5">

@@ -40,9 +40,9 @@ version = gitVersion()
  * The repositories to look up OML dependencies in
  */
 repositories {
-    mavenLocal()
-    mavenCentral()
-  	// Until this PR is merged: https://github.com/opencaesar/core-vocabularies/pull/29
+  mavenLocal()
+  mavenCentral()
+  // Until this PR is merged: https://github.com/opencaesar/core-vocabularies/pull/29
 	maven { url 'https://jitpack.io' }
 }
 
@@ -122,8 +122,9 @@ task generateDocs(dependsOn: omlToBikeshed, group:"oml") {
 
 /*
  * A task to convert the OML catalog to OWL catalog
+ * downloadDependencies is excluded because it does not behave incrementally.
  */
-task omlToOwlRdf(type:io.opencaesar.oml2owl.Oml2OwlTask, group:"oml", dependsOn: downloadDependencies) {
+task omlToOwlRdf(type:io.opencaesar.oml2owl.Oml2OwlTask, group:"oml" /*, dependsOn: downloadDependencies */) {
     // OML catalog
     inputCatalogPath = file('catalog.xml')
     // OWL catalog
@@ -165,7 +166,10 @@ task owlReasonVIM4Rdf(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: om
   reportPath = file('build/reports/owl/jcgm-bundle/reasoning.xml')
 }
 
-task omlToOwlTrig(type:io.opencaesar.oml2owl.Oml2OwlTask, dependsOn: downloadDependencies) {
+/*
+ * downloadDependencies is excluded because it does not behave incrementally.
+ */
+task omlToOwlTrig(type:io.opencaesar.oml2owl.Oml2OwlTask /*, dependsOn: downloadDependencies */) {
   // OML catalog
   inputCatalogPath = file('catalog.xml')
   // OWL catalog
@@ -207,7 +211,7 @@ task owlReasonVIM4Trig(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: o
   reportPath = file('build/reports/trig/jcgm-bundle/reasoning.xml')
 }
 
-task owlReasonSimpleVocabularyTrig(type:io.opencaesar.owl.reason.OwlReasonTask /*, dependsOn: omlToOwlTrig */) {
+task owlReasonSimpleVocabularyTrig(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwlTrig) {
   // OWL catalog
   catalogPath = file('build/trig/catalog.xml')
   // Input ontology IRI to reason on
@@ -227,7 +231,7 @@ task owlReasonSimpleVocabularyTrig(type:io.opencaesar.owl.reason.OwlReasonTask /
 }
 
 
-task owlReasonSimpleDescriptionTrig(type:io.opencaesar.owl.reason.OwlReasonTask /*, dependsOn: omlToOwlTrig */) {
+task owlReasonSimpleDescriptionTrig(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwlTrig) {
   // OWL catalog
   catalogPath = file('build/trig/catalog.xml')
   // Input ontology IRI to reason on
@@ -244,7 +248,7 @@ task owlReasonSimpleDescriptionTrig(type:io.opencaesar.owl.reason.OwlReasonTask 
   reportPath = file('build/reports/trig/simple-description-bundle/reasoning.xml')
 }
 
-task owlReasonCompleteVocabularyTrig(type:io.opencaesar.owl.reason.OwlReasonTask /*, dependsOn: omlToOwlTrig */) {
+task owlReasonCompleteVocabularyTrig(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwlTrig) {
   // OWL catalog
   catalogPath = file('build/trig/catalog.xml')
   // Input ontology IRI to reason on
@@ -302,6 +306,7 @@ task owlReasonCompleteDescriptionTrig(type:io.opencaesar.owl.reason.OwlReasonTas
 task startFuseki(type: io.opencaesar.owl.fuseki.StartFusekiTask, group:"oml") {
     configurationPath = file('.fuseki.ttl')
     outputFolderPath = file('.fuseki')
+    webUI = true
 }
 
 /*
@@ -315,7 +320,7 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group:"oml") {
  * A task to load the iso80000 dataset to a Fuseki dataset endpoint
  */
  
-task owlLoadCompleteDescriptionRdf(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonCompleteDescriptionRdf) {
+task owlLoadCompleteDescriptionRdf(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: [startFuseki, owlReasonCompleteDescriptionRdf]) {
     catalogPath = file('build/owl/catalog.xml')
     endpointURL = "http://localhost:3030/$dataset_name".toString()
     fileExtensions = ['owl']
@@ -326,7 +331,7 @@ task owlLoadCompleteDescriptionRdf(type:io.opencaesar.owl.load.OwlLoadTask, grou
     ]
 }
 
-task owlLoadCompleteDescriptionTrig(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonCompleteDescriptionTrig) {
+task owlLoadCompleteDescriptionTrig(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: [startFuseki, owlReasonCompleteDescriptionTrig]) {
     catalogPath = file('build/trig/catalog.xml')
     endpointURL = "http://localhost:3030/$dataset_name".toString()
     fileExtensions = ['trig']
