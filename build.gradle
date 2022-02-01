@@ -12,7 +12,7 @@ buildscript {
   	classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
   		
   	// https://github.com/opencaesar/oml-tools/tags
-    classpath 'io.opencaesar.oml:oml-merge-gradle:1.0.+'
+    classpath 'io.opencaesar.oml:oml-merge-gradle:1.1.+'
   	classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.0.+'
   		
   	// https://github.com/opencaesar/owl-tools/tags
@@ -320,7 +320,8 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group:"oml") {
  * A task to load the iso80000 dataset to a Fuseki dataset endpoint
  */
  
-task owlLoadCompleteDescriptionRdf(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: [startFuseki, owlReasonCompleteDescriptionRdf]) {
+task owlLoadCompleteDescriptionRdf(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonCompleteDescriptionRdf) {
+    inferredTaskDependency = startFuseki
     catalogPath = file('build/owl/catalog.xml')
     endpointURL = "http://localhost:3030/$dataset_name".toString()
     fileExtensions = ['owl']
@@ -332,6 +333,7 @@ task owlLoadCompleteDescriptionRdf(type:io.opencaesar.owl.load.OwlLoadTask, grou
 }
 
 task owlLoadCompleteDescriptionTrig(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: [startFuseki, owlReasonCompleteDescriptionTrig]) {
+    inferredTaskDependency = startFuseki
     catalogPath = file('build/trig/catalog.xml')
     endpointURL = "http://localhost:3030/$dataset_name".toString()
     fileExtensions = ['trig']
