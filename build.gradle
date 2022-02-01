@@ -124,7 +124,7 @@ task generateDocs(dependsOn: omlToBikeshed, group:"oml") {
  * A task to convert the OML catalog to OWL catalog
  * downloadDependencies is excluded because it does not behave incrementally.
  */
-task omlToOwlRdf(type:io.opencaesar.oml2owl.Oml2OwlTask, group:"oml" /*, dependsOn: downloadDependencies */) {
+task omlToOwlRdf(type:io.opencaesar.oml2owl.Oml2OwlTask, group:"oml", dependsOn: downloadDependencies) {
     // OML catalog
     inputCatalogPath = file('catalog.xml')
     // OWL catalog
@@ -169,7 +169,7 @@ task owlReasonVIM4Rdf(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: om
 /*
  * downloadDependencies is excluded because it does not behave incrementally.
  */
-task omlToOwlTrig(type:io.opencaesar.oml2owl.Oml2OwlTask /*, dependsOn: downloadDependencies */) {
+task omlToOwlTrig(type:io.opencaesar.oml2owl.Oml2OwlTask, dependsOn: downloadDependencies) {
   // OML catalog
   inputCatalogPath = file('catalog.xml')
   // OWL catalog
