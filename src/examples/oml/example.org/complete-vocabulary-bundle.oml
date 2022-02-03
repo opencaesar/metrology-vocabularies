@@ -1,0 +1,9 @@
+vocabulary bundle <http://example.org/complete-vocabulary-bundle#> as complete-vocabulary-bundle {
+  
+  extends <http://example.org/simple-vocabulary-bundle#>
+  extends <http://bipm.org/jcgm/jcgm-bundle#>
+  
+  includes <http://example.org/some-domain#>
+  includes <http://example.org/some-domain-with-metrology#>
+  
+}

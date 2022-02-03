@@ -1,0 +1,15 @@
+PREFIX vim4-annotations: <http://bipm.org/jcgm/vim4-annotations#>
+PREFIX oml:              <http://opencaesar.io/oml#>
+PREFIX owl:              <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:              <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs:             <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?p ?q ?u
+WHERE {
+  ?p 
+    a owl:DatatypeProperty ;
+    rdfs:range xsd:double ;
+    vim4-annotations:generalQuantity ?q ;
+    vim4-annotations:measurementUnit ?u .
+}
+ORDER BY ?p ?q ?u

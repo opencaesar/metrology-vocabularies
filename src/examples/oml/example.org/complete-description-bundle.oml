@@ -1,0 +1,10 @@
+description bundle <http://example.org/complete-description-bundle#> as complete-description-bundle {
+  
+  uses <http://example.org/complete-vocabulary-bundle#>
+  
+  extends <http://iso.org/iso-80000-bundle#>
+  
+  includes <http://example.org/test-property-values#>
+  //includes <http://example.org/test-relation-entity-counter-examples#>
+  includes <http://example.org/test-metrology-model#>
+}

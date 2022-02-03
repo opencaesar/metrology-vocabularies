@@ -1,0 +1,5 @@
+vocabulary bundle <http://example.org/simple-vocabulary-bundle#> as simple-vocabulary-bundle {
+  
+  includes <http://example.org/some-domain#>
+  
+}

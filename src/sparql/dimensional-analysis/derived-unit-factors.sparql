@@ -1,0 +1,26 @@
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+PREFIX oml:   <http://opencaesar.io/oml#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?su ?du ?fu (xsd:integer(strbefore(str(?e),"/")) as ?num) (xsd:integer(strafter(str(?e),"/")) as ?den)
+WHERE {
+  ?su 
+    a vim4:SystemOfUnits .
+  
+  ?sud 
+    a vim4:SystemHasDerivedUnit ;
+    oml:hasSource ?su ;
+    oml:hasTarget ?du .
+
+  ?suf
+    a vim4:HasPowerOfUnitFactor ;
+    oml:hasSource ?sud ;
+    oml:hasTarget ?sfu ;
+    vim4:exponent ?e .
+  
+  ?sfu
+    a vim4:SystemHasUnit ;
+    oml:hasSource ?su ;
+    oml:hasTarget ?fu .
+}
+ORDER BY ?su ?du ?fu

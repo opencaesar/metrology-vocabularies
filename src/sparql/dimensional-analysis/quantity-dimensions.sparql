@@ -1,0 +1,15 @@
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+PREFIX oml:   <http://opencaesar.io/oml#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?g ?qdim ?sq ?st ?dim
+WHERE {
+  GRAPH ?g {
+    ?qdim
+      a vim4:HasQuantityDimensionFactor ;
+      oml:hasSource ?sq ;
+      oml:hasTarget ?st ;
+      vim4:exponent ?dim .
+  }
+}

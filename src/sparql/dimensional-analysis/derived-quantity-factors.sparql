@@ -1,0 +1,26 @@
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+PREFIX oml:   <http://opencaesar.io/oml#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?sq ?dq ?fq (xsd:integer(strbefore(str(?e),"/")) as ?num) (xsd:integer(strafter(str(?e),"/")) as ?den)
+WHERE {
+  ?sq 
+    a vim4:SystemOfQuantities .
+  
+  ?sqd 
+    a vim4:SystemHasDerivedUnitaryQuantity ;
+    oml:hasSource ?sq ;
+    oml:hasTarget ?dq .
+
+  ?sqf
+    a vim4:HasPowerOfUnitaryQuantityFactor ;
+    oml:hasSource ?sqd ;
+    oml:hasTarget ?sfq ;
+    vim4:exponent ?e .
+  
+  ?sfq
+    a vim4:SystemHasUnitaryQuantity ;
+    oml:hasSource ?sq ;
+    oml:hasTarget ?fq .
+}
+ORDER BY ?sq ?dq ?fq

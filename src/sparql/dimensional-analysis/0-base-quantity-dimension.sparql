@@ -1,0 +1,17 @@
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+PREFIX oml:   <http://opencaesar.io/oml#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+SELECT ?g ?bqdim ?sbq ?sbq
+WHERE {
+  ?sq a vim4:SystemOfQuantities .
+  GRAPH ?g {
+    ?sbq a vim4:SystemHasBaseUnitaryQuantity ;
+         oml:hasSource ?sq ;
+         oml:hasTarget ?bq .
+    FILTER NOT EXISTS {
+      ?any a vim4:HasQuantityDimensionFactor; oml:hasSource ?sbq; oml:hasTarget ?sbq .
+    }  
+  }
+  BIND (iri( concat( concat(str(?sbq),".dim."), strafter(str(?sq),"#") ) ) as ?bqdim)
+}
