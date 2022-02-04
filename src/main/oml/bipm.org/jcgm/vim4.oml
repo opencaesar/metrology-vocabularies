@@ -369,6 +369,16 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
     functional
   ]
   
+  @rdfs:label "InherentUnitaryQuantityValue"
+  @rdfs:isDefinedBy "[VIM4 CD: 1.2 except for the cases of Note 1 and 1.20 for an IndividualUnitaryQuantity]"
+  @rdfs:comment "This combined concept is not explictly discussed in VIM4 CD but it is practically useful."
+  concept InherentUnitaryQuantityValue :> InherentUnitaryQuantity, UnitaryQuantityValue
+  
+  rule InherentUnitaryQuantityValueReflexiveAttribution [
+    InherentUnitaryQuantityValue(q) ->
+    isAttributedTo(q,q)
+  ]
+  
   @rdfs:label "MeasurementUnit"
   @rdfs:isDefinedBy "[VIM4 CD: 1.9]"
   @iso-1087-1:Concept
