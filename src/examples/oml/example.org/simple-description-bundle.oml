@@ -1,0 +1,8 @@
+description bundle <http://example.org/simple-description-bundle#> as simple-description-bundle {
+  
+  uses <http://example.org/simple-vocabulary-bundle#>
+  
+  includes <http://example.org/test-property-values#>
+  includes <http://example.org/test-relation-entity-counter-examples#>
+  
+}

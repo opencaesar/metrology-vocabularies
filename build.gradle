@@ -1,48 +1,54 @@
 /* 
- * Dataset maven coordinates
- */
-ext.title = 'Metrology Vocabularies'
-description ='Metrology vocabularies from iupac.org, iso/iec iso-80000 and NIST Special publication 811'
-group = 'io.opencaesar.ontologies'
-version = '4.0.2'
-
-apply from: "${rootDir}/gradle/maven-deployment.gradle"
-
-/* 
  * The Gradle task dependencies 
  */
 buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
-        classpath 'io.opencaesar.owl:owl-query-gradle:+'
-        classpath 'io.opencaesar.owl:owl-load-gradle:+'
-        classpath 'io.opencaesar.owl:owl-reason-gradle:+'
-        classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.1.+'
-        classpath 'io.opencaesar.oml:oml-merge-gradle:1.1.+'
-        classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
-    }
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+  		// https://github.com/opencaesar/owl-adapter/tags
+  		classpath 'io.opencaesar.adapters:oml2owl-gradle:1.0.+'
+  		
+  		// https://github.com/opencaesar/oml-tools/tags
+    	classpath 'io.opencaesar.oml:oml-merge-gradle:1.1.+'
+  		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.1.+'
+  		
+  		// https://github.com/opencaesar/owl-tools/tags
+  		classpath 'io.opencaesar.owl:owl-load-gradle:+'
+  		classpath 'io.opencaesar.owl:owl-reason-gradle:+'
+  		classpath 'io.opencaesar.owl:owl-fuseki:+'
+  		classpath 'io.opencaesar.owl:owl-fuseki-gradle:+'
+  		classpath 'io.opencaesar.owl:owl-query-gradle:+'
+	}
 }
 
-// project variables
-ext {
-    // Name of dataset (matches one used in .fuseki.ttl file)
-    dataset = 'metrology-vocabularies'
-    // URL for publishing dataset documentation
-    publishUrl = 'https://opencaesar.github.io/metrology-vocabularies'
-    // Bikeshed folder
-    bikeshed = 'build/bikeshed'
+plugins {
+  id 'com.palantir.git-version' version '0.12.3'
 }
+
+apply from: "${rootDir}/gradle/maven-deployment.gradle"
+
+
+/* 
+ * Dataset maven coordinates
+ */
+ext.title = 'Metrology Vocabularies'
+description ='Metrology vocabularies from bipm.org, iso/iec iso-80000, and supporting ISO-704, ISO-1087 terminological analysis'
+group = 'io.opencaesar.ontologies'
+version = gitVersion()
+
+/*
+ * Properties
+ */
+ext.bikeshed = 'build/gradle'
 
 /*
  * The repositories to look up OML dependencies in
  */
 repositories {
-    mavenLocal()
-    mavenCentral()
+	mavenLocal()
+	mavenCentral()
 }
 
 /*
@@ -53,17 +59,10 @@ configurations {
 }
 
 /*
- * Dependency versions
- */
-ext { 
-    coreVersion = '3.+'
-}
-
-/*
  * The OML dependencies
  */
 dependencies {
-    oml "io.opencaesar.ontologies:core-vocabularies:$coreVersion"
+	oml "io.opencaesar.ontologies:core-vocabularies:$coreVersion"
 }
 
 /*
@@ -77,7 +76,12 @@ task downloadDependencies(type:io.opencaesar.oml.merge.OmlMergeTask, group:"oml"
 /*
  * A task to generate Bikeshed specification for the OML catalog
  */
-task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, group:"oml", dependsOn: downloadDependencies) {
+task copyDiagrams(type: Copy) {
+    from 'diagrams'
+    into 'build/bikeshed/diagrams'
+}
+
+task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, group:"oml", dependsOn: [downloadDependencies, copyDiagrams]) {
     // OML catalog
     inputCatalogPath = file('catalog.xml')
     // OML catalog title
@@ -87,7 +91,7 @@ task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, group:"oml
     // OWL folder
     outputFolderPath = file("$bikeshed")
     // Publish URL
-    publishUrl = "$publishUrl".toString()
+    publishUrl = "$dataset_publishUrl".toString()
 }
 
 /*
@@ -108,30 +112,14 @@ task generateDocs(dependsOn: omlToBikeshed) {
 
 /*
  * A task to convert the OML catalog to OWL catalog
+ * downloadDependencies is excluded because it does not behave incrementally.
  */
 task omlToOwl(type:io.opencaesar.oml2owl.Oml2OwlTask, group:"oml", dependsOn: downloadDependencies) {
     // OML catalog
     inputCatalogPath = file('catalog.xml')
     // OWL catalog
     outputCatalogPath = file('build/owl/catalog.xml')
-}
-
-/*
- * A task to run the Openllet reasoner on the OWL catalog
- */
-task owlReasonMetrology(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
-	// OWL catalog
-	catalogPath = file('build/owl/catalog.xml')
-	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://iupac.org/metrology-bundle'
-	// Entailment statements to generate and the ontologies to persist them in
-	specs = [
-		'http://iupac.org/metrology-bundle/classes = ALL_SUBCLASS',
-		'http://iupac.org/metrology-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://iupac.org/metrology-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
-	]
-	// Junit error report
-	reportPath = file('build/reports/metrology-bundle/reasoning.xml')
+    outputFileExtension = 'owl'
 }
 
 task owlReasonIso80000(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
@@ -146,22 +134,37 @@ task owlReasonIso80000(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: o
 		'http://iso.org/iso-80000-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
 	]
 	// Junit error report
-	reportPath = file('build/reports/iso-80000-bundle/reasoning.xml')
+	reportPath = file('build/reports/owl/iso-80000-bundle/reasoning.xml')
 }
 
-task owlReasonNistSP811(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
-	// OWL catalog
-	catalogPath = file('build/owl/catalog.xml')
-	// Input ontology IRI to reason on
-	inputOntologyIri = 'http://nist.gov/pml/special-publication-811-bundle'
-	// Entailment statements to generate and the ontologies to persist them in
-	specs = [
-		'http://nist.gov/pml/special-publication-811-bundle/classes = ALL_SUBCLASS',
-		'http://nist.gov/pml/special-publication-811-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
-		'http://nist.gov/pml/special-publication-811-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
-	]
-	// Junit error report
-	reportPath = file('build/reports/special-publication-811-bundle/reasoning.xml')
+task owlReasonVIM4(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
+  	// OWL catalog
+  	catalogPath = file('build/owl/catalog.xml')
+  	// Input ontology IRI to reason on
+  	inputOntologyIri = 'http://bipm.org/jcgm/jcgm-bundle'
+  	// Entailment statements to generate and the ontologies to persist them in
+  	specs = [
+    	'http://bipm.org/jcgm/jcgm-bundle/classes = ALL_SUBCLASS',
+    	'http://bipm.org/jcgm/jcgm-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+    	'http://bipm.org/jcgm/jcgm-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+  	]
+  	// Junit error report
+  	reportPath = file('build/reports/owl/jcgm-bundle/reasoning.xml')
+}
+
+task owlReasonCompleteDescription(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: omlToOwl) {
+  	// OWL catalog
+  	catalogPath = file('build/owl/catalog.xml')
+  	// Input ontology IRI to reason on
+  	inputOntologyIri = 'http://example.org/complete-description-bundle'
+  	// Entailment statements to generate and the ontologies to persist them in
+  	specs = [
+    	'http://example.org/complete-description-bundle/classes = ALL_SUBCLASS',
+    	'http://example.org/complete-description-bundle/properties = INVERSE_PROPERTY | ALL_SUBPROPERTY',
+    	'http://example.org/complete-description-bundle/individuals = ALL_INSTANCE | DATA_PROPERTY_VALUE | OBJECT_PROPERTY_VALUE | SAME_AS'
+  	]
+  	// Junit error report
+  	reportPath = file('build/reports/owl/complete-description-bundle/reasoning.xml')
 }
 
 /*
@@ -170,6 +173,7 @@ task owlReasonNistSP811(type:io.opencaesar.owl.reason.OwlReasonTask, dependsOn: 
 task startFuseki(type: io.opencaesar.owl.fuseki.StartFusekiTask, group:"oml") {
     configurationPath = file('.fuseki.ttl')
     outputFolderPath = file('.fuseki')
+    webUI = true
 }
 
 /*
@@ -180,64 +184,36 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group:"oml") {
 }
 
 /*
- * A task to load the metrology dataset to a Fuseki dataset endpoint
- */
-task owlLoadMetrology(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonMetrology) {
-    catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset".toString()
-    fileExtensions = ['owl', 'ttl']
-    iris = [
-		'http://iupac.org/metrology-bundle/classes',
-		'http://iupac.org/metrology-bundle/properties',
-		'http://iupac.org/metrology-bundle/individuals',
-    ]
-}
-
-/*
  * A task to load the iso80000 dataset to a Fuseki dataset endpoint
  */
-task owlLoadIso80000(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonIso80000) {
+ 
+task owlLoadCompleteDescription(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonCompleteDescription) {
     catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset".toString()
+    endpointURL = "http://localhost:3030/metrology-vocabularies".toString()
     fileExtensions = ['owl', 'ttl']
     iris = [
-		'http://iso.org/iso-80000-bundle/classes',
-		'http://iso.org/iso-80000-bundle/properties',
-		'http://iso.org/iso-80000-bundle/individuals',
-    ]
-}
-
-/*
- * A task to load the nistsp811 dataset to a Fuseki dataset endpoint
- */
-task owlLoadNistSP811(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonNistSP811) {
-    catalogPath = file('build/owl/catalog.xml')
-    endpointURL = "http://localhost:3030/$dataset".toString()
-    fileExtensions = ['owl', 'ttl']
-    iris = [
-		'http://nist.gov/pml/special-publication-811-bundle/classes',
-	  	'http://nist.gov/pml/special-publication-811-bundle/properties',
-	  	'http://nist.gov/pml/special-publication-811-bundle/individuals'
+    	'http://example.org/complete-description-bundle/classes',
+    	'http://example.org/complete-description-bundle/properties',
+    	'http://example.org/complete-description-bundle/individuals',
     ]
 }
 
 /*
  * A task to run a set of SPARQL queries on a Fuseki dataset endpoint
  */
-/*task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, group:"oml", dependsOn: owlLoad) {
-    endpointURL = "http://localhost:3030/$dataset".toString()
+task owlQuery(type:io.opencaesar.owl.query.OwlQueryTask, group:"oml", dependsOn: owlLoadCompleteDescription) {
+    endpointURL = "http://localhost:3030/metrology-vocabularies".toString()
     queryPath = file('src/sparql')
     resultPath = file('build/frames')
-}*/
+}
 
 /*
  * A task to build the project, which executes several tasks together
  */
 tasks.named('build') {
     group "oml"
-    dependsOn owlReasonMetrology
     dependsOn owlReasonIso80000
-    dependsOn owlReasonNistSP811
+    dependsOn owlReasonVIM4
 }
 
 /*

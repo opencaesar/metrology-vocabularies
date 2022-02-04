@@ -1,0 +1,38 @@
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+PREFIX oml:   <http://opencaesar.io/oml#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?bq1dim ?sdq ?sqb1 ?dim 
+WHERE {
+  ?sq a vim4:SystemOfQuantities .
+  GRAPH ?gd {
+    ?sdq a vim4:SystemHasDerivedUnitaryQuantity; oml:hasSource ?sq; oml:hasTarget ?dq .
+    ?hasP1 a vim4:HasPowerOfUnitaryQuantityFactor; oml:hasSource ?sdq; oml:hasTarget ?sq1; vim4:exponent ?ed1 .
+    FILTER NOT EXISTS {
+      ?pf a vim4:HasPowerOfUnitaryQuantityFactor; oml:hasSource ?sdq.
+      FILTER(?pf != ?hasP1)
+    }
+  }
+  GRAPH ?gd1 {
+    { ?sq1 a vim4:SystemHasBaseUnitaryQuantity } UNION { ?sq1 a vim4:SystemHasDerivedUnitaryQuantity }
+    ?sq1 oml:hasSource ?sq.
+    ?qf1 a vim4:HasQuantityDimensionFactor; oml:hasSource ?sq1; oml:hasTarget ?sqb1; vim4:exponent ?eb1 .
+  }
+  GRAPH ?gb1 {
+    ?sqb1 a vim4:SystemHasBaseUnitaryQuantity; oml:hasSource ?sq; oml:hasTarget ?qb1 .
+  }
+  GRAPH ?gd {
+    FILTER NOT EXISTS {
+      ?any a vim4:HasQuantityDimensionFactor; oml:hasSource ?sdq; oml:hasTarget ?sqb1 .
+    }
+  }
+  BIND (iri( concat( concat(str(?sdq),".dim."), strafter(str(?qb1),"#") ) ) as ?bq1dim)
+  BIND (xsd:integer(strbefore(str(?ed1),"/")) as ?ed1num)
+  BIND (xsd:integer(strafter(str(?ed1),"/")) as ?ed1den)
+  BIND (xsd:integer(strbefore(str(?eb1),"/")) as ?eb1num)
+  BIND (xsd:integer(strafter(str(?eb1),"/")) as ?eb1den)
+  BIND (?ed1num * ?eb1num as ?num)
+  BIND (?ed1den * ?eb1den as ?den)
+  BIND (strdt(concat(concat(str(?num),"/"),str(?den)), owl:rational) as ?dim)
+}
