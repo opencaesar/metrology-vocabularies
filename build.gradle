@@ -27,9 +27,6 @@ plugins {
   id 'com.palantir.git-version' version '0.12.3'
 }
 
-apply from: "${rootDir}/gradle/maven-deployment.gradle"
-
-
 /* 
  * Dataset maven coordinates
  */
@@ -37,6 +34,8 @@ ext.title = 'Metrology Vocabularies'
 description ='Metrology vocabularies from bipm.org, iso/iec iso-80000, and supporting ISO-704, ISO-1087 terminological analysis'
 group = 'io.opencaesar.ontologies'
 version = gitVersion()
+
+apply from: "${rootDir}/gradle/maven-deployment.gradle"
 
 /*
  * Properties
@@ -227,7 +226,7 @@ tasks.named('clean') {
  * Publish artifact to maven
  */
 task omlZip(type: Zip, group:"oml") {
-    from file('src/oml')
+    from file('src/main/oml')
     include "**/*.oml"
     destinationDirectory = file('build/libs')
     archiveBaseName = project.name
