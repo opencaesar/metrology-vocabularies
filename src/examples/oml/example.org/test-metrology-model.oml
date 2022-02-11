@@ -13,6 +13,12 @@ description <http://example.org/test-metrology-model#> as test-metrology-model {
   ci camera1 : some-domain:Component 
   [ some-domain:name "camera1" ]
   
+  
+  ci camera1.mass.basic.constraint : vim4:InherentUnitaryQuantityValue [
+    vim4:hasDoubleNumber "3.103"^^xsd:double
+    vim4:characterizes camera1
+  ]
+  
   ci camera1.mass.basic : vim4:IndividualUnitaryQuantity [
     vim4:instantiates simple-mass-management:mass.basic
     vim4:characterizes camera1
