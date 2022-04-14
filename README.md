@@ -125,17 +125,3 @@ It is unclear why the `insert` for the same `where` clause does not actually ins
 To encode the closed-world semantics of this analysis in SPARQL, it is necessary to use non-trivial filter clauses to ensure that the `where` clause checks for all relevant cases.
 
 This exercise warrants looking for a different strategy to implement dimensional analysis.
-
-
-
-
-
-  In the case of 
- 
-
-## Important note about this repository
-
-This repository depends on the branch `trig-format` of this fork: https://github.com/NicolasRouquette/core-vocabularies
-until this PR is merged: https://github.com/opencaesar/core-vocabularies/pull/26
-
-The [build.gradle](build.gradle) is configured to resolve the `core-vocabularies` from https://jitpack.io/#NicolasRouquette/core-vocabularies/
