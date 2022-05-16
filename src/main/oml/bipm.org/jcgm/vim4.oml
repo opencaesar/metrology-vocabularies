@@ -254,10 +254,10 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
   ]
   
   // See https://github.com/opencaesar/oml/issues/90
-//  rule incoherent-derived-unit-implies-incoherent-system-of-units [
-//    systemHasDerivedUnit(su, dq) ^ isCoherent(dq, "false"^^xsd:boolean) ->
-//    isCoherent(su, "false"^^xsd:boolean)
-//  ]
+ rule incoherent-derived-unit-implies-incoherent-system-of-units [
+   systemHasDerivedUnit(su, dq) ^ isCoherent(dq, "false"^^xsd:boolean) ->
+   isCoherent(su, "false"^^xsd:boolean)
+ ]
   
   @rdfs:label "Given"
   @rdfs:isDefinedBy "[VIM4 CD: 1.13]"
