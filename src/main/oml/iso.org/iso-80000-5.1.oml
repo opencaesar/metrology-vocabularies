@@ -25,7 +25,7 @@ description <http://iso.org/iso-80000-5.1#> as iso-80000-5.1 {
   
   @dc:source "5-1.a"
   ci kelvin : vim4:UnprefixedMeasurementUnit
-  [ vim4:id "kelvin: " vim4:instantiates thermodynamic-temperature ]
+  [ vim4:id "kelvin" vim4:instantiates thermodynamic-temperature ]
   
   ri SI7-kelvin : vim4:SystemHasBaseUnit
   [ from iso-80000-1:SI7 to kelvin ]

@@ -35,3 +35,8 @@ build
 # MacOS
 .DS_Store
 
+# VSCode
+.history
+
+# Jupyter
+.ipynb_checkpoints
