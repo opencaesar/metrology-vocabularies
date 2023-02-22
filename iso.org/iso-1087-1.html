@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Metrology Vocabularies 5.0.1-9-ge8f2fd6</title>
+  <title>ISO 1087-1:2000 annotation vocabulary</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1488,9 +1488,23 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
-  <link href="https://opencaesar.github.io/metrology-vocabularies" rel="canonical">
-  <link href="https://opencaesar.github.io/assets/img/oml.png" rel="icon">
+  <link href="https://opencaesar.github.io/metrology-vocabularies/iso.org/iso-1087-1" rel="canonical">
   <meta content="e8f2fd6ec2b315d6d4d4c0417ead33c64bc51f16" name="document-revision">
+<style>
+a[data-link-type=biblio] {
+    white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
+}
+</style>
 <style>/* style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1896,16 +1910,16 @@ dfn > a.self-link::before      { content: "#"; }
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">Metrology Vocabularies 5.0.1-9-ge8f2fd6</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h1 class="p-name no-ref" id="title">ISO 1087-1:2000 annotation vocabulary</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/metrology-vocabularies">https://opencaesar.github.io/metrology-vocabularies</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/metrology-vocabularies/iso.org/iso-1087-1">https://opencaesar.github.io/metrology-vocabularies/iso.org/iso-1087-1</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">(see individual ontologies)</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>(see individual ontologies)
+     <dd>Copyright 2021, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1913,201 +1927,93 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>Documentation generated from OML ontologies</p>
+   <p>Annotation vocabulary for traceability of terminology analysis per ISO 1087-1:2000</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
+    <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Imports</span></a>
     <li>
-     <a href="#heading-domain-bipm.org"><span class="secno">1</span> <span class="content">bipm.org</span></a>
+     <a href="#concepts"><span class="secno">3</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#heading-jcgm-bundle-1"><span class="secno">1.1</span> <span class="content"><span>jcgm-bundle</span></span></a>
-      <li><a href="#heading-vim4-2"><span class="secno">1.2</span> <span class="content"><span>OML formalization of VIM4 Committee Draft 11 January 2021</span></span></a>
-      <li><a href="#heading-vim4-annotations-3"><span class="secno">1.3</span> <span class="content"><span>Annotations for lightweight VIM4 modeling based on OML scalar properties.</span></span></a>
-      <li><a href="#heading-vim4-terminological-analysis-4"><span class="secno">1.4</span> <span class="content"><span>vim4-terminological-analysis</span></span></a>
-      <li><a href="#heading-vim4.1-systems-diagram-5"><span class="secno">1.5</span> <span class="content"><span>vim4.1-systems-diagram</span></span></a>
+      <li><a href="#ConceptSystem"><span class="secno">3.1</span> <span class="content"><span>ConceptSystem</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-example.org"><span class="secno">2</span> <span class="content">example.org</span></a>
+     <a href="#AnnotationProperties"><span class="secno">4</span> <span class="content">Annotation Properties</span></a>
      <ol class="toc">
-      <li><a href="#heading-complete-description-bundle-6"><span class="secno">2.1</span> <span class="content"><span>complete-description-bundle</span></span></a>
-      <li><a href="#heading-complete-vocabulary-bundle-7"><span class="secno">2.2</span> <span class="content"><span>complete-vocabulary-bundle</span></span></a>
-      <li><a href="#heading-simple-description-bundle-8"><span class="secno">2.3</span> <span class="content"><span>simple-description-bundle</span></span></a>
-      <li><a href="#heading-simple-mass-management-9"><span class="secno">2.4</span> <span class="content"><span>simple-mass-management</span></span></a>
-      <li><a href="#heading-simple-vocabulary-bundle-10"><span class="secno">2.5</span> <span class="content"><span>simple-vocabulary-bundle</span></span></a>
-      <li><a href="#heading-some-domain-11"><span class="secno">2.6</span> <span class="content"><span>some-domain</span></span></a>
-      <li><a href="#heading-some-domain-with-metrology-12"><span class="secno">2.7</span> <span class="content"><span>some-domain-with-metrology</span></span></a>
-      <li><a href="#heading-test-metrology-model-13"><span class="secno">2.8</span> <span class="content"><span>test-metrology-model</span></span></a>
-      <li><a href="#heading-test-property-values-14"><span class="secno">2.9</span> <span class="content"><span>test-property-values</span></span></a>
-      <li><a href="#heading-test-relation-entity-counter-examples-15"><span class="secno">2.10</span> <span class="content"><span>test-relation-entity-counter-examples</span></span></a>
+      <li><a href="#AssociativeRelation"><span class="secno">4.1</span> <span class="content"><span>AssociativeRelation</span></span></a>
+      <li><a href="#CausalRelation"><span class="secno">4.2</span> <span class="content"><span>CausalRelation</span></span></a>
+      <li><a href="#Characteristic"><span class="secno">4.3</span> <span class="content"><span>Characteristic</span></span></a>
+      <li><a href="#Concept"><span class="secno">4.4</span> <span class="content"><span>Concept</span></span></a>
+      <li><a href="#ConceptDiagram"><span class="secno">4.5</span> <span class="content"><span>ConceptDiagram</span></span></a>
+      <li><a href="#DelimitingCharacteristic"><span class="secno">4.6</span> <span class="content"><span>DelimitingCharacteristic</span></span></a>
+      <li><a href="#EssentialCharacteristic"><span class="secno">4.7</span> <span class="content"><span>EssentialCharacteristic</span></span></a>
+      <li><a href="#GenericRelation"><span class="secno">4.8</span> <span class="content"><span>GenericRelation</span></span></a>
+      <li><a href="#HierarchicalRelation"><span class="secno">4.9</span> <span class="content"><span>HierarchicalRelation</span></span></a>
+      <li><a href="#Includes"><span class="secno">4.10</span> <span class="content"><span>Includes</span></span></a>
+      <li><a href="#IsIncludedIn"><span class="secno">4.11</span> <span class="content"><span>IsIncludedIn</span></span></a>
+      <li><a href="#Object"><span class="secno">4.12</span> <span class="content"><span>Object</span></span></a>
+      <li><a href="#PartitiveRelation"><span class="secno">4.13</span> <span class="content"><span>PartitiveRelation</span></span></a>
+      <li><a href="#Property"><span class="secno">4.14</span> <span class="content"><span>Property</span></span></a>
+      <li><a href="#SequentialRelation"><span class="secno">4.15</span> <span class="content"><span>SequentialRelation</span></span></a>
+      <li><a href="#Shows"><span class="secno">4.16</span> <span class="content"><span>Shows</span></span></a>
+      <li><a href="#TemporalRelation"><span class="secno">4.17</span> <span class="content"><span>TemporalRelation</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-iso.org"><span class="secno">3</span> <span class="content">iso.org</span></a>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
-      <li><a href="#heading-iec-80000-6.1-16"><span class="secno">3.1</span> <span class="content"><span>IEC-80000-6.1 electric-current, ampere</span></span></a>
-      <li><a href="#heading-iec-80000-6.10-17"><span class="secno">3.2</span> <span class="content"><span>IEC-80000-6.10 electric-field-strength</span></span></a>
-      <li><a href="#heading-iec-80000-6.11-18"><span class="secno">3.3</span> <span class="content"><span>IEC-80000-6.11 electric-potential, volt</span></span></a>
-      <li><a href="#heading-iec-80000-6.13-19"><span class="secno">3.4</span> <span class="content"><span>IEC-80000-6.13 capacitance, farad</span></span></a>
-      <li><a href="#heading-iec-80000-6.2-20"><span class="secno">3.5</span> <span class="content"><span>IEC-80000-6.2 electric-charge, coulomb</span></span></a>
-      <li><a href="#heading-iec-80000-6.21-21"><span class="secno">3.6</span> <span class="content"><span>IEC-80000-6.21 magnetic-flux-density, tesla</span></span></a>
-      <li><a href="#heading-iec-80000-6.45-22"><span class="secno">3.7</span> <span class="content"><span>IEC-80000-6.45 power, watt</span></span></a>
-      <li><a href="#heading-iec-80000-6.46-23"><span class="secno">3.8</span> <span class="content"><span>IEC-80000-6.46 resistance, ohm</span></span></a>
-      <li><a href="#heading-iso-1087-1-24"><span class="secno">3.9</span> <span class="content"><span>ISO 1087-1:2000 annotation vocabulary</span></span></a>
-      <li><a href="#heading-iso-80000-1-25"><span class="secno">3.10</span> <span class="content"><span>ISO-80000-1</span></span></a>
-      <li><a href="#heading-iso-80000-3.1-26"><span class="secno">3.11</span> <span class="content"><span>ISO-80000-3.1 length, metre</span></span></a>
-      <li><a href="#heading-iso-80000-3.10-27"><span class="secno">3.12</span> <span class="content"><span>ISO-80000-3.10 angular-velocity</span></span></a>
-      <li><a href="#heading-iso-80000-3.11-28"><span class="secno">3.13</span> <span class="content"><span>ISO-80000-3.11 angular-acceleration</span></span></a>
-      <li><a href="#heading-iso-80000-3.12-29"><span class="secno">3.14</span> <span class="content"><span>ISO-80000-3.12 period-duration</span></span></a>
-      <li><a href="#heading-iso-80000-3.14-30"><span class="secno">3.15</span> <span class="content"><span>ISO-80000-3.14 rotation</span></span></a>
-      <li><a href="#heading-iso-80000-3.15-31"><span class="secno">3.16</span> <span class="content"><span>ISO-80000-3.15 frequency, hertz</span></span></a>
-      <li><a href="#heading-iso-80000-3.2-32"><span class="secno">3.17</span> <span class="content"><span>ISO-80000-3.2 curvature</span></span></a>
-      <li><a href="#heading-iso-80000-3.3-33"><span class="secno">3.18</span> <span class="content"><span>ISO-80000-3.3 area</span></span></a>
-      <li><a href="#heading-iso-80000-3.4-34"><span class="secno">3.19</span> <span class="content"><span>ISO-80000-3.4 volume</span></span></a>
-      <li><a href="#heading-iso-80000-3.5-35"><span class="secno">3.20</span> <span class="content"><span>ISO-80000-3.5 plane-angle, radian</span></span></a>
-      <li><a href="#heading-iso-80000-3.6-36"><span class="secno">3.21</span> <span class="content"><span>ISO-80000-3.6 solid-angle, steradian</span></span></a>
-      <li><a href="#heading-iso-80000-3.7-37"><span class="secno">3.22</span> <span class="content"><span>ISO-80000-3.7 time, second</span></span></a>
-      <li><a href="#heading-iso-80000-3.8-38"><span class="secno">3.23</span> <span class="content"><span>ISO-80000-3.8 velocity</span></span></a>
-      <li><a href="#heading-iso-80000-3.9-39"><span class="secno">3.24</span> <span class="content"><span>ISO-80000-3.9 acceleration</span></span></a>
-      <li><a href="#heading-iso-80000-4.1-40"><span class="secno">3.25</span> <span class="content"><span>ISO-80000-4.1 mass</span></span></a>
-      <li><a href="#heading-iso-80000-4.11-41"><span class="secno">3.26</span> <span class="content"><span>ISO-80000-4.11 impulse</span></span></a>
-      <li><a href="#heading-iso-80000-4.13-42"><span class="secno">3.27</span> <span class="content"><span>ISO-80000-4.13 moment-of-force</span></span></a>
-      <li><a href="#heading-iso-80000-4.14-43"><span class="secno">3.28</span> <span class="content"><span>ISO-80000-4.15</span></span></a>
-      <li><a href="#heading-iso-80000-4.15-44"><span class="secno">3.29</span> <span class="content"><span>ISO-80000-4.15 pressure, pascal</span></span></a>
-      <li><a href="#heading-iso-80000-4.2-45"><span class="secno">3.30</span> <span class="content"><span>ISO-80000-4.2 mass-density</span></span></a>
-      <li><a href="#heading-iso-80000-4.26-46"><span class="secno">3.31</span> <span class="content"><span>ISO-80000-4.26 power, watt</span></span></a>
-      <li><a href="#heading-iso-80000-4.3-47"><span class="secno">3.32</span> <span class="content"><span>ISO-80000-4.3 relative-mass-density</span></span></a>
-      <li><a href="#heading-iso-80000-4.8-48"><span class="secno">3.33</span> <span class="content"><span>ISO-80000-4.8 momentum</span></span></a>
-      <li><a href="#heading-iso-80000-4.9-49"><span class="secno">3.34</span> <span class="content"><span>ISO-80000-4.9 force, newton</span></span></a>
-      <li><a href="#heading-iso-80000-5.1-50"><span class="secno">3.35</span> <span class="content"><span>ISO-80000-5.1 thermodynamic-temperature, kelvin</span></span></a>
-      <li><a href="#heading-iso-80000-bundle-51"><span class="secno">3.36</span> <span class="content"><span>ISO/IEC-80000 Bundle of quantities and units</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-opencaesar.io"><span class="secno">4</span> <span class="content">opencaesar.io</span></a>
-     <ol class="toc">
-      <li><a href="#heading-viewpoint-52"><span class="secno">4.1</span> <span class="content"><span>Viewpoint</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-purl.org"><span class="secno">5</span> <span class="content">purl.org</span></a>
-     <ol class="toc">
-      <li><a href="#heading-dc-53"><span class="secno">5.1</span> <span class="content"><span>DC</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-www.w3.org"><span class="secno">6</span> <span class="content">www.w3.org</span></a>
-     <ol class="toc">
-      <li><a href="#heading-rdf-54"><span class="secno">6.1</span> <span class="content"><span>RDF</span></span></a>
-      <li><a href="#heading-rdfs-55"><span class="secno">6.2</span> <span class="content"><span>RDFS</span></span></a>
-      <li><a href="#heading-xsd-56"><span class="secno">6.3</span> <span class="content"><span>XSD</span></span></a>
-      <li><a href="#heading-owl-57"><span class="secno">6.4</span> <span class="content"><span>OWL2</span></span></a>
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
      </ol>
    </ol>
   </nav>
   <main>
-   <h2 class="heading settled" data-level="1" id="heading-domain-bipm.org"><span class="secno">1. </span><span class="content">bipm.org</span><a class="self-link" href="#heading-domain-bipm.org"></a></h2>
-   <h3 class="heading settled" data-level="1.1" id="heading-jcgm-bundle-1"><span class="secno">1.1. </span><span class="content"><a href="./bipm.org/jcgm/jcgm-bundle.html">jcgm-bundle</a></span><a class="self-link" href="#heading-jcgm-bundle-1"></a></h3>
-   <h3 class="heading settled" data-level="1.2" id="heading-vim4-2"><span class="secno">1.2. </span><span class="content"><a href="./bipm.org/jcgm/vim4.html">OML formalization of VIM4 Committee Draft 11 January 2021</a></span><a class="self-link" href="#heading-vim4-2"></a></h3>
-   <h3 class="heading settled" data-level="1.3" id="heading-vim4-annotations-3"><span class="secno">1.3. </span><span class="content"><a href="./bipm.org/jcgm/vim4-annotations.html">Annotations for lightweight VIM4 modeling based on OML scalar properties.</a></span><a class="self-link" href="#heading-vim4-annotations-3"></a></h3>
-   <h3 class="heading settled" data-level="1.4" id="heading-vim4-terminological-analysis-4"><span class="secno">1.4. </span><span class="content"><a href="./bipm.org/jcgm/vim4-terminological-analysis.html">vim4-terminological-analysis</a></span><a class="self-link" href="#heading-vim4-terminological-analysis-4"></a></h3>
-   <h3 class="heading settled" data-level="1.5" id="heading-vim4.1-systems-diagram-5"><span class="secno">1.5. </span><span class="content"><a href="./bipm.org/jcgm/vim4.1-systems-diagram.html">vim4.1-systems-diagram</a></span><a class="self-link" href="#heading-vim4.1-systems-diagram-5"></a></h3>
-   <h2 class="heading settled" data-level="2" id="heading-domain-example.org"><span class="secno">2. </span><span class="content">example.org</span><a class="self-link" href="#heading-domain-example.org"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="heading-complete-description-bundle-6"><span class="secno">2.1. </span><span class="content"><a href="./example.org/complete-description-bundle.html">complete-description-bundle</a></span><a class="self-link" href="#heading-complete-description-bundle-6"></a></h3>
-   <h3 class="heading settled" data-level="2.2" id="heading-complete-vocabulary-bundle-7"><span class="secno">2.2. </span><span class="content"><a href="./example.org/complete-vocabulary-bundle.html">complete-vocabulary-bundle</a></span><a class="self-link" href="#heading-complete-vocabulary-bundle-7"></a></h3>
-   <h3 class="heading settled" data-level="2.3" id="heading-simple-description-bundle-8"><span class="secno">2.3. </span><span class="content"><a href="./example.org/simple-description-bundle.html">simple-description-bundle</a></span><a class="self-link" href="#heading-simple-description-bundle-8"></a></h3>
-   <h3 class="heading settled" data-level="2.4" id="heading-simple-mass-management-9"><span class="secno">2.4. </span><span class="content"><a href="./example.org/simple-mass-management.html">simple-mass-management</a></span><a class="self-link" href="#heading-simple-mass-management-9"></a></h3>
-   <h3 class="heading settled" data-level="2.5" id="heading-simple-vocabulary-bundle-10"><span class="secno">2.5. </span><span class="content"><a href="./example.org/simple-vocabulary-bundle.html">simple-vocabulary-bundle</a></span><a class="self-link" href="#heading-simple-vocabulary-bundle-10"></a></h3>
-   <h3 class="heading settled" data-level="2.6" id="heading-some-domain-11"><span class="secno">2.6. </span><span class="content"><a href="./example.org/some-domain.html">some-domain</a></span><a class="self-link" href="#heading-some-domain-11"></a></h3>
-   <h3 class="heading settled" data-level="2.7" id="heading-some-domain-with-metrology-12"><span class="secno">2.7. </span><span class="content"><a href="./example.org/some-domain-with-metrology.html">some-domain-with-metrology</a></span><a class="self-link" href="#heading-some-domain-with-metrology-12"></a></h3>
-   <h3 class="heading settled" data-level="2.8" id="heading-test-metrology-model-13"><span class="secno">2.8. </span><span class="content"><a href="./example.org/test-metrology-model.html">test-metrology-model</a></span><a class="self-link" href="#heading-test-metrology-model-13"></a></h3>
-   <h3 class="heading settled" data-level="2.9" id="heading-test-property-values-14"><span class="secno">2.9. </span><span class="content"><a href="./example.org/test-property-values.html">test-property-values</a></span><a class="self-link" href="#heading-test-property-values-14"></a></h3>
-   <h3 class="heading settled" data-level="2.10" id="heading-test-relation-entity-counter-examples-15"><span class="secno">2.10. </span><span class="content"><a href="./example.org/test-relation-entity-counter-examples.html">test-relation-entity-counter-examples</a></span><a class="self-link" href="#heading-test-relation-entity-counter-examples-15"></a></h3>
-   <h2 class="heading settled" data-level="3" id="heading-domain-iso.org"><span class="secno">3. </span><span class="content">iso.org</span><a class="self-link" href="#heading-domain-iso.org"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="heading-iec-80000-6.1-16"><span class="secno">3.1. </span><span class="content"><a href="./iso.org/iec-80000-6.1.html">IEC-80000-6.1 electric-current, ampere</a></span><a class="self-link" href="#heading-iec-80000-6.1-16"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.2" id="heading-iec-80000-6.10-17"><span class="secno">3.2. </span><span class="content"><a href="./iso.org/iec-80000-6.10.html">IEC-80000-6.10 electric-field-strength</a></span><a class="self-link" href="#heading-iec-80000-6.10-17"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.3" id="heading-iec-80000-6.11-18"><span class="secno">3.3. </span><span class="content"><a href="./iso.org/iec-80000-6.11.html">IEC-80000-6.11 electric-potential, volt</a></span><a class="self-link" href="#heading-iec-80000-6.11-18"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.4" id="heading-iec-80000-6.13-19"><span class="secno">3.4. </span><span class="content"><a href="./iso.org/iec-80000-6.13.html">IEC-80000-6.13 capacitance, farad</a></span><a class="self-link" href="#heading-iec-80000-6.13-19"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.5" id="heading-iec-80000-6.2-20"><span class="secno">3.5. </span><span class="content"><a href="./iso.org/iec-80000-6.2.html">IEC-80000-6.2 electric-charge, coulomb</a></span><a class="self-link" href="#heading-iec-80000-6.2-20"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.6" id="heading-iec-80000-6.21-21"><span class="secno">3.6. </span><span class="content"><a href="./iso.org/iec-80000-6.21.html">IEC-80000-6.21 magnetic-flux-density, tesla</a></span><a class="self-link" href="#heading-iec-80000-6.21-21"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.7" id="heading-iec-80000-6.45-22"><span class="secno">3.7. </span><span class="content"><a href="./iso.org/iec-80000-6.45.html">IEC-80000-6.45 power, watt</a></span><a class="self-link" href="#heading-iec-80000-6.45-22"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.8" id="heading-iec-80000-6.46-23"><span class="secno">3.8. </span><span class="content"><a href="./iso.org/iec-80000-6.46.html">IEC-80000-6.46 resistance, ohm</a></span><a class="self-link" href="#heading-iec-80000-6.46-23"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.9" id="heading-iso-1087-1-24"><span class="secno">3.9. </span><span class="content"><a href="./iso.org/iso-1087-1.html">ISO 1087-1:2000 annotation vocabulary</a></span><a class="self-link" href="#heading-iso-1087-1-24"></a></h3>
-    Annotation vocabulary for traceability of terminology analysis per ISO 1087-1:2000 
-   <h3 class="heading settled" data-level="3.10" id="heading-iso-80000-1-25"><span class="secno">3.10. </span><span class="content"><a href="./iso.org/iso-80000-1.html">ISO-80000-1</a></span><a class="self-link" href="#heading-iso-80000-1-25"></a></h3>
-    The ISO-80000-1 library of multipliers, prefixes, SI, and ISQ. 
-   <h3 class="heading settled" data-level="3.11" id="heading-iso-80000-3.1-26"><span class="secno">3.11. </span><span class="content"><a href="./iso.org/iso-80000-3.1.html">ISO-80000-3.1 length, metre</a></span><a class="self-link" href="#heading-iso-80000-3.1-26"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.12" id="heading-iso-80000-3.10-27"><span class="secno">3.12. </span><span class="content"><a href="./iso.org/iso-80000-3.10.html">ISO-80000-3.10 angular-velocity</a></span><a class="self-link" href="#heading-iso-80000-3.10-27"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.13" id="heading-iso-80000-3.11-28"><span class="secno">3.13. </span><span class="content"><a href="./iso.org/iso-80000-3.11.html">ISO-80000-3.11 angular-acceleration</a></span><a class="self-link" href="#heading-iso-80000-3.11-28"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.14" id="heading-iso-80000-3.12-29"><span class="secno">3.14. </span><span class="content"><a href="./iso.org/iso-80000-3.12.html">ISO-80000-3.12 period-duration</a></span><a class="self-link" href="#heading-iso-80000-3.12-29"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.15" id="heading-iso-80000-3.14-30"><span class="secno">3.15. </span><span class="content"><a href="./iso.org/iso-80000-3.14.html">ISO-80000-3.14 rotation</a></span><a class="self-link" href="#heading-iso-80000-3.14-30"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.16" id="heading-iso-80000-3.15-31"><span class="secno">3.16. </span><span class="content"><a href="./iso.org/iso-80000-3.15.html">ISO-80000-3.15 frequency, hertz</a></span><a class="self-link" href="#heading-iso-80000-3.15-31"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.17" id="heading-iso-80000-3.2-32"><span class="secno">3.17. </span><span class="content"><a href="./iso.org/iso-80000-3.2.html">ISO-80000-3.2 curvature</a></span><a class="self-link" href="#heading-iso-80000-3.2-32"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.18" id="heading-iso-80000-3.3-33"><span class="secno">3.18. </span><span class="content"><a href="./iso.org/iso-80000-3.3.html">ISO-80000-3.3 area</a></span><a class="self-link" href="#heading-iso-80000-3.3-33"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.19" id="heading-iso-80000-3.4-34"><span class="secno">3.19. </span><span class="content"><a href="./iso.org/iso-80000-3.4.html">ISO-80000-3.4 volume</a></span><a class="self-link" href="#heading-iso-80000-3.4-34"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.20" id="heading-iso-80000-3.5-35"><span class="secno">3.20. </span><span class="content"><a href="./iso.org/iso-80000-3.5.html">ISO-80000-3.5 plane-angle, radian</a></span><a class="self-link" href="#heading-iso-80000-3.5-35"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.21" id="heading-iso-80000-3.6-36"><span class="secno">3.21. </span><span class="content"><a href="./iso.org/iso-80000-3.6.html">ISO-80000-3.6 solid-angle, steradian</a></span><a class="self-link" href="#heading-iso-80000-3.6-36"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.22" id="heading-iso-80000-3.7-37"><span class="secno">3.22. </span><span class="content"><a href="./iso.org/iso-80000-3.7.html">ISO-80000-3.7 time, second</a></span><a class="self-link" href="#heading-iso-80000-3.7-37"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.23" id="heading-iso-80000-3.8-38"><span class="secno">3.23. </span><span class="content"><a href="./iso.org/iso-80000-3.8.html">ISO-80000-3.8 velocity</a></span><a class="self-link" href="#heading-iso-80000-3.8-38"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.24" id="heading-iso-80000-3.9-39"><span class="secno">3.24. </span><span class="content"><a href="./iso.org/iso-80000-3.9.html">ISO-80000-3.9 acceleration</a></span><a class="self-link" href="#heading-iso-80000-3.9-39"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.25" id="heading-iso-80000-4.1-40"><span class="secno">3.25. </span><span class="content"><a href="./iso.org/iso-80000-4.1.html">ISO-80000-4.1 mass</a></span><a class="self-link" href="#heading-iso-80000-4.1-40"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.26" id="heading-iso-80000-4.11-41"><span class="secno">3.26. </span><span class="content"><a href="./iso.org/iso-80000-4.11.html">ISO-80000-4.11 impulse</a></span><a class="self-link" href="#heading-iso-80000-4.11-41"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.27" id="heading-iso-80000-4.13-42"><span class="secno">3.27. </span><span class="content"><a href="./iso.org/iso-80000-4.13.html">ISO-80000-4.13 moment-of-force</a></span><a class="self-link" href="#heading-iso-80000-4.13-42"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.28" id="heading-iso-80000-4.14-43"><span class="secno">3.28. </span><span class="content"><a href="./iso.org/iso-80000-4.14.html">ISO-80000-4.15</a></span><a class="self-link" href="#heading-iso-80000-4.14-43"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.29" id="heading-iso-80000-4.15-44"><span class="secno">3.29. </span><span class="content"><a href="./iso.org/iso-80000-4.15.html">ISO-80000-4.15 pressure, pascal</a></span><a class="self-link" href="#heading-iso-80000-4.15-44"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.30" id="heading-iso-80000-4.2-45"><span class="secno">3.30. </span><span class="content"><a href="./iso.org/iso-80000-4.2.html">ISO-80000-4.2 mass-density</a></span><a class="self-link" href="#heading-iso-80000-4.2-45"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.31" id="heading-iso-80000-4.26-46"><span class="secno">3.31. </span><span class="content"><a href="./iso.org/iso-80000-4.26.html">ISO-80000-4.26 power, watt</a></span><a class="self-link" href="#heading-iso-80000-4.26-46"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.32" id="heading-iso-80000-4.3-47"><span class="secno">3.32. </span><span class="content"><a href="./iso.org/iso-80000-4.3.html">ISO-80000-4.3 relative-mass-density</a></span><a class="self-link" href="#heading-iso-80000-4.3-47"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.33" id="heading-iso-80000-4.8-48"><span class="secno">3.33. </span><span class="content"><a href="./iso.org/iso-80000-4.8.html">ISO-80000-4.8 momentum</a></span><a class="self-link" href="#heading-iso-80000-4.8-48"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.34" id="heading-iso-80000-4.9-49"><span class="secno">3.34. </span><span class="content"><a href="./iso.org/iso-80000-4.9.html">ISO-80000-4.9 force, newton</a></span><a class="self-link" href="#heading-iso-80000-4.9-49"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.35" id="heading-iso-80000-5.1-50"><span class="secno">3.35. </span><span class="content"><a href="./iso.org/iso-80000-5.1.html">ISO-80000-5.1 thermodynamic-temperature, kelvin</a></span><a class="self-link" href="#heading-iso-80000-5.1-50"></a></h3>
-    The ISO-80000-5 library. 
-   <h3 class="heading settled" data-level="3.36" id="heading-iso-80000-bundle-51"><span class="secno">3.36. </span><span class="content"><a href="./iso.org/iso-80000-bundle.html">ISO/IEC-80000 Bundle of quantities and units</a></span><a class="self-link" href="#heading-iso-80000-bundle-51"></a></h3>
-    This is the ISO-80000 vocabulary bundle. 
-   <h2 class="heading settled" data-level="4" id="heading-domain-opencaesar.io"><span class="secno">4. </span><span class="content">opencaesar.io</span><a class="self-link" href="#heading-domain-opencaesar.io"></a></h2>
-   <h3 class="heading settled" data-level="4.1" id="heading-viewpoint-52"><span class="secno">4.1. </span><span class="content"><a href="./opencaesar.io/viewpoint.html">Viewpoint</a></span><a class="self-link" href="#heading-viewpoint-52"></a></h3>
-    A vocabulary for defining common terms used in defining viewpoints 
-   <h2 class="heading settled" data-level="5" id="heading-domain-purl.org"><span class="secno">5. </span><span class="content">purl.org</span><a class="self-link" href="#heading-domain-purl.org"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="heading-dc-53"><span class="secno">5.1. </span><span class="content"><a href="./purl.org/dc/elements/1.1.html">DC</a></span><a class="self-link" href="#heading-dc-53"></a></h3>
-    The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative. 
-   <h2 class="heading settled" data-level="6" id="heading-domain-www.w3.org"><span class="secno">6. </span><span class="content">www.w3.org</span><a class="self-link" href="#heading-domain-www.w3.org"></a></h2>
-   <h3 class="heading settled" data-level="6.1" id="heading-rdf-54"><span class="secno">6.1. </span><span class="content"><a href="./www.w3.org/1999/02/22-rdf-syntax-ns.html">RDF</a></span><a class="self-link" href="#heading-rdf-54"></a></h3>
-    The RDF vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.2" id="heading-rdfs-55"><span class="secno">6.2. </span><span class="content"><a href="./www.w3.org/2000/01/rdf-schema.html">RDFS</a></span><a class="self-link" href="#heading-rdfs-55"></a></h3>
-    The RDFS vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.3" id="heading-xsd-56"><span class="secno">6.3. </span><span class="content"><a href="./www.w3.org/2001/XMLSchema.html">XSD</a></span><a class="self-link" href="#heading-xsd-56"></a></h3>
-    The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.4" id="heading-owl-57"><span class="secno">6.4. </span><span class="content"><a href="./www.w3.org/2002/07/owl.html">OWL2</a></span><a class="self-link" href="#heading-owl-57"></a></h3>
-    The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C. 
+   <div>
+    <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="iso-1087-1.html">http://iso.org/iso-1087-1</a> [iso-1087-1]</p>
+    </ul>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#Extensions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="../www.w3.org/2000/01/rdf-schema.html">http://www.w3.org/2000/01/rdf-schema</a> [rdfs]</p>
+     <li data-md>
+      <p><a href="../purl.org/dc/elements/1.1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="../opencaesar.io/viewpoint.html">http://opencaesar.io/viewpoint</a> [viewpoint]</p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="concepts"><span class="secno">3. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="ConceptSystem"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="conceptsystem" id="conceptsystem">ConceptSystem<a class="self-link" href="#conceptsystem"></a></dfn></span><a class="self-link" href="#ConceptSystem"></a></h3>
+    <table class="def"></table>
+    <h2 class="heading settled" data-level="4" id="AnnotationProperties"><span class="secno">4. </span><span class="content">Annotation Properties</span><a class="self-link" href="#AnnotationProperties"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="AssociativeRelation"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="associativerelation" id="associativerelation">AssociativeRelation<a class="self-link" href="#associativerelation"></a></dfn></span><a class="self-link" href="#AssociativeRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="CausalRelation"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="causalrelation" id="causalrelation">CausalRelation<a class="self-link" href="#causalrelation"></a></dfn></span><a class="self-link" href="#CausalRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="Characteristic"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="characteristic" id="characteristic">Characteristic<a class="self-link" href="#characteristic"></a></dfn></span><a class="self-link" href="#Characteristic"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="Concept"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="concept" id="concept">Concept<a class="self-link" href="#concept"></a></dfn></span><a class="self-link" href="#Concept"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="ConceptDiagram"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="conceptdiagram" id="conceptdiagram">ConceptDiagram<a class="self-link" href="#conceptdiagram"></a></dfn></span><a class="self-link" href="#ConceptDiagram"></a></h3>
+    <p>Annotation subject is an ontology</p>
+    <h3 class="heading settled" data-level="4.6" id="DelimitingCharacteristic"><span class="secno">4.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="delimitingcharacteristic" id="delimitingcharacteristic">DelimitingCharacteristic<a class="self-link" href="#delimitingcharacteristic"></a></dfn></span><a class="self-link" href="#DelimitingCharacteristic"></a></h3>
+    <h3 class="heading settled" data-level="4.7" id="EssentialCharacteristic"><span class="secno">4.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="essentialcharacteristic" id="essentialcharacteristic">EssentialCharacteristic<a class="self-link" href="#essentialcharacteristic"></a></dfn></span><a class="self-link" href="#EssentialCharacteristic"></a></h3>
+    <h3 class="heading settled" data-level="4.8" id="GenericRelation"><span class="secno">4.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="genericrelation" id="genericrelation">GenericRelation<a class="self-link" href="#genericrelation"></a></dfn></span><a class="self-link" href="#GenericRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.9" id="HierarchicalRelation"><span class="secno">4.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="hierarchicalrelation" id="hierarchicalrelation">HierarchicalRelation<a class="self-link" href="#hierarchicalrelation"></a></dfn></span><a class="self-link" href="#HierarchicalRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.10" id="Includes"><span class="secno">4.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="includes" id="includes">Includes<a class="self-link" href="#includes"></a></dfn></span><a class="self-link" href="#Includes"></a></h3>
+    <p>This annotation specifies that the annotation subject is included in the scope of a concept system (the annotation object).
+The annotation subject should be an instance or a specialization of ConceptSystem.
+The annotation target should have an annotation as Object, Property, Concept or one of the Characteristics or *Relations.</p>
+    <h3 class="heading settled" data-level="4.11" id="IsIncludedIn"><span class="secno">4.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="isincludedin" id="isincludedin">IsIncludedIn<a class="self-link" href="#isincludedin"></a></dfn></span><a class="self-link" href="#IsIncludedIn"></a></h3>
+    <p>This annotation specifies that the annotation subject is included in the scope of a concept system (the annotation object).
+The annotation subject should have an annotation as Object, Property, Concept or one of the Characteristics or *Relations.
+The annotation object should be an instance or a specialization of ConceptSystem.</p>
+    <h3 class="heading settled" data-level="4.12" id="Object"><span class="secno">4.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="object" id="object">Object<a class="self-link" href="#object"></a></dfn></span><a class="self-link" href="#Object"></a></h3>
+    <h3 class="heading settled" data-level="4.13" id="PartitiveRelation"><span class="secno">4.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="partitiverelation" id="partitiverelation">PartitiveRelation<a class="self-link" href="#partitiverelation"></a></dfn></span><a class="self-link" href="#PartitiveRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.14" id="Property"><span class="secno">4.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="property" id="property">Property<a class="self-link" href="#property"></a></dfn></span><a class="self-link" href="#Property"></a></h3>
+    <h3 class="heading settled" data-level="4.15" id="SequentialRelation"><span class="secno">4.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="sequentialrelation" id="sequentialrelation">SequentialRelation<a class="self-link" href="#sequentialrelation"></a></dfn></span><a class="self-link" href="#SequentialRelation"></a></h3>
+    <h3 class="heading settled" data-level="4.16" id="Shows"><span class="secno">4.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="shows" id="shows">Shows<a class="self-link" href="#shows"></a></dfn></span><a class="self-link" href="#Shows"></a></h3>
+    <p>Annotation subject is shown in the diagram of the annotated ontology.</p>
+    <h3 class="heading settled" data-level="4.17" id="TemporalRelation"><span class="secno">4.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="temporalrelation" id="temporalrelation">TemporalRelation<a class="self-link" href="#temporalrelation"></a></dfn></span><a class="self-link" href="#TemporalRelation"></a></h3>
+   </div>
   </main>
 <script>
 (function() {
@@ -2238,3 +2144,25 @@ dfn > a.self-link::before      { content: "#"; }
 
 })();
 </script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#associativerelation">associativerelation</a><span>, in § 4.1</span>
+   <li><a href="#causalrelation">causalrelation</a><span>, in § 4.2</span>
+   <li><a href="#characteristic">characteristic</a><span>, in § 4.3</span>
+   <li><a href="#concept">concept</a><span>, in § 4.4</span>
+   <li><a href="#conceptdiagram">conceptdiagram</a><span>, in § 4.5</span>
+   <li><a href="#conceptsystem">conceptsystem</a><span>, in § 3.1</span>
+   <li><a href="#delimitingcharacteristic">delimitingcharacteristic</a><span>, in § 4.6</span>
+   <li><a href="#essentialcharacteristic">essentialcharacteristic</a><span>, in § 4.7</span>
+   <li><a href="#genericrelation">genericrelation</a><span>, in § 4.8</span>
+   <li><a href="#hierarchicalrelation">hierarchicalrelation</a><span>, in § 4.9</span>
+   <li><a href="#includes">includes</a><span>, in § 4.10</span>
+   <li><a href="#isincludedin">isincludedin</a><span>, in § 4.11</span>
+   <li><a href="#object">object</a><span>, in § 4.12</span>
+   <li><a href="#partitiverelation">partitiverelation</a><span>, in § 4.13</span>
+   <li><a href="#property">property</a><span>, in § 4.14</span>
+   <li><a href="#sequentialrelation">sequentialrelation</a><span>, in § 4.15</span>
+   <li><a href="#shows">shows</a><span>, in § 4.16</span>
+   <li><a href="#temporalrelation">temporalrelation</a><span>, in § 4.17</span>
+  </ul>

@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Metrology Vocabularies 5.0.1-9-ge8f2fd6</title>
+  <title>ISO-80000-4.11 impulse</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1488,9 +1488,23 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
-  <link href="https://opencaesar.github.io/metrology-vocabularies" rel="canonical">
-  <link href="https://opencaesar.github.io/assets/img/oml.png" rel="icon">
+  <link href="https://opencaesar.github.io/metrology-vocabularies/iso.org/iso-80000-4.11" rel="canonical">
   <meta content="e8f2fd6ec2b315d6d4d4c0417ead33c64bc51f16" name="document-revision">
+<style>
+a[data-link-type=biblio] {
+    white-space: pre-wrap;
+}
+table.def th {
+	white-space: nowrap;
+}
+table.def ul {
+	padding-left: 1em;
+}
+table.def dfn code {
+	font-family: sans-serif;
+	color: #005A9C;
+}
+</style>
 <style>/* style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1692,6 +1706,47 @@ figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }
 </style>
+<style>/* style-dfn-panel */
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    width: 20em;
+    min-width: min-content;
+    max-width: 300px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
 <style>/* style-issues */
 a[href].issue-return {
     float: right;
@@ -1892,20 +1947,27 @@ dfn > a.self-link::before      { content: "#"; }
         --selflink-hover-text: white;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}
 </style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref" id="title">Metrology Vocabularies 5.0.1-9-ge8f2fd6</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h1 class="p-name no-ref" id="title">ISO-80000-4.11 impulse</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/metrology-vocabularies">https://opencaesar.github.io/metrology-vocabularies</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/metrology-vocabularies/iso.org/iso-80000-4.11">https://opencaesar.github.io/metrology-vocabularies/iso.org/iso-80000-4.11</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">(see individual ontologies)</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Jet Propulsion Laboratory</span>
      <dt>Copyright:
-     <dd>(see individual ontologies)
+     <dd>Copyright 2021, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology. This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1913,201 +1975,437 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>Documentation generated from OML ontologies</p>
+   <p>The ISO-80000-4 library.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
+    <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
+    <li><a href="#Iclusions"><span class="secno">3</span> <span class="content">Usages</span></a>
     <li>
-     <a href="#heading-domain-bipm.org"><span class="secno">1</span> <span class="content">bipm.org</span></a>
+     <a href="#ConceptInstances"><span class="secno">4</span> <span class="content">Concept Instances</span></a>
      <ol class="toc">
-      <li><a href="#heading-jcgm-bundle-1"><span class="secno">1.1</span> <span class="content"><span>jcgm-bundle</span></span></a>
-      <li><a href="#heading-vim4-2"><span class="secno">1.2</span> <span class="content"><span>OML formalization of VIM4 Committee Draft 11 January 2021</span></span></a>
-      <li><a href="#heading-vim4-annotations-3"><span class="secno">1.3</span> <span class="content"><span>Annotations for lightweight VIM4 modeling based on OML scalar properties.</span></span></a>
-      <li><a href="#heading-vim4-terminological-analysis-4"><span class="secno">1.4</span> <span class="content"><span>vim4-terminological-analysis</span></span></a>
-      <li><a href="#heading-vim4.1-systems-diagram-5"><span class="secno">1.5</span> <span class="content"><span>vim4.1-systems-diagram</span></span></a>
+      <li><a href="#Inpulse"><span class="secno">4.1</span> <span class="content"><span>inpulse</span></span></a>
+      <li><a href="#Newton-second"><span class="secno">4.2</span> <span class="content"><span>newton-second</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-example.org"><span class="secno">2</span> <span class="content">example.org</span></a>
+     <a href="#RelationInstances"><span class="secno">5</span> <span class="content">Relation Instances</span></a>
      <ol class="toc">
-      <li><a href="#heading-complete-description-bundle-6"><span class="secno">2.1</span> <span class="content"><span>complete-description-bundle</span></span></a>
-      <li><a href="#heading-complete-vocabulary-bundle-7"><span class="secno">2.2</span> <span class="content"><span>complete-vocabulary-bundle</span></span></a>
-      <li><a href="#heading-simple-description-bundle-8"><span class="secno">2.3</span> <span class="content"><span>simple-description-bundle</span></span></a>
-      <li><a href="#heading-simple-mass-management-9"><span class="secno">2.4</span> <span class="content"><span>simple-mass-management</span></span></a>
-      <li><a href="#heading-simple-vocabulary-bundle-10"><span class="secno">2.5</span> <span class="content"><span>simple-vocabulary-bundle</span></span></a>
-      <li><a href="#heading-some-domain-11"><span class="secno">2.6</span> <span class="content"><span>some-domain</span></span></a>
-      <li><a href="#heading-some-domain-with-metrology-12"><span class="secno">2.7</span> <span class="content"><span>some-domain-with-metrology</span></span></a>
-      <li><a href="#heading-test-metrology-model-13"><span class="secno">2.8</span> <span class="content"><span>test-metrology-model</span></span></a>
-      <li><a href="#heading-test-property-values-14"><span class="secno">2.9</span> <span class="content"><span>test-property-values</span></span></a>
-      <li><a href="#heading-test-relation-entity-counter-examples-15"><span class="secno">2.10</span> <span class="content"><span>test-relation-entity-counter-examples</span></span></a>
+      <li><a href="#ISQ7-inpulse"><span class="secno">5.1</span> <span class="content"><span>ISQ7-inpulse</span></span></a>
+      <li><a href="#ISQ7-inpulse.force"><span class="secno">5.2</span> <span class="content"><span>ISQ7-inpulse.force</span></span></a>
+      <li><a href="#ISQ7-inpulse.time"><span class="secno">5.3</span> <span class="content"><span>ISQ7-inpulse.time</span></span></a>
+      <li><a href="#ISQ8-inpulse"><span class="secno">5.4</span> <span class="content"><span>ISQ8-inpulse</span></span></a>
+      <li><a href="#ISQ8-inpulse.force"><span class="secno">5.5</span> <span class="content"><span>ISQ8-inpulse.force</span></span></a>
+      <li><a href="#ISQ8-inpulse.time"><span class="secno">5.6</span> <span class="content"><span>ISQ8-inpulse.time</span></span></a>
+      <li><a href="#SI7-newton-second"><span class="secno">5.7</span> <span class="content"><span>SI7-newton-second</span></span></a>
+      <li><a href="#SI7-newton-second.newton"><span class="secno">5.8</span> <span class="content"><span>SI7-newton-second.newton</span></span></a>
+      <li><a href="#SI7-newton-second.second"><span class="secno">5.9</span> <span class="content"><span>SI7-newton-second.second</span></span></a>
+      <li><a href="#SI8-newton-second"><span class="secno">5.10</span> <span class="content"><span>SI8-newton-second</span></span></a>
+      <li><a href="#SI8-newton-second.newton"><span class="secno">5.11</span> <span class="content"><span>SI8-newton-second.newton</span></span></a>
+      <li><a href="#SI8-newton-second.second"><span class="secno">5.12</span> <span class="content"><span>SI8-newton-second.second</span></span></a>
      </ol>
     <li>
-     <a href="#heading-domain-iso.org"><span class="secno">3</span> <span class="content">iso.org</span></a>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
-      <li><a href="#heading-iec-80000-6.1-16"><span class="secno">3.1</span> <span class="content"><span>IEC-80000-6.1 electric-current, ampere</span></span></a>
-      <li><a href="#heading-iec-80000-6.10-17"><span class="secno">3.2</span> <span class="content"><span>IEC-80000-6.10 electric-field-strength</span></span></a>
-      <li><a href="#heading-iec-80000-6.11-18"><span class="secno">3.3</span> <span class="content"><span>IEC-80000-6.11 electric-potential, volt</span></span></a>
-      <li><a href="#heading-iec-80000-6.13-19"><span class="secno">3.4</span> <span class="content"><span>IEC-80000-6.13 capacitance, farad</span></span></a>
-      <li><a href="#heading-iec-80000-6.2-20"><span class="secno">3.5</span> <span class="content"><span>IEC-80000-6.2 electric-charge, coulomb</span></span></a>
-      <li><a href="#heading-iec-80000-6.21-21"><span class="secno">3.6</span> <span class="content"><span>IEC-80000-6.21 magnetic-flux-density, tesla</span></span></a>
-      <li><a href="#heading-iec-80000-6.45-22"><span class="secno">3.7</span> <span class="content"><span>IEC-80000-6.45 power, watt</span></span></a>
-      <li><a href="#heading-iec-80000-6.46-23"><span class="secno">3.8</span> <span class="content"><span>IEC-80000-6.46 resistance, ohm</span></span></a>
-      <li><a href="#heading-iso-1087-1-24"><span class="secno">3.9</span> <span class="content"><span>ISO 1087-1:2000 annotation vocabulary</span></span></a>
-      <li><a href="#heading-iso-80000-1-25"><span class="secno">3.10</span> <span class="content"><span>ISO-80000-1</span></span></a>
-      <li><a href="#heading-iso-80000-3.1-26"><span class="secno">3.11</span> <span class="content"><span>ISO-80000-3.1 length, metre</span></span></a>
-      <li><a href="#heading-iso-80000-3.10-27"><span class="secno">3.12</span> <span class="content"><span>ISO-80000-3.10 angular-velocity</span></span></a>
-      <li><a href="#heading-iso-80000-3.11-28"><span class="secno">3.13</span> <span class="content"><span>ISO-80000-3.11 angular-acceleration</span></span></a>
-      <li><a href="#heading-iso-80000-3.12-29"><span class="secno">3.14</span> <span class="content"><span>ISO-80000-3.12 period-duration</span></span></a>
-      <li><a href="#heading-iso-80000-3.14-30"><span class="secno">3.15</span> <span class="content"><span>ISO-80000-3.14 rotation</span></span></a>
-      <li><a href="#heading-iso-80000-3.15-31"><span class="secno">3.16</span> <span class="content"><span>ISO-80000-3.15 frequency, hertz</span></span></a>
-      <li><a href="#heading-iso-80000-3.2-32"><span class="secno">3.17</span> <span class="content"><span>ISO-80000-3.2 curvature</span></span></a>
-      <li><a href="#heading-iso-80000-3.3-33"><span class="secno">3.18</span> <span class="content"><span>ISO-80000-3.3 area</span></span></a>
-      <li><a href="#heading-iso-80000-3.4-34"><span class="secno">3.19</span> <span class="content"><span>ISO-80000-3.4 volume</span></span></a>
-      <li><a href="#heading-iso-80000-3.5-35"><span class="secno">3.20</span> <span class="content"><span>ISO-80000-3.5 plane-angle, radian</span></span></a>
-      <li><a href="#heading-iso-80000-3.6-36"><span class="secno">3.21</span> <span class="content"><span>ISO-80000-3.6 solid-angle, steradian</span></span></a>
-      <li><a href="#heading-iso-80000-3.7-37"><span class="secno">3.22</span> <span class="content"><span>ISO-80000-3.7 time, second</span></span></a>
-      <li><a href="#heading-iso-80000-3.8-38"><span class="secno">3.23</span> <span class="content"><span>ISO-80000-3.8 velocity</span></span></a>
-      <li><a href="#heading-iso-80000-3.9-39"><span class="secno">3.24</span> <span class="content"><span>ISO-80000-3.9 acceleration</span></span></a>
-      <li><a href="#heading-iso-80000-4.1-40"><span class="secno">3.25</span> <span class="content"><span>ISO-80000-4.1 mass</span></span></a>
-      <li><a href="#heading-iso-80000-4.11-41"><span class="secno">3.26</span> <span class="content"><span>ISO-80000-4.11 impulse</span></span></a>
-      <li><a href="#heading-iso-80000-4.13-42"><span class="secno">3.27</span> <span class="content"><span>ISO-80000-4.13 moment-of-force</span></span></a>
-      <li><a href="#heading-iso-80000-4.14-43"><span class="secno">3.28</span> <span class="content"><span>ISO-80000-4.15</span></span></a>
-      <li><a href="#heading-iso-80000-4.15-44"><span class="secno">3.29</span> <span class="content"><span>ISO-80000-4.15 pressure, pascal</span></span></a>
-      <li><a href="#heading-iso-80000-4.2-45"><span class="secno">3.30</span> <span class="content"><span>ISO-80000-4.2 mass-density</span></span></a>
-      <li><a href="#heading-iso-80000-4.26-46"><span class="secno">3.31</span> <span class="content"><span>ISO-80000-4.26 power, watt</span></span></a>
-      <li><a href="#heading-iso-80000-4.3-47"><span class="secno">3.32</span> <span class="content"><span>ISO-80000-4.3 relative-mass-density</span></span></a>
-      <li><a href="#heading-iso-80000-4.8-48"><span class="secno">3.33</span> <span class="content"><span>ISO-80000-4.8 momentum</span></span></a>
-      <li><a href="#heading-iso-80000-4.9-49"><span class="secno">3.34</span> <span class="content"><span>ISO-80000-4.9 force, newton</span></span></a>
-      <li><a href="#heading-iso-80000-5.1-50"><span class="secno">3.35</span> <span class="content"><span>ISO-80000-5.1 thermodynamic-temperature, kelvin</span></span></a>
-      <li><a href="#heading-iso-80000-bundle-51"><span class="secno">3.36</span> <span class="content"><span>ISO/IEC-80000 Bundle of quantities and units</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-opencaesar.io"><span class="secno">4</span> <span class="content">opencaesar.io</span></a>
-     <ol class="toc">
-      <li><a href="#heading-viewpoint-52"><span class="secno">4.1</span> <span class="content"><span>Viewpoint</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-purl.org"><span class="secno">5</span> <span class="content">purl.org</span></a>
-     <ol class="toc">
-      <li><a href="#heading-dc-53"><span class="secno">5.1</span> <span class="content"><span>DC</span></span></a>
-     </ol>
-    <li>
-     <a href="#heading-domain-www.w3.org"><span class="secno">6</span> <span class="content">www.w3.org</span></a>
-     <ol class="toc">
-      <li><a href="#heading-rdf-54"><span class="secno">6.1</span> <span class="content"><span>RDF</span></span></a>
-      <li><a href="#heading-rdfs-55"><span class="secno">6.2</span> <span class="content"><span>RDFS</span></span></a>
-      <li><a href="#heading-xsd-56"><span class="secno">6.3</span> <span class="content"><span>XSD</span></span></a>
-      <li><a href="#heading-owl-57"><span class="secno">6.4</span> <span class="content"><span>OWL2</span></span></a>
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
    </ol>
   </nav>
   <main>
-   <h2 class="heading settled" data-level="1" id="heading-domain-bipm.org"><span class="secno">1. </span><span class="content">bipm.org</span><a class="self-link" href="#heading-domain-bipm.org"></a></h2>
-   <h3 class="heading settled" data-level="1.1" id="heading-jcgm-bundle-1"><span class="secno">1.1. </span><span class="content"><a href="./bipm.org/jcgm/jcgm-bundle.html">jcgm-bundle</a></span><a class="self-link" href="#heading-jcgm-bundle-1"></a></h3>
-   <h3 class="heading settled" data-level="1.2" id="heading-vim4-2"><span class="secno">1.2. </span><span class="content"><a href="./bipm.org/jcgm/vim4.html">OML formalization of VIM4 Committee Draft 11 January 2021</a></span><a class="self-link" href="#heading-vim4-2"></a></h3>
-   <h3 class="heading settled" data-level="1.3" id="heading-vim4-annotations-3"><span class="secno">1.3. </span><span class="content"><a href="./bipm.org/jcgm/vim4-annotations.html">Annotations for lightweight VIM4 modeling based on OML scalar properties.</a></span><a class="self-link" href="#heading-vim4-annotations-3"></a></h3>
-   <h3 class="heading settled" data-level="1.4" id="heading-vim4-terminological-analysis-4"><span class="secno">1.4. </span><span class="content"><a href="./bipm.org/jcgm/vim4-terminological-analysis.html">vim4-terminological-analysis</a></span><a class="self-link" href="#heading-vim4-terminological-analysis-4"></a></h3>
-   <h3 class="heading settled" data-level="1.5" id="heading-vim4.1-systems-diagram-5"><span class="secno">1.5. </span><span class="content"><a href="./bipm.org/jcgm/vim4.1-systems-diagram.html">vim4.1-systems-diagram</a></span><a class="self-link" href="#heading-vim4.1-systems-diagram-5"></a></h3>
-   <h2 class="heading settled" data-level="2" id="heading-domain-example.org"><span class="secno">2. </span><span class="content">example.org</span><a class="self-link" href="#heading-domain-example.org"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="heading-complete-description-bundle-6"><span class="secno">2.1. </span><span class="content"><a href="./example.org/complete-description-bundle.html">complete-description-bundle</a></span><a class="self-link" href="#heading-complete-description-bundle-6"></a></h3>
-   <h3 class="heading settled" data-level="2.2" id="heading-complete-vocabulary-bundle-7"><span class="secno">2.2. </span><span class="content"><a href="./example.org/complete-vocabulary-bundle.html">complete-vocabulary-bundle</a></span><a class="self-link" href="#heading-complete-vocabulary-bundle-7"></a></h3>
-   <h3 class="heading settled" data-level="2.3" id="heading-simple-description-bundle-8"><span class="secno">2.3. </span><span class="content"><a href="./example.org/simple-description-bundle.html">simple-description-bundle</a></span><a class="self-link" href="#heading-simple-description-bundle-8"></a></h3>
-   <h3 class="heading settled" data-level="2.4" id="heading-simple-mass-management-9"><span class="secno">2.4. </span><span class="content"><a href="./example.org/simple-mass-management.html">simple-mass-management</a></span><a class="self-link" href="#heading-simple-mass-management-9"></a></h3>
-   <h3 class="heading settled" data-level="2.5" id="heading-simple-vocabulary-bundle-10"><span class="secno">2.5. </span><span class="content"><a href="./example.org/simple-vocabulary-bundle.html">simple-vocabulary-bundle</a></span><a class="self-link" href="#heading-simple-vocabulary-bundle-10"></a></h3>
-   <h3 class="heading settled" data-level="2.6" id="heading-some-domain-11"><span class="secno">2.6. </span><span class="content"><a href="./example.org/some-domain.html">some-domain</a></span><a class="self-link" href="#heading-some-domain-11"></a></h3>
-   <h3 class="heading settled" data-level="2.7" id="heading-some-domain-with-metrology-12"><span class="secno">2.7. </span><span class="content"><a href="./example.org/some-domain-with-metrology.html">some-domain-with-metrology</a></span><a class="self-link" href="#heading-some-domain-with-metrology-12"></a></h3>
-   <h3 class="heading settled" data-level="2.8" id="heading-test-metrology-model-13"><span class="secno">2.8. </span><span class="content"><a href="./example.org/test-metrology-model.html">test-metrology-model</a></span><a class="self-link" href="#heading-test-metrology-model-13"></a></h3>
-   <h3 class="heading settled" data-level="2.9" id="heading-test-property-values-14"><span class="secno">2.9. </span><span class="content"><a href="./example.org/test-property-values.html">test-property-values</a></span><a class="self-link" href="#heading-test-property-values-14"></a></h3>
-   <h3 class="heading settled" data-level="2.10" id="heading-test-relation-entity-counter-examples-15"><span class="secno">2.10. </span><span class="content"><a href="./example.org/test-relation-entity-counter-examples.html">test-relation-entity-counter-examples</a></span><a class="self-link" href="#heading-test-relation-entity-counter-examples-15"></a></h3>
-   <h2 class="heading settled" data-level="3" id="heading-domain-iso.org"><span class="secno">3. </span><span class="content">iso.org</span><a class="self-link" href="#heading-domain-iso.org"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="heading-iec-80000-6.1-16"><span class="secno">3.1. </span><span class="content"><a href="./iso.org/iec-80000-6.1.html">IEC-80000-6.1 electric-current, ampere</a></span><a class="self-link" href="#heading-iec-80000-6.1-16"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.2" id="heading-iec-80000-6.10-17"><span class="secno">3.2. </span><span class="content"><a href="./iso.org/iec-80000-6.10.html">IEC-80000-6.10 electric-field-strength</a></span><a class="self-link" href="#heading-iec-80000-6.10-17"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.3" id="heading-iec-80000-6.11-18"><span class="secno">3.3. </span><span class="content"><a href="./iso.org/iec-80000-6.11.html">IEC-80000-6.11 electric-potential, volt</a></span><a class="self-link" href="#heading-iec-80000-6.11-18"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.4" id="heading-iec-80000-6.13-19"><span class="secno">3.4. </span><span class="content"><a href="./iso.org/iec-80000-6.13.html">IEC-80000-6.13 capacitance, farad</a></span><a class="self-link" href="#heading-iec-80000-6.13-19"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.5" id="heading-iec-80000-6.2-20"><span class="secno">3.5. </span><span class="content"><a href="./iso.org/iec-80000-6.2.html">IEC-80000-6.2 electric-charge, coulomb</a></span><a class="self-link" href="#heading-iec-80000-6.2-20"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.6" id="heading-iec-80000-6.21-21"><span class="secno">3.6. </span><span class="content"><a href="./iso.org/iec-80000-6.21.html">IEC-80000-6.21 magnetic-flux-density, tesla</a></span><a class="self-link" href="#heading-iec-80000-6.21-21"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.7" id="heading-iec-80000-6.45-22"><span class="secno">3.7. </span><span class="content"><a href="./iso.org/iec-80000-6.45.html">IEC-80000-6.45 power, watt</a></span><a class="self-link" href="#heading-iec-80000-6.45-22"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.8" id="heading-iec-80000-6.46-23"><span class="secno">3.8. </span><span class="content"><a href="./iso.org/iec-80000-6.46.html">IEC-80000-6.46 resistance, ohm</a></span><a class="self-link" href="#heading-iec-80000-6.46-23"></a></h3>
-    The IEC-80000-6 library. 
-   <h3 class="heading settled" data-level="3.9" id="heading-iso-1087-1-24"><span class="secno">3.9. </span><span class="content"><a href="./iso.org/iso-1087-1.html">ISO 1087-1:2000 annotation vocabulary</a></span><a class="self-link" href="#heading-iso-1087-1-24"></a></h3>
-    Annotation vocabulary for traceability of terminology analysis per ISO 1087-1:2000 
-   <h3 class="heading settled" data-level="3.10" id="heading-iso-80000-1-25"><span class="secno">3.10. </span><span class="content"><a href="./iso.org/iso-80000-1.html">ISO-80000-1</a></span><a class="self-link" href="#heading-iso-80000-1-25"></a></h3>
-    The ISO-80000-1 library of multipliers, prefixes, SI, and ISQ. 
-   <h3 class="heading settled" data-level="3.11" id="heading-iso-80000-3.1-26"><span class="secno">3.11. </span><span class="content"><a href="./iso.org/iso-80000-3.1.html">ISO-80000-3.1 length, metre</a></span><a class="self-link" href="#heading-iso-80000-3.1-26"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.12" id="heading-iso-80000-3.10-27"><span class="secno">3.12. </span><span class="content"><a href="./iso.org/iso-80000-3.10.html">ISO-80000-3.10 angular-velocity</a></span><a class="self-link" href="#heading-iso-80000-3.10-27"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.13" id="heading-iso-80000-3.11-28"><span class="secno">3.13. </span><span class="content"><a href="./iso.org/iso-80000-3.11.html">ISO-80000-3.11 angular-acceleration</a></span><a class="self-link" href="#heading-iso-80000-3.11-28"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.14" id="heading-iso-80000-3.12-29"><span class="secno">3.14. </span><span class="content"><a href="./iso.org/iso-80000-3.12.html">ISO-80000-3.12 period-duration</a></span><a class="self-link" href="#heading-iso-80000-3.12-29"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.15" id="heading-iso-80000-3.14-30"><span class="secno">3.15. </span><span class="content"><a href="./iso.org/iso-80000-3.14.html">ISO-80000-3.14 rotation</a></span><a class="self-link" href="#heading-iso-80000-3.14-30"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.16" id="heading-iso-80000-3.15-31"><span class="secno">3.16. </span><span class="content"><a href="./iso.org/iso-80000-3.15.html">ISO-80000-3.15 frequency, hertz</a></span><a class="self-link" href="#heading-iso-80000-3.15-31"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.17" id="heading-iso-80000-3.2-32"><span class="secno">3.17. </span><span class="content"><a href="./iso.org/iso-80000-3.2.html">ISO-80000-3.2 curvature</a></span><a class="self-link" href="#heading-iso-80000-3.2-32"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.18" id="heading-iso-80000-3.3-33"><span class="secno">3.18. </span><span class="content"><a href="./iso.org/iso-80000-3.3.html">ISO-80000-3.3 area</a></span><a class="self-link" href="#heading-iso-80000-3.3-33"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.19" id="heading-iso-80000-3.4-34"><span class="secno">3.19. </span><span class="content"><a href="./iso.org/iso-80000-3.4.html">ISO-80000-3.4 volume</a></span><a class="self-link" href="#heading-iso-80000-3.4-34"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.20" id="heading-iso-80000-3.5-35"><span class="secno">3.20. </span><span class="content"><a href="./iso.org/iso-80000-3.5.html">ISO-80000-3.5 plane-angle, radian</a></span><a class="self-link" href="#heading-iso-80000-3.5-35"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.21" id="heading-iso-80000-3.6-36"><span class="secno">3.21. </span><span class="content"><a href="./iso.org/iso-80000-3.6.html">ISO-80000-3.6 solid-angle, steradian</a></span><a class="self-link" href="#heading-iso-80000-3.6-36"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.22" id="heading-iso-80000-3.7-37"><span class="secno">3.22. </span><span class="content"><a href="./iso.org/iso-80000-3.7.html">ISO-80000-3.7 time, second</a></span><a class="self-link" href="#heading-iso-80000-3.7-37"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.23" id="heading-iso-80000-3.8-38"><span class="secno">3.23. </span><span class="content"><a href="./iso.org/iso-80000-3.8.html">ISO-80000-3.8 velocity</a></span><a class="self-link" href="#heading-iso-80000-3.8-38"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.24" id="heading-iso-80000-3.9-39"><span class="secno">3.24. </span><span class="content"><a href="./iso.org/iso-80000-3.9.html">ISO-80000-3.9 acceleration</a></span><a class="self-link" href="#heading-iso-80000-3.9-39"></a></h3>
-    The ISO-80000-3 library. 
-   <h3 class="heading settled" data-level="3.25" id="heading-iso-80000-4.1-40"><span class="secno">3.25. </span><span class="content"><a href="./iso.org/iso-80000-4.1.html">ISO-80000-4.1 mass</a></span><a class="self-link" href="#heading-iso-80000-4.1-40"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.26" id="heading-iso-80000-4.11-41"><span class="secno">3.26. </span><span class="content"><a href="./iso.org/iso-80000-4.11.html">ISO-80000-4.11 impulse</a></span><a class="self-link" href="#heading-iso-80000-4.11-41"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.27" id="heading-iso-80000-4.13-42"><span class="secno">3.27. </span><span class="content"><a href="./iso.org/iso-80000-4.13.html">ISO-80000-4.13 moment-of-force</a></span><a class="self-link" href="#heading-iso-80000-4.13-42"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.28" id="heading-iso-80000-4.14-43"><span class="secno">3.28. </span><span class="content"><a href="./iso.org/iso-80000-4.14.html">ISO-80000-4.15</a></span><a class="self-link" href="#heading-iso-80000-4.14-43"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.29" id="heading-iso-80000-4.15-44"><span class="secno">3.29. </span><span class="content"><a href="./iso.org/iso-80000-4.15.html">ISO-80000-4.15 pressure, pascal</a></span><a class="self-link" href="#heading-iso-80000-4.15-44"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.30" id="heading-iso-80000-4.2-45"><span class="secno">3.30. </span><span class="content"><a href="./iso.org/iso-80000-4.2.html">ISO-80000-4.2 mass-density</a></span><a class="self-link" href="#heading-iso-80000-4.2-45"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.31" id="heading-iso-80000-4.26-46"><span class="secno">3.31. </span><span class="content"><a href="./iso.org/iso-80000-4.26.html">ISO-80000-4.26 power, watt</a></span><a class="self-link" href="#heading-iso-80000-4.26-46"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.32" id="heading-iso-80000-4.3-47"><span class="secno">3.32. </span><span class="content"><a href="./iso.org/iso-80000-4.3.html">ISO-80000-4.3 relative-mass-density</a></span><a class="self-link" href="#heading-iso-80000-4.3-47"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.33" id="heading-iso-80000-4.8-48"><span class="secno">3.33. </span><span class="content"><a href="./iso.org/iso-80000-4.8.html">ISO-80000-4.8 momentum</a></span><a class="self-link" href="#heading-iso-80000-4.8-48"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.34" id="heading-iso-80000-4.9-49"><span class="secno">3.34. </span><span class="content"><a href="./iso.org/iso-80000-4.9.html">ISO-80000-4.9 force, newton</a></span><a class="self-link" href="#heading-iso-80000-4.9-49"></a></h3>
-    The ISO-80000-4 library. 
-   <h3 class="heading settled" data-level="3.35" id="heading-iso-80000-5.1-50"><span class="secno">3.35. </span><span class="content"><a href="./iso.org/iso-80000-5.1.html">ISO-80000-5.1 thermodynamic-temperature, kelvin</a></span><a class="self-link" href="#heading-iso-80000-5.1-50"></a></h3>
-    The ISO-80000-5 library. 
-   <h3 class="heading settled" data-level="3.36" id="heading-iso-80000-bundle-51"><span class="secno">3.36. </span><span class="content"><a href="./iso.org/iso-80000-bundle.html">ISO/IEC-80000 Bundle of quantities and units</a></span><a class="self-link" href="#heading-iso-80000-bundle-51"></a></h3>
-    This is the ISO-80000 vocabulary bundle. 
-   <h2 class="heading settled" data-level="4" id="heading-domain-opencaesar.io"><span class="secno">4. </span><span class="content">opencaesar.io</span><a class="self-link" href="#heading-domain-opencaesar.io"></a></h2>
-   <h3 class="heading settled" data-level="4.1" id="heading-viewpoint-52"><span class="secno">4.1. </span><span class="content"><a href="./opencaesar.io/viewpoint.html">Viewpoint</a></span><a class="self-link" href="#heading-viewpoint-52"></a></h3>
-    A vocabulary for defining common terms used in defining viewpoints 
-   <h2 class="heading settled" data-level="5" id="heading-domain-purl.org"><span class="secno">5. </span><span class="content">purl.org</span><a class="self-link" href="#heading-domain-purl.org"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="heading-dc-53"><span class="secno">5.1. </span><span class="content"><a href="./purl.org/dc/elements/1.1.html">DC</a></span><a class="self-link" href="#heading-dc-53"></a></h3>
-    The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative. 
-   <h2 class="heading settled" data-level="6" id="heading-domain-www.w3.org"><span class="secno">6. </span><span class="content">www.w3.org</span><a class="self-link" href="#heading-domain-www.w3.org"></a></h2>
-   <h3 class="heading settled" data-level="6.1" id="heading-rdf-54"><span class="secno">6.1. </span><span class="content"><a href="./www.w3.org/1999/02/22-rdf-syntax-ns.html">RDF</a></span><a class="self-link" href="#heading-rdf-54"></a></h3>
-    The RDF vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.2" id="heading-rdfs-55"><span class="secno">6.2. </span><span class="content"><a href="./www.w3.org/2000/01/rdf-schema.html">RDFS</a></span><a class="self-link" href="#heading-rdfs-55"></a></h3>
-    The RDFS vocabulary is a subset of the vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.3" id="heading-xsd-56"><span class="secno">6.3. </span><span class="content"><a href="./www.w3.org/2001/XMLSchema.html">XSD</a></span><a class="self-link" href="#heading-xsd-56"></a></h3>
-    The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C. 
-   <h3 class="heading settled" data-level="6.4" id="heading-owl-57"><span class="secno">6.4. </span><span class="content"><a href="./www.w3.org/2002/07/owl.html">OWL2</a></span><a class="self-link" href="#heading-owl-57"></a></h3>
-    The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C. 
+   <div>
+    <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="iso-80000-4.11.html">http://iso.org/iso-80000-4.11</a> [iso-80000-4.11]</p>
+    </ul>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="../iso.org/iso-80000-1.html">http://iso.org/iso-80000-1</a> [iso-80000-1]</p>
+     <li data-md>
+      <p><a href="../iso.org/iso-80000-3.7.html">http://iso.org/iso-80000-3.7</a> [iso-80000-3.7]</p>
+     <li data-md>
+      <p><a href="../iso.org/iso-80000-4.9.html">http://iso.org/iso-80000-4.9</a> [iso-80000-4.9]</p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="Iclusions"><span class="secno">3. </span><span class="content">Usages</span><a class="self-link" href="#Iclusions"></a></h2>
+    <ul>
+     <li data-md>
+      <p><a href="../purl.org/dc/elements/1.1.html">http://purl.org/dc/elements/1.1</a> [dc]</p>
+     <li data-md>
+      <p><a href="../www.w3.org/2001/XMLSchema.html">http://www.w3.org/2001/XMLSchema</a> [xsd]</p>
+     <li data-md>
+      <p><a href="../www.w3.org/2002/07/owl.html">http://www.w3.org/2002/07/owl</a> [owl]</p>
+     <li data-md>
+      <p><a href="../bipm.org/jcgm/vim4.html">http://bipm.org/jcgm/vim4</a> [vim4]</p>
+    </ul>
+    <h2 class="heading settled" data-level="4" id="ConceptInstances"><span class="secno">4. </span><span class="content">Concept Instances</span><a class="self-link" href="#ConceptInstances"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="Inpulse"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="inpulse">inpulse<a class="self-link" href="#inpulse"></a></dfn></span><a class="self-link" href="#Inpulse"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#generalunitaryquantity" id="ref-for-generalunitaryquantity">vim4:GeneralUnitaryQuantity</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#id" id="ref-for-id">vim4:id</a> = "impulse" 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="4.2" id="Newton-second"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="newton-second">newton-second<a class="self-link" href="#newton-second"></a></dfn></span><a class="self-link" href="#Newton-second"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit" id="ref-for-unprefixedmeasurementunit">vim4:UnprefixedMeasurementUnit</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#id" id="ref-for-id①">vim4:id</a> = "newton-second" 
+        </ul>
+      <tr>
+       <th>Links
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#instantiates_1" id="ref-for-instantiates_1">vim4:instantiates</a> <a data-link-type="dfn" href="iso-80000-4.11.html#inpulse" id="ref-for-inpulse">inpulse</a> 
+        </ul>
+    </table>
+    <h2 class="heading settled" data-level="5" id="RelationInstances"><span class="secno">5. </span><span class="content">Relation Instances</span><a class="self-link" href="#RelationInstances"></a></h2>
+    <h3 class="heading settled" data-level="5.1" id="ISQ7-inpulse"><span class="secno">5.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="isq7-inpulse" id="isq7-inpulse">ISQ7-inpulse<a class="self-link" href="#isq7-inpulse"></a></dfn></span><a class="self-link" href="#ISQ7-inpulse"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity" id="ref-for-systemhasderivedunitaryquantity">vim4:SystemHasDerivedUnitaryQuantity</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-1.html#isq7" id="ref-for-isq7">iso-80000-1:ISQ7</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#inpulse" id="ref-for-inpulse①">inpulse</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#isdimensionless" id="ref-for-isdimensionless">vim4:isDimensionless</a> = "false"^^xsd:boolean 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.2" id="ISQ7-inpulse.force"><span class="secno">5.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="isq7-inpulse.force" id="isq7-inpulseforce">ISQ7-inpulse.force<a class="self-link" href="#isq7-inpulseforce"></a></dfn></span><a class="self-link" href="#ISQ7-inpulse.force"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor" id="ref-for-haspowerofunitaryquantityfactor">vim4:HasPowerOfUnitaryQuantityFactor</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#isq7-inpulse" id="ref-for-isq7-inpulse">ISQ7-inpulse</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.9.html#isq7-force" id="ref-for-isq7-force">iso-80000-4.9:ISQ7-force</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#exponent" id="ref-for-exponent">vim4:exponent</a> = "1/1"^^owl:rational 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.3" id="ISQ7-inpulse.time"><span class="secno">5.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="isq7-inpulse.time" id="isq7-inpulsetime">ISQ7-inpulse.time<a class="self-link" href="#isq7-inpulsetime"></a></dfn></span><a class="self-link" href="#ISQ7-inpulse.time"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor" id="ref-for-haspowerofunitaryquantityfactor①">vim4:HasPowerOfUnitaryQuantityFactor</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#isq7-inpulse" id="ref-for-isq7-inpulse①">ISQ7-inpulse</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-3.7.html#isq7-time" id="ref-for-isq7-time">iso-80000-3.7:ISQ7-time</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#exponent" id="ref-for-exponent①">vim4:exponent</a> = "1/1"^^owl:rational 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.4" id="ISQ8-inpulse"><span class="secno">5.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="isq8-inpulse" id="isq8-inpulse">ISQ8-inpulse<a class="self-link" href="#isq8-inpulse"></a></dfn></span><a class="self-link" href="#ISQ8-inpulse"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity" id="ref-for-systemhasderivedunitaryquantity①">vim4:SystemHasDerivedUnitaryQuantity</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-1.html#isq8" id="ref-for-isq8">iso-80000-1:ISQ8</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#inpulse" id="ref-for-inpulse②">inpulse</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#isdimensionless" id="ref-for-isdimensionless①">vim4:isDimensionless</a> = "false"^^xsd:boolean 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.5" id="ISQ8-inpulse.force"><span class="secno">5.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="isq8-inpulse.force" id="isq8-inpulseforce">ISQ8-inpulse.force<a class="self-link" href="#isq8-inpulseforce"></a></dfn></span><a class="self-link" href="#ISQ8-inpulse.force"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor" id="ref-for-haspowerofunitaryquantityfactor②">vim4:HasPowerOfUnitaryQuantityFactor</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#isq8-inpulse" id="ref-for-isq8-inpulse">ISQ8-inpulse</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.9.html#isq8-force" id="ref-for-isq8-force">iso-80000-4.9:ISQ8-force</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#exponent" id="ref-for-exponent②">vim4:exponent</a> = "1/1"^^owl:rational 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.6" id="ISQ8-inpulse.time"><span class="secno">5.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="isq8-inpulse.time" id="isq8-inpulsetime">ISQ8-inpulse.time<a class="self-link" href="#isq8-inpulsetime"></a></dfn></span><a class="self-link" href="#ISQ8-inpulse.time"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor" id="ref-for-haspowerofunitaryquantityfactor③">vim4:HasPowerOfUnitaryQuantityFactor</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#isq8-inpulse" id="ref-for-isq8-inpulse①">ISQ8-inpulse</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-3.7.html#isq8-time" id="ref-for-isq8-time">iso-80000-3.7:ISQ8-time</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#exponent" id="ref-for-exponent③">vim4:exponent</a> = "1/1"^^owl:rational 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.7" id="SI7-newton-second"><span class="secno">5.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="si7-newton-second" id="si7-newton-second">SI7-newton-second<a class="self-link" href="#si7-newton-second"></a></dfn></span><a class="self-link" href="#SI7-newton-second"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#systemhasderivedunit" id="ref-for-systemhasderivedunit">vim4:SystemHasDerivedUnit</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-1.html#si7" id="ref-for-si7">iso-80000-1:SI7</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#newton-second" id="ref-for-newton-second">newton-second</a> 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.8" id="SI7-newton-second.newton"><span class="secno">5.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="si7-newton-second.newton" id="si7-newton-secondnewton">SI7-newton-second.newton<a class="self-link" href="#si7-newton-secondnewton"></a></dfn></span><a class="self-link" href="#SI7-newton-second.newton"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#haspowerofunitfactor" id="ref-for-haspowerofunitfactor">vim4:HasPowerOfUnitFactor</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#si7-newton-second" id="ref-for-si7-newton-second">SI7-newton-second</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.9.html#si7-newton" id="ref-for-si7-newton">iso-80000-4.9:SI7-newton</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#exponent" id="ref-for-exponent④">vim4:exponent</a> = "1/1"^^owl:rational 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.9" id="SI7-newton-second.second"><span class="secno">5.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="si7-newton-second.second" id="si7-newton-secondsecond">SI7-newton-second.second<a class="self-link" href="#si7-newton-secondsecond"></a></dfn></span><a class="self-link" href="#SI7-newton-second.second"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#haspowerofunitfactor" id="ref-for-haspowerofunitfactor①">vim4:HasPowerOfUnitFactor</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#si7-newton-second" id="ref-for-si7-newton-second①">SI7-newton-second</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-3.7.html#si7-second" id="ref-for-si7-second">iso-80000-3.7:SI7-second</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#exponent" id="ref-for-exponent⑤">vim4:exponent</a> = "1/1"^^owl:rational 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.10" id="SI8-newton-second"><span class="secno">5.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="si8-newton-second" id="si8-newton-second">SI8-newton-second<a class="self-link" href="#si8-newton-second"></a></dfn></span><a class="self-link" href="#SI8-newton-second"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#systemhasderivedunit" id="ref-for-systemhasderivedunit①">vim4:SystemHasDerivedUnit</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-1.html#si8" id="ref-for-si8">iso-80000-1:SI8</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#newton-second" id="ref-for-newton-second①">newton-second</a> 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.11" id="SI8-newton-second.newton"><span class="secno">5.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="si8-newton-second.newton" id="si8-newton-secondnewton">SI8-newton-second.newton<a class="self-link" href="#si8-newton-secondnewton"></a></dfn></span><a class="self-link" href="#SI8-newton-second.newton"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#haspowerofunitfactor" id="ref-for-haspowerofunitfactor②">vim4:HasPowerOfUnitFactor</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#si8-newton-second" id="ref-for-si8-newton-second">SI8-newton-second</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.9.html#si8-newton" id="ref-for-si8-newton">iso-80000-4.9:SI8-newton</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#exponent" id="ref-for-exponent⑥">vim4:exponent</a> = "1/1"^^owl:rational 
+        </ul>
+    </table>
+    <h3 class="heading settled" data-level="5.12" id="SI8-newton-second.second"><span class="secno">5.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export data-lt="si8-newton-second.second" id="si8-newton-secondsecond">SI8-newton-second.second<a class="self-link" href="#si8-newton-secondsecond"></a></dfn></span><a class="self-link" href="#SI8-newton-second.second"></a></h3>
+    <table class="def">
+     <tbody>
+      <tr>
+       <th>Types
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#haspowerofunitfactor" id="ref-for-haspowerofunitfactor③">vim4:HasPowerOfUnitFactor</a> 
+        </ul>
+      <tr>
+       <th>Source
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-4.11.html#si8-newton-second" id="ref-for-si8-newton-second①">SI8-newton-second</a> 
+        </ul>
+      <tr>
+       <th>Target
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="iso-80000-3.7.html#si8-second" id="ref-for-si8-second">iso-80000-3.7:SI8-second</a> 
+        </ul>
+      <tr>
+       <th>Properties
+       <td>
+        <ul>
+         <li> <a data-link-type="dfn" href="../bipm.org/jcgm/vim4.html#exponent" id="ref-for-exponent⑦">vim4:exponent</a> = "1/1"^^owl:rational 
+        </ul>
+    </table>
+   </div>
   </main>
 <script>
 (function() {
@@ -2237,4 +2535,375 @@ dfn > a.self-link::before      { content: "#"; }
   }
 
 })();
+</script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#inpulse">inpulse</a><span>, in § 4.1</span>
+   <li><a href="#isq7-inpulse">isq7-inpulse</a><span>, in § 5.1</span>
+   <li><a href="#isq7-inpulseforce">isq7-inpulse.force</a><span>, in § 5.2</span>
+   <li><a href="#isq7-inpulsetime">isq7-inpulse.time</a><span>, in § 5.3</span>
+   <li><a href="#isq8-inpulse">isq8-inpulse</a><span>, in § 5.4</span>
+   <li><a href="#isq8-inpulseforce">isq8-inpulse.force</a><span>, in § 5.5</span>
+   <li><a href="#isq8-inpulsetime">isq8-inpulse.time</a><span>, in § 5.6</span>
+   <li><a href="#newton-second">newton-second</a><span>, in § 4.2</span>
+   <li><a href="#si7-newton-second">si7-newton-second</a><span>, in § 5.7</span>
+   <li><a href="#si7-newton-secondnewton">si7-newton-second.newton</a><span>, in § 5.8</span>
+   <li><a href="#si7-newton-secondsecond">si7-newton-second.second</a><span>, in § 5.9</span>
+   <li><a href="#si8-newton-second">si8-newton-second</a><span>, in § 5.10</span>
+   <li><a href="#si8-newton-secondnewton">si8-newton-second.newton</a><span>, in § 5.11</span>
+   <li><a href="#si8-newton-secondsecond">si8-newton-second.second</a><span>, in § 5.12</span>
+  </ul>
+  <aside aria-labelledby="infopaneltitle-for-a1137e28e1d72231671e7fd683f3a19b" class="dfn-panel" data-for="a1137e28e1d72231671e7fd683f3a19b" id="infopanel-for-a1137e28e1d72231671e7fd683f3a19b">
+   <span id="infopaneltitle-for-a1137e28e1d72231671e7fd683f3a19b" style="display:none">Info about the 'exponent' external reference.</span><a href="../bipm.org/jcgm/vim4.html#exponent">../bipm.org/jcgm/vim4.html#exponent</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-exponent">5.2. ISQ7-inpulse.force</a>
+    <li><a href="#ref-for-exponent①">5.3. ISQ7-inpulse.time</a>
+    <li><a href="#ref-for-exponent②">5.5. ISQ8-inpulse.force</a>
+    <li><a href="#ref-for-exponent③">5.6. ISQ8-inpulse.time</a>
+    <li><a href="#ref-for-exponent④">5.8. SI7-newton-second.newton</a>
+    <li><a href="#ref-for-exponent⑤">5.9. SI7-newton-second.second</a>
+    <li><a href="#ref-for-exponent⑥">5.11. SI8-newton-second.newton</a>
+    <li><a href="#ref-for-exponent⑦">5.12. SI8-newton-second.second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-3fd81ec3b18efe04a5bebacb4dfcb16c" class="dfn-panel" data-for="3fd81ec3b18efe04a5bebacb4dfcb16c" id="infopanel-for-3fd81ec3b18efe04a5bebacb4dfcb16c">
+   <span id="infopaneltitle-for-3fd81ec3b18efe04a5bebacb4dfcb16c" style="display:none">Info about the 'generalunitaryquantity' external reference.</span><a href="../bipm.org/jcgm/vim4.html#generalunitaryquantity">../bipm.org/jcgm/vim4.html#generalunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-generalunitaryquantity">4.1. inpulse</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-535fe74ab51b5c00a84eb46a25b002d3" class="dfn-panel" data-for="535fe74ab51b5c00a84eb46a25b002d3" id="infopanel-for-535fe74ab51b5c00a84eb46a25b002d3">
+   <span id="infopaneltitle-for-535fe74ab51b5c00a84eb46a25b002d3" style="display:none">Info about the 'haspowerofunitaryquantityfactor' external reference.</span><a href="../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor">../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-haspowerofunitaryquantityfactor">5.2. ISQ7-inpulse.force</a>
+    <li><a href="#ref-for-haspowerofunitaryquantityfactor①">5.3. ISQ7-inpulse.time</a>
+    <li><a href="#ref-for-haspowerofunitaryquantityfactor②">5.5. ISQ8-inpulse.force</a>
+    <li><a href="#ref-for-haspowerofunitaryquantityfactor③">5.6. ISQ8-inpulse.time</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-d0f70bdb479252c7b7fb19c675043aef" class="dfn-panel" data-for="d0f70bdb479252c7b7fb19c675043aef" id="infopanel-for-d0f70bdb479252c7b7fb19c675043aef">
+   <span id="infopaneltitle-for-d0f70bdb479252c7b7fb19c675043aef" style="display:none">Info about the 'haspowerofunitfactor' external reference.</span><a href="../bipm.org/jcgm/vim4.html#haspowerofunitfactor">../bipm.org/jcgm/vim4.html#haspowerofunitfactor</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-haspowerofunitfactor">5.8. SI7-newton-second.newton</a>
+    <li><a href="#ref-for-haspowerofunitfactor①">5.9. SI7-newton-second.second</a>
+    <li><a href="#ref-for-haspowerofunitfactor②">5.11. SI8-newton-second.newton</a>
+    <li><a href="#ref-for-haspowerofunitfactor③">5.12. SI8-newton-second.second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-a55dc4183806d00f57769dd51a14d8b6" class="dfn-panel" data-for="a55dc4183806d00f57769dd51a14d8b6" id="infopanel-for-a55dc4183806d00f57769dd51a14d8b6">
+   <span id="infopaneltitle-for-a55dc4183806d00f57769dd51a14d8b6" style="display:none">Info about the 'id' external reference.</span><a href="../bipm.org/jcgm/vim4.html#id">../bipm.org/jcgm/vim4.html#id</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-id">4.1. inpulse</a>
+    <li><a href="#ref-for-id①">4.2. newton-second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-68276dbf72f7e9ff6b765618f7aa5401" class="dfn-panel" data-for="68276dbf72f7e9ff6b765618f7aa5401" id="infopanel-for-68276dbf72f7e9ff6b765618f7aa5401">
+   <span id="infopaneltitle-for-68276dbf72f7e9ff6b765618f7aa5401" style="display:none">Info about the 'instantiates_1' external reference.</span><a href="../bipm.org/jcgm/vim4.html#instantiates_1">../bipm.org/jcgm/vim4.html#instantiates_1</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-instantiates_1">4.2. newton-second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-59095b1ae35be320957c0b3c9b524fcd" class="dfn-panel" data-for="59095b1ae35be320957c0b3c9b524fcd" id="infopanel-for-59095b1ae35be320957c0b3c9b524fcd">
+   <span id="infopaneltitle-for-59095b1ae35be320957c0b3c9b524fcd" style="display:none">Info about the 'isdimensionless' external reference.</span><a href="../bipm.org/jcgm/vim4.html#isdimensionless">../bipm.org/jcgm/vim4.html#isdimensionless</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isdimensionless">5.1. ISQ7-inpulse</a>
+    <li><a href="#ref-for-isdimensionless①">5.4. ISQ8-inpulse</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-0d69af81d63e38857736e4c2b508add9" class="dfn-panel" data-for="0d69af81d63e38857736e4c2b508add9" id="infopanel-for-0d69af81d63e38857736e4c2b508add9">
+   <span id="infopaneltitle-for-0d69af81d63e38857736e4c2b508add9" style="display:none">Info about the 'systemhasderivedunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasderivedunit">../bipm.org/jcgm/vim4.html#systemhasderivedunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasderivedunit">5.7. SI7-newton-second</a>
+    <li><a href="#ref-for-systemhasderivedunit①">5.10. SI8-newton-second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-56d67cae2f4f57f67725d22b7b52d2b8" class="dfn-panel" data-for="56d67cae2f4f57f67725d22b7b52d2b8" id="infopanel-for-56d67cae2f4f57f67725d22b7b52d2b8">
+   <span id="infopaneltitle-for-56d67cae2f4f57f67725d22b7b52d2b8" style="display:none">Info about the 'systemhasderivedunitaryquantity' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity">../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-systemhasderivedunitaryquantity">5.1. ISQ7-inpulse</a>
+    <li><a href="#ref-for-systemhasderivedunitaryquantity①">5.4. ISQ8-inpulse</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-b6481b11251901b497f35d832c27d2e1" class="dfn-panel" data-for="b6481b11251901b497f35d832c27d2e1" id="infopanel-for-b6481b11251901b497f35d832c27d2e1">
+   <span id="infopaneltitle-for-b6481b11251901b497f35d832c27d2e1" style="display:none">Info about the 'unprefixedmeasurementunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit">../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-unprefixedmeasurementunit">4.2. newton-second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-b1dc043e5efbcc452c05318f2f52f1e4" class="dfn-panel" data-for="b1dc043e5efbcc452c05318f2f52f1e4" id="infopanel-for-b1dc043e5efbcc452c05318f2f52f1e4">
+   <span id="infopaneltitle-for-b1dc043e5efbcc452c05318f2f52f1e4" style="display:none">Info about the 'isq7' external reference.</span><a href="iso-80000-1.html#isq7">iso-80000-1.html#isq7</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isq7">5.1. ISQ7-inpulse</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-f257f9f007741c509006e6756479b3ef" class="dfn-panel" data-for="f257f9f007741c509006e6756479b3ef" id="infopanel-for-f257f9f007741c509006e6756479b3ef">
+   <span id="infopaneltitle-for-f257f9f007741c509006e6756479b3ef" style="display:none">Info about the 'isq8' external reference.</span><a href="iso-80000-1.html#isq8">iso-80000-1.html#isq8</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isq8">5.4. ISQ8-inpulse</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-d005e23d5d949663f3cf9e786bc3d9a0" class="dfn-panel" data-for="d005e23d5d949663f3cf9e786bc3d9a0" id="infopanel-for-d005e23d5d949663f3cf9e786bc3d9a0">
+   <span id="infopaneltitle-for-d005e23d5d949663f3cf9e786bc3d9a0" style="display:none">Info about the 'si7' external reference.</span><a href="iso-80000-1.html#si7">iso-80000-1.html#si7</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si7">5.7. SI7-newton-second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-c84ea8907660487a2bffadf8ad295cac" class="dfn-panel" data-for="c84ea8907660487a2bffadf8ad295cac" id="infopanel-for-c84ea8907660487a2bffadf8ad295cac">
+   <span id="infopaneltitle-for-c84ea8907660487a2bffadf8ad295cac" style="display:none">Info about the 'si8' external reference.</span><a href="iso-80000-1.html#si8">iso-80000-1.html#si8</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si8">5.10. SI8-newton-second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-9310e3e7f5c6cba0d6753cb956df9148" class="dfn-panel" data-for="9310e3e7f5c6cba0d6753cb956df9148" id="infopanel-for-9310e3e7f5c6cba0d6753cb956df9148">
+   <span id="infopaneltitle-for-9310e3e7f5c6cba0d6753cb956df9148" style="display:none">Info about the 'isq7-time' external reference.</span><a href="iso-80000-3.7.html#isq7-time">iso-80000-3.7.html#isq7-time</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isq7-time">5.3. ISQ7-inpulse.time</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-2dd9fe0024aed80ce805ade725637ef3" class="dfn-panel" data-for="2dd9fe0024aed80ce805ade725637ef3" id="infopanel-for-2dd9fe0024aed80ce805ade725637ef3">
+   <span id="infopaneltitle-for-2dd9fe0024aed80ce805ade725637ef3" style="display:none">Info about the 'isq8-time' external reference.</span><a href="iso-80000-3.7.html#isq8-time">iso-80000-3.7.html#isq8-time</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isq8-time">5.6. ISQ8-inpulse.time</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-f6654a4cb21ff57a1e03f9124b9ac499" class="dfn-panel" data-for="f6654a4cb21ff57a1e03f9124b9ac499" id="infopanel-for-f6654a4cb21ff57a1e03f9124b9ac499">
+   <span id="infopaneltitle-for-f6654a4cb21ff57a1e03f9124b9ac499" style="display:none">Info about the 'si7-second' external reference.</span><a href="iso-80000-3.7.html#si7-second">iso-80000-3.7.html#si7-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si7-second">5.9. SI7-newton-second.second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-75c69672f707f9f8e976b16ceb573ec5" class="dfn-panel" data-for="75c69672f707f9f8e976b16ceb573ec5" id="infopanel-for-75c69672f707f9f8e976b16ceb573ec5">
+   <span id="infopaneltitle-for-75c69672f707f9f8e976b16ceb573ec5" style="display:none">Info about the 'si8-second' external reference.</span><a href="iso-80000-3.7.html#si8-second">iso-80000-3.7.html#si8-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si8-second">5.12. SI8-newton-second.second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-a1c4fdd161f6468cfdf44ab2ac6fb87a" class="dfn-panel" data-for="a1c4fdd161f6468cfdf44ab2ac6fb87a" id="infopanel-for-a1c4fdd161f6468cfdf44ab2ac6fb87a">
+   <span id="infopaneltitle-for-a1c4fdd161f6468cfdf44ab2ac6fb87a" style="display:none">Info about the 'inpulse' external reference.</span><a href="iso-80000-4.11.html#inpulse">iso-80000-4.11.html#inpulse</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-inpulse">4.2. newton-second</a>
+    <li><a href="#ref-for-inpulse①">5.1. ISQ7-inpulse</a>
+    <li><a href="#ref-for-inpulse②">5.4. ISQ8-inpulse</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-766a6659fe68a27ad89aa69f29f0d41c" class="dfn-panel" data-for="766a6659fe68a27ad89aa69f29f0d41c" id="infopanel-for-766a6659fe68a27ad89aa69f29f0d41c">
+   <span id="infopaneltitle-for-766a6659fe68a27ad89aa69f29f0d41c" style="display:none">Info about the 'isq7-inpulse' external reference.</span><a href="iso-80000-4.11.html#isq7-inpulse">iso-80000-4.11.html#isq7-inpulse</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isq7-inpulse">5.2. ISQ7-inpulse.force</a>
+    <li><a href="#ref-for-isq7-inpulse①">5.3. ISQ7-inpulse.time</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-484352e2dc158661f6b7a508262857bd" class="dfn-panel" data-for="484352e2dc158661f6b7a508262857bd" id="infopanel-for-484352e2dc158661f6b7a508262857bd">
+   <span id="infopaneltitle-for-484352e2dc158661f6b7a508262857bd" style="display:none">Info about the 'isq8-inpulse' external reference.</span><a href="iso-80000-4.11.html#isq8-inpulse">iso-80000-4.11.html#isq8-inpulse</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isq8-inpulse">5.5. ISQ8-inpulse.force</a>
+    <li><a href="#ref-for-isq8-inpulse①">5.6. ISQ8-inpulse.time</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-923fa5a4a22f31c9d7e6368bd6aa4324" class="dfn-panel" data-for="923fa5a4a22f31c9d7e6368bd6aa4324" id="infopanel-for-923fa5a4a22f31c9d7e6368bd6aa4324">
+   <span id="infopaneltitle-for-923fa5a4a22f31c9d7e6368bd6aa4324" style="display:none">Info about the 'newton-second' external reference.</span><a href="iso-80000-4.11.html#newton-second">iso-80000-4.11.html#newton-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-newton-second">5.7. SI7-newton-second</a>
+    <li><a href="#ref-for-newton-second①">5.10. SI8-newton-second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-fc2db0a761e76926dc0a2c4743753248" class="dfn-panel" data-for="fc2db0a761e76926dc0a2c4743753248" id="infopanel-for-fc2db0a761e76926dc0a2c4743753248">
+   <span id="infopaneltitle-for-fc2db0a761e76926dc0a2c4743753248" style="display:none">Info about the 'si7-newton-second' external reference.</span><a href="iso-80000-4.11.html#si7-newton-second">iso-80000-4.11.html#si7-newton-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si7-newton-second">5.8. SI7-newton-second.newton</a>
+    <li><a href="#ref-for-si7-newton-second①">5.9. SI7-newton-second.second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-1b000049ecaf6c31fb31c156f76a3929" class="dfn-panel" data-for="1b000049ecaf6c31fb31c156f76a3929" id="infopanel-for-1b000049ecaf6c31fb31c156f76a3929">
+   <span id="infopaneltitle-for-1b000049ecaf6c31fb31c156f76a3929" style="display:none">Info about the 'si8-newton-second' external reference.</span><a href="iso-80000-4.11.html#si8-newton-second">iso-80000-4.11.html#si8-newton-second</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si8-newton-second">5.11. SI8-newton-second.newton</a>
+    <li><a href="#ref-for-si8-newton-second①">5.12. SI8-newton-second.second</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-7695315ced9fb04b8ce128d1650c3c7b" class="dfn-panel" data-for="7695315ced9fb04b8ce128d1650c3c7b" id="infopanel-for-7695315ced9fb04b8ce128d1650c3c7b">
+   <span id="infopaneltitle-for-7695315ced9fb04b8ce128d1650c3c7b" style="display:none">Info about the 'isq7-force' external reference.</span><a href="iso-80000-4.9.html#isq7-force">iso-80000-4.9.html#isq7-force</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isq7-force">5.2. ISQ7-inpulse.force</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-f3d7681059fea680ffc3894bcdf07321" class="dfn-panel" data-for="f3d7681059fea680ffc3894bcdf07321" id="infopanel-for-f3d7681059fea680ffc3894bcdf07321">
+   <span id="infopaneltitle-for-f3d7681059fea680ffc3894bcdf07321" style="display:none">Info about the 'isq8-force' external reference.</span><a href="iso-80000-4.9.html#isq8-force">iso-80000-4.9.html#isq8-force</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-isq8-force">5.5. ISQ8-inpulse.force</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-f60a79c552dac91f58da73ed0e0cedf0" class="dfn-panel" data-for="f60a79c552dac91f58da73ed0e0cedf0" id="infopanel-for-f60a79c552dac91f58da73ed0e0cedf0">
+   <span id="infopaneltitle-for-f60a79c552dac91f58da73ed0e0cedf0" style="display:none">Info about the 'si7-newton' external reference.</span><a href="iso-80000-4.9.html#si7-newton">iso-80000-4.9.html#si7-newton</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si7-newton">5.8. SI7-newton-second.newton</a>
+   </ul>
+  </aside>
+  <aside aria-labelledby="infopaneltitle-for-bfadc02e1b9070a864a35177c1aa7cc4" class="dfn-panel" data-for="bfadc02e1b9070a864a35177c1aa7cc4" id="infopanel-for-bfadc02e1b9070a864a35177c1aa7cc4">
+   <span id="infopaneltitle-for-bfadc02e1b9070a864a35177c1aa7cc4" style="display:none">Info about the 'si8-newton' external reference.</span><a href="iso-80000-4.9.html#si8-newton">iso-80000-4.9.html#si8-newton</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-si8-newton">5.11. SI8-newton-second.newton</a>
+   </ul>
+  </aside>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[HTTP://BIPM.ORG/JCGM/VIM4]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="a1137e28e1d72231671e7fd683f3a19b">exponent</span>
+     <li><span class="dfn-paneled" id="3fd81ec3b18efe04a5bebacb4dfcb16c">generalunitaryquantity</span>
+     <li><span class="dfn-paneled" id="535fe74ab51b5c00a84eb46a25b002d3">haspowerofunitaryquantityfactor</span>
+     <li><span class="dfn-paneled" id="d0f70bdb479252c7b7fb19c675043aef">haspowerofunitfactor</span>
+     <li><span class="dfn-paneled" id="a55dc4183806d00f57769dd51a14d8b6">id</span>
+     <li><span class="dfn-paneled" id="68276dbf72f7e9ff6b765618f7aa5401">instantiates_1</span>
+     <li><span class="dfn-paneled" id="59095b1ae35be320957c0b3c9b524fcd">isdimensionless</span>
+     <li><span class="dfn-paneled" id="0d69af81d63e38857736e4c2b508add9">systemhasderivedunit</span>
+     <li><span class="dfn-paneled" id="56d67cae2f4f57f67725d22b7b52d2b8">systemhasderivedunitaryquantity</span>
+     <li><span class="dfn-paneled" id="b6481b11251901b497f35d832c27d2e1">unprefixedmeasurementunit</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-1]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="b1dc043e5efbcc452c05318f2f52f1e4">isq7</span>
+     <li><span class="dfn-paneled" id="f257f9f007741c509006e6756479b3ef">isq8</span>
+     <li><span class="dfn-paneled" id="d005e23d5d949663f3cf9e786bc3d9a0">si7</span>
+     <li><span class="dfn-paneled" id="c84ea8907660487a2bffadf8ad295cac">si8</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-3.7]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="9310e3e7f5c6cba0d6753cb956df9148">isq7-time</span>
+     <li><span class="dfn-paneled" id="2dd9fe0024aed80ce805ade725637ef3">isq8-time</span>
+     <li><span class="dfn-paneled" id="f6654a4cb21ff57a1e03f9124b9ac499">si7-second</span>
+     <li><span class="dfn-paneled" id="75c69672f707f9f8e976b16ceb573ec5">si8-second</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-4.11]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="a1c4fdd161f6468cfdf44ab2ac6fb87a">inpulse</span>
+     <li><span class="dfn-paneled" id="766a6659fe68a27ad89aa69f29f0d41c">isq7-inpulse</span>
+     <li><span class="dfn-paneled" id="484352e2dc158661f6b7a508262857bd">isq8-inpulse</span>
+     <li><span class="dfn-paneled" id="923fa5a4a22f31c9d7e6368bd6aa4324">newton-second</span>
+     <li><span class="dfn-paneled" id="fc2db0a761e76926dc0a2c4743753248">si7-newton-second</span>
+     <li><span class="dfn-paneled" id="1b000049ecaf6c31fb31c156f76a3929">si8-newton-second</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-4.9]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="7695315ced9fb04b8ce128d1650c3c7b">isq7-force</span>
+     <li><span class="dfn-paneled" id="f3d7681059fea680ffc3894bcdf07321">isq8-force</span>
+     <li><span class="dfn-paneled" id="f60a79c552dac91f58da73ed0e0cedf0">si7-newton</span>
+     <li><span class="dfn-paneled" id="bfadc02e1b9070a864a35177c1aa7cc4">si8-newton</span>
+    </ul>
+  </ul>
+<script>/* script-dfn-panel */
+"use strict";
+{
+    function queryAll(sel) {
+        return [].slice.call(document.querySelectorAll(sel));
+    }
+
+    // Add popup behavior to all dfns to show the corresponding dfn-panel.
+    var dfns = document.querySelectorAll('.dfn-paneled');
+    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
+
+    function hideAllDfnPanels() {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
+    }
+
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn) {
+        // Find dfn panel
+        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
+        if (dfnPanel) {
+            const panelWrapper = document.createElement('span');
+            panelWrapper.appendChild(dfnPanel);
+            panelWrapper.style.position = "relative";
+            panelWrapper.style.height = "0px";
+            dfn.insertAdjacentElement("afterend", panelWrapper);
+            dfn.setAttribute('role', 'button');
+            dfn.setAttribute('aria-expanded', 'false')
+            dfn.tabIndex = 0;
+            dfn.classList.add('has-dfn-panel');
+            dfn.addEventListener('click', (event) => {
+                showDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+            });
+            dfn.addEventListener('keypress', (event) => {
+                const kc = event.keyCode;
+                // 32->Space, 13->Enter
+                if(kc == 32 || kc == 13) {
+                    toggleDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            });
+
+            dfnPanel.addEventListener('click', (event) => {
+                pinDfnPanel(dfnPanel);
+                event.stopPropagation();
+            });
+
+            dfnPanel.addEventListener('keydown', (event) => {
+                if(event.keyCode == 27) { // Escape key
+                    hideDfnPanel(dfnPanel, dfn);
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+            })
+
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
+        }
+    }
+}
 </script>
