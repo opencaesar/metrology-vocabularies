@@ -16,6 +16,7 @@ description <http://example.org/test-metrology-model#> as test-metrology-model {
   
   ci camera1.mass.basic.constraint : vim4:InherentUnitaryQuantityValue [
     vim4:hasDoubleNumber "3.103"^^xsd:double
+    vim4:unit iso-80000-4.1:kilogram
     vim4:characterizes camera1
   ]
   

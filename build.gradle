@@ -184,6 +184,7 @@ task stopFuseki(type: io.opencaesar.owl.fuseki.StopFusekiTask, group:"oml") {
  */
  
 task owlLoadCompleteDescription(type:io.opencaesar.owl.load.OwlLoadTask, group:"oml", dependsOn: owlReasonCompleteDescription) {
+    inputs.files(startFuseki.outputFolderPath) // rerun when fuseki restarts
     catalogPath = file('build/owl/catalog.xml')
     endpointURL = "http://localhost:3030/metrology-vocabularies".toString()
     fileExtensions = ['owl', 'ttl']
