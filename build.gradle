@@ -40,7 +40,7 @@ apply from: "${rootDir}/gradle/maven-deployment.gradle"
 /*
  * Properties
  */
-ext.bikeshed = 'build/gradle'
+ext.bikeshed = 'build/bikeshed'
 
 /*
  * The repositories to look up OML dependencies in
@@ -77,7 +77,7 @@ task downloadDependencies(type:io.opencaesar.oml.merge.OmlMergeTask, group:"oml"
  */
 task copyDiagrams(type: Copy) {
     from 'diagrams'
-    into 'build/bikeshed/diagrams'
+    into file("$bikeshed/diagrams")
 }
 
 task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, group:"oml", dependsOn: [downloadDependencies, copyDiagrams]) {
