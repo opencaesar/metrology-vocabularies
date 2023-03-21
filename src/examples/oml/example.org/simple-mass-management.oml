@@ -4,9 +4,9 @@ description <http://example.org/simple-mass-management#> as simple-mass-manageme
   
   extends <http://iso.org/iso-80000-4.1#> as iso-80000-4.1
   
-  ci mass.basic : vim4:GeneralUnitaryQuantity
+  instance mass.basic : vim4:GeneralUnitaryQuantity
   [ vim4:id "mass.basic" vim4:specializes iso-80000-4.1:mass ]
   
-  ci mass.allocation : vim4:GeneralUnitaryQuantity
+  instance mass.allocation : vim4:GeneralUnitaryQuantity
   [ vim4:id "mass.allocation" vim4:specializes iso-80000-4.1:mass ]
 }
