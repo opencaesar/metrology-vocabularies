@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/metrology-vocabularies/iso.org/iso-80000-3.1" rel="canonical">
-  <meta content="e8f2fd6ec2b315d6d4d4c0417ead33c64bc51f16" name="document-revision">
+  <meta content="c39258f88a60699662ffa99a6df5496bfd2b3310" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">ISO-80000-3.1 length, metre</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -3992,654 +3998,146 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#si8-metre">si8-metre</a><span>, in § 5.56</span>
    <li><a href="#thickness">thickness</a><span>, in § 4.16</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-d007e47929d2675c97fec877558871f4" class="dfn-panel" data-for="d007e47929d2675c97fec877558871f4" id="infopanel-for-d007e47929d2675c97fec877558871f4">
-   <span id="infopaneltitle-for-d007e47929d2675c97fec877558871f4" style="display:none">Info about the 'dimensionsymbol' external reference.</span><a href="../bipm.org/jcgm/vim4.html#dimensionsymbol">../bipm.org/jcgm/vim4.html#dimensionsymbol</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dimensionsymbol">5.13. ISQ7-length</a>
-    <li><a href="#ref-for-dimensionsymbol①">5.38. ISQ8-length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a1137e28e1d72231671e7fd683f3a19b" class="dfn-panel" data-for="a1137e28e1d72231671e7fd683f3a19b" id="infopanel-for-a1137e28e1d72231671e7fd683f3a19b">
-   <span id="infopaneltitle-for-a1137e28e1d72231671e7fd683f3a19b" style="display:none">Info about the 'exponent' external reference.</span><a href="../bipm.org/jcgm/vim4.html#exponent">../bipm.org/jcgm/vim4.html#exponent</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-exponent">5.2. ISQ7-breadth.length</a>
-    <li><a href="#ref-for-exponent①">5.4. ISQ7-cartesian-coordinate.length</a>
-    <li><a href="#ref-for-exponent②">5.6. ISQ7-diameter.length</a>
-    <li><a href="#ref-for-exponent③">5.8. ISQ7-displacement.length</a>
-    <li><a href="#ref-for-exponent④">5.10. ISQ7-distance.length</a>
-    <li><a href="#ref-for-exponent⑤">5.12. ISQ7-height.length</a>
-    <li><a href="#ref-for-exponent⑥">5.15. ISQ7-length-of-path.length</a>
-    <li><a href="#ref-for-exponent⑦">5.17. ISQ7-position-vector.length</a>
-    <li><a href="#ref-for-exponent⑧">5.19. ISQ7-radial-distance.length</a>
-    <li><a href="#ref-for-exponent⑨">5.22. ISQ7-radius-of-curvature.length</a>
-    <li><a href="#ref-for-exponent①⓪">5.23. ISQ7-radius.length</a>
-    <li><a href="#ref-for-exponent①①">5.25. ISQ7-thickness.length</a>
-    <li><a href="#ref-for-exponent①②">5.27. ISQ8-breadth.length</a>
-    <li><a href="#ref-for-exponent①③">5.29. ISQ8-cartesian-coordinate.length</a>
-    <li><a href="#ref-for-exponent①④">5.31. ISQ8-diameter.length</a>
-    <li><a href="#ref-for-exponent①⑤">5.33. ISQ8-displacement.length</a>
-    <li><a href="#ref-for-exponent①⑥">5.35. ISQ8-distance.length</a>
-    <li><a href="#ref-for-exponent①⑦">5.37. ISQ8-height.length</a>
-    <li><a href="#ref-for-exponent①⑧">5.40. ISQ8-length-of-path.length</a>
-    <li><a href="#ref-for-exponent①⑨">5.42. ISQ8-position-vector.length</a>
-    <li><a href="#ref-for-exponent②⓪">5.44. ISQ8-radial-distance.length</a>
-    <li><a href="#ref-for-exponent②①">5.47. ISQ8-radius-of-curvature.length</a>
-    <li><a href="#ref-for-exponent②②">5.48. ISQ8-radius.length</a>
-    <li><a href="#ref-for-exponent②③">5.50. ISQ8-thickness.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3fd81ec3b18efe04a5bebacb4dfcb16c" class="dfn-panel" data-for="3fd81ec3b18efe04a5bebacb4dfcb16c" id="infopanel-for-3fd81ec3b18efe04a5bebacb4dfcb16c">
-   <span id="infopaneltitle-for-3fd81ec3b18efe04a5bebacb4dfcb16c" style="display:none">Info about the 'generalunitaryquantity' external reference.</span><a href="../bipm.org/jcgm/vim4.html#generalunitaryquantity">../bipm.org/jcgm/vim4.html#generalunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generalunitaryquantity">4.1. breadth</a>
-    <li><a href="#ref-for-generalunitaryquantity①">4.2. cartesian-coordinate</a>
-    <li><a href="#ref-for-generalunitaryquantity②">4.4. diameter</a>
-    <li><a href="#ref-for-generalunitaryquantity③">4.5. displacement</a>
-    <li><a href="#ref-for-generalunitaryquantity④">4.6. distance</a>
-    <li><a href="#ref-for-generalunitaryquantity⑤">4.7. height</a>
-    <li><a href="#ref-for-generalunitaryquantity⑥">4.9. length</a>
-    <li><a href="#ref-for-generalunitaryquantity⑦">4.10. length-of-path</a>
-    <li><a href="#ref-for-generalunitaryquantity⑧">4.12. position-vector</a>
-    <li><a href="#ref-for-generalunitaryquantity⑨">4.13. radial-distance</a>
-    <li><a href="#ref-for-generalunitaryquantity①⓪">4.14. radius</a>
-    <li><a href="#ref-for-generalunitaryquantity①①">4.15. radius-of-curvature</a>
-    <li><a href="#ref-for-generalunitaryquantity①②">4.16. thickness</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-68dba369341faed167b27bee48418458" class="dfn-panel" data-for="68dba369341faed167b27bee48418458" id="infopanel-for-68dba369341faed167b27bee48418458">
-   <span id="infopaneltitle-for-68dba369341faed167b27bee48418458" style="display:none">Info about the 'hasmultiple_1' external reference.</span><a href="../bipm.org/jcgm/vim4.html#hasmultiple_1">../bipm.org/jcgm/vim4.html#hasmultiple_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hasmultiple_1">4.3. decimetre</a>
-    <li><a href="#ref-for-hasmultiple_1①">4.8. kilometre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-535fe74ab51b5c00a84eb46a25b002d3" class="dfn-panel" data-for="535fe74ab51b5c00a84eb46a25b002d3" id="infopanel-for-535fe74ab51b5c00a84eb46a25b002d3">
-   <span id="infopaneltitle-for-535fe74ab51b5c00a84eb46a25b002d3" style="display:none">Info about the 'haspowerofunitaryquantityfactor' external reference.</span><a href="../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor">../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor">5.2. ISQ7-breadth.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①">5.4. ISQ7-cartesian-coordinate.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor②">5.6. ISQ7-diameter.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor③">5.8. ISQ7-displacement.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor④">5.10. ISQ7-distance.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor⑤">5.12. ISQ7-height.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor⑥">5.15. ISQ7-length-of-path.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor⑦">5.17. ISQ7-position-vector.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor⑧">5.19. ISQ7-radial-distance.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor⑨">5.22. ISQ7-radius-of-curvature.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①⓪">5.23. ISQ7-radius.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①①">5.25. ISQ7-thickness.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①②">5.27. ISQ8-breadth.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①③">5.29. ISQ8-cartesian-coordinate.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①④">5.31. ISQ8-diameter.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①⑤">5.33. ISQ8-displacement.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①⑥">5.35. ISQ8-distance.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①⑦">5.37. ISQ8-height.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①⑧">5.40. ISQ8-length-of-path.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①⑨">5.42. ISQ8-position-vector.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor②⓪">5.44. ISQ8-radial-distance.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor②①">5.47. ISQ8-radius-of-curvature.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor②②">5.48. ISQ8-radius.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor②③">5.50. ISQ8-thickness.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a55dc4183806d00f57769dd51a14d8b6" class="dfn-panel" data-for="a55dc4183806d00f57769dd51a14d8b6" id="infopanel-for-a55dc4183806d00f57769dd51a14d8b6">
-   <span id="infopaneltitle-for-a55dc4183806d00f57769dd51a14d8b6" style="display:none">Info about the 'id' external reference.</span><a href="../bipm.org/jcgm/vim4.html#id">../bipm.org/jcgm/vim4.html#id</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-id">4.1. breadth</a>
-    <li><a href="#ref-for-id①">4.2. cartesian-coordinate</a>
-    <li><a href="#ref-for-id②">4.3. decimetre</a>
-    <li><a href="#ref-for-id③">4.4. diameter</a>
-    <li><a href="#ref-for-id④">4.5. displacement</a>
-    <li><a href="#ref-for-id⑤">4.6. distance</a>
-    <li><a href="#ref-for-id⑥">4.7. height</a>
-    <li><a href="#ref-for-id⑦">4.8. kilometre</a>
-    <li><a href="#ref-for-id⑧">4.9. length</a>
-    <li><a href="#ref-for-id⑨">4.10. length-of-path</a>
-    <li><a href="#ref-for-id①⓪">4.11. metre</a>
-    <li><a href="#ref-for-id①①">4.12. position-vector</a>
-    <li><a href="#ref-for-id①②">4.13. radial-distance</a>
-    <li><a href="#ref-for-id①③">4.14. radius</a>
-    <li><a href="#ref-for-id①④">4.15. radius-of-curvature</a>
-    <li><a href="#ref-for-id①⑤">4.16. thickness</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-68276dbf72f7e9ff6b765618f7aa5401" class="dfn-panel" data-for="68276dbf72f7e9ff6b765618f7aa5401" id="infopanel-for-68276dbf72f7e9ff6b765618f7aa5401">
-   <span id="infopaneltitle-for-68276dbf72f7e9ff6b765618f7aa5401" style="display:none">Info about the 'instantiates_1' external reference.</span><a href="../bipm.org/jcgm/vim4.html#instantiates_1">../bipm.org/jcgm/vim4.html#instantiates_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-instantiates_1">4.11. metre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6b1c6b4e03d0c2e036fb5f781edb370d" class="dfn-panel" data-for="6b1c6b4e03d0c2e036fb5f781edb370d" id="infopanel-for-6b1c6b4e03d0c2e036fb5f781edb370d">
-   <span id="infopaneltitle-for-6b1c6b4e03d0c2e036fb5f781edb370d" style="display:none">Info about the 'ismultipleof_1' external reference.</span><a href="../bipm.org/jcgm/vim4.html#ismultipleof_1">../bipm.org/jcgm/vim4.html#ismultipleof_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-ismultipleof_1">4.3. decimetre</a>
-    <li><a href="#ref-for-ismultipleof_1①">4.8. kilometre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5a5070f27cc32a58e8e6f19636cb0be1" class="dfn-panel" data-for="5a5070f27cc32a58e8e6f19636cb0be1" id="infopanel-for-5a5070f27cc32a58e8e6f19636cb0be1">
-   <span id="infopaneltitle-for-5a5070f27cc32a58e8e6f19636cb0be1" style="display:none">Info about the 'isoffsystemunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#isoffsystemunit">../bipm.org/jcgm/vim4.html#isoffsystemunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isoffsystemunit">5.51. SI7-decimetre</a>
-    <li><a href="#ref-for-isoffsystemunit①">5.52. SI7-kilometre</a>
-    <li><a href="#ref-for-isoffsystemunit②">5.54. SI8-decimetre</a>
-    <li><a href="#ref-for-isoffsystemunit③">5.55. SI8-kilometre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-66fd844118ae24b649d94dfd8be3c8f0" class="dfn-panel" data-for="66fd844118ae24b649d94dfd8be3c8f0" id="infopanel-for-66fd844118ae24b649d94dfd8be3c8f0">
-   <span id="infopaneltitle-for-66fd844118ae24b649d94dfd8be3c8f0" style="display:none">Info about the 'prefixedmeasurementunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#prefixedmeasurementunit">../bipm.org/jcgm/vim4.html#prefixedmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-prefixedmeasurementunit">4.3. decimetre</a>
-    <li><a href="#ref-for-prefixedmeasurementunit①">4.8. kilometre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-814d86a4a7aa7f652a0e78216b702153" class="dfn-panel" data-for="814d86a4a7aa7f652a0e78216b702153" id="infopanel-for-814d86a4a7aa7f652a0e78216b702153">
-   <span id="infopaneltitle-for-814d86a4a7aa7f652a0e78216b702153" style="display:none">Info about the 'systemhasbaseunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasbaseunit">../bipm.org/jcgm/vim4.html#systemhasbaseunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasbaseunit">5.53. SI7-metre</a>
-    <li><a href="#ref-for-systemhasbaseunit①">5.56. SI8-metre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4a590646a89c576ea361371d8e0eb7c3" class="dfn-panel" data-for="4a590646a89c576ea361371d8e0eb7c3" id="infopanel-for-4a590646a89c576ea361371d8e0eb7c3">
-   <span id="infopaneltitle-for-4a590646a89c576ea361371d8e0eb7c3" style="display:none">Info about the 'systemhasbaseunitaryquantity' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity">../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasbaseunitaryquantity">5.13. ISQ7-length</a>
-    <li><a href="#ref-for-systemhasbaseunitaryquantity①">5.38. ISQ8-length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0d69af81d63e38857736e4c2b508add9" class="dfn-panel" data-for="0d69af81d63e38857736e4c2b508add9" id="infopanel-for-0d69af81d63e38857736e4c2b508add9">
-   <span id="infopaneltitle-for-0d69af81d63e38857736e4c2b508add9" style="display:none">Info about the 'systemhasderivedunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasderivedunit">../bipm.org/jcgm/vim4.html#systemhasderivedunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasderivedunit">5.51. SI7-decimetre</a>
-    <li><a href="#ref-for-systemhasderivedunit①">5.52. SI7-kilometre</a>
-    <li><a href="#ref-for-systemhasderivedunit②">5.54. SI8-decimetre</a>
-    <li><a href="#ref-for-systemhasderivedunit③">5.55. SI8-kilometre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-56d67cae2f4f57f67725d22b7b52d2b8" class="dfn-panel" data-for="56d67cae2f4f57f67725d22b7b52d2b8" id="infopanel-for-56d67cae2f4f57f67725d22b7b52d2b8">
-   <span id="infopaneltitle-for-56d67cae2f4f57f67725d22b7b52d2b8" style="display:none">Info about the 'systemhasderivedunitaryquantity' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity">../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity">5.1. ISQ7-breadth</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①">5.3. ISQ7-cartesian-coordinate</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity②">5.5. ISQ7-diameter</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity③">5.7. ISQ7-displacement</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity④">5.9. ISQ7-distance</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity⑤">5.11. ISQ7-height</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity⑥">5.14. ISQ7-length-of-path</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity⑦">5.16. ISQ7-position-vector</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity⑧">5.18. ISQ7-radial-distance</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity⑨">5.20. ISQ7-radius</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①⓪">5.21. ISQ7-radius-of-curvature</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①①">5.24. ISQ7-thickness</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①②">5.26. ISQ8-breadth</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①③">5.28. ISQ8-cartesian-coordinate</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①④">5.30. ISQ8-diameter</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①⑤">5.32. ISQ8-displacement</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①⑥">5.34. ISQ8-distance</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①⑦">5.36. ISQ8-height</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①⑧">5.39. ISQ8-length-of-path</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①⑨">5.41. ISQ8-position-vector</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity②⓪">5.43. ISQ8-radial-distance</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity②①">5.45. ISQ8-radius</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity②②">5.46. ISQ8-radius-of-curvature</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity②③">5.49. ISQ8-thickness</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b6481b11251901b497f35d832c27d2e1" class="dfn-panel" data-for="b6481b11251901b497f35d832c27d2e1" id="infopanel-for-b6481b11251901b497f35d832c27d2e1">
-   <span id="infopaneltitle-for-b6481b11251901b497f35d832c27d2e1" style="display:none">Info about the 'unprefixedmeasurementunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit">../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unprefixedmeasurementunit">4.11. metre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-05911b142a08af30e8de82ccd2a7759f" class="dfn-panel" data-for="05911b142a08af30e8de82ccd2a7759f" id="infopanel-for-05911b142a08af30e8de82ccd2a7759f">
-   <span id="infopaneltitle-for-05911b142a08af30e8de82ccd2a7759f" style="display:none">Info about the 'deci' external reference.</span><a href="iso-80000-1.html#deci">iso-80000-1.html#deci</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-deci">4.3. decimetre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b1dc043e5efbcc452c05318f2f52f1e4" class="dfn-panel" data-for="b1dc043e5efbcc452c05318f2f52f1e4" id="infopanel-for-b1dc043e5efbcc452c05318f2f52f1e4">
-   <span id="infopaneltitle-for-b1dc043e5efbcc452c05318f2f52f1e4" style="display:none">Info about the 'isq7' external reference.</span><a href="iso-80000-1.html#isq7">iso-80000-1.html#isq7</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7">5.1. ISQ7-breadth</a>
-    <li><a href="#ref-for-isq7①">5.3. ISQ7-cartesian-coordinate</a>
-    <li><a href="#ref-for-isq7②">5.5. ISQ7-diameter</a>
-    <li><a href="#ref-for-isq7③">5.7. ISQ7-displacement</a>
-    <li><a href="#ref-for-isq7④">5.9. ISQ7-distance</a>
-    <li><a href="#ref-for-isq7⑤">5.11. ISQ7-height</a>
-    <li><a href="#ref-for-isq7⑥">5.13. ISQ7-length</a>
-    <li><a href="#ref-for-isq7⑦">5.14. ISQ7-length-of-path</a>
-    <li><a href="#ref-for-isq7⑧">5.16. ISQ7-position-vector</a>
-    <li><a href="#ref-for-isq7⑨">5.18. ISQ7-radial-distance</a>
-    <li><a href="#ref-for-isq7①⓪">5.20. ISQ7-radius</a>
-    <li><a href="#ref-for-isq7①①">5.21. ISQ7-radius-of-curvature</a>
-    <li><a href="#ref-for-isq7①②">5.24. ISQ7-thickness</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f257f9f007741c509006e6756479b3ef" class="dfn-panel" data-for="f257f9f007741c509006e6756479b3ef" id="infopanel-for-f257f9f007741c509006e6756479b3ef">
-   <span id="infopaneltitle-for-f257f9f007741c509006e6756479b3ef" style="display:none">Info about the 'isq8' external reference.</span><a href="iso-80000-1.html#isq8">iso-80000-1.html#isq8</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8">5.26. ISQ8-breadth</a>
-    <li><a href="#ref-for-isq8①">5.28. ISQ8-cartesian-coordinate</a>
-    <li><a href="#ref-for-isq8②">5.30. ISQ8-diameter</a>
-    <li><a href="#ref-for-isq8③">5.32. ISQ8-displacement</a>
-    <li><a href="#ref-for-isq8④">5.34. ISQ8-distance</a>
-    <li><a href="#ref-for-isq8⑤">5.36. ISQ8-height</a>
-    <li><a href="#ref-for-isq8⑥">5.38. ISQ8-length</a>
-    <li><a href="#ref-for-isq8⑦">5.39. ISQ8-length-of-path</a>
-    <li><a href="#ref-for-isq8⑧">5.41. ISQ8-position-vector</a>
-    <li><a href="#ref-for-isq8⑨">5.43. ISQ8-radial-distance</a>
-    <li><a href="#ref-for-isq8①⓪">5.45. ISQ8-radius</a>
-    <li><a href="#ref-for-isq8①①">5.46. ISQ8-radius-of-curvature</a>
-    <li><a href="#ref-for-isq8①②">5.49. ISQ8-thickness</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2092209c62ac8aee86c32f4bd783227a" class="dfn-panel" data-for="2092209c62ac8aee86c32f4bd783227a" id="infopanel-for-2092209c62ac8aee86c32f4bd783227a">
-   <span id="infopaneltitle-for-2092209c62ac8aee86c32f4bd783227a" style="display:none">Info about the 'kilo' external reference.</span><a href="iso-80000-1.html#kilo">iso-80000-1.html#kilo</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-kilo">4.8. kilometre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d005e23d5d949663f3cf9e786bc3d9a0" class="dfn-panel" data-for="d005e23d5d949663f3cf9e786bc3d9a0" id="infopanel-for-d005e23d5d949663f3cf9e786bc3d9a0">
-   <span id="infopaneltitle-for-d005e23d5d949663f3cf9e786bc3d9a0" style="display:none">Info about the 'si7' external reference.</span><a href="iso-80000-1.html#si7">iso-80000-1.html#si7</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si7">5.51. SI7-decimetre</a>
-    <li><a href="#ref-for-si7①">5.52. SI7-kilometre</a>
-    <li><a href="#ref-for-si7②">5.53. SI7-metre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c84ea8907660487a2bffadf8ad295cac" class="dfn-panel" data-for="c84ea8907660487a2bffadf8ad295cac" id="infopanel-for-c84ea8907660487a2bffadf8ad295cac">
-   <span id="infopaneltitle-for-c84ea8907660487a2bffadf8ad295cac" style="display:none">Info about the 'si8' external reference.</span><a href="iso-80000-1.html#si8">iso-80000-1.html#si8</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si8">5.54. SI8-decimetre</a>
-    <li><a href="#ref-for-si8①">5.55. SI8-kilometre</a>
-    <li><a href="#ref-for-si8②">5.56. SI8-metre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2262eeabe14a1f25ae670ebf7990209c" class="dfn-panel" data-for="2262eeabe14a1f25ae670ebf7990209c" id="infopanel-for-2262eeabe14a1f25ae670ebf7990209c">
-   <span id="infopaneltitle-for-2262eeabe14a1f25ae670ebf7990209c" style="display:none">Info about the 'breadth' external reference.</span><a href="iso-80000-3.1.html#breadth">iso-80000-3.1.html#breadth</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-breadth">5.1. ISQ7-breadth</a>
-    <li><a href="#ref-for-breadth①">5.26. ISQ8-breadth</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-8e11795752ca5f86d82d4541e57d9334" class="dfn-panel" data-for="8e11795752ca5f86d82d4541e57d9334" id="infopanel-for-8e11795752ca5f86d82d4541e57d9334">
-   <span id="infopaneltitle-for-8e11795752ca5f86d82d4541e57d9334" style="display:none">Info about the 'cartesian-coordinate' external reference.</span><a href="iso-80000-3.1.html#cartesian-coordinate">iso-80000-3.1.html#cartesian-coordinate</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-cartesian-coordinate">5.3. ISQ7-cartesian-coordinate</a>
-    <li><a href="#ref-for-cartesian-coordinate①">5.28. ISQ8-cartesian-coordinate</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ff100f9fe9623d2f644bc3403a6089a7" class="dfn-panel" data-for="ff100f9fe9623d2f644bc3403a6089a7" id="infopanel-for-ff100f9fe9623d2f644bc3403a6089a7">
-   <span id="infopaneltitle-for-ff100f9fe9623d2f644bc3403a6089a7" style="display:none">Info about the 'decimetre' external reference.</span><a href="iso-80000-3.1.html#decimetre">iso-80000-3.1.html#decimetre</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-decimetre">5.51. SI7-decimetre</a>
-    <li><a href="#ref-for-decimetre①">5.54. SI8-decimetre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0c942afc1d187031a6749e9130a73028" class="dfn-panel" data-for="0c942afc1d187031a6749e9130a73028" id="infopanel-for-0c942afc1d187031a6749e9130a73028">
-   <span id="infopaneltitle-for-0c942afc1d187031a6749e9130a73028" style="display:none">Info about the 'diameter' external reference.</span><a href="iso-80000-3.1.html#diameter">iso-80000-3.1.html#diameter</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-diameter">5.5. ISQ7-diameter</a>
-    <li><a href="#ref-for-diameter①">5.30. ISQ8-diameter</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7ffdeacfa4daeaf42ce2c0960fece3d6" class="dfn-panel" data-for="7ffdeacfa4daeaf42ce2c0960fece3d6" id="infopanel-for-7ffdeacfa4daeaf42ce2c0960fece3d6">
-   <span id="infopaneltitle-for-7ffdeacfa4daeaf42ce2c0960fece3d6" style="display:none">Info about the 'displacement' external reference.</span><a href="iso-80000-3.1.html#displacement">iso-80000-3.1.html#displacement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-displacement">5.7. ISQ7-displacement</a>
-    <li><a href="#ref-for-displacement①">5.32. ISQ8-displacement</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d9da25321372c194ba2ceb232902fa27" class="dfn-panel" data-for="d9da25321372c194ba2ceb232902fa27" id="infopanel-for-d9da25321372c194ba2ceb232902fa27">
-   <span id="infopaneltitle-for-d9da25321372c194ba2ceb232902fa27" style="display:none">Info about the 'distance' external reference.</span><a href="iso-80000-3.1.html#distance">iso-80000-3.1.html#distance</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-distance">5.9. ISQ7-distance</a>
-    <li><a href="#ref-for-distance①">5.34. ISQ8-distance</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7d4be76517e6ae2d364799a661a9484c" class="dfn-panel" data-for="7d4be76517e6ae2d364799a661a9484c" id="infopanel-for-7d4be76517e6ae2d364799a661a9484c">
-   <span id="infopaneltitle-for-7d4be76517e6ae2d364799a661a9484c" style="display:none">Info about the 'height' external reference.</span><a href="iso-80000-3.1.html#height">iso-80000-3.1.html#height</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-height">5.11. ISQ7-height</a>
-    <li><a href="#ref-for-height①">5.36. ISQ8-height</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0feb1d27661cd77d4dac4597d86372f2" class="dfn-panel" data-for="0feb1d27661cd77d4dac4597d86372f2" id="infopanel-for-0feb1d27661cd77d4dac4597d86372f2">
-   <span id="infopaneltitle-for-0feb1d27661cd77d4dac4597d86372f2" style="display:none">Info about the 'isq7-breadth' external reference.</span><a href="iso-80000-3.1.html#isq7-breadth">iso-80000-3.1.html#isq7-breadth</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-breadth">5.2. ISQ7-breadth.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b71ca75f83f0d497b8f5db029c23d4b4" class="dfn-panel" data-for="b71ca75f83f0d497b8f5db029c23d4b4" id="infopanel-for-b71ca75f83f0d497b8f5db029c23d4b4">
-   <span id="infopaneltitle-for-b71ca75f83f0d497b8f5db029c23d4b4" style="display:none">Info about the 'isq7-cartesian-coordinate' external reference.</span><a href="iso-80000-3.1.html#isq7-cartesian-coordinate">iso-80000-3.1.html#isq7-cartesian-coordinate</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-cartesian-coordinate">5.4. ISQ7-cartesian-coordinate.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1b9a885ae23f095fa22a12a083f77ac8" class="dfn-panel" data-for="1b9a885ae23f095fa22a12a083f77ac8" id="infopanel-for-1b9a885ae23f095fa22a12a083f77ac8">
-   <span id="infopaneltitle-for-1b9a885ae23f095fa22a12a083f77ac8" style="display:none">Info about the 'isq7-diameter' external reference.</span><a href="iso-80000-3.1.html#isq7-diameter">iso-80000-3.1.html#isq7-diameter</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-diameter">5.6. ISQ7-diameter.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b458bee5b6cf9e3a7b506dbfe54b7344" class="dfn-panel" data-for="b458bee5b6cf9e3a7b506dbfe54b7344" id="infopanel-for-b458bee5b6cf9e3a7b506dbfe54b7344">
-   <span id="infopaneltitle-for-b458bee5b6cf9e3a7b506dbfe54b7344" style="display:none">Info about the 'isq7-displacement' external reference.</span><a href="iso-80000-3.1.html#isq7-displacement">iso-80000-3.1.html#isq7-displacement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-displacement">5.8. ISQ7-displacement.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9616556da566a56c67e2a50b2be4df68" class="dfn-panel" data-for="9616556da566a56c67e2a50b2be4df68" id="infopanel-for-9616556da566a56c67e2a50b2be4df68">
-   <span id="infopaneltitle-for-9616556da566a56c67e2a50b2be4df68" style="display:none">Info about the 'isq7-distance' external reference.</span><a href="iso-80000-3.1.html#isq7-distance">iso-80000-3.1.html#isq7-distance</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-distance">5.10. ISQ7-distance.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a5f822c9765ef9ad448cbc9159ae0d8b" class="dfn-panel" data-for="a5f822c9765ef9ad448cbc9159ae0d8b" id="infopanel-for-a5f822c9765ef9ad448cbc9159ae0d8b">
-   <span id="infopaneltitle-for-a5f822c9765ef9ad448cbc9159ae0d8b" style="display:none">Info about the 'isq7-height' external reference.</span><a href="iso-80000-3.1.html#isq7-height">iso-80000-3.1.html#isq7-height</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-height">5.12. ISQ7-height.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1d6b361097e463d786555d890d8f1bb1" class="dfn-panel" data-for="1d6b361097e463d786555d890d8f1bb1" id="infopanel-for-1d6b361097e463d786555d890d8f1bb1">
-   <span id="infopaneltitle-for-1d6b361097e463d786555d890d8f1bb1" style="display:none">Info about the 'isq7-length' external reference.</span><a href="iso-80000-3.1.html#isq7-length">iso-80000-3.1.html#isq7-length</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-length">5.2. ISQ7-breadth.length</a>
-    <li><a href="#ref-for-isq7-length①">5.4. ISQ7-cartesian-coordinate.length</a>
-    <li><a href="#ref-for-isq7-length②">5.6. ISQ7-diameter.length</a>
-    <li><a href="#ref-for-isq7-length③">5.8. ISQ7-displacement.length</a>
-    <li><a href="#ref-for-isq7-length④">5.10. ISQ7-distance.length</a>
-    <li><a href="#ref-for-isq7-length⑤">5.12. ISQ7-height.length</a>
-    <li><a href="#ref-for-isq7-length⑥">5.15. ISQ7-length-of-path.length</a>
-    <li><a href="#ref-for-isq7-length⑦">5.17. ISQ7-position-vector.length</a>
-    <li><a href="#ref-for-isq7-length⑧">5.19. ISQ7-radial-distance.length</a>
-    <li><a href="#ref-for-isq7-length⑨">5.22. ISQ7-radius-of-curvature.length</a>
-    <li><a href="#ref-for-isq7-length①⓪">5.23. ISQ7-radius.length</a>
-    <li><a href="#ref-for-isq7-length①①">5.25. ISQ7-thickness.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-06c9372dcbd1f8bd262412bdda521126" class="dfn-panel" data-for="06c9372dcbd1f8bd262412bdda521126" id="infopanel-for-06c9372dcbd1f8bd262412bdda521126">
-   <span id="infopaneltitle-for-06c9372dcbd1f8bd262412bdda521126" style="display:none">Info about the 'isq7-length-of-path' external reference.</span><a href="iso-80000-3.1.html#isq7-length-of-path">iso-80000-3.1.html#isq7-length-of-path</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-length-of-path">5.15. ISQ7-length-of-path.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-779cee0bbdc81cb49ae4acf6a13a7c67" class="dfn-panel" data-for="779cee0bbdc81cb49ae4acf6a13a7c67" id="infopanel-for-779cee0bbdc81cb49ae4acf6a13a7c67">
-   <span id="infopaneltitle-for-779cee0bbdc81cb49ae4acf6a13a7c67" style="display:none">Info about the 'isq7-position-vector' external reference.</span><a href="iso-80000-3.1.html#isq7-position-vector">iso-80000-3.1.html#isq7-position-vector</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-position-vector">5.17. ISQ7-position-vector.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-56c2a7b9a9b425e673c103e1982b02a1" class="dfn-panel" data-for="56c2a7b9a9b425e673c103e1982b02a1" id="infopanel-for-56c2a7b9a9b425e673c103e1982b02a1">
-   <span id="infopaneltitle-for-56c2a7b9a9b425e673c103e1982b02a1" style="display:none">Info about the 'isq7-radial-distance' external reference.</span><a href="iso-80000-3.1.html#isq7-radial-distance">iso-80000-3.1.html#isq7-radial-distance</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-radial-distance">5.19. ISQ7-radial-distance.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2df097f0bdd84bd111764f9284c4bf08" class="dfn-panel" data-for="2df097f0bdd84bd111764f9284c4bf08" id="infopanel-for-2df097f0bdd84bd111764f9284c4bf08">
-   <span id="infopaneltitle-for-2df097f0bdd84bd111764f9284c4bf08" style="display:none">Info about the 'isq7-radius' external reference.</span><a href="iso-80000-3.1.html#isq7-radius">iso-80000-3.1.html#isq7-radius</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-radius">5.23. ISQ7-radius.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f0ce9bb7ff5a28b4b1192a902d22c55f" class="dfn-panel" data-for="f0ce9bb7ff5a28b4b1192a902d22c55f" id="infopanel-for-f0ce9bb7ff5a28b4b1192a902d22c55f">
-   <span id="infopaneltitle-for-f0ce9bb7ff5a28b4b1192a902d22c55f" style="display:none">Info about the 'isq7-radius-of-curvature' external reference.</span><a href="iso-80000-3.1.html#isq7-radius-of-curvature">iso-80000-3.1.html#isq7-radius-of-curvature</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-radius-of-curvature">5.22. ISQ7-radius-of-curvature.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-816fadca74c34dcf21cbbd90d98b7517" class="dfn-panel" data-for="816fadca74c34dcf21cbbd90d98b7517" id="infopanel-for-816fadca74c34dcf21cbbd90d98b7517">
-   <span id="infopaneltitle-for-816fadca74c34dcf21cbbd90d98b7517" style="display:none">Info about the 'isq7-thickness' external reference.</span><a href="iso-80000-3.1.html#isq7-thickness">iso-80000-3.1.html#isq7-thickness</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-thickness">5.25. ISQ7-thickness.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f884423293cb6e0592c9a4e14cce0b82" class="dfn-panel" data-for="f884423293cb6e0592c9a4e14cce0b82" id="infopanel-for-f884423293cb6e0592c9a4e14cce0b82">
-   <span id="infopaneltitle-for-f884423293cb6e0592c9a4e14cce0b82" style="display:none">Info about the 'isq8-breadth' external reference.</span><a href="iso-80000-3.1.html#isq8-breadth">iso-80000-3.1.html#isq8-breadth</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-breadth">5.27. ISQ8-breadth.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bc0e5cc95610b31da56deb7c85e5c5e4" class="dfn-panel" data-for="bc0e5cc95610b31da56deb7c85e5c5e4" id="infopanel-for-bc0e5cc95610b31da56deb7c85e5c5e4">
-   <span id="infopaneltitle-for-bc0e5cc95610b31da56deb7c85e5c5e4" style="display:none">Info about the 'isq8-cartesian-coordinate' external reference.</span><a href="iso-80000-3.1.html#isq8-cartesian-coordinate">iso-80000-3.1.html#isq8-cartesian-coordinate</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-cartesian-coordinate">5.29. ISQ8-cartesian-coordinate.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-31c951604d639ea460604280f672e70a" class="dfn-panel" data-for="31c951604d639ea460604280f672e70a" id="infopanel-for-31c951604d639ea460604280f672e70a">
-   <span id="infopaneltitle-for-31c951604d639ea460604280f672e70a" style="display:none">Info about the 'isq8-diameter' external reference.</span><a href="iso-80000-3.1.html#isq8-diameter">iso-80000-3.1.html#isq8-diameter</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-diameter">5.31. ISQ8-diameter.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-409330e53df33ca8eb0b4016d2c902ca" class="dfn-panel" data-for="409330e53df33ca8eb0b4016d2c902ca" id="infopanel-for-409330e53df33ca8eb0b4016d2c902ca">
-   <span id="infopaneltitle-for-409330e53df33ca8eb0b4016d2c902ca" style="display:none">Info about the 'isq8-displacement' external reference.</span><a href="iso-80000-3.1.html#isq8-displacement">iso-80000-3.1.html#isq8-displacement</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-displacement">5.33. ISQ8-displacement.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-715d7c36ddcc8a327144fa5df1771158" class="dfn-panel" data-for="715d7c36ddcc8a327144fa5df1771158" id="infopanel-for-715d7c36ddcc8a327144fa5df1771158">
-   <span id="infopaneltitle-for-715d7c36ddcc8a327144fa5df1771158" style="display:none">Info about the 'isq8-distance' external reference.</span><a href="iso-80000-3.1.html#isq8-distance">iso-80000-3.1.html#isq8-distance</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-distance">5.35. ISQ8-distance.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9ee3ee361633c2499fce8d2c057ea94a" class="dfn-panel" data-for="9ee3ee361633c2499fce8d2c057ea94a" id="infopanel-for-9ee3ee361633c2499fce8d2c057ea94a">
-   <span id="infopaneltitle-for-9ee3ee361633c2499fce8d2c057ea94a" style="display:none">Info about the 'isq8-height' external reference.</span><a href="iso-80000-3.1.html#isq8-height">iso-80000-3.1.html#isq8-height</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-height">5.37. ISQ8-height.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-159d84c106869dc788ee2edec8c7faf9" class="dfn-panel" data-for="159d84c106869dc788ee2edec8c7faf9" id="infopanel-for-159d84c106869dc788ee2edec8c7faf9">
-   <span id="infopaneltitle-for-159d84c106869dc788ee2edec8c7faf9" style="display:none">Info about the 'isq8-length' external reference.</span><a href="iso-80000-3.1.html#isq8-length">iso-80000-3.1.html#isq8-length</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-length">5.27. ISQ8-breadth.length</a>
-    <li><a href="#ref-for-isq8-length①">5.29. ISQ8-cartesian-coordinate.length</a>
-    <li><a href="#ref-for-isq8-length②">5.31. ISQ8-diameter.length</a>
-    <li><a href="#ref-for-isq8-length③">5.33. ISQ8-displacement.length</a>
-    <li><a href="#ref-for-isq8-length④">5.35. ISQ8-distance.length</a>
-    <li><a href="#ref-for-isq8-length⑤">5.37. ISQ8-height.length</a>
-    <li><a href="#ref-for-isq8-length⑥">5.40. ISQ8-length-of-path.length</a>
-    <li><a href="#ref-for-isq8-length⑦">5.42. ISQ8-position-vector.length</a>
-    <li><a href="#ref-for-isq8-length⑧">5.44. ISQ8-radial-distance.length</a>
-    <li><a href="#ref-for-isq8-length⑨">5.47. ISQ8-radius-of-curvature.length</a>
-    <li><a href="#ref-for-isq8-length①⓪">5.48. ISQ8-radius.length</a>
-    <li><a href="#ref-for-isq8-length①①">5.50. ISQ8-thickness.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-19d830d0c37729a6d707e6f546079838" class="dfn-panel" data-for="19d830d0c37729a6d707e6f546079838" id="infopanel-for-19d830d0c37729a6d707e6f546079838">
-   <span id="infopaneltitle-for-19d830d0c37729a6d707e6f546079838" style="display:none">Info about the 'isq8-length-of-path' external reference.</span><a href="iso-80000-3.1.html#isq8-length-of-path">iso-80000-3.1.html#isq8-length-of-path</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-length-of-path">5.40. ISQ8-length-of-path.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-e7a00abd297cead9c85c3db38cce9bd1" class="dfn-panel" data-for="e7a00abd297cead9c85c3db38cce9bd1" id="infopanel-for-e7a00abd297cead9c85c3db38cce9bd1">
-   <span id="infopaneltitle-for-e7a00abd297cead9c85c3db38cce9bd1" style="display:none">Info about the 'isq8-position-vector' external reference.</span><a href="iso-80000-3.1.html#isq8-position-vector">iso-80000-3.1.html#isq8-position-vector</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-position-vector">5.42. ISQ8-position-vector.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a8874851fcdea59af897162d867c0ab8" class="dfn-panel" data-for="a8874851fcdea59af897162d867c0ab8" id="infopanel-for-a8874851fcdea59af897162d867c0ab8">
-   <span id="infopaneltitle-for-a8874851fcdea59af897162d867c0ab8" style="display:none">Info about the 'isq8-radial-distance' external reference.</span><a href="iso-80000-3.1.html#isq8-radial-distance">iso-80000-3.1.html#isq8-radial-distance</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-radial-distance">5.44. ISQ8-radial-distance.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b7356d9933842f9c08c56a6682cf10d2" class="dfn-panel" data-for="b7356d9933842f9c08c56a6682cf10d2" id="infopanel-for-b7356d9933842f9c08c56a6682cf10d2">
-   <span id="infopaneltitle-for-b7356d9933842f9c08c56a6682cf10d2" style="display:none">Info about the 'isq8-radius' external reference.</span><a href="iso-80000-3.1.html#isq8-radius">iso-80000-3.1.html#isq8-radius</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-radius">5.48. ISQ8-radius.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6a762f014f47c6779e00bf2088d4e453" class="dfn-panel" data-for="6a762f014f47c6779e00bf2088d4e453" id="infopanel-for-6a762f014f47c6779e00bf2088d4e453">
-   <span id="infopaneltitle-for-6a762f014f47c6779e00bf2088d4e453" style="display:none">Info about the 'isq8-radius-of-curvature' external reference.</span><a href="iso-80000-3.1.html#isq8-radius-of-curvature">iso-80000-3.1.html#isq8-radius-of-curvature</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-radius-of-curvature">5.47. ISQ8-radius-of-curvature.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-144c973f6d70d00aa9d40cf66d51b3d0" class="dfn-panel" data-for="144c973f6d70d00aa9d40cf66d51b3d0" id="infopanel-for-144c973f6d70d00aa9d40cf66d51b3d0">
-   <span id="infopaneltitle-for-144c973f6d70d00aa9d40cf66d51b3d0" style="display:none">Info about the 'isq8-thickness' external reference.</span><a href="iso-80000-3.1.html#isq8-thickness">iso-80000-3.1.html#isq8-thickness</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-thickness">5.50. ISQ8-thickness.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5fcce60d52ef557aaa4473be0eb66f9a" class="dfn-panel" data-for="5fcce60d52ef557aaa4473be0eb66f9a" id="infopanel-for-5fcce60d52ef557aaa4473be0eb66f9a">
-   <span id="infopaneltitle-for-5fcce60d52ef557aaa4473be0eb66f9a" style="display:none">Info about the 'kilometre' external reference.</span><a href="iso-80000-3.1.html#kilometre">iso-80000-3.1.html#kilometre</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-kilometre">5.52. SI7-kilometre</a>
-    <li><a href="#ref-for-kilometre①">5.55. SI8-kilometre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-fcef15c2501cb82ce0bd78c9376e0665" class="dfn-panel" data-for="fcef15c2501cb82ce0bd78c9376e0665" id="infopanel-for-fcef15c2501cb82ce0bd78c9376e0665">
-   <span id="infopaneltitle-for-fcef15c2501cb82ce0bd78c9376e0665" style="display:none">Info about the 'length' external reference.</span><a href="iso-80000-3.1.html#length">iso-80000-3.1.html#length</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-length">4.11. metre</a>
-    <li><a href="#ref-for-length①">5.13. ISQ7-length</a>
-    <li><a href="#ref-for-length②">5.38. ISQ8-length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9c1f09272996d1ab7023b9a83817ed10" class="dfn-panel" data-for="9c1f09272996d1ab7023b9a83817ed10" id="infopanel-for-9c1f09272996d1ab7023b9a83817ed10">
-   <span id="infopaneltitle-for-9c1f09272996d1ab7023b9a83817ed10" style="display:none">Info about the 'length-of-path' external reference.</span><a href="iso-80000-3.1.html#length-of-path">iso-80000-3.1.html#length-of-path</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-length-of-path">5.14. ISQ7-length-of-path</a>
-    <li><a href="#ref-for-length-of-path①">5.39. ISQ8-length-of-path</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-27a8706305e5b5038319f110491ecfae" class="dfn-panel" data-for="27a8706305e5b5038319f110491ecfae" id="infopanel-for-27a8706305e5b5038319f110491ecfae">
-   <span id="infopaneltitle-for-27a8706305e5b5038319f110491ecfae" style="display:none">Info about the 'metre' external reference.</span><a href="iso-80000-3.1.html#metre">iso-80000-3.1.html#metre</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-metre">4.3. decimetre</a>
-    <li><a href="#ref-for-metre①">4.8. kilometre</a>
-    <li><a href="#ref-for-metre②">5.53. SI7-metre</a>
-    <li><a href="#ref-for-metre③">5.56. SI8-metre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-fe167fa311cea07b0bf114491f2b34e0" class="dfn-panel" data-for="fe167fa311cea07b0bf114491f2b34e0" id="infopanel-for-fe167fa311cea07b0bf114491f2b34e0">
-   <span id="infopaneltitle-for-fe167fa311cea07b0bf114491f2b34e0" style="display:none">Info about the 'position-vector' external reference.</span><a href="iso-80000-3.1.html#position-vector">iso-80000-3.1.html#position-vector</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-position-vector">5.16. ISQ7-position-vector</a>
-    <li><a href="#ref-for-position-vector①">5.41. ISQ8-position-vector</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3e1baeed9af0783b453edf15b9690e06" class="dfn-panel" data-for="3e1baeed9af0783b453edf15b9690e06" id="infopanel-for-3e1baeed9af0783b453edf15b9690e06">
-   <span id="infopaneltitle-for-3e1baeed9af0783b453edf15b9690e06" style="display:none">Info about the 'radial-distance' external reference.</span><a href="iso-80000-3.1.html#radial-distance">iso-80000-3.1.html#radial-distance</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-radial-distance">5.18. ISQ7-radial-distance</a>
-    <li><a href="#ref-for-radial-distance①">5.43. ISQ8-radial-distance</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bbd73bff17b682fdabf463ffb48d2c63" class="dfn-panel" data-for="bbd73bff17b682fdabf463ffb48d2c63" id="infopanel-for-bbd73bff17b682fdabf463ffb48d2c63">
-   <span id="infopaneltitle-for-bbd73bff17b682fdabf463ffb48d2c63" style="display:none">Info about the 'radius' external reference.</span><a href="iso-80000-3.1.html#radius">iso-80000-3.1.html#radius</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-radius">5.20. ISQ7-radius</a>
-    <li><a href="#ref-for-radius①">5.45. ISQ8-radius</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-453d7fd28860be6eaa3f4a74f0b26ce0" class="dfn-panel" data-for="453d7fd28860be6eaa3f4a74f0b26ce0" id="infopanel-for-453d7fd28860be6eaa3f4a74f0b26ce0">
-   <span id="infopaneltitle-for-453d7fd28860be6eaa3f4a74f0b26ce0" style="display:none">Info about the 'radius-of-curvature' external reference.</span><a href="iso-80000-3.1.html#radius-of-curvature">iso-80000-3.1.html#radius-of-curvature</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-radius-of-curvature">5.21. ISQ7-radius-of-curvature</a>
-    <li><a href="#ref-for-radius-of-curvature①">5.46. ISQ8-radius-of-curvature</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-72b5b4cf3f72fb17fe15b58784934d34" class="dfn-panel" data-for="72b5b4cf3f72fb17fe15b58784934d34" id="infopanel-for-72b5b4cf3f72fb17fe15b58784934d34">
-   <span id="infopaneltitle-for-72b5b4cf3f72fb17fe15b58784934d34" style="display:none">Info about the 'thickness' external reference.</span><a href="iso-80000-3.1.html#thickness">iso-80000-3.1.html#thickness</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-thickness">5.24. ISQ7-thickness</a>
-    <li><a href="#ref-for-thickness①">5.49. ISQ8-thickness</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://BIPM.ORG/JCGM/VIM4]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="d007e47929d2675c97fec877558871f4">dimensionsymbol</span>
-     <li><span class="dfn-paneled" id="a1137e28e1d72231671e7fd683f3a19b">exponent</span>
-     <li><span class="dfn-paneled" id="3fd81ec3b18efe04a5bebacb4dfcb16c">generalunitaryquantity</span>
-     <li><span class="dfn-paneled" id="68dba369341faed167b27bee48418458">hasmultiple_1</span>
-     <li><span class="dfn-paneled" id="535fe74ab51b5c00a84eb46a25b002d3">haspowerofunitaryquantityfactor</span>
-     <li><span class="dfn-paneled" id="a55dc4183806d00f57769dd51a14d8b6">id</span>
-     <li><span class="dfn-paneled" id="68276dbf72f7e9ff6b765618f7aa5401">instantiates_1</span>
-     <li><span class="dfn-paneled" id="6b1c6b4e03d0c2e036fb5f781edb370d">ismultipleof_1</span>
-     <li><span class="dfn-paneled" id="5a5070f27cc32a58e8e6f19636cb0be1">isoffsystemunit</span>
-     <li><span class="dfn-paneled" id="66fd844118ae24b649d94dfd8be3c8f0">prefixedmeasurementunit</span>
-     <li><span class="dfn-paneled" id="814d86a4a7aa7f652a0e78216b702153">systemhasbaseunit</span>
-     <li><span class="dfn-paneled" id="4a590646a89c576ea361371d8e0eb7c3">systemhasbaseunitaryquantity</span>
-     <li><span class="dfn-paneled" id="0d69af81d63e38857736e4c2b508add9">systemhasderivedunit</span>
-     <li><span class="dfn-paneled" id="56d67cae2f4f57f67725d22b7b52d2b8">systemhasderivedunitaryquantity</span>
-     <li><span class="dfn-paneled" id="b6481b11251901b497f35d832c27d2e1">unprefixedmeasurementunit</span>
+     <li><span class="dfn-paneled" id="d83736fc">dimensionsymbol</span>
+     <li><span class="dfn-paneled" id="4c6f2553">exponent</span>
+     <li><span class="dfn-paneled" id="2d12e8b3">generalunitaryquantity</span>
+     <li><span class="dfn-paneled" id="8f027011">hasmultiple_1</span>
+     <li><span class="dfn-paneled" id="57c27c1d">haspowerofunitaryquantityfactor</span>
+     <li><span class="dfn-paneled" id="22cc0d19">id</span>
+     <li><span class="dfn-paneled" id="b963c60b">instantiates_1</span>
+     <li><span class="dfn-paneled" id="e12b5a27">ismultipleof_1</span>
+     <li><span class="dfn-paneled" id="652e29f7">isoffsystemunit</span>
+     <li><span class="dfn-paneled" id="8b4570b4">prefixedmeasurementunit</span>
+     <li><span class="dfn-paneled" id="7c7e5b23">systemhasbaseunit</span>
+     <li><span class="dfn-paneled" id="1e17c61a">systemhasbaseunitaryquantity</span>
+     <li><span class="dfn-paneled" id="e2fb5e82">systemhasderivedunit</span>
+     <li><span class="dfn-paneled" id="092684e0">systemhasderivedunitaryquantity</span>
+     <li><span class="dfn-paneled" id="dd43b8fd">unprefixedmeasurementunit</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-1]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="05911b142a08af30e8de82ccd2a7759f">deci</span>
-     <li><span class="dfn-paneled" id="b1dc043e5efbcc452c05318f2f52f1e4">isq7</span>
-     <li><span class="dfn-paneled" id="f257f9f007741c509006e6756479b3ef">isq8</span>
-     <li><span class="dfn-paneled" id="2092209c62ac8aee86c32f4bd783227a">kilo</span>
-     <li><span class="dfn-paneled" id="d005e23d5d949663f3cf9e786bc3d9a0">si7</span>
-     <li><span class="dfn-paneled" id="c84ea8907660487a2bffadf8ad295cac">si8</span>
+     <li><span class="dfn-paneled" id="7797967a">deci</span>
+     <li><span class="dfn-paneled" id="a137317b">isq7</span>
+     <li><span class="dfn-paneled" id="a0d8ea7b">isq8</span>
+     <li><span class="dfn-paneled" id="8f51335b">kilo</span>
+     <li><span class="dfn-paneled" id="418bb73d">si7</span>
+     <li><span class="dfn-paneled" id="4b1230ac">si8</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-3.1]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="2262eeabe14a1f25ae670ebf7990209c">breadth</span>
-     <li><span class="dfn-paneled" id="8e11795752ca5f86d82d4541e57d9334">cartesian-coordinate</span>
-     <li><span class="dfn-paneled" id="ff100f9fe9623d2f644bc3403a6089a7">decimetre</span>
-     <li><span class="dfn-paneled" id="0c942afc1d187031a6749e9130a73028">diameter</span>
-     <li><span class="dfn-paneled" id="7ffdeacfa4daeaf42ce2c0960fece3d6">displacement</span>
-     <li><span class="dfn-paneled" id="d9da25321372c194ba2ceb232902fa27">distance</span>
-     <li><span class="dfn-paneled" id="7d4be76517e6ae2d364799a661a9484c">height</span>
-     <li><span class="dfn-paneled" id="0feb1d27661cd77d4dac4597d86372f2">isq7-breadth</span>
-     <li><span class="dfn-paneled" id="b71ca75f83f0d497b8f5db029c23d4b4">isq7-cartesian-coordinate</span>
-     <li><span class="dfn-paneled" id="1b9a885ae23f095fa22a12a083f77ac8">isq7-diameter</span>
-     <li><span class="dfn-paneled" id="b458bee5b6cf9e3a7b506dbfe54b7344">isq7-displacement</span>
-     <li><span class="dfn-paneled" id="9616556da566a56c67e2a50b2be4df68">isq7-distance</span>
-     <li><span class="dfn-paneled" id="a5f822c9765ef9ad448cbc9159ae0d8b">isq7-height</span>
-     <li><span class="dfn-paneled" id="1d6b361097e463d786555d890d8f1bb1">isq7-length</span>
-     <li><span class="dfn-paneled" id="06c9372dcbd1f8bd262412bdda521126">isq7-length-of-path</span>
-     <li><span class="dfn-paneled" id="779cee0bbdc81cb49ae4acf6a13a7c67">isq7-position-vector</span>
-     <li><span class="dfn-paneled" id="56c2a7b9a9b425e673c103e1982b02a1">isq7-radial-distance</span>
-     <li><span class="dfn-paneled" id="2df097f0bdd84bd111764f9284c4bf08">isq7-radius</span>
-     <li><span class="dfn-paneled" id="f0ce9bb7ff5a28b4b1192a902d22c55f">isq7-radius-of-curvature</span>
-     <li><span class="dfn-paneled" id="816fadca74c34dcf21cbbd90d98b7517">isq7-thickness</span>
-     <li><span class="dfn-paneled" id="f884423293cb6e0592c9a4e14cce0b82">isq8-breadth</span>
-     <li><span class="dfn-paneled" id="bc0e5cc95610b31da56deb7c85e5c5e4">isq8-cartesian-coordinate</span>
-     <li><span class="dfn-paneled" id="31c951604d639ea460604280f672e70a">isq8-diameter</span>
-     <li><span class="dfn-paneled" id="409330e53df33ca8eb0b4016d2c902ca">isq8-displacement</span>
-     <li><span class="dfn-paneled" id="715d7c36ddcc8a327144fa5df1771158">isq8-distance</span>
-     <li><span class="dfn-paneled" id="9ee3ee361633c2499fce8d2c057ea94a">isq8-height</span>
-     <li><span class="dfn-paneled" id="159d84c106869dc788ee2edec8c7faf9">isq8-length</span>
-     <li><span class="dfn-paneled" id="19d830d0c37729a6d707e6f546079838">isq8-length-of-path</span>
-     <li><span class="dfn-paneled" id="e7a00abd297cead9c85c3db38cce9bd1">isq8-position-vector</span>
-     <li><span class="dfn-paneled" id="a8874851fcdea59af897162d867c0ab8">isq8-radial-distance</span>
-     <li><span class="dfn-paneled" id="b7356d9933842f9c08c56a6682cf10d2">isq8-radius</span>
-     <li><span class="dfn-paneled" id="6a762f014f47c6779e00bf2088d4e453">isq8-radius-of-curvature</span>
-     <li><span class="dfn-paneled" id="144c973f6d70d00aa9d40cf66d51b3d0">isq8-thickness</span>
-     <li><span class="dfn-paneled" id="5fcce60d52ef557aaa4473be0eb66f9a">kilometre</span>
-     <li><span class="dfn-paneled" id="fcef15c2501cb82ce0bd78c9376e0665">length</span>
-     <li><span class="dfn-paneled" id="9c1f09272996d1ab7023b9a83817ed10">length-of-path</span>
-     <li><span class="dfn-paneled" id="27a8706305e5b5038319f110491ecfae">metre</span>
-     <li><span class="dfn-paneled" id="fe167fa311cea07b0bf114491f2b34e0">position-vector</span>
-     <li><span class="dfn-paneled" id="3e1baeed9af0783b453edf15b9690e06">radial-distance</span>
-     <li><span class="dfn-paneled" id="bbd73bff17b682fdabf463ffb48d2c63">radius</span>
-     <li><span class="dfn-paneled" id="453d7fd28860be6eaa3f4a74f0b26ce0">radius-of-curvature</span>
-     <li><span class="dfn-paneled" id="72b5b4cf3f72fb17fe15b58784934d34">thickness</span>
+     <li><span class="dfn-paneled" id="4aa86390">breadth</span>
+     <li><span class="dfn-paneled" id="91729e41">cartesian-coordinate</span>
+     <li><span class="dfn-paneled" id="07c262be">decimetre</span>
+     <li><span class="dfn-paneled" id="b3ff1828">diameter</span>
+     <li><span class="dfn-paneled" id="e297cd1e">displacement</span>
+     <li><span class="dfn-paneled" id="afa4daab">distance</span>
+     <li><span class="dfn-paneled" id="83203a23">height</span>
+     <li><span class="dfn-paneled" id="19bb78ec">isq7-breadth</span>
+     <li><span class="dfn-paneled" id="9425f467">isq7-cartesian-coordinate</span>
+     <li><span class="dfn-paneled" id="8ee9ba4a">isq7-diameter</span>
+     <li><span class="dfn-paneled" id="3b98d93a">isq7-displacement</span>
+     <li><span class="dfn-paneled" id="4cf07b90">isq7-distance</span>
+     <li><span class="dfn-paneled" id="c91a90e5">isq7-height</span>
+     <li><span class="dfn-paneled" id="42c9a104">isq7-length</span>
+     <li><span class="dfn-paneled" id="b3b22b6b">isq7-length-of-path</span>
+     <li><span class="dfn-paneled" id="05c4c368">isq7-position-vector</span>
+     <li><span class="dfn-paneled" id="ab820ff6">isq7-radial-distance</span>
+     <li><span class="dfn-paneled" id="e4b9aeed">isq7-radius</span>
+     <li><span class="dfn-paneled" id="c885782d">isq7-radius-of-curvature</span>
+     <li><span class="dfn-paneled" id="4b37cbf5">isq7-thickness</span>
+     <li><span class="dfn-paneled" id="d8d3809d">isq8-breadth</span>
+     <li><span class="dfn-paneled" id="e2556a55">isq8-cartesian-coordinate</span>
+     <li><span class="dfn-paneled" id="a1f9719f">isq8-diameter</span>
+     <li><span class="dfn-paneled" id="f5633647">isq8-displacement</span>
+     <li><span class="dfn-paneled" id="9fe5a473">isq8-distance</span>
+     <li><span class="dfn-paneled" id="71a0c662">isq8-height</span>
+     <li><span class="dfn-paneled" id="f1681625">isq8-length</span>
+     <li><span class="dfn-paneled" id="56e045af">isq8-length-of-path</span>
+     <li><span class="dfn-paneled" id="24e17a61">isq8-position-vector</span>
+     <li><span class="dfn-paneled" id="f0313b7d">isq8-radial-distance</span>
+     <li><span class="dfn-paneled" id="3acf36e5">isq8-radius</span>
+     <li><span class="dfn-paneled" id="0f9e09b1">isq8-radius-of-curvature</span>
+     <li><span class="dfn-paneled" id="622f3009">isq8-thickness</span>
+     <li><span class="dfn-paneled" id="ffd6aa7a">kilometre</span>
+     <li><span class="dfn-paneled" id="08dcc2d3">length</span>
+     <li><span class="dfn-paneled" id="a0704a91">length-of-path</span>
+     <li><span class="dfn-paneled" id="44c89821">metre</span>
+     <li><span class="dfn-paneled" id="9321224f">position-vector</span>
+     <li><span class="dfn-paneled" id="30b5d8c9">radial-distance</span>
+     <li><span class="dfn-paneled" id="e19523d2">radius</span>
+     <li><span class="dfn-paneled" id="0d24139c">radius-of-curvature</span>
+     <li><span class="dfn-paneled" id="b83d9e47">thickness</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -4689,49 +4187,306 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['d83736fc'] = {"dfnID": "d83736fc", "url": "../bipm.org/jcgm/vim4.html#dimensionsymbol", "dfnText": "dimensionsymbol", "refSections": [{"refs": [{"id": "ref-for-dimensionsymbol"}], "title": "5.13. ISQ7-length"}, {"refs": [{"id": "ref-for-dimensionsymbol\u2460"}], "title": "5.38. ISQ8-length"}], "external": true};
+window.dfnpanelData['4c6f2553'] = {"dfnID": "4c6f2553", "url": "../bipm.org/jcgm/vim4.html#exponent", "dfnText": "exponent", "refSections": [{"refs": [{"id": "ref-for-exponent"}], "title": "5.2. ISQ7-breadth.length"}, {"refs": [{"id": "ref-for-exponent\u2460"}], "title": "5.4. ISQ7-cartesian-coordinate.length"}, {"refs": [{"id": "ref-for-exponent\u2461"}], "title": "5.6. ISQ7-diameter.length"}, {"refs": [{"id": "ref-for-exponent\u2462"}], "title": "5.8. ISQ7-displacement.length"}, {"refs": [{"id": "ref-for-exponent\u2463"}], "title": "5.10. ISQ7-distance.length"}, {"refs": [{"id": "ref-for-exponent\u2464"}], "title": "5.12. ISQ7-height.length"}, {"refs": [{"id": "ref-for-exponent\u2465"}], "title": "5.15. ISQ7-length-of-path.length"}, {"refs": [{"id": "ref-for-exponent\u2466"}], "title": "5.17. ISQ7-position-vector.length"}, {"refs": [{"id": "ref-for-exponent\u2467"}], "title": "5.19. ISQ7-radial-distance.length"}, {"refs": [{"id": "ref-for-exponent\u2468"}], "title": "5.22. ISQ7-radius-of-curvature.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u24ea"}], "title": "5.23. ISQ7-radius.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u2460"}], "title": "5.25. ISQ7-thickness.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u2461"}], "title": "5.27. ISQ8-breadth.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u2462"}], "title": "5.29. ISQ8-cartesian-coordinate.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u2463"}], "title": "5.31. ISQ8-diameter.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u2464"}], "title": "5.33. ISQ8-displacement.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u2465"}], "title": "5.35. ISQ8-distance.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u2466"}], "title": "5.37. ISQ8-height.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u2467"}], "title": "5.40. ISQ8-length-of-path.length"}, {"refs": [{"id": "ref-for-exponent\u2460\u2468"}], "title": "5.42. ISQ8-position-vector.length"}, {"refs": [{"id": "ref-for-exponent\u2461\u24ea"}], "title": "5.44. ISQ8-radial-distance.length"}, {"refs": [{"id": "ref-for-exponent\u2461\u2460"}], "title": "5.47. ISQ8-radius-of-curvature.length"}, {"refs": [{"id": "ref-for-exponent\u2461\u2461"}], "title": "5.48. ISQ8-radius.length"}, {"refs": [{"id": "ref-for-exponent\u2461\u2462"}], "title": "5.50. ISQ8-thickness.length"}], "external": true};
+window.dfnpanelData['2d12e8b3'] = {"dfnID": "2d12e8b3", "url": "../bipm.org/jcgm/vim4.html#generalunitaryquantity", "dfnText": "generalunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-generalunitaryquantity"}], "title": "4.1. breadth"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2460"}], "title": "4.2. cartesian-coordinate"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2461"}], "title": "4.4. diameter"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2462"}], "title": "4.5. displacement"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2463"}], "title": "4.6. distance"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2464"}], "title": "4.7. height"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2465"}], "title": "4.9. length"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2466"}], "title": "4.10. length-of-path"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2467"}], "title": "4.12. position-vector"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2468"}], "title": "4.13. radial-distance"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2460\u24ea"}], "title": "4.14. radius"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2460\u2460"}], "title": "4.15. radius-of-curvature"}, {"refs": [{"id": "ref-for-generalunitaryquantity\u2460\u2461"}], "title": "4.16. thickness"}], "external": true};
+window.dfnpanelData['8f027011'] = {"dfnID": "8f027011", "url": "../bipm.org/jcgm/vim4.html#hasmultiple_1", "dfnText": "hasmultiple_1", "refSections": [{"refs": [{"id": "ref-for-hasmultiple_1"}], "title": "4.3. decimetre"}, {"refs": [{"id": "ref-for-hasmultiple_1\u2460"}], "title": "4.8. kilometre"}], "external": true};
+window.dfnpanelData['57c27c1d'] = {"dfnID": "57c27c1d", "url": "../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor", "dfnText": "haspowerofunitaryquantityfactor", "refSections": [{"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor"}], "title": "5.2. ISQ7-breadth.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460"}], "title": "5.4. ISQ7-cartesian-coordinate.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2461"}], "title": "5.6. ISQ7-diameter.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2462"}], "title": "5.8. ISQ7-displacement.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2463"}], "title": "5.10. ISQ7-distance.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2464"}], "title": "5.12. ISQ7-height.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2465"}], "title": "5.15. ISQ7-length-of-path.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2466"}], "title": "5.17. ISQ7-position-vector.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2467"}], "title": "5.19. ISQ7-radial-distance.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2468"}], "title": "5.22. ISQ7-radius-of-curvature.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u24ea"}], "title": "5.23. ISQ7-radius.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u2460"}], "title": "5.25. ISQ7-thickness.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u2461"}], "title": "5.27. ISQ8-breadth.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u2462"}], "title": "5.29. ISQ8-cartesian-coordinate.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u2463"}], "title": "5.31. ISQ8-diameter.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u2464"}], "title": "5.33. ISQ8-displacement.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u2465"}], "title": "5.35. ISQ8-distance.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u2466"}], "title": "5.37. ISQ8-height.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u2467"}], "title": "5.40. ISQ8-length-of-path.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460\u2468"}], "title": "5.42. ISQ8-position-vector.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2461\u24ea"}], "title": "5.44. ISQ8-radial-distance.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2461\u2460"}], "title": "5.47. ISQ8-radius-of-curvature.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2461\u2461"}], "title": "5.48. ISQ8-radius.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2461\u2462"}], "title": "5.50. ISQ8-thickness.length"}], "external": true};
+window.dfnpanelData['22cc0d19'] = {"dfnID": "22cc0d19", "url": "../bipm.org/jcgm/vim4.html#id", "dfnText": "id", "refSections": [{"refs": [{"id": "ref-for-id"}], "title": "4.1. breadth"}, {"refs": [{"id": "ref-for-id\u2460"}], "title": "4.2. cartesian-coordinate"}, {"refs": [{"id": "ref-for-id\u2461"}], "title": "4.3. decimetre"}, {"refs": [{"id": "ref-for-id\u2462"}], "title": "4.4. diameter"}, {"refs": [{"id": "ref-for-id\u2463"}], "title": "4.5. displacement"}, {"refs": [{"id": "ref-for-id\u2464"}], "title": "4.6. distance"}, {"refs": [{"id": "ref-for-id\u2465"}], "title": "4.7. height"}, {"refs": [{"id": "ref-for-id\u2466"}], "title": "4.8. kilometre"}, {"refs": [{"id": "ref-for-id\u2467"}], "title": "4.9. length"}, {"refs": [{"id": "ref-for-id\u2468"}], "title": "4.10. length-of-path"}, {"refs": [{"id": "ref-for-id\u2460\u24ea"}], "title": "4.11. metre"}, {"refs": [{"id": "ref-for-id\u2460\u2460"}], "title": "4.12. position-vector"}, {"refs": [{"id": "ref-for-id\u2460\u2461"}], "title": "4.13. radial-distance"}, {"refs": [{"id": "ref-for-id\u2460\u2462"}], "title": "4.14. radius"}, {"refs": [{"id": "ref-for-id\u2460\u2463"}], "title": "4.15. radius-of-curvature"}, {"refs": [{"id": "ref-for-id\u2460\u2464"}], "title": "4.16. thickness"}], "external": true};
+window.dfnpanelData['b963c60b'] = {"dfnID": "b963c60b", "url": "../bipm.org/jcgm/vim4.html#instantiates_1", "dfnText": "instantiates_1", "refSections": [{"refs": [{"id": "ref-for-instantiates_1"}], "title": "4.11. metre"}], "external": true};
+window.dfnpanelData['e12b5a27'] = {"dfnID": "e12b5a27", "url": "../bipm.org/jcgm/vim4.html#ismultipleof_1", "dfnText": "ismultipleof_1", "refSections": [{"refs": [{"id": "ref-for-ismultipleof_1"}], "title": "4.3. decimetre"}, {"refs": [{"id": "ref-for-ismultipleof_1\u2460"}], "title": "4.8. kilometre"}], "external": true};
+window.dfnpanelData['652e29f7'] = {"dfnID": "652e29f7", "url": "../bipm.org/jcgm/vim4.html#isoffsystemunit", "dfnText": "isoffsystemunit", "refSections": [{"refs": [{"id": "ref-for-isoffsystemunit"}], "title": "5.51. SI7-decimetre"}, {"refs": [{"id": "ref-for-isoffsystemunit\u2460"}], "title": "5.52. SI7-kilometre"}, {"refs": [{"id": "ref-for-isoffsystemunit\u2461"}], "title": "5.54. SI8-decimetre"}, {"refs": [{"id": "ref-for-isoffsystemunit\u2462"}], "title": "5.55. SI8-kilometre"}], "external": true};
+window.dfnpanelData['8b4570b4'] = {"dfnID": "8b4570b4", "url": "../bipm.org/jcgm/vim4.html#prefixedmeasurementunit", "dfnText": "prefixedmeasurementunit", "refSections": [{"refs": [{"id": "ref-for-prefixedmeasurementunit"}], "title": "4.3. decimetre"}, {"refs": [{"id": "ref-for-prefixedmeasurementunit\u2460"}], "title": "4.8. kilometre"}], "external": true};
+window.dfnpanelData['7c7e5b23'] = {"dfnID": "7c7e5b23", "url": "../bipm.org/jcgm/vim4.html#systemhasbaseunit", "dfnText": "systemhasbaseunit", "refSections": [{"refs": [{"id": "ref-for-systemhasbaseunit"}], "title": "5.53. SI7-metre"}, {"refs": [{"id": "ref-for-systemhasbaseunit\u2460"}], "title": "5.56. SI8-metre"}], "external": true};
+window.dfnpanelData['1e17c61a'] = {"dfnID": "1e17c61a", "url": "../bipm.org/jcgm/vim4.html#systemhasbaseunitaryquantity", "dfnText": "systemhasbaseunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-systemhasbaseunitaryquantity"}], "title": "5.13. ISQ7-length"}, {"refs": [{"id": "ref-for-systemhasbaseunitaryquantity\u2460"}], "title": "5.38. ISQ8-length"}], "external": true};
+window.dfnpanelData['e2fb5e82'] = {"dfnID": "e2fb5e82", "url": "../bipm.org/jcgm/vim4.html#systemhasderivedunit", "dfnText": "systemhasderivedunit", "refSections": [{"refs": [{"id": "ref-for-systemhasderivedunit"}], "title": "5.51. SI7-decimetre"}, {"refs": [{"id": "ref-for-systemhasderivedunit\u2460"}], "title": "5.52. SI7-kilometre"}, {"refs": [{"id": "ref-for-systemhasderivedunit\u2461"}], "title": "5.54. SI8-decimetre"}, {"refs": [{"id": "ref-for-systemhasderivedunit\u2462"}], "title": "5.55. SI8-kilometre"}], "external": true};
+window.dfnpanelData['092684e0'] = {"dfnID": "092684e0", "url": "../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity", "dfnText": "systemhasderivedunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-systemhasderivedunitaryquantity"}], "title": "5.1. ISQ7-breadth"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460"}], "title": "5.3. ISQ7-cartesian-coordinate"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2461"}], "title": "5.5. ISQ7-diameter"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2462"}], "title": "5.7. ISQ7-displacement"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2463"}], "title": "5.9. ISQ7-distance"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2464"}], "title": "5.11. ISQ7-height"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2465"}], "title": "5.14. ISQ7-length-of-path"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2466"}], "title": "5.16. ISQ7-position-vector"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2467"}], "title": "5.18. ISQ7-radial-distance"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2468"}], "title": "5.20. ISQ7-radius"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u24ea"}], "title": "5.21. ISQ7-radius-of-curvature"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u2460"}], "title": "5.24. ISQ7-thickness"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u2461"}], "title": "5.26. ISQ8-breadth"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u2462"}], "title": "5.28. ISQ8-cartesian-coordinate"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u2463"}], "title": "5.30. ISQ8-diameter"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u2464"}], "title": "5.32. ISQ8-displacement"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u2465"}], "title": "5.34. ISQ8-distance"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u2466"}], "title": "5.36. ISQ8-height"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u2467"}], "title": "5.39. ISQ8-length-of-path"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460\u2468"}], "title": "5.41. ISQ8-position-vector"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2461\u24ea"}], "title": "5.43. ISQ8-radial-distance"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2461\u2460"}], "title": "5.45. ISQ8-radius"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2461\u2461"}], "title": "5.46. ISQ8-radius-of-curvature"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2461\u2462"}], "title": "5.49. ISQ8-thickness"}], "external": true};
+window.dfnpanelData['dd43b8fd'] = {"dfnID": "dd43b8fd", "url": "../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit", "dfnText": "unprefixedmeasurementunit", "refSections": [{"refs": [{"id": "ref-for-unprefixedmeasurementunit"}], "title": "4.11. metre"}], "external": true};
+window.dfnpanelData['7797967a'] = {"dfnID": "7797967a", "url": "iso-80000-1.html#deci", "dfnText": "deci", "refSections": [{"refs": [{"id": "ref-for-deci"}], "title": "4.3. decimetre"}], "external": true};
+window.dfnpanelData['a137317b'] = {"dfnID": "a137317b", "url": "iso-80000-1.html#isq7", "dfnText": "isq7", "refSections": [{"refs": [{"id": "ref-for-isq7"}], "title": "5.1. ISQ7-breadth"}, {"refs": [{"id": "ref-for-isq7\u2460"}], "title": "5.3. ISQ7-cartesian-coordinate"}, {"refs": [{"id": "ref-for-isq7\u2461"}], "title": "5.5. ISQ7-diameter"}, {"refs": [{"id": "ref-for-isq7\u2462"}], "title": "5.7. ISQ7-displacement"}, {"refs": [{"id": "ref-for-isq7\u2463"}], "title": "5.9. ISQ7-distance"}, {"refs": [{"id": "ref-for-isq7\u2464"}], "title": "5.11. ISQ7-height"}, {"refs": [{"id": "ref-for-isq7\u2465"}], "title": "5.13. ISQ7-length"}, {"refs": [{"id": "ref-for-isq7\u2466"}], "title": "5.14. ISQ7-length-of-path"}, {"refs": [{"id": "ref-for-isq7\u2467"}], "title": "5.16. ISQ7-position-vector"}, {"refs": [{"id": "ref-for-isq7\u2468"}], "title": "5.18. ISQ7-radial-distance"}, {"refs": [{"id": "ref-for-isq7\u2460\u24ea"}], "title": "5.20. ISQ7-radius"}, {"refs": [{"id": "ref-for-isq7\u2460\u2460"}], "title": "5.21. ISQ7-radius-of-curvature"}, {"refs": [{"id": "ref-for-isq7\u2460\u2461"}], "title": "5.24. ISQ7-thickness"}], "external": true};
+window.dfnpanelData['a0d8ea7b'] = {"dfnID": "a0d8ea7b", "url": "iso-80000-1.html#isq8", "dfnText": "isq8", "refSections": [{"refs": [{"id": "ref-for-isq8"}], "title": "5.26. ISQ8-breadth"}, {"refs": [{"id": "ref-for-isq8\u2460"}], "title": "5.28. ISQ8-cartesian-coordinate"}, {"refs": [{"id": "ref-for-isq8\u2461"}], "title": "5.30. ISQ8-diameter"}, {"refs": [{"id": "ref-for-isq8\u2462"}], "title": "5.32. ISQ8-displacement"}, {"refs": [{"id": "ref-for-isq8\u2463"}], "title": "5.34. ISQ8-distance"}, {"refs": [{"id": "ref-for-isq8\u2464"}], "title": "5.36. ISQ8-height"}, {"refs": [{"id": "ref-for-isq8\u2465"}], "title": "5.38. ISQ8-length"}, {"refs": [{"id": "ref-for-isq8\u2466"}], "title": "5.39. ISQ8-length-of-path"}, {"refs": [{"id": "ref-for-isq8\u2467"}], "title": "5.41. ISQ8-position-vector"}, {"refs": [{"id": "ref-for-isq8\u2468"}], "title": "5.43. ISQ8-radial-distance"}, {"refs": [{"id": "ref-for-isq8\u2460\u24ea"}], "title": "5.45. ISQ8-radius"}, {"refs": [{"id": "ref-for-isq8\u2460\u2460"}], "title": "5.46. ISQ8-radius-of-curvature"}, {"refs": [{"id": "ref-for-isq8\u2460\u2461"}], "title": "5.49. ISQ8-thickness"}], "external": true};
+window.dfnpanelData['8f51335b'] = {"dfnID": "8f51335b", "url": "iso-80000-1.html#kilo", "dfnText": "kilo", "refSections": [{"refs": [{"id": "ref-for-kilo"}], "title": "4.8. kilometre"}], "external": true};
+window.dfnpanelData['418bb73d'] = {"dfnID": "418bb73d", "url": "iso-80000-1.html#si7", "dfnText": "si7", "refSections": [{"refs": [{"id": "ref-for-si7"}], "title": "5.51. SI7-decimetre"}, {"refs": [{"id": "ref-for-si7\u2460"}], "title": "5.52. SI7-kilometre"}, {"refs": [{"id": "ref-for-si7\u2461"}], "title": "5.53. SI7-metre"}], "external": true};
+window.dfnpanelData['4b1230ac'] = {"dfnID": "4b1230ac", "url": "iso-80000-1.html#si8", "dfnText": "si8", "refSections": [{"refs": [{"id": "ref-for-si8"}], "title": "5.54. SI8-decimetre"}, {"refs": [{"id": "ref-for-si8\u2460"}], "title": "5.55. SI8-kilometre"}, {"refs": [{"id": "ref-for-si8\u2461"}], "title": "5.56. SI8-metre"}], "external": true};
+window.dfnpanelData['4aa86390'] = {"dfnID": "4aa86390", "url": "iso-80000-3.1.html#breadth", "dfnText": "breadth", "refSections": [{"refs": [{"id": "ref-for-breadth"}], "title": "5.1. ISQ7-breadth"}, {"refs": [{"id": "ref-for-breadth\u2460"}], "title": "5.26. ISQ8-breadth"}], "external": true};
+window.dfnpanelData['91729e41'] = {"dfnID": "91729e41", "url": "iso-80000-3.1.html#cartesian-coordinate", "dfnText": "cartesian-coordinate", "refSections": [{"refs": [{"id": "ref-for-cartesian-coordinate"}], "title": "5.3. ISQ7-cartesian-coordinate"}, {"refs": [{"id": "ref-for-cartesian-coordinate\u2460"}], "title": "5.28. ISQ8-cartesian-coordinate"}], "external": true};
+window.dfnpanelData['07c262be'] = {"dfnID": "07c262be", "url": "iso-80000-3.1.html#decimetre", "dfnText": "decimetre", "refSections": [{"refs": [{"id": "ref-for-decimetre"}], "title": "5.51. SI7-decimetre"}, {"refs": [{"id": "ref-for-decimetre\u2460"}], "title": "5.54. SI8-decimetre"}], "external": true};
+window.dfnpanelData['b3ff1828'] = {"dfnID": "b3ff1828", "url": "iso-80000-3.1.html#diameter", "dfnText": "diameter", "refSections": [{"refs": [{"id": "ref-for-diameter"}], "title": "5.5. ISQ7-diameter"}, {"refs": [{"id": "ref-for-diameter\u2460"}], "title": "5.30. ISQ8-diameter"}], "external": true};
+window.dfnpanelData['e297cd1e'] = {"dfnID": "e297cd1e", "url": "iso-80000-3.1.html#displacement", "dfnText": "displacement", "refSections": [{"refs": [{"id": "ref-for-displacement"}], "title": "5.7. ISQ7-displacement"}, {"refs": [{"id": "ref-for-displacement\u2460"}], "title": "5.32. ISQ8-displacement"}], "external": true};
+window.dfnpanelData['afa4daab'] = {"dfnID": "afa4daab", "url": "iso-80000-3.1.html#distance", "dfnText": "distance", "refSections": [{"refs": [{"id": "ref-for-distance"}], "title": "5.9. ISQ7-distance"}, {"refs": [{"id": "ref-for-distance\u2460"}], "title": "5.34. ISQ8-distance"}], "external": true};
+window.dfnpanelData['83203a23'] = {"dfnID": "83203a23", "url": "iso-80000-3.1.html#height", "dfnText": "height", "refSections": [{"refs": [{"id": "ref-for-height"}], "title": "5.11. ISQ7-height"}, {"refs": [{"id": "ref-for-height\u2460"}], "title": "5.36. ISQ8-height"}], "external": true};
+window.dfnpanelData['19bb78ec'] = {"dfnID": "19bb78ec", "url": "iso-80000-3.1.html#isq7-breadth", "dfnText": "isq7-breadth", "refSections": [{"refs": [{"id": "ref-for-isq7-breadth"}], "title": "5.2. ISQ7-breadth.length"}], "external": true};
+window.dfnpanelData['9425f467'] = {"dfnID": "9425f467", "url": "iso-80000-3.1.html#isq7-cartesian-coordinate", "dfnText": "isq7-cartesian-coordinate", "refSections": [{"refs": [{"id": "ref-for-isq7-cartesian-coordinate"}], "title": "5.4. ISQ7-cartesian-coordinate.length"}], "external": true};
+window.dfnpanelData['8ee9ba4a'] = {"dfnID": "8ee9ba4a", "url": "iso-80000-3.1.html#isq7-diameter", "dfnText": "isq7-diameter", "refSections": [{"refs": [{"id": "ref-for-isq7-diameter"}], "title": "5.6. ISQ7-diameter.length"}], "external": true};
+window.dfnpanelData['3b98d93a'] = {"dfnID": "3b98d93a", "url": "iso-80000-3.1.html#isq7-displacement", "dfnText": "isq7-displacement", "refSections": [{"refs": [{"id": "ref-for-isq7-displacement"}], "title": "5.8. ISQ7-displacement.length"}], "external": true};
+window.dfnpanelData['4cf07b90'] = {"dfnID": "4cf07b90", "url": "iso-80000-3.1.html#isq7-distance", "dfnText": "isq7-distance", "refSections": [{"refs": [{"id": "ref-for-isq7-distance"}], "title": "5.10. ISQ7-distance.length"}], "external": true};
+window.dfnpanelData['c91a90e5'] = {"dfnID": "c91a90e5", "url": "iso-80000-3.1.html#isq7-height", "dfnText": "isq7-height", "refSections": [{"refs": [{"id": "ref-for-isq7-height"}], "title": "5.12. ISQ7-height.length"}], "external": true};
+window.dfnpanelData['42c9a104'] = {"dfnID": "42c9a104", "url": "iso-80000-3.1.html#isq7-length", "dfnText": "isq7-length", "refSections": [{"refs": [{"id": "ref-for-isq7-length"}], "title": "5.2. ISQ7-breadth.length"}, {"refs": [{"id": "ref-for-isq7-length\u2460"}], "title": "5.4. ISQ7-cartesian-coordinate.length"}, {"refs": [{"id": "ref-for-isq7-length\u2461"}], "title": "5.6. ISQ7-diameter.length"}, {"refs": [{"id": "ref-for-isq7-length\u2462"}], "title": "5.8. ISQ7-displacement.length"}, {"refs": [{"id": "ref-for-isq7-length\u2463"}], "title": "5.10. ISQ7-distance.length"}, {"refs": [{"id": "ref-for-isq7-length\u2464"}], "title": "5.12. ISQ7-height.length"}, {"refs": [{"id": "ref-for-isq7-length\u2465"}], "title": "5.15. ISQ7-length-of-path.length"}, {"refs": [{"id": "ref-for-isq7-length\u2466"}], "title": "5.17. ISQ7-position-vector.length"}, {"refs": [{"id": "ref-for-isq7-length\u2467"}], "title": "5.19. ISQ7-radial-distance.length"}, {"refs": [{"id": "ref-for-isq7-length\u2468"}], "title": "5.22. ISQ7-radius-of-curvature.length"}, {"refs": [{"id": "ref-for-isq7-length\u2460\u24ea"}], "title": "5.23. ISQ7-radius.length"}, {"refs": [{"id": "ref-for-isq7-length\u2460\u2460"}], "title": "5.25. ISQ7-thickness.length"}], "external": true};
+window.dfnpanelData['b3b22b6b'] = {"dfnID": "b3b22b6b", "url": "iso-80000-3.1.html#isq7-length-of-path", "dfnText": "isq7-length-of-path", "refSections": [{"refs": [{"id": "ref-for-isq7-length-of-path"}], "title": "5.15. ISQ7-length-of-path.length"}], "external": true};
+window.dfnpanelData['05c4c368'] = {"dfnID": "05c4c368", "url": "iso-80000-3.1.html#isq7-position-vector", "dfnText": "isq7-position-vector", "refSections": [{"refs": [{"id": "ref-for-isq7-position-vector"}], "title": "5.17. ISQ7-position-vector.length"}], "external": true};
+window.dfnpanelData['ab820ff6'] = {"dfnID": "ab820ff6", "url": "iso-80000-3.1.html#isq7-radial-distance", "dfnText": "isq7-radial-distance", "refSections": [{"refs": [{"id": "ref-for-isq7-radial-distance"}], "title": "5.19. ISQ7-radial-distance.length"}], "external": true};
+window.dfnpanelData['e4b9aeed'] = {"dfnID": "e4b9aeed", "url": "iso-80000-3.1.html#isq7-radius", "dfnText": "isq7-radius", "refSections": [{"refs": [{"id": "ref-for-isq7-radius"}], "title": "5.23. ISQ7-radius.length"}], "external": true};
+window.dfnpanelData['c885782d'] = {"dfnID": "c885782d", "url": "iso-80000-3.1.html#isq7-radius-of-curvature", "dfnText": "isq7-radius-of-curvature", "refSections": [{"refs": [{"id": "ref-for-isq7-radius-of-curvature"}], "title": "5.22. ISQ7-radius-of-curvature.length"}], "external": true};
+window.dfnpanelData['4b37cbf5'] = {"dfnID": "4b37cbf5", "url": "iso-80000-3.1.html#isq7-thickness", "dfnText": "isq7-thickness", "refSections": [{"refs": [{"id": "ref-for-isq7-thickness"}], "title": "5.25. ISQ7-thickness.length"}], "external": true};
+window.dfnpanelData['d8d3809d'] = {"dfnID": "d8d3809d", "url": "iso-80000-3.1.html#isq8-breadth", "dfnText": "isq8-breadth", "refSections": [{"refs": [{"id": "ref-for-isq8-breadth"}], "title": "5.27. ISQ8-breadth.length"}], "external": true};
+window.dfnpanelData['e2556a55'] = {"dfnID": "e2556a55", "url": "iso-80000-3.1.html#isq8-cartesian-coordinate", "dfnText": "isq8-cartesian-coordinate", "refSections": [{"refs": [{"id": "ref-for-isq8-cartesian-coordinate"}], "title": "5.29. ISQ8-cartesian-coordinate.length"}], "external": true};
+window.dfnpanelData['a1f9719f'] = {"dfnID": "a1f9719f", "url": "iso-80000-3.1.html#isq8-diameter", "dfnText": "isq8-diameter", "refSections": [{"refs": [{"id": "ref-for-isq8-diameter"}], "title": "5.31. ISQ8-diameter.length"}], "external": true};
+window.dfnpanelData['f5633647'] = {"dfnID": "f5633647", "url": "iso-80000-3.1.html#isq8-displacement", "dfnText": "isq8-displacement", "refSections": [{"refs": [{"id": "ref-for-isq8-displacement"}], "title": "5.33. ISQ8-displacement.length"}], "external": true};
+window.dfnpanelData['9fe5a473'] = {"dfnID": "9fe5a473", "url": "iso-80000-3.1.html#isq8-distance", "dfnText": "isq8-distance", "refSections": [{"refs": [{"id": "ref-for-isq8-distance"}], "title": "5.35. ISQ8-distance.length"}], "external": true};
+window.dfnpanelData['71a0c662'] = {"dfnID": "71a0c662", "url": "iso-80000-3.1.html#isq8-height", "dfnText": "isq8-height", "refSections": [{"refs": [{"id": "ref-for-isq8-height"}], "title": "5.37. ISQ8-height.length"}], "external": true};
+window.dfnpanelData['f1681625'] = {"dfnID": "f1681625", "url": "iso-80000-3.1.html#isq8-length", "dfnText": "isq8-length", "refSections": [{"refs": [{"id": "ref-for-isq8-length"}], "title": "5.27. ISQ8-breadth.length"}, {"refs": [{"id": "ref-for-isq8-length\u2460"}], "title": "5.29. ISQ8-cartesian-coordinate.length"}, {"refs": [{"id": "ref-for-isq8-length\u2461"}], "title": "5.31. ISQ8-diameter.length"}, {"refs": [{"id": "ref-for-isq8-length\u2462"}], "title": "5.33. ISQ8-displacement.length"}, {"refs": [{"id": "ref-for-isq8-length\u2463"}], "title": "5.35. ISQ8-distance.length"}, {"refs": [{"id": "ref-for-isq8-length\u2464"}], "title": "5.37. ISQ8-height.length"}, {"refs": [{"id": "ref-for-isq8-length\u2465"}], "title": "5.40. ISQ8-length-of-path.length"}, {"refs": [{"id": "ref-for-isq8-length\u2466"}], "title": "5.42. ISQ8-position-vector.length"}, {"refs": [{"id": "ref-for-isq8-length\u2467"}], "title": "5.44. ISQ8-radial-distance.length"}, {"refs": [{"id": "ref-for-isq8-length\u2468"}], "title": "5.47. ISQ8-radius-of-curvature.length"}, {"refs": [{"id": "ref-for-isq8-length\u2460\u24ea"}], "title": "5.48. ISQ8-radius.length"}, {"refs": [{"id": "ref-for-isq8-length\u2460\u2460"}], "title": "5.50. ISQ8-thickness.length"}], "external": true};
+window.dfnpanelData['56e045af'] = {"dfnID": "56e045af", "url": "iso-80000-3.1.html#isq8-length-of-path", "dfnText": "isq8-length-of-path", "refSections": [{"refs": [{"id": "ref-for-isq8-length-of-path"}], "title": "5.40. ISQ8-length-of-path.length"}], "external": true};
+window.dfnpanelData['24e17a61'] = {"dfnID": "24e17a61", "url": "iso-80000-3.1.html#isq8-position-vector", "dfnText": "isq8-position-vector", "refSections": [{"refs": [{"id": "ref-for-isq8-position-vector"}], "title": "5.42. ISQ8-position-vector.length"}], "external": true};
+window.dfnpanelData['f0313b7d'] = {"dfnID": "f0313b7d", "url": "iso-80000-3.1.html#isq8-radial-distance", "dfnText": "isq8-radial-distance", "refSections": [{"refs": [{"id": "ref-for-isq8-radial-distance"}], "title": "5.44. ISQ8-radial-distance.length"}], "external": true};
+window.dfnpanelData['3acf36e5'] = {"dfnID": "3acf36e5", "url": "iso-80000-3.1.html#isq8-radius", "dfnText": "isq8-radius", "refSections": [{"refs": [{"id": "ref-for-isq8-radius"}], "title": "5.48. ISQ8-radius.length"}], "external": true};
+window.dfnpanelData['0f9e09b1'] = {"dfnID": "0f9e09b1", "url": "iso-80000-3.1.html#isq8-radius-of-curvature", "dfnText": "isq8-radius-of-curvature", "refSections": [{"refs": [{"id": "ref-for-isq8-radius-of-curvature"}], "title": "5.47. ISQ8-radius-of-curvature.length"}], "external": true};
+window.dfnpanelData['622f3009'] = {"dfnID": "622f3009", "url": "iso-80000-3.1.html#isq8-thickness", "dfnText": "isq8-thickness", "refSections": [{"refs": [{"id": "ref-for-isq8-thickness"}], "title": "5.50. ISQ8-thickness.length"}], "external": true};
+window.dfnpanelData['ffd6aa7a'] = {"dfnID": "ffd6aa7a", "url": "iso-80000-3.1.html#kilometre", "dfnText": "kilometre", "refSections": [{"refs": [{"id": "ref-for-kilometre"}], "title": "5.52. SI7-kilometre"}, {"refs": [{"id": "ref-for-kilometre\u2460"}], "title": "5.55. SI8-kilometre"}], "external": true};
+window.dfnpanelData['08dcc2d3'] = {"dfnID": "08dcc2d3", "url": "iso-80000-3.1.html#length", "dfnText": "length", "refSections": [{"refs": [{"id": "ref-for-length"}], "title": "4.11. metre"}, {"refs": [{"id": "ref-for-length\u2460"}], "title": "5.13. ISQ7-length"}, {"refs": [{"id": "ref-for-length\u2461"}], "title": "5.38. ISQ8-length"}], "external": true};
+window.dfnpanelData['a0704a91'] = {"dfnID": "a0704a91", "url": "iso-80000-3.1.html#length-of-path", "dfnText": "length-of-path", "refSections": [{"refs": [{"id": "ref-for-length-of-path"}], "title": "5.14. ISQ7-length-of-path"}, {"refs": [{"id": "ref-for-length-of-path\u2460"}], "title": "5.39. ISQ8-length-of-path"}], "external": true};
+window.dfnpanelData['44c89821'] = {"dfnID": "44c89821", "url": "iso-80000-3.1.html#metre", "dfnText": "metre", "refSections": [{"refs": [{"id": "ref-for-metre"}], "title": "4.3. decimetre"}, {"refs": [{"id": "ref-for-metre\u2460"}], "title": "4.8. kilometre"}, {"refs": [{"id": "ref-for-metre\u2461"}], "title": "5.53. SI7-metre"}, {"refs": [{"id": "ref-for-metre\u2462"}], "title": "5.56. SI8-metre"}], "external": true};
+window.dfnpanelData['9321224f'] = {"dfnID": "9321224f", "url": "iso-80000-3.1.html#position-vector", "dfnText": "position-vector", "refSections": [{"refs": [{"id": "ref-for-position-vector"}], "title": "5.16. ISQ7-position-vector"}, {"refs": [{"id": "ref-for-position-vector\u2460"}], "title": "5.41. ISQ8-position-vector"}], "external": true};
+window.dfnpanelData['30b5d8c9'] = {"dfnID": "30b5d8c9", "url": "iso-80000-3.1.html#radial-distance", "dfnText": "radial-distance", "refSections": [{"refs": [{"id": "ref-for-radial-distance"}], "title": "5.18. ISQ7-radial-distance"}, {"refs": [{"id": "ref-for-radial-distance\u2460"}], "title": "5.43. ISQ8-radial-distance"}], "external": true};
+window.dfnpanelData['e19523d2'] = {"dfnID": "e19523d2", "url": "iso-80000-3.1.html#radius", "dfnText": "radius", "refSections": [{"refs": [{"id": "ref-for-radius"}], "title": "5.20. ISQ7-radius"}, {"refs": [{"id": "ref-for-radius\u2460"}], "title": "5.45. ISQ8-radius"}], "external": true};
+window.dfnpanelData['0d24139c'] = {"dfnID": "0d24139c", "url": "iso-80000-3.1.html#radius-of-curvature", "dfnText": "radius-of-curvature", "refSections": [{"refs": [{"id": "ref-for-radius-of-curvature"}], "title": "5.21. ISQ7-radius-of-curvature"}, {"refs": [{"id": "ref-for-radius-of-curvature\u2460"}], "title": "5.46. ISQ8-radius-of-curvature"}], "external": true};
+window.dfnpanelData['b83d9e47'] = {"dfnID": "b83d9e47", "url": "iso-80000-3.1.html#thickness", "dfnText": "thickness", "refSections": [{"refs": [{"id": "ref-for-thickness"}], "title": "5.24. ISQ7-thickness"}, {"refs": [{"id": "ref-for-thickness\u2460"}], "title": "5.49. ISQ8-thickness"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

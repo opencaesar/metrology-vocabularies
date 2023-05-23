@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/metrology-vocabularies/iso.org/iso-80000-3.8" rel="canonical">
-  <meta content="e8f2fd6ec2b315d6d4d4c0417ead33c64bc51f16" name="document-revision">
+  <meta content="c39258f88a60699662ffa99a6df5496bfd2b3310" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">ISO-80000-3.8 velocity</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2770,336 +2776,126 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#si8-metre-per-secondpersecond">si8-metre-per-second.per.second</a><span>, in § 5.18</span>
    <li><a href="#velocity">velocity</a><span>, in § 4.3</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-a1137e28e1d72231671e7fd683f3a19b" class="dfn-panel" data-for="a1137e28e1d72231671e7fd683f3a19b" id="infopanel-for-a1137e28e1d72231671e7fd683f3a19b">
-   <span id="infopaneltitle-for-a1137e28e1d72231671e7fd683f3a19b" style="display:none">Info about the 'exponent' external reference.</span><a href="../bipm.org/jcgm/vim4.html#exponent">../bipm.org/jcgm/vim4.html#exponent</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-exponent">5.2. ISQ7-velocity.length</a>
-    <li><a href="#ref-for-exponent①">5.3. ISQ7-velocity.per.time</a>
-    <li><a href="#ref-for-exponent②">5.5. ISQ8-velocity.length</a>
-    <li><a href="#ref-for-exponent③">5.6. ISQ8-velocity.per.time</a>
-    <li><a href="#ref-for-exponent④">5.8. SI7-kilometre-per-hour.kilometre</a>
-    <li><a href="#ref-for-exponent⑤">5.9. SI7-kilometre-per-hour.per.hour</a>
-    <li><a href="#ref-for-exponent⑥">5.11. SI7-metre-per-second.metre</a>
-    <li><a href="#ref-for-exponent⑦">5.12. SI7-metre-per-second.per.second</a>
-    <li><a href="#ref-for-exponent⑧">5.14. SI8-kilometre-per-hour.kilometre</a>
-    <li><a href="#ref-for-exponent⑨">5.15. SI8-kilometre-per-hour.per.hour</a>
-    <li><a href="#ref-for-exponent①⓪">5.17. SI8-metre-per-second.metre</a>
-    <li><a href="#ref-for-exponent①①">5.18. SI8-metre-per-second.per.second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-3fd81ec3b18efe04a5bebacb4dfcb16c" class="dfn-panel" data-for="3fd81ec3b18efe04a5bebacb4dfcb16c" id="infopanel-for-3fd81ec3b18efe04a5bebacb4dfcb16c">
-   <span id="infopaneltitle-for-3fd81ec3b18efe04a5bebacb4dfcb16c" style="display:none">Info about the 'generalunitaryquantity' external reference.</span><a href="../bipm.org/jcgm/vim4.html#generalunitaryquantity">../bipm.org/jcgm/vim4.html#generalunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-generalunitaryquantity">4.3. velocity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-535fe74ab51b5c00a84eb46a25b002d3" class="dfn-panel" data-for="535fe74ab51b5c00a84eb46a25b002d3" id="infopanel-for-535fe74ab51b5c00a84eb46a25b002d3">
-   <span id="infopaneltitle-for-535fe74ab51b5c00a84eb46a25b002d3" style="display:none">Info about the 'haspowerofunitaryquantityfactor' external reference.</span><a href="../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor">../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor">5.2. ISQ7-velocity.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor①">5.3. ISQ7-velocity.per.time</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor②">5.5. ISQ8-velocity.length</a>
-    <li><a href="#ref-for-haspowerofunitaryquantityfactor③">5.6. ISQ8-velocity.per.time</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d0f70bdb479252c7b7fb19c675043aef" class="dfn-panel" data-for="d0f70bdb479252c7b7fb19c675043aef" id="infopanel-for-d0f70bdb479252c7b7fb19c675043aef">
-   <span id="infopaneltitle-for-d0f70bdb479252c7b7fb19c675043aef" style="display:none">Info about the 'haspowerofunitfactor' external reference.</span><a href="../bipm.org/jcgm/vim4.html#haspowerofunitfactor">../bipm.org/jcgm/vim4.html#haspowerofunitfactor</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-haspowerofunitfactor">5.8. SI7-kilometre-per-hour.kilometre</a>
-    <li><a href="#ref-for-haspowerofunitfactor①">5.9. SI7-kilometre-per-hour.per.hour</a>
-    <li><a href="#ref-for-haspowerofunitfactor②">5.11. SI7-metre-per-second.metre</a>
-    <li><a href="#ref-for-haspowerofunitfactor③">5.12. SI7-metre-per-second.per.second</a>
-    <li><a href="#ref-for-haspowerofunitfactor④">5.14. SI8-kilometre-per-hour.kilometre</a>
-    <li><a href="#ref-for-haspowerofunitfactor⑤">5.15. SI8-kilometre-per-hour.per.hour</a>
-    <li><a href="#ref-for-haspowerofunitfactor⑥">5.17. SI8-metre-per-second.metre</a>
-    <li><a href="#ref-for-haspowerofunitfactor⑦">5.18. SI8-metre-per-second.per.second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a55dc4183806d00f57769dd51a14d8b6" class="dfn-panel" data-for="a55dc4183806d00f57769dd51a14d8b6" id="infopanel-for-a55dc4183806d00f57769dd51a14d8b6">
-   <span id="infopaneltitle-for-a55dc4183806d00f57769dd51a14d8b6" style="display:none">Info about the 'id' external reference.</span><a href="../bipm.org/jcgm/vim4.html#id">../bipm.org/jcgm/vim4.html#id</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-id">4.1. kilometre-per-hour</a>
-    <li><a href="#ref-for-id①">4.2. metre-per-second</a>
-    <li><a href="#ref-for-id②">4.3. velocity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-68276dbf72f7e9ff6b765618f7aa5401" class="dfn-panel" data-for="68276dbf72f7e9ff6b765618f7aa5401" id="infopanel-for-68276dbf72f7e9ff6b765618f7aa5401">
-   <span id="infopaneltitle-for-68276dbf72f7e9ff6b765618f7aa5401" style="display:none">Info about the 'instantiates_1' external reference.</span><a href="../bipm.org/jcgm/vim4.html#instantiates_1">../bipm.org/jcgm/vim4.html#instantiates_1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-instantiates_1">4.1. kilometre-per-hour</a>
-    <li><a href="#ref-for-instantiates_1①">4.2. metre-per-second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-59095b1ae35be320957c0b3c9b524fcd" class="dfn-panel" data-for="59095b1ae35be320957c0b3c9b524fcd" id="infopanel-for-59095b1ae35be320957c0b3c9b524fcd">
-   <span id="infopaneltitle-for-59095b1ae35be320957c0b3c9b524fcd" style="display:none">Info about the 'isdimensionless' external reference.</span><a href="../bipm.org/jcgm/vim4.html#isdimensionless">../bipm.org/jcgm/vim4.html#isdimensionless</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isdimensionless">5.1. ISQ7-velocity</a>
-    <li><a href="#ref-for-isdimensionless①">5.4. ISQ8-velocity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5a5070f27cc32a58e8e6f19636cb0be1" class="dfn-panel" data-for="5a5070f27cc32a58e8e6f19636cb0be1" id="infopanel-for-5a5070f27cc32a58e8e6f19636cb0be1">
-   <span id="infopaneltitle-for-5a5070f27cc32a58e8e6f19636cb0be1" style="display:none">Info about the 'isoffsystemunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#isoffsystemunit">../bipm.org/jcgm/vim4.html#isoffsystemunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isoffsystemunit">5.7. SI7-kilometre-per-hour</a>
-    <li><a href="#ref-for-isoffsystemunit①">5.10. SI7-metre-per-second</a>
-    <li><a href="#ref-for-isoffsystemunit②">5.13. SI8-kilometre-per-hour</a>
-    <li><a href="#ref-for-isoffsystemunit③">5.16. SI8-metre-per-second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0d69af81d63e38857736e4c2b508add9" class="dfn-panel" data-for="0d69af81d63e38857736e4c2b508add9" id="infopanel-for-0d69af81d63e38857736e4c2b508add9">
-   <span id="infopaneltitle-for-0d69af81d63e38857736e4c2b508add9" style="display:none">Info about the 'systemhasderivedunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasderivedunit">../bipm.org/jcgm/vim4.html#systemhasderivedunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasderivedunit">5.7. SI7-kilometre-per-hour</a>
-    <li><a href="#ref-for-systemhasderivedunit①">5.10. SI7-metre-per-second</a>
-    <li><a href="#ref-for-systemhasderivedunit②">5.13. SI8-kilometre-per-hour</a>
-    <li><a href="#ref-for-systemhasderivedunit③">5.16. SI8-metre-per-second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-56d67cae2f4f57f67725d22b7b52d2b8" class="dfn-panel" data-for="56d67cae2f4f57f67725d22b7b52d2b8" id="infopanel-for-56d67cae2f4f57f67725d22b7b52d2b8">
-   <span id="infopaneltitle-for-56d67cae2f4f57f67725d22b7b52d2b8" style="display:none">Info about the 'systemhasderivedunitaryquantity' external reference.</span><a href="../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity">../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity">5.1. ISQ7-velocity</a>
-    <li><a href="#ref-for-systemhasderivedunitaryquantity①">5.4. ISQ8-velocity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b6481b11251901b497f35d832c27d2e1" class="dfn-panel" data-for="b6481b11251901b497f35d832c27d2e1" id="infopanel-for-b6481b11251901b497f35d832c27d2e1">
-   <span id="infopaneltitle-for-b6481b11251901b497f35d832c27d2e1" style="display:none">Info about the 'unprefixedmeasurementunit' external reference.</span><a href="../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit">../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-unprefixedmeasurementunit">4.1. kilometre-per-hour</a>
-    <li><a href="#ref-for-unprefixedmeasurementunit①">4.2. metre-per-second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b1dc043e5efbcc452c05318f2f52f1e4" class="dfn-panel" data-for="b1dc043e5efbcc452c05318f2f52f1e4" id="infopanel-for-b1dc043e5efbcc452c05318f2f52f1e4">
-   <span id="infopaneltitle-for-b1dc043e5efbcc452c05318f2f52f1e4" style="display:none">Info about the 'isq7' external reference.</span><a href="iso-80000-1.html#isq7">iso-80000-1.html#isq7</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7">5.1. ISQ7-velocity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f257f9f007741c509006e6756479b3ef" class="dfn-panel" data-for="f257f9f007741c509006e6756479b3ef" id="infopanel-for-f257f9f007741c509006e6756479b3ef">
-   <span id="infopaneltitle-for-f257f9f007741c509006e6756479b3ef" style="display:none">Info about the 'isq8' external reference.</span><a href="iso-80000-1.html#isq8">iso-80000-1.html#isq8</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8">5.4. ISQ8-velocity</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d005e23d5d949663f3cf9e786bc3d9a0" class="dfn-panel" data-for="d005e23d5d949663f3cf9e786bc3d9a0" id="infopanel-for-d005e23d5d949663f3cf9e786bc3d9a0">
-   <span id="infopaneltitle-for-d005e23d5d949663f3cf9e786bc3d9a0" style="display:none">Info about the 'si7' external reference.</span><a href="iso-80000-1.html#si7">iso-80000-1.html#si7</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si7">5.7. SI7-kilometre-per-hour</a>
-    <li><a href="#ref-for-si7①">5.10. SI7-metre-per-second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c84ea8907660487a2bffadf8ad295cac" class="dfn-panel" data-for="c84ea8907660487a2bffadf8ad295cac" id="infopanel-for-c84ea8907660487a2bffadf8ad295cac">
-   <span id="infopaneltitle-for-c84ea8907660487a2bffadf8ad295cac" style="display:none">Info about the 'si8' external reference.</span><a href="iso-80000-1.html#si8">iso-80000-1.html#si8</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si8">5.13. SI8-kilometre-per-hour</a>
-    <li><a href="#ref-for-si8①">5.16. SI8-metre-per-second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-1d6b361097e463d786555d890d8f1bb1" class="dfn-panel" data-for="1d6b361097e463d786555d890d8f1bb1" id="infopanel-for-1d6b361097e463d786555d890d8f1bb1">
-   <span id="infopaneltitle-for-1d6b361097e463d786555d890d8f1bb1" style="display:none">Info about the 'isq7-length' external reference.</span><a href="iso-80000-3.1.html#isq7-length">iso-80000-3.1.html#isq7-length</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-length">5.2. ISQ7-velocity.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-159d84c106869dc788ee2edec8c7faf9" class="dfn-panel" data-for="159d84c106869dc788ee2edec8c7faf9" id="infopanel-for-159d84c106869dc788ee2edec8c7faf9">
-   <span id="infopaneltitle-for-159d84c106869dc788ee2edec8c7faf9" style="display:none">Info about the 'isq8-length' external reference.</span><a href="iso-80000-3.1.html#isq8-length">iso-80000-3.1.html#isq8-length</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-length">5.5. ISQ8-velocity.length</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bb9becb6720f03994cb28809921db8ac" class="dfn-panel" data-for="bb9becb6720f03994cb28809921db8ac" id="infopanel-for-bb9becb6720f03994cb28809921db8ac">
-   <span id="infopaneltitle-for-bb9becb6720f03994cb28809921db8ac" style="display:none">Info about the 'si7-kilometre' external reference.</span><a href="iso-80000-3.1.html#si7-kilometre">iso-80000-3.1.html#si7-kilometre</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si7-kilometre">5.8. SI7-kilometre-per-hour.kilometre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-43c4b71e900343e5ef50c44adcaf2f37" class="dfn-panel" data-for="43c4b71e900343e5ef50c44adcaf2f37" id="infopanel-for-43c4b71e900343e5ef50c44adcaf2f37">
-   <span id="infopaneltitle-for-43c4b71e900343e5ef50c44adcaf2f37" style="display:none">Info about the 'si7-metre' external reference.</span><a href="iso-80000-3.1.html#si7-metre">iso-80000-3.1.html#si7-metre</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si7-metre">5.11. SI7-metre-per-second.metre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a0008c0fcc51d3aaad5c814d89d99542" class="dfn-panel" data-for="a0008c0fcc51d3aaad5c814d89d99542" id="infopanel-for-a0008c0fcc51d3aaad5c814d89d99542">
-   <span id="infopaneltitle-for-a0008c0fcc51d3aaad5c814d89d99542" style="display:none">Info about the 'si8-kilometre' external reference.</span><a href="iso-80000-3.1.html#si8-kilometre">iso-80000-3.1.html#si8-kilometre</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si8-kilometre">5.14. SI8-kilometre-per-hour.kilometre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b1e0318e8849576d57cbd305a4aa4a56" class="dfn-panel" data-for="b1e0318e8849576d57cbd305a4aa4a56" id="infopanel-for-b1e0318e8849576d57cbd305a4aa4a56">
-   <span id="infopaneltitle-for-b1e0318e8849576d57cbd305a4aa4a56" style="display:none">Info about the 'si8-metre' external reference.</span><a href="iso-80000-3.1.html#si8-metre">iso-80000-3.1.html#si8-metre</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si8-metre">5.17. SI8-metre-per-second.metre</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9310e3e7f5c6cba0d6753cb956df9148" class="dfn-panel" data-for="9310e3e7f5c6cba0d6753cb956df9148" id="infopanel-for-9310e3e7f5c6cba0d6753cb956df9148">
-   <span id="infopaneltitle-for-9310e3e7f5c6cba0d6753cb956df9148" style="display:none">Info about the 'isq7-time' external reference.</span><a href="iso-80000-3.7.html#isq7-time">iso-80000-3.7.html#isq7-time</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-time">5.3. ISQ7-velocity.per.time</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-2dd9fe0024aed80ce805ade725637ef3" class="dfn-panel" data-for="2dd9fe0024aed80ce805ade725637ef3" id="infopanel-for-2dd9fe0024aed80ce805ade725637ef3">
-   <span id="infopaneltitle-for-2dd9fe0024aed80ce805ade725637ef3" style="display:none">Info about the 'isq8-time' external reference.</span><a href="iso-80000-3.7.html#isq8-time">iso-80000-3.7.html#isq8-time</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-time">5.6. ISQ8-velocity.per.time</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f727089fcfa248c4b1de9c89953fae1b" class="dfn-panel" data-for="f727089fcfa248c4b1de9c89953fae1b" id="infopanel-for-f727089fcfa248c4b1de9c89953fae1b">
-   <span id="infopaneltitle-for-f727089fcfa248c4b1de9c89953fae1b" style="display:none">Info about the 'si7-hour' external reference.</span><a href="iso-80000-3.7.html#si7-hour">iso-80000-3.7.html#si7-hour</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si7-hour">5.9. SI7-kilometre-per-hour.per.hour</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-f6654a4cb21ff57a1e03f9124b9ac499" class="dfn-panel" data-for="f6654a4cb21ff57a1e03f9124b9ac499" id="infopanel-for-f6654a4cb21ff57a1e03f9124b9ac499">
-   <span id="infopaneltitle-for-f6654a4cb21ff57a1e03f9124b9ac499" style="display:none">Info about the 'si7-second' external reference.</span><a href="iso-80000-3.7.html#si7-second">iso-80000-3.7.html#si7-second</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si7-second">5.12. SI7-metre-per-second.per.second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-17ae1a6dbcb02d206ecc4efa5f2b31bc" class="dfn-panel" data-for="17ae1a6dbcb02d206ecc4efa5f2b31bc" id="infopanel-for-17ae1a6dbcb02d206ecc4efa5f2b31bc">
-   <span id="infopaneltitle-for-17ae1a6dbcb02d206ecc4efa5f2b31bc" style="display:none">Info about the 'si8-hour' external reference.</span><a href="iso-80000-3.7.html#si8-hour">iso-80000-3.7.html#si8-hour</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si8-hour">5.15. SI8-kilometre-per-hour.per.hour</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-75c69672f707f9f8e976b16ceb573ec5" class="dfn-panel" data-for="75c69672f707f9f8e976b16ceb573ec5" id="infopanel-for-75c69672f707f9f8e976b16ceb573ec5">
-   <span id="infopaneltitle-for-75c69672f707f9f8e976b16ceb573ec5" style="display:none">Info about the 'si8-second' external reference.</span><a href="iso-80000-3.7.html#si8-second">iso-80000-3.7.html#si8-second</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si8-second">5.18. SI8-metre-per-second.per.second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-dc9c8b8db3019b490dec4d2cef2a234b" class="dfn-panel" data-for="dc9c8b8db3019b490dec4d2cef2a234b" id="infopanel-for-dc9c8b8db3019b490dec4d2cef2a234b">
-   <span id="infopaneltitle-for-dc9c8b8db3019b490dec4d2cef2a234b" style="display:none">Info about the 'isq7-velocity' external reference.</span><a href="iso-80000-3.8.html#isq7-velocity">iso-80000-3.8.html#isq7-velocity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq7-velocity">5.2. ISQ7-velocity.length</a>
-    <li><a href="#ref-for-isq7-velocity①">5.3. ISQ7-velocity.per.time</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-a9c63236a7c184f2f437674f112f75ef" class="dfn-panel" data-for="a9c63236a7c184f2f437674f112f75ef" id="infopanel-for-a9c63236a7c184f2f437674f112f75ef">
-   <span id="infopaneltitle-for-a9c63236a7c184f2f437674f112f75ef" style="display:none">Info about the 'isq8-velocity' external reference.</span><a href="iso-80000-3.8.html#isq8-velocity">iso-80000-3.8.html#isq8-velocity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isq8-velocity">5.5. ISQ8-velocity.length</a>
-    <li><a href="#ref-for-isq8-velocity①">5.6. ISQ8-velocity.per.time</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ba56912943af8eb52c31fb7dae71901b" class="dfn-panel" data-for="ba56912943af8eb52c31fb7dae71901b" id="infopanel-for-ba56912943af8eb52c31fb7dae71901b">
-   <span id="infopaneltitle-for-ba56912943af8eb52c31fb7dae71901b" style="display:none">Info about the 'metre-per-second' external reference.</span><a href="iso-80000-3.8.html#metre-per-second">iso-80000-3.8.html#metre-per-second</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-metre-per-second">5.7. SI7-kilometre-per-hour</a>
-    <li><a href="#ref-for-metre-per-second①">5.10. SI7-metre-per-second</a>
-    <li><a href="#ref-for-metre-per-second②">5.13. SI8-kilometre-per-hour</a>
-    <li><a href="#ref-for-metre-per-second③">5.16. SI8-metre-per-second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-996fcc1b94d34aec0ed2be6be82c3f8c" class="dfn-panel" data-for="996fcc1b94d34aec0ed2be6be82c3f8c" id="infopanel-for-996fcc1b94d34aec0ed2be6be82c3f8c">
-   <span id="infopaneltitle-for-996fcc1b94d34aec0ed2be6be82c3f8c" style="display:none">Info about the 'si7-kilometre-per-hour' external reference.</span><a href="iso-80000-3.8.html#si7-kilometre-per-hour">iso-80000-3.8.html#si7-kilometre-per-hour</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si7-kilometre-per-hour">5.8. SI7-kilometre-per-hour.kilometre</a>
-    <li><a href="#ref-for-si7-kilometre-per-hour①">5.9. SI7-kilometre-per-hour.per.hour</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-921679162998fa38ef0569bfc9110793" class="dfn-panel" data-for="921679162998fa38ef0569bfc9110793" id="infopanel-for-921679162998fa38ef0569bfc9110793">
-   <span id="infopaneltitle-for-921679162998fa38ef0569bfc9110793" style="display:none">Info about the 'si7-metre-per-second' external reference.</span><a href="iso-80000-3.8.html#si7-metre-per-second">iso-80000-3.8.html#si7-metre-per-second</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si7-metre-per-second">5.11. SI7-metre-per-second.metre</a>
-    <li><a href="#ref-for-si7-metre-per-second①">5.12. SI7-metre-per-second.per.second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-12a0a5c7df850b3f0797a53fc9483b2d" class="dfn-panel" data-for="12a0a5c7df850b3f0797a53fc9483b2d" id="infopanel-for-12a0a5c7df850b3f0797a53fc9483b2d">
-   <span id="infopaneltitle-for-12a0a5c7df850b3f0797a53fc9483b2d" style="display:none">Info about the 'si8-kilometre-per-hour' external reference.</span><a href="iso-80000-3.8.html#si8-kilometre-per-hour">iso-80000-3.8.html#si8-kilometre-per-hour</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si8-kilometre-per-hour">5.14. SI8-kilometre-per-hour.kilometre</a>
-    <li><a href="#ref-for-si8-kilometre-per-hour①">5.15. SI8-kilometre-per-hour.per.hour</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d4efc0bc6108d3aaf556a97c0861722d" class="dfn-panel" data-for="d4efc0bc6108d3aaf556a97c0861722d" id="infopanel-for-d4efc0bc6108d3aaf556a97c0861722d">
-   <span id="infopaneltitle-for-d4efc0bc6108d3aaf556a97c0861722d" style="display:none">Info about the 'si8-metre-per-second' external reference.</span><a href="iso-80000-3.8.html#si8-metre-per-second">iso-80000-3.8.html#si8-metre-per-second</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-si8-metre-per-second">5.17. SI8-metre-per-second.metre</a>
-    <li><a href="#ref-for-si8-metre-per-second①">5.18. SI8-metre-per-second.per.second</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-0816b3f12334f13ef8718e33aeb523be" class="dfn-panel" data-for="0816b3f12334f13ef8718e33aeb523be" id="infopanel-for-0816b3f12334f13ef8718e33aeb523be">
-   <span id="infopaneltitle-for-0816b3f12334f13ef8718e33aeb523be" style="display:none">Info about the 'velocity' external reference.</span><a href="iso-80000-3.8.html#velocity">iso-80000-3.8.html#velocity</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-velocity">4.1. kilometre-per-hour</a>
-    <li><a href="#ref-for-velocity①">4.2. metre-per-second</a>
-    <li><a href="#ref-for-velocity②">5.1. ISQ7-velocity</a>
-    <li><a href="#ref-for-velocity③">5.4. ISQ8-velocity</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://BIPM.ORG/JCGM/VIM4]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="a1137e28e1d72231671e7fd683f3a19b">exponent</span>
-     <li><span class="dfn-paneled" id="3fd81ec3b18efe04a5bebacb4dfcb16c">generalunitaryquantity</span>
-     <li><span class="dfn-paneled" id="535fe74ab51b5c00a84eb46a25b002d3">haspowerofunitaryquantityfactor</span>
-     <li><span class="dfn-paneled" id="d0f70bdb479252c7b7fb19c675043aef">haspowerofunitfactor</span>
-     <li><span class="dfn-paneled" id="a55dc4183806d00f57769dd51a14d8b6">id</span>
-     <li><span class="dfn-paneled" id="68276dbf72f7e9ff6b765618f7aa5401">instantiates_1</span>
-     <li><span class="dfn-paneled" id="59095b1ae35be320957c0b3c9b524fcd">isdimensionless</span>
-     <li><span class="dfn-paneled" id="5a5070f27cc32a58e8e6f19636cb0be1">isoffsystemunit</span>
-     <li><span class="dfn-paneled" id="0d69af81d63e38857736e4c2b508add9">systemhasderivedunit</span>
-     <li><span class="dfn-paneled" id="56d67cae2f4f57f67725d22b7b52d2b8">systemhasderivedunitaryquantity</span>
-     <li><span class="dfn-paneled" id="b6481b11251901b497f35d832c27d2e1">unprefixedmeasurementunit</span>
+     <li><span class="dfn-paneled" id="4c6f2553">exponent</span>
+     <li><span class="dfn-paneled" id="2d12e8b3">generalunitaryquantity</span>
+     <li><span class="dfn-paneled" id="57c27c1d">haspowerofunitaryquantityfactor</span>
+     <li><span class="dfn-paneled" id="6b9c370e">haspowerofunitfactor</span>
+     <li><span class="dfn-paneled" id="22cc0d19">id</span>
+     <li><span class="dfn-paneled" id="b963c60b">instantiates_1</span>
+     <li><span class="dfn-paneled" id="d7db4ce3">isdimensionless</span>
+     <li><span class="dfn-paneled" id="652e29f7">isoffsystemunit</span>
+     <li><span class="dfn-paneled" id="e2fb5e82">systemhasderivedunit</span>
+     <li><span class="dfn-paneled" id="092684e0">systemhasderivedunitaryquantity</span>
+     <li><span class="dfn-paneled" id="dd43b8fd">unprefixedmeasurementunit</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-1]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="b1dc043e5efbcc452c05318f2f52f1e4">isq7</span>
-     <li><span class="dfn-paneled" id="f257f9f007741c509006e6756479b3ef">isq8</span>
-     <li><span class="dfn-paneled" id="d005e23d5d949663f3cf9e786bc3d9a0">si7</span>
-     <li><span class="dfn-paneled" id="c84ea8907660487a2bffadf8ad295cac">si8</span>
+     <li><span class="dfn-paneled" id="a137317b">isq7</span>
+     <li><span class="dfn-paneled" id="a0d8ea7b">isq8</span>
+     <li><span class="dfn-paneled" id="418bb73d">si7</span>
+     <li><span class="dfn-paneled" id="4b1230ac">si8</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-3.1]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="1d6b361097e463d786555d890d8f1bb1">isq7-length</span>
-     <li><span class="dfn-paneled" id="159d84c106869dc788ee2edec8c7faf9">isq8-length</span>
-     <li><span class="dfn-paneled" id="bb9becb6720f03994cb28809921db8ac">si7-kilometre</span>
-     <li><span class="dfn-paneled" id="43c4b71e900343e5ef50c44adcaf2f37">si7-metre</span>
-     <li><span class="dfn-paneled" id="a0008c0fcc51d3aaad5c814d89d99542">si8-kilometre</span>
-     <li><span class="dfn-paneled" id="b1e0318e8849576d57cbd305a4aa4a56">si8-metre</span>
+     <li><span class="dfn-paneled" id="42c9a104">isq7-length</span>
+     <li><span class="dfn-paneled" id="f1681625">isq8-length</span>
+     <li><span class="dfn-paneled" id="7d3a25f9">si7-kilometre</span>
+     <li><span class="dfn-paneled" id="eed6bbb4">si7-metre</span>
+     <li><span class="dfn-paneled" id="ba56c00d">si8-kilometre</span>
+     <li><span class="dfn-paneled" id="09bbaa41">si8-metre</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-3.7]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="9310e3e7f5c6cba0d6753cb956df9148">isq7-time</span>
-     <li><span class="dfn-paneled" id="2dd9fe0024aed80ce805ade725637ef3">isq8-time</span>
-     <li><span class="dfn-paneled" id="f727089fcfa248c4b1de9c89953fae1b">si7-hour</span>
-     <li><span class="dfn-paneled" id="f6654a4cb21ff57a1e03f9124b9ac499">si7-second</span>
-     <li><span class="dfn-paneled" id="17ae1a6dbcb02d206ecc4efa5f2b31bc">si8-hour</span>
-     <li><span class="dfn-paneled" id="75c69672f707f9f8e976b16ceb573ec5">si8-second</span>
+     <li><span class="dfn-paneled" id="27b4a54e">isq7-time</span>
+     <li><span class="dfn-paneled" id="6701e4a1">isq8-time</span>
+     <li><span class="dfn-paneled" id="bd49fd21">si7-hour</span>
+     <li><span class="dfn-paneled" id="4b3f0bae">si7-second</span>
+     <li><span class="dfn-paneled" id="28e73af2">si8-hour</span>
+     <li><span class="dfn-paneled" id="9dd01cbf">si8-second</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://ISO.ORG/ISO-80000-3.8]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="dc9c8b8db3019b490dec4d2cef2a234b">isq7-velocity</span>
-     <li><span class="dfn-paneled" id="a9c63236a7c184f2f437674f112f75ef">isq8-velocity</span>
-     <li><span class="dfn-paneled" id="ba56912943af8eb52c31fb7dae71901b">metre-per-second</span>
-     <li><span class="dfn-paneled" id="996fcc1b94d34aec0ed2be6be82c3f8c">si7-kilometre-per-hour</span>
-     <li><span class="dfn-paneled" id="921679162998fa38ef0569bfc9110793">si7-metre-per-second</span>
-     <li><span class="dfn-paneled" id="12a0a5c7df850b3f0797a53fc9483b2d">si8-kilometre-per-hour</span>
-     <li><span class="dfn-paneled" id="d4efc0bc6108d3aaf556a97c0861722d">si8-metre-per-second</span>
-     <li><span class="dfn-paneled" id="0816b3f12334f13ef8718e33aeb523be">velocity</span>
+     <li><span class="dfn-paneled" id="7c3d5854">isq7-velocity</span>
+     <li><span class="dfn-paneled" id="34ffb61f">isq8-velocity</span>
+     <li><span class="dfn-paneled" id="85f4ea52">metre-per-second</span>
+     <li><span class="dfn-paneled" id="1fef8c19">si7-kilometre-per-hour</span>
+     <li><span class="dfn-paneled" id="35c1312c">si7-metre-per-second</span>
+     <li><span class="dfn-paneled" id="35a819ef">si8-kilometre-per-hour</span>
+     <li><span class="dfn-paneled" id="bc45fdd1">si8-metre-per-second</span>
+     <li><span class="dfn-paneled" id="a8dc8d8b">velocity</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -3149,49 +2945,278 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['4c6f2553'] = {"dfnID": "4c6f2553", "url": "../bipm.org/jcgm/vim4.html#exponent", "dfnText": "exponent", "refSections": [{"refs": [{"id": "ref-for-exponent"}], "title": "5.2. ISQ7-velocity.length"}, {"refs": [{"id": "ref-for-exponent\u2460"}], "title": "5.3. ISQ7-velocity.per.time"}, {"refs": [{"id": "ref-for-exponent\u2461"}], "title": "5.5. ISQ8-velocity.length"}, {"refs": [{"id": "ref-for-exponent\u2462"}], "title": "5.6. ISQ8-velocity.per.time"}, {"refs": [{"id": "ref-for-exponent\u2463"}], "title": "5.8. SI7-kilometre-per-hour.kilometre"}, {"refs": [{"id": "ref-for-exponent\u2464"}], "title": "5.9. SI7-kilometre-per-hour.per.hour"}, {"refs": [{"id": "ref-for-exponent\u2465"}], "title": "5.11. SI7-metre-per-second.metre"}, {"refs": [{"id": "ref-for-exponent\u2466"}], "title": "5.12. SI7-metre-per-second.per.second"}, {"refs": [{"id": "ref-for-exponent\u2467"}], "title": "5.14. SI8-kilometre-per-hour.kilometre"}, {"refs": [{"id": "ref-for-exponent\u2468"}], "title": "5.15. SI8-kilometre-per-hour.per.hour"}, {"refs": [{"id": "ref-for-exponent\u2460\u24ea"}], "title": "5.17. SI8-metre-per-second.metre"}, {"refs": [{"id": "ref-for-exponent\u2460\u2460"}], "title": "5.18. SI8-metre-per-second.per.second"}], "external": true};
+window.dfnpanelData['2d12e8b3'] = {"dfnID": "2d12e8b3", "url": "../bipm.org/jcgm/vim4.html#generalunitaryquantity", "dfnText": "generalunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-generalunitaryquantity"}], "title": "4.3. velocity"}], "external": true};
+window.dfnpanelData['57c27c1d'] = {"dfnID": "57c27c1d", "url": "../bipm.org/jcgm/vim4.html#haspowerofunitaryquantityfactor", "dfnText": "haspowerofunitaryquantityfactor", "refSections": [{"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor"}], "title": "5.2. ISQ7-velocity.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2460"}], "title": "5.3. ISQ7-velocity.per.time"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2461"}], "title": "5.5. ISQ8-velocity.length"}, {"refs": [{"id": "ref-for-haspowerofunitaryquantityfactor\u2462"}], "title": "5.6. ISQ8-velocity.per.time"}], "external": true};
+window.dfnpanelData['6b9c370e'] = {"dfnID": "6b9c370e", "url": "../bipm.org/jcgm/vim4.html#haspowerofunitfactor", "dfnText": "haspowerofunitfactor", "refSections": [{"refs": [{"id": "ref-for-haspowerofunitfactor"}], "title": "5.8. SI7-kilometre-per-hour.kilometre"}, {"refs": [{"id": "ref-for-haspowerofunitfactor\u2460"}], "title": "5.9. SI7-kilometre-per-hour.per.hour"}, {"refs": [{"id": "ref-for-haspowerofunitfactor\u2461"}], "title": "5.11. SI7-metre-per-second.metre"}, {"refs": [{"id": "ref-for-haspowerofunitfactor\u2462"}], "title": "5.12. SI7-metre-per-second.per.second"}, {"refs": [{"id": "ref-for-haspowerofunitfactor\u2463"}], "title": "5.14. SI8-kilometre-per-hour.kilometre"}, {"refs": [{"id": "ref-for-haspowerofunitfactor\u2464"}], "title": "5.15. SI8-kilometre-per-hour.per.hour"}, {"refs": [{"id": "ref-for-haspowerofunitfactor\u2465"}], "title": "5.17. SI8-metre-per-second.metre"}, {"refs": [{"id": "ref-for-haspowerofunitfactor\u2466"}], "title": "5.18. SI8-metre-per-second.per.second"}], "external": true};
+window.dfnpanelData['22cc0d19'] = {"dfnID": "22cc0d19", "url": "../bipm.org/jcgm/vim4.html#id", "dfnText": "id", "refSections": [{"refs": [{"id": "ref-for-id"}], "title": "4.1. kilometre-per-hour"}, {"refs": [{"id": "ref-for-id\u2460"}], "title": "4.2. metre-per-second"}, {"refs": [{"id": "ref-for-id\u2461"}], "title": "4.3. velocity"}], "external": true};
+window.dfnpanelData['b963c60b'] = {"dfnID": "b963c60b", "url": "../bipm.org/jcgm/vim4.html#instantiates_1", "dfnText": "instantiates_1", "refSections": [{"refs": [{"id": "ref-for-instantiates_1"}], "title": "4.1. kilometre-per-hour"}, {"refs": [{"id": "ref-for-instantiates_1\u2460"}], "title": "4.2. metre-per-second"}], "external": true};
+window.dfnpanelData['d7db4ce3'] = {"dfnID": "d7db4ce3", "url": "../bipm.org/jcgm/vim4.html#isdimensionless", "dfnText": "isdimensionless", "refSections": [{"refs": [{"id": "ref-for-isdimensionless"}], "title": "5.1. ISQ7-velocity"}, {"refs": [{"id": "ref-for-isdimensionless\u2460"}], "title": "5.4. ISQ8-velocity"}], "external": true};
+window.dfnpanelData['652e29f7'] = {"dfnID": "652e29f7", "url": "../bipm.org/jcgm/vim4.html#isoffsystemunit", "dfnText": "isoffsystemunit", "refSections": [{"refs": [{"id": "ref-for-isoffsystemunit"}], "title": "5.7. SI7-kilometre-per-hour"}, {"refs": [{"id": "ref-for-isoffsystemunit\u2460"}], "title": "5.10. SI7-metre-per-second"}, {"refs": [{"id": "ref-for-isoffsystemunit\u2461"}], "title": "5.13. SI8-kilometre-per-hour"}, {"refs": [{"id": "ref-for-isoffsystemunit\u2462"}], "title": "5.16. SI8-metre-per-second"}], "external": true};
+window.dfnpanelData['e2fb5e82'] = {"dfnID": "e2fb5e82", "url": "../bipm.org/jcgm/vim4.html#systemhasderivedunit", "dfnText": "systemhasderivedunit", "refSections": [{"refs": [{"id": "ref-for-systemhasderivedunit"}], "title": "5.7. SI7-kilometre-per-hour"}, {"refs": [{"id": "ref-for-systemhasderivedunit\u2460"}], "title": "5.10. SI7-metre-per-second"}, {"refs": [{"id": "ref-for-systemhasderivedunit\u2461"}], "title": "5.13. SI8-kilometre-per-hour"}, {"refs": [{"id": "ref-for-systemhasderivedunit\u2462"}], "title": "5.16. SI8-metre-per-second"}], "external": true};
+window.dfnpanelData['092684e0'] = {"dfnID": "092684e0", "url": "../bipm.org/jcgm/vim4.html#systemhasderivedunitaryquantity", "dfnText": "systemhasderivedunitaryquantity", "refSections": [{"refs": [{"id": "ref-for-systemhasderivedunitaryquantity"}], "title": "5.1. ISQ7-velocity"}, {"refs": [{"id": "ref-for-systemhasderivedunitaryquantity\u2460"}], "title": "5.4. ISQ8-velocity"}], "external": true};
+window.dfnpanelData['dd43b8fd'] = {"dfnID": "dd43b8fd", "url": "../bipm.org/jcgm/vim4.html#unprefixedmeasurementunit", "dfnText": "unprefixedmeasurementunit", "refSections": [{"refs": [{"id": "ref-for-unprefixedmeasurementunit"}], "title": "4.1. kilometre-per-hour"}, {"refs": [{"id": "ref-for-unprefixedmeasurementunit\u2460"}], "title": "4.2. metre-per-second"}], "external": true};
+window.dfnpanelData['a137317b'] = {"dfnID": "a137317b", "url": "iso-80000-1.html#isq7", "dfnText": "isq7", "refSections": [{"refs": [{"id": "ref-for-isq7"}], "title": "5.1. ISQ7-velocity"}], "external": true};
+window.dfnpanelData['a0d8ea7b'] = {"dfnID": "a0d8ea7b", "url": "iso-80000-1.html#isq8", "dfnText": "isq8", "refSections": [{"refs": [{"id": "ref-for-isq8"}], "title": "5.4. ISQ8-velocity"}], "external": true};
+window.dfnpanelData['418bb73d'] = {"dfnID": "418bb73d", "url": "iso-80000-1.html#si7", "dfnText": "si7", "refSections": [{"refs": [{"id": "ref-for-si7"}], "title": "5.7. SI7-kilometre-per-hour"}, {"refs": [{"id": "ref-for-si7\u2460"}], "title": "5.10. SI7-metre-per-second"}], "external": true};
+window.dfnpanelData['4b1230ac'] = {"dfnID": "4b1230ac", "url": "iso-80000-1.html#si8", "dfnText": "si8", "refSections": [{"refs": [{"id": "ref-for-si8"}], "title": "5.13. SI8-kilometre-per-hour"}, {"refs": [{"id": "ref-for-si8\u2460"}], "title": "5.16. SI8-metre-per-second"}], "external": true};
+window.dfnpanelData['42c9a104'] = {"dfnID": "42c9a104", "url": "iso-80000-3.1.html#isq7-length", "dfnText": "isq7-length", "refSections": [{"refs": [{"id": "ref-for-isq7-length"}], "title": "5.2. ISQ7-velocity.length"}], "external": true};
+window.dfnpanelData['f1681625'] = {"dfnID": "f1681625", "url": "iso-80000-3.1.html#isq8-length", "dfnText": "isq8-length", "refSections": [{"refs": [{"id": "ref-for-isq8-length"}], "title": "5.5. ISQ8-velocity.length"}], "external": true};
+window.dfnpanelData['7d3a25f9'] = {"dfnID": "7d3a25f9", "url": "iso-80000-3.1.html#si7-kilometre", "dfnText": "si7-kilometre", "refSections": [{"refs": [{"id": "ref-for-si7-kilometre"}], "title": "5.8. SI7-kilometre-per-hour.kilometre"}], "external": true};
+window.dfnpanelData['eed6bbb4'] = {"dfnID": "eed6bbb4", "url": "iso-80000-3.1.html#si7-metre", "dfnText": "si7-metre", "refSections": [{"refs": [{"id": "ref-for-si7-metre"}], "title": "5.11. SI7-metre-per-second.metre"}], "external": true};
+window.dfnpanelData['ba56c00d'] = {"dfnID": "ba56c00d", "url": "iso-80000-3.1.html#si8-kilometre", "dfnText": "si8-kilometre", "refSections": [{"refs": [{"id": "ref-for-si8-kilometre"}], "title": "5.14. SI8-kilometre-per-hour.kilometre"}], "external": true};
+window.dfnpanelData['09bbaa41'] = {"dfnID": "09bbaa41", "url": "iso-80000-3.1.html#si8-metre", "dfnText": "si8-metre", "refSections": [{"refs": [{"id": "ref-for-si8-metre"}], "title": "5.17. SI8-metre-per-second.metre"}], "external": true};
+window.dfnpanelData['27b4a54e'] = {"dfnID": "27b4a54e", "url": "iso-80000-3.7.html#isq7-time", "dfnText": "isq7-time", "refSections": [{"refs": [{"id": "ref-for-isq7-time"}], "title": "5.3. ISQ7-velocity.per.time"}], "external": true};
+window.dfnpanelData['6701e4a1'] = {"dfnID": "6701e4a1", "url": "iso-80000-3.7.html#isq8-time", "dfnText": "isq8-time", "refSections": [{"refs": [{"id": "ref-for-isq8-time"}], "title": "5.6. ISQ8-velocity.per.time"}], "external": true};
+window.dfnpanelData['bd49fd21'] = {"dfnID": "bd49fd21", "url": "iso-80000-3.7.html#si7-hour", "dfnText": "si7-hour", "refSections": [{"refs": [{"id": "ref-for-si7-hour"}], "title": "5.9. SI7-kilometre-per-hour.per.hour"}], "external": true};
+window.dfnpanelData['4b3f0bae'] = {"dfnID": "4b3f0bae", "url": "iso-80000-3.7.html#si7-second", "dfnText": "si7-second", "refSections": [{"refs": [{"id": "ref-for-si7-second"}], "title": "5.12. SI7-metre-per-second.per.second"}], "external": true};
+window.dfnpanelData['28e73af2'] = {"dfnID": "28e73af2", "url": "iso-80000-3.7.html#si8-hour", "dfnText": "si8-hour", "refSections": [{"refs": [{"id": "ref-for-si8-hour"}], "title": "5.15. SI8-kilometre-per-hour.per.hour"}], "external": true};
+window.dfnpanelData['9dd01cbf'] = {"dfnID": "9dd01cbf", "url": "iso-80000-3.7.html#si8-second", "dfnText": "si8-second", "refSections": [{"refs": [{"id": "ref-for-si8-second"}], "title": "5.18. SI8-metre-per-second.per.second"}], "external": true};
+window.dfnpanelData['7c3d5854'] = {"dfnID": "7c3d5854", "url": "iso-80000-3.8.html#isq7-velocity", "dfnText": "isq7-velocity", "refSections": [{"refs": [{"id": "ref-for-isq7-velocity"}], "title": "5.2. ISQ7-velocity.length"}, {"refs": [{"id": "ref-for-isq7-velocity\u2460"}], "title": "5.3. ISQ7-velocity.per.time"}], "external": true};
+window.dfnpanelData['34ffb61f'] = {"dfnID": "34ffb61f", "url": "iso-80000-3.8.html#isq8-velocity", "dfnText": "isq8-velocity", "refSections": [{"refs": [{"id": "ref-for-isq8-velocity"}], "title": "5.5. ISQ8-velocity.length"}, {"refs": [{"id": "ref-for-isq8-velocity\u2460"}], "title": "5.6. ISQ8-velocity.per.time"}], "external": true};
+window.dfnpanelData['85f4ea52'] = {"dfnID": "85f4ea52", "url": "iso-80000-3.8.html#metre-per-second", "dfnText": "metre-per-second", "refSections": [{"refs": [{"id": "ref-for-metre-per-second"}], "title": "5.7. SI7-kilometre-per-hour"}, {"refs": [{"id": "ref-for-metre-per-second\u2460"}], "title": "5.10. SI7-metre-per-second"}, {"refs": [{"id": "ref-for-metre-per-second\u2461"}], "title": "5.13. SI8-kilometre-per-hour"}, {"refs": [{"id": "ref-for-metre-per-second\u2462"}], "title": "5.16. SI8-metre-per-second"}], "external": true};
+window.dfnpanelData['1fef8c19'] = {"dfnID": "1fef8c19", "url": "iso-80000-3.8.html#si7-kilometre-per-hour", "dfnText": "si7-kilometre-per-hour", "refSections": [{"refs": [{"id": "ref-for-si7-kilometre-per-hour"}], "title": "5.8. SI7-kilometre-per-hour.kilometre"}, {"refs": [{"id": "ref-for-si7-kilometre-per-hour\u2460"}], "title": "5.9. SI7-kilometre-per-hour.per.hour"}], "external": true};
+window.dfnpanelData['35c1312c'] = {"dfnID": "35c1312c", "url": "iso-80000-3.8.html#si7-metre-per-second", "dfnText": "si7-metre-per-second", "refSections": [{"refs": [{"id": "ref-for-si7-metre-per-second"}], "title": "5.11. SI7-metre-per-second.metre"}, {"refs": [{"id": "ref-for-si7-metre-per-second\u2460"}], "title": "5.12. SI7-metre-per-second.per.second"}], "external": true};
+window.dfnpanelData['35a819ef'] = {"dfnID": "35a819ef", "url": "iso-80000-3.8.html#si8-kilometre-per-hour", "dfnText": "si8-kilometre-per-hour", "refSections": [{"refs": [{"id": "ref-for-si8-kilometre-per-hour"}], "title": "5.14. SI8-kilometre-per-hour.kilometre"}, {"refs": [{"id": "ref-for-si8-kilometre-per-hour\u2460"}], "title": "5.15. SI8-kilometre-per-hour.per.hour"}], "external": true};
+window.dfnpanelData['bc45fdd1'] = {"dfnID": "bc45fdd1", "url": "iso-80000-3.8.html#si8-metre-per-second", "dfnText": "si8-metre-per-second", "refSections": [{"refs": [{"id": "ref-for-si8-metre-per-second"}], "title": "5.17. SI8-metre-per-second.metre"}, {"refs": [{"id": "ref-for-si8-metre-per-second\u2460"}], "title": "5.18. SI8-metre-per-second.per.second"}], "external": true};
+window.dfnpanelData['a8dc8d8b'] = {"dfnID": "a8dc8d8b", "url": "iso-80000-3.8.html#velocity", "dfnText": "velocity", "refSections": [{"refs": [{"id": "ref-for-velocity"}], "title": "4.1. kilometre-per-hour"}, {"refs": [{"id": "ref-for-velocity\u2460"}], "title": "4.2. metre-per-second"}, {"refs": [{"id": "ref-for-velocity\u2461"}], "title": "5.1. ISQ7-velocity"}, {"refs": [{"id": "ref-for-velocity\u2462"}], "title": "5.4. ISQ8-velocity"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

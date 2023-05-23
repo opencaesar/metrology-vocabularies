@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/metrology-vocabularies/example.org/test-property-values" rel="canonical">
-  <meta content="e8f2fd6ec2b315d6d4d4c0417ead33c64bc51f16" name="document-revision">
+  <meta content="c39258f88a60699662ffa99a6df5496bfd2b3310" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">test-property-values</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2184,60 +2190,79 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#camera1">camera1</a><span>, in § 3.1</span>
    <li><a href="#camera2">camera2</a><span>, in § 3.2</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-f6cd1c8da6363f1b02b30d1a6cafeeff" class="dfn-panel" data-for="f6cd1c8da6363f1b02b30d1a6cafeeff" id="infopanel-for-f6cd1c8da6363f1b02b30d1a6cafeeff">
-   <span id="infopaneltitle-for-f6cd1c8da6363f1b02b30d1a6cafeeff" style="display:none">Info about the 'component' external reference.</span><a href="some-domain.html#component">some-domain.html#component</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-component">3.1. camera1</a>
-    <li><a href="#ref-for-component①">3.2. camera2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-7cdfed73a4da0cd3fe11f96517893a10" class="dfn-panel" data-for="7cdfed73a4da0cd3fe11f96517893a10" id="infopanel-for-7cdfed73a4da0cd3fe11f96517893a10">
-   <span id="infopaneltitle-for-7cdfed73a4da0cd3fe11f96517893a10" style="display:none">Info about the 'mass.allocation' external reference.</span><a href="some-domain.html#massallocation">some-domain.html#massallocation</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-massallocation">3.1. camera1</a>
-    <li><a href="#ref-for-massallocation①">3.2. camera2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-6a66375227d337b60cc55c0b985117cb" class="dfn-panel" data-for="6a66375227d337b60cc55c0b985117cb" id="infopanel-for-6a66375227d337b60cc55c0b985117cb">
-   <span id="infopaneltitle-for-6a66375227d337b60cc55c0b985117cb" style="display:none">Info about the 'mass.basic' external reference.</span><a href="some-domain.html#massbasic">some-domain.html#massbasic</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-massbasic">3.1. camera1</a>
-    <li><a href="#ref-for-massbasic①">3.2. camera2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d7eac3df49f995f75f4f6064c5b7ba32" class="dfn-panel" data-for="d7eac3df49f995f75f4f6064c5b7ba32" id="infopanel-for-d7eac3df49f995f75f4f6064c5b7ba32">
-   <span id="infopaneltitle-for-d7eac3df49f995f75f4f6064c5b7ba32" style="display:none">Info about the 'name' external reference.</span><a href="some-domain.html#name">some-domain.html#name</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-name">3.1. camera1</a>
-    <li><a href="#ref-for-name①">3.2. camera2</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://EXAMPLE.ORG/SOME-DOMAIN]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="f6cd1c8da6363f1b02b30d1a6cafeeff">component</span>
-     <li><span class="dfn-paneled" id="7cdfed73a4da0cd3fe11f96517893a10">mass.allocation</span>
-     <li><span class="dfn-paneled" id="6a66375227d337b60cc55c0b985117cb">mass.basic</span>
-     <li><span class="dfn-paneled" id="d7eac3df49f995f75f4f6064c5b7ba32">name</span>
+     <li><span class="dfn-paneled" id="165dee9d">component</span>
+     <li><span class="dfn-paneled" id="23160ae6">mass.allocation</span>
+     <li><span class="dfn-paneled" id="cfb7e129">mass.basic</span>
+     <li><span class="dfn-paneled" id="b4b3a548">name</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2287,49 +2312,247 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['165dee9d'] = {"dfnID": "165dee9d", "url": "some-domain.html#component", "dfnText": "component", "refSections": [{"refs": [{"id": "ref-for-component"}], "title": "3.1. camera1"}, {"refs": [{"id": "ref-for-component\u2460"}], "title": "3.2. camera2"}], "external": true};
+window.dfnpanelData['23160ae6'] = {"dfnID": "23160ae6", "url": "some-domain.html#massallocation", "dfnText": "mass.allocation", "refSections": [{"refs": [{"id": "ref-for-massallocation"}], "title": "3.1. camera1"}, {"refs": [{"id": "ref-for-massallocation\u2460"}], "title": "3.2. camera2"}], "external": true};
+window.dfnpanelData['cfb7e129'] = {"dfnID": "cfb7e129", "url": "some-domain.html#massbasic", "dfnText": "mass.basic", "refSections": [{"refs": [{"id": "ref-for-massbasic"}], "title": "3.1. camera1"}, {"refs": [{"id": "ref-for-massbasic\u2460"}], "title": "3.2. camera2"}], "external": true};
+window.dfnpanelData['b4b3a548'] = {"dfnID": "b4b3a548", "url": "some-domain.html#name", "dfnText": "name", "refSections": [{"refs": [{"id": "ref-for-name"}], "title": "3.1. camera1"}, {"refs": [{"id": "ref-for-name\u2460"}], "title": "3.2. camera2"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>

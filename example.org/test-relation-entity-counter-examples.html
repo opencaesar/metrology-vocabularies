@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f043d3484, updated Fri Feb 17 10:53:48 2023 -0800" name="generator">
+  <meta content="Bikeshed version 3383f409d, updated Fri Apr 28 15:49:22 2023 -0700" name="generator">
   <link href="https://opencaesar.github.io/metrology-vocabularies/example.org/test-relation-entity-counter-examples" rel="canonical">
-  <meta content="e8f2fd6ec2b315d6d4d4c0417ead33c64bc51f16" name="document-revision">
+  <meta content="c39258f88a60699662ffa99a6df5496bfd2b3310" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1715,8 +1715,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1733,8 +1732,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1745,7 +1751,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -1959,7 +1965,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="http://www.opencaesar.io/oml/"><img alt="OML Specification" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
    <h1 class="p-name no-ref" id="title">test-relation-entity-counter-examples</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-02-22">22 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2023-05-23">23 May 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2564,181 +2570,95 @@ dfn > a.self-link::before      { content: "#"; }
    <li><a href="#r4">r4</a><span>, in § 4.7</span>
    <li><a href="#r5">r5</a><span>, in § 4.8</span>
   </ul>
-  <aside aria-labelledby="infopaneltitle-for-f6cd1c8da6363f1b02b30d1a6cafeeff" class="dfn-panel" data-for="f6cd1c8da6363f1b02b30d1a6cafeeff" id="infopanel-for-f6cd1c8da6363f1b02b30d1a6cafeeff">
-   <span id="infopaneltitle-for-f6cd1c8da6363f1b02b30d1a6cafeeff" style="display:none">Info about the 'component' external reference.</span><a href="some-domain.html#component">some-domain.html#component</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-component">3.1. c1</a>
-    <li><a href="#ref-for-component①">3.2. c2</a>
-    <li><a href="#ref-for-component②">3.3. c3</a>
-    <li><a href="#ref-for-component③">3.4. c4</a>
-    <li><a href="#ref-for-component④">3.5. c5</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-895f53aefb214d0602e45645a4a9fd51" class="dfn-panel" data-for="895f53aefb214d0602e45645a4a9fd51" id="infopanel-for-895f53aefb214d0602e45645a4a9fd51">
-   <span id="infopaneltitle-for-895f53aefb214d0602e45645a4a9fd51" style="display:none">Info about the 'function' external reference.</span><a href="some-domain.html#function">some-domain.html#function</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-function">3.6. f1</a>
-    <li><a href="#ref-for-function①">3.7. f2</a>
-    <li><a href="#ref-for-function②">3.8. f3</a>
-    <li><a href="#ref-for-function③">3.9. f4</a>
-    <li><a href="#ref-for-function④">3.10. f5</a>
-    <li><a href="#ref-for-function⑤">3.11. f6</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b25a15c1236509a7f22394c468280695" class="dfn-panel" data-for="b25a15c1236509a7f22394c468280695" id="infopanel-for-b25a15c1236509a7f22394c468280695">
-   <span id="infopaneltitle-for-b25a15c1236509a7f22394c468280695" style="display:none">Info about the 'isperformedby' external reference.</span><a href="some-domain.html#isperformedby">some-domain.html#isperformedby</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-isperformedby">4.1. i1</a>
-    <li><a href="#ref-for-isperformedby①">4.2. i2</a>
-    <li><a href="#ref-for-isperformedby②">4.3. i4</a>
-    <li><a href="#ref-for-isperformedby③">4.4. i5</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-d7eac3df49f995f75f4f6064c5b7ba32" class="dfn-panel" data-for="d7eac3df49f995f75f4f6064c5b7ba32" id="infopanel-for-d7eac3df49f995f75f4f6064c5b7ba32">
-   <span id="infopaneltitle-for-d7eac3df49f995f75f4f6064c5b7ba32" style="display:none">Info about the 'name' external reference.</span><a href="some-domain.html#name">some-domain.html#name</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-name">3.1. c1</a>
-    <li><a href="#ref-for-name①">3.2. c2</a>
-    <li><a href="#ref-for-name②">3.3. c3</a>
-    <li><a href="#ref-for-name③">3.4. c4</a>
-    <li><a href="#ref-for-name④">3.5. c5</a>
-    <li><a href="#ref-for-name⑤">3.6. f1</a>
-    <li><a href="#ref-for-name⑥">3.7. f2</a>
-    <li><a href="#ref-for-name⑦">3.8. f3</a>
-    <li><a href="#ref-for-name⑧">3.9. f4</a>
-    <li><a href="#ref-for-name⑨">3.10. f5</a>
-    <li><a href="#ref-for-name①⓪">3.11. f6</a>
-    <li><a href="#ref-for-name①①">4.5. r1</a>
-    <li><a href="#ref-for-name①②">4.6. r2</a>
-    <li><a href="#ref-for-name①③">4.7. r4</a>
-    <li><a href="#ref-for-name①④">4.8. r5</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-358fe732352193b5c79c7b24509e8616" class="dfn-panel" data-for="358fe732352193b5c79c7b24509e8616" id="infopanel-for-358fe732352193b5c79c7b24509e8616">
-   <span id="infopaneltitle-for-358fe732352193b5c79c7b24509e8616" style="display:none">Info about the 'performs' external reference.</span><a href="some-domain.html#performs">some-domain.html#performs</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-performs">4.5. r1</a>
-    <li><a href="#ref-for-performs①">4.6. r2</a>
-    <li><a href="#ref-for-performs②">4.7. r4</a>
-    <li><a href="#ref-for-performs③">4.8. r5</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-c09eb2a14585219839dce4703592efe0" class="dfn-panel" data-for="c09eb2a14585219839dce4703592efe0" id="infopanel-for-c09eb2a14585219839dce4703592efe0">
-   <span id="infopaneltitle-for-c09eb2a14585219839dce4703592efe0" style="display:none">Info about the 'c1' external reference.</span><a href="test-relation-entity-counter-examples.html#c1">test-relation-entity-counter-examples.html#c1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-c1">4.1. i1</a>
-    <li><a href="#ref-for-c1①">4.5. r1</a>
-    <li><a href="#ref-for-c1②">4.6. r2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-5cb7bacd9f4a0472570ac5e130336116" class="dfn-panel" data-for="5cb7bacd9f4a0472570ac5e130336116" id="infopanel-for-5cb7bacd9f4a0472570ac5e130336116">
-   <span id="infopaneltitle-for-5cb7bacd9f4a0472570ac5e130336116" style="display:none">Info about the 'c2' external reference.</span><a href="test-relation-entity-counter-examples.html#c2">test-relation-entity-counter-examples.html#c2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-c2">4.2. i2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-da0a302f99647fa2f3b209c858137719" class="dfn-panel" data-for="da0a302f99647fa2f3b209c858137719" id="infopanel-for-da0a302f99647fa2f3b209c858137719">
-   <span id="infopaneltitle-for-da0a302f99647fa2f3b209c858137719" style="display:none">Info about the 'c3' external reference.</span><a href="test-relation-entity-counter-examples.html#c3">test-relation-entity-counter-examples.html#c3</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-c3">4.8. r5</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bce5e02b9d04b4006a5751ff264207bc" class="dfn-panel" data-for="bce5e02b9d04b4006a5751ff264207bc" id="infopanel-for-bce5e02b9d04b4006a5751ff264207bc">
-   <span id="infopaneltitle-for-bce5e02b9d04b4006a5751ff264207bc" style="display:none">Info about the 'c4' external reference.</span><a href="test-relation-entity-counter-examples.html#c4">test-relation-entity-counter-examples.html#c4</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-c4">4.3. i4</a>
-    <li><a href="#ref-for-c4①">4.7. r4</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-b21874dd4ea8cf57f9dde090de0497b9" class="dfn-panel" data-for="b21874dd4ea8cf57f9dde090de0497b9" id="infopanel-for-b21874dd4ea8cf57f9dde090de0497b9">
-   <span id="infopaneltitle-for-b21874dd4ea8cf57f9dde090de0497b9" style="display:none">Info about the 'c5' external reference.</span><a href="test-relation-entity-counter-examples.html#c5">test-relation-entity-counter-examples.html#c5</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-c5">4.4. i5</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-11977d56563ad466247eadddc01e4630" class="dfn-panel" data-for="11977d56563ad466247eadddc01e4630" id="infopanel-for-11977d56563ad466247eadddc01e4630">
-   <span id="infopaneltitle-for-11977d56563ad466247eadddc01e4630" style="display:none">Info about the 'f1' external reference.</span><a href="test-relation-entity-counter-examples.html#f1">test-relation-entity-counter-examples.html#f1</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-f1">4.1. i1</a>
-    <li><a href="#ref-for-f1①">4.5. r1</a>
-    <li><a href="#ref-for-f1②">4.6. r2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-bea4697db1010e6ec26f6b0cee2c09eb" class="dfn-panel" data-for="bea4697db1010e6ec26f6b0cee2c09eb" id="infopanel-for-bea4697db1010e6ec26f6b0cee2c09eb">
-   <span id="infopaneltitle-for-bea4697db1010e6ec26f6b0cee2c09eb" style="display:none">Info about the 'f2' external reference.</span><a href="test-relation-entity-counter-examples.html#f2">test-relation-entity-counter-examples.html#f2</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-f2">4.2. i2</a>
-    <li><a href="#ref-for-f2①">4.5. r1</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-9e79b80bef6018f4f2c47ae4be962649" class="dfn-panel" data-for="9e79b80bef6018f4f2c47ae4be962649" id="infopanel-for-9e79b80bef6018f4f2c47ae4be962649">
-   <span id="infopaneltitle-for-9e79b80bef6018f4f2c47ae4be962649" style="display:none">Info about the 'f3' external reference.</span><a href="test-relation-entity-counter-examples.html#f3">test-relation-entity-counter-examples.html#f3</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-f3">4.2. i2</a>
-    <li><a href="#ref-for-f3①">4.6. r2</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4f3897282c5ed5e6e66252176cd8d070" class="dfn-panel" data-for="4f3897282c5ed5e6e66252176cd8d070" id="infopanel-for-4f3897282c5ed5e6e66252176cd8d070">
-   <span id="infopaneltitle-for-4f3897282c5ed5e6e66252176cd8d070" style="display:none">Info about the 'f4' external reference.</span><a href="test-relation-entity-counter-examples.html#f4">test-relation-entity-counter-examples.html#f4</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-f4">4.3. i4</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-ed1d9744d9cec51e5550e6b464d35daa" class="dfn-panel" data-for="ed1d9744d9cec51e5550e6b464d35daa" id="infopanel-for-ed1d9744d9cec51e5550e6b464d35daa">
-   <span id="infopaneltitle-for-ed1d9744d9cec51e5550e6b464d35daa" style="display:none">Info about the 'f5' external reference.</span><a href="test-relation-entity-counter-examples.html#f5">test-relation-entity-counter-examples.html#f5</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-f5">4.4. i5</a>
-    <li><a href="#ref-for-f5①">4.7. r4</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-4521e96fa0154a1189d8987e19e3de46" class="dfn-panel" data-for="4521e96fa0154a1189d8987e19e3de46" id="infopanel-for-4521e96fa0154a1189d8987e19e3de46">
-   <span id="infopaneltitle-for-4521e96fa0154a1189d8987e19e3de46" style="display:none">Info about the 'f6' external reference.</span><a href="test-relation-entity-counter-examples.html#f6">test-relation-entity-counter-examples.html#f6</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-f6">4.8. r5</a>
-   </ul>
-  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
     <a data-link-type="biblio">[HTTP://EXAMPLE.ORG/SOME-DOMAIN]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="f6cd1c8da6363f1b02b30d1a6cafeeff">component</span>
-     <li><span class="dfn-paneled" id="895f53aefb214d0602e45645a4a9fd51">function</span>
-     <li><span class="dfn-paneled" id="b25a15c1236509a7f22394c468280695">isperformedby</span>
-     <li><span class="dfn-paneled" id="d7eac3df49f995f75f4f6064c5b7ba32">name</span>
-     <li><span class="dfn-paneled" id="358fe732352193b5c79c7b24509e8616">performs</span>
+     <li><span class="dfn-paneled" id="165dee9d">component</span>
+     <li><span class="dfn-paneled" id="6aceda0a">function</span>
+     <li><span class="dfn-paneled" id="f92b3aa1">isperformedby</span>
+     <li><span class="dfn-paneled" id="b4b3a548">name</span>
+     <li><span class="dfn-paneled" id="fa033d42">performs</span>
     </ul>
    <li>
     <a data-link-type="biblio">[HTTP://EXAMPLE.ORG/TEST-RELATION-ENTITY-COUNTER-EXAMPLES]</a> defines the following terms:
     <ul>
-     <li><span class="dfn-paneled" id="c09eb2a14585219839dce4703592efe0">c1</span>
-     <li><span class="dfn-paneled" id="5cb7bacd9f4a0472570ac5e130336116">c2</span>
-     <li><span class="dfn-paneled" id="da0a302f99647fa2f3b209c858137719">c3</span>
-     <li><span class="dfn-paneled" id="bce5e02b9d04b4006a5751ff264207bc">c4</span>
-     <li><span class="dfn-paneled" id="b21874dd4ea8cf57f9dde090de0497b9">c5</span>
-     <li><span class="dfn-paneled" id="11977d56563ad466247eadddc01e4630">f1</span>
-     <li><span class="dfn-paneled" id="bea4697db1010e6ec26f6b0cee2c09eb">f2</span>
-     <li><span class="dfn-paneled" id="9e79b80bef6018f4f2c47ae4be962649">f3</span>
-     <li><span class="dfn-paneled" id="4f3897282c5ed5e6e66252176cd8d070">f4</span>
-     <li><span class="dfn-paneled" id="ed1d9744d9cec51e5550e6b464d35daa">f5</span>
-     <li><span class="dfn-paneled" id="4521e96fa0154a1189d8987e19e3de46">f6</span>
+     <li><span class="dfn-paneled" id="234fd7f0">c1</span>
+     <li><span class="dfn-paneled" id="9a12ee5f">c2</span>
+     <li><span class="dfn-paneled" id="ab7ecc2c">c3</span>
+     <li><span class="dfn-paneled" id="d963c1ad">c4</span>
+     <li><span class="dfn-paneled" id="68fcef13">c5</span>
+     <li><span class="dfn-paneled" id="45c106e4">f1</span>
+     <li><span class="dfn-paneled" id="a43d2eb4">f2</span>
+     <li><span class="dfn-paneled" id="3b5ce7e4">f3</span>
+     <li><span class="dfn-paneled" id="5ad8f58d">f4</span>
+     <li><span class="dfn-paneled" id="543799a9">f5</span>
+     <li><span class="dfn-paneled" id="fe1a2f09">f6</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -2788,49 +2708,259 @@ dfn > a.self-link::before      { content: "#"; }
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['165dee9d'] = {"dfnID": "165dee9d", "url": "some-domain.html#component", "dfnText": "component", "refSections": [{"refs": [{"id": "ref-for-component"}], "title": "3.1. c1"}, {"refs": [{"id": "ref-for-component\u2460"}], "title": "3.2. c2"}, {"refs": [{"id": "ref-for-component\u2461"}], "title": "3.3. c3"}, {"refs": [{"id": "ref-for-component\u2462"}], "title": "3.4. c4"}, {"refs": [{"id": "ref-for-component\u2463"}], "title": "3.5. c5"}], "external": true};
+window.dfnpanelData['6aceda0a'] = {"dfnID": "6aceda0a", "url": "some-domain.html#function", "dfnText": "function", "refSections": [{"refs": [{"id": "ref-for-function"}], "title": "3.6. f1"}, {"refs": [{"id": "ref-for-function\u2460"}], "title": "3.7. f2"}, {"refs": [{"id": "ref-for-function\u2461"}], "title": "3.8. f3"}, {"refs": [{"id": "ref-for-function\u2462"}], "title": "3.9. f4"}, {"refs": [{"id": "ref-for-function\u2463"}], "title": "3.10. f5"}, {"refs": [{"id": "ref-for-function\u2464"}], "title": "3.11. f6"}], "external": true};
+window.dfnpanelData['f92b3aa1'] = {"dfnID": "f92b3aa1", "url": "some-domain.html#isperformedby", "dfnText": "isperformedby", "refSections": [{"refs": [{"id": "ref-for-isperformedby"}], "title": "4.1. i1"}, {"refs": [{"id": "ref-for-isperformedby\u2460"}], "title": "4.2. i2"}, {"refs": [{"id": "ref-for-isperformedby\u2461"}], "title": "4.3. i4"}, {"refs": [{"id": "ref-for-isperformedby\u2462"}], "title": "4.4. i5"}], "external": true};
+window.dfnpanelData['b4b3a548'] = {"dfnID": "b4b3a548", "url": "some-domain.html#name", "dfnText": "name", "refSections": [{"refs": [{"id": "ref-for-name"}], "title": "3.1. c1"}, {"refs": [{"id": "ref-for-name\u2460"}], "title": "3.2. c2"}, {"refs": [{"id": "ref-for-name\u2461"}], "title": "3.3. c3"}, {"refs": [{"id": "ref-for-name\u2462"}], "title": "3.4. c4"}, {"refs": [{"id": "ref-for-name\u2463"}], "title": "3.5. c5"}, {"refs": [{"id": "ref-for-name\u2464"}], "title": "3.6. f1"}, {"refs": [{"id": "ref-for-name\u2465"}], "title": "3.7. f2"}, {"refs": [{"id": "ref-for-name\u2466"}], "title": "3.8. f3"}, {"refs": [{"id": "ref-for-name\u2467"}], "title": "3.9. f4"}, {"refs": [{"id": "ref-for-name\u2468"}], "title": "3.10. f5"}, {"refs": [{"id": "ref-for-name\u2460\u24ea"}], "title": "3.11. f6"}, {"refs": [{"id": "ref-for-name\u2460\u2460"}], "title": "4.5. r1"}, {"refs": [{"id": "ref-for-name\u2460\u2461"}], "title": "4.6. r2"}, {"refs": [{"id": "ref-for-name\u2460\u2462"}], "title": "4.7. r4"}, {"refs": [{"id": "ref-for-name\u2460\u2463"}], "title": "4.8. r5"}], "external": true};
+window.dfnpanelData['fa033d42'] = {"dfnID": "fa033d42", "url": "some-domain.html#performs", "dfnText": "performs", "refSections": [{"refs": [{"id": "ref-for-performs"}], "title": "4.5. r1"}, {"refs": [{"id": "ref-for-performs\u2460"}], "title": "4.6. r2"}, {"refs": [{"id": "ref-for-performs\u2461"}], "title": "4.7. r4"}, {"refs": [{"id": "ref-for-performs\u2462"}], "title": "4.8. r5"}], "external": true};
+window.dfnpanelData['234fd7f0'] = {"dfnID": "234fd7f0", "url": "test-relation-entity-counter-examples.html#c1", "dfnText": "c1", "refSections": [{"refs": [{"id": "ref-for-c1"}], "title": "4.1. i1"}, {"refs": [{"id": "ref-for-c1\u2460"}], "title": "4.5. r1"}, {"refs": [{"id": "ref-for-c1\u2461"}], "title": "4.6. r2"}], "external": true};
+window.dfnpanelData['9a12ee5f'] = {"dfnID": "9a12ee5f", "url": "test-relation-entity-counter-examples.html#c2", "dfnText": "c2", "refSections": [{"refs": [{"id": "ref-for-c2"}], "title": "4.2. i2"}], "external": true};
+window.dfnpanelData['ab7ecc2c'] = {"dfnID": "ab7ecc2c", "url": "test-relation-entity-counter-examples.html#c3", "dfnText": "c3", "refSections": [{"refs": [{"id": "ref-for-c3"}], "title": "4.8. r5"}], "external": true};
+window.dfnpanelData['d963c1ad'] = {"dfnID": "d963c1ad", "url": "test-relation-entity-counter-examples.html#c4", "dfnText": "c4", "refSections": [{"refs": [{"id": "ref-for-c4"}], "title": "4.3. i4"}, {"refs": [{"id": "ref-for-c4\u2460"}], "title": "4.7. r4"}], "external": true};
+window.dfnpanelData['68fcef13'] = {"dfnID": "68fcef13", "url": "test-relation-entity-counter-examples.html#c5", "dfnText": "c5", "refSections": [{"refs": [{"id": "ref-for-c5"}], "title": "4.4. i5"}], "external": true};
+window.dfnpanelData['45c106e4'] = {"dfnID": "45c106e4", "url": "test-relation-entity-counter-examples.html#f1", "dfnText": "f1", "refSections": [{"refs": [{"id": "ref-for-f1"}], "title": "4.1. i1"}, {"refs": [{"id": "ref-for-f1\u2460"}], "title": "4.5. r1"}, {"refs": [{"id": "ref-for-f1\u2461"}], "title": "4.6. r2"}], "external": true};
+window.dfnpanelData['a43d2eb4'] = {"dfnID": "a43d2eb4", "url": "test-relation-entity-counter-examples.html#f2", "dfnText": "f2", "refSections": [{"refs": [{"id": "ref-for-f2"}], "title": "4.2. i2"}, {"refs": [{"id": "ref-for-f2\u2460"}], "title": "4.5. r1"}], "external": true};
+window.dfnpanelData['3b5ce7e4'] = {"dfnID": "3b5ce7e4", "url": "test-relation-entity-counter-examples.html#f3", "dfnText": "f3", "refSections": [{"refs": [{"id": "ref-for-f3"}], "title": "4.2. i2"}, {"refs": [{"id": "ref-for-f3\u2460"}], "title": "4.6. r2"}], "external": true};
+window.dfnpanelData['5ad8f58d'] = {"dfnID": "5ad8f58d", "url": "test-relation-entity-counter-examples.html#f4", "dfnText": "f4", "refSections": [{"refs": [{"id": "ref-for-f4"}], "title": "4.3. i4"}], "external": true};
+window.dfnpanelData['543799a9'] = {"dfnID": "543799a9", "url": "test-relation-entity-counter-examples.html#f5", "dfnText": "f5", "refSections": [{"refs": [{"id": "ref-for-f5"}], "title": "4.4. i5"}, {"refs": [{"id": "ref-for-f5\u2460"}], "title": "4.7. r4"}], "external": true};
+window.dfnpanelData['fe1a2f09'] = {"dfnID": "fe1a2f09", "url": "test-relation-entity-counter-examples.html#f6", "dfnText": "f6", "refSections": [{"refs": [{"id": "ref-for-f6"}], "title": "4.8. r5"}], "external": true};
+</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>
