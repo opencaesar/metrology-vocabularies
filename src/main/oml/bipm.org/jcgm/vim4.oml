@@ -93,7 +93,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	]
 
 	rule SpecializesTransitivity [
-		specializes(a, b) ^ specializes(b, c) -> specializes(a, c)
+		specializes(a, b) & specializes(b, c) -> specializes(a, c)
 	]
 
 	@rdfs:label "general ordinal quantity"
@@ -217,7 +217,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	] < RationalExponent
 
 	rule DerivationDefinedWithinTheSameSystemOfQuantities [
-		hasPowerOfUnitaryQuantityFactor(d, f) ^ SystemHasDerivedUnitaryQuantity(ds, d, dq) ^ SystemHasUnitaryQuantity(fs, f, fq) -> sameAs(ds, fs)
+		hasPowerOfUnitaryQuantityFactor(d, f) & SystemHasDerivedUnitaryQuantity(ds, d, dq) & SystemHasUnitaryQuantity(fs, f, fq) -> sameAs(ds, fs)
 	]
 
 	@rdfs:label "Has Quantity Dimension Factor"
@@ -231,7 +231,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	] < RationalExponent
 
 	rule DimensionDefinedWithinTheSameSystemOfQuantities [
-		hasQuantityDimensionFactor(d, b) ^ SystemHasUnitaryQuantity(ds, d, dq) ^ SystemHasBaseUnitaryQuantity(bs, b, bq) -> sameAs(ds, bs)
+		hasQuantityDimensionFactor(d, b) & SystemHasUnitaryQuantity(ds, d, dq) & SystemHasBaseUnitaryQuantity(bs, b, bq) -> sameAs(ds, bs)
 	]
 
 	@rdfs:label "isDimensionless"
@@ -481,7 +481,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	] < RationalExponent
 
 	rule DerivationDefinedWithinTheSameSystemOfUnits [
-		hasPowerOfUnitFactor(d, f) ^ SystemHasDerivedUnit(ds, d, du) ^ SystemHasUnit(fs, f, fu) -> sameAs(ds, fs)
+		hasPowerOfUnitFactor(d, f) & SystemHasDerivedUnit(ds, d, du) & SystemHasUnit(fs, f, fu) -> sameAs(ds, fs)
 	]
 
 	@rdfs:label "MeasurementScale"
