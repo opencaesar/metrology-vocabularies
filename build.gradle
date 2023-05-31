@@ -1,4 +1,14 @@
 /* 
+ * Dataset maven coordinates
+ */
+ext.title = 'Metrology Vocabularies'
+description ='Metrology vocabularies from bipm.org, iso/iec iso-80000, and supporting ISO-704, ISO-1087 terminological analysis'
+group = 'io.opencaesar.ontologies'
+version = '6.0.0'
+
+apply from: "${rootDir}/gradle/maven-deployment.gradle"
+
+/* 
  * The Gradle task dependencies 
  */
 buildscript {
@@ -7,40 +17,16 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-  		// https://github.com/opencaesar/owl-adapter/tags
-  		classpath 'io.opencaesar.adapters:oml2owl-gradle:1.+'
-  		
-  		// https://github.com/opencaesar/oml-tools/tags
-    		classpath 'io.opencaesar.oml:oml-merge-gradle:1.+'
-  		classpath 'io.opencaesar.oml:oml-bikeshed-gradle:1.+'
-  		
-  		// https://github.com/opencaesar/owl-tools/tags
-  		classpath 'io.opencaesar.owl:owl-load-gradle:1.+'
-  		classpath 'io.opencaesar.owl:owl-reason-gradle:1.+'
-  		classpath 'io.opencaesar.owl:owl-fuseki:1.+'
-  		classpath 'io.opencaesar.owl:owl-fuseki-gradle:1.+'
-  		classpath 'io.opencaesar.owl:owl-query-gradle:1.+'
+  		classpath 'io.opencaesar.owl:owl-load-gradle:2.+'
+  		classpath 'io.opencaesar.owl:owl-reason-gradle:2.+'
+  		classpath 'io.opencaesar.owl:owl-fuseki:2.+'
+  		classpath 'io.opencaesar.owl:owl-fuseki-gradle:2.+'
+  		classpath 'io.opencaesar.owl:owl-doc-gradle:2.+'
+  		classpath 'io.opencaesar.owl:owl-query-gradle:2.+'
+    	classpath 'io.opencaesar.oml:oml-merge-gradle:2.+'
+  		classpath 'io.opencaesar.adapters:oml2owl-gradle:2.+'
 	}
 }
-
-plugins {
-  id 'com.palantir.git-version' version '0.12.3'
-}
-
-/* 
- * Dataset maven coordinates
- */
-ext.title = 'Metrology Vocabularies'
-description ='Metrology vocabularies from bipm.org, iso/iec iso-80000, and supporting ISO-704, ISO-1087 terminological analysis'
-group = 'io.opencaesar.ontologies'
-version = gitVersion()
-
-apply from: "${rootDir}/gradle/maven-deployment.gradle"
-
-/*
- * Properties
- */
-ext.bikeshed = 'build/bikeshed'
 
 /*
  * The repositories to look up OML dependencies in
@@ -61,7 +47,7 @@ configurations {
  * The OML dependencies
  */
 dependencies {
-	oml "io.opencaesar.ontologies:core-vocabularies:$coreVersion"
+	oml "io.opencaesar.ontologies:core-vocabularies:4.+"
 }
 
 /*
@@ -70,40 +56,6 @@ dependencies {
 task downloadDependencies(type:io.opencaesar.oml.merge.OmlMergeTask, group:"oml") {
     inputZipPaths = configurations.oml.files
     outputCatalogFolder = file('build/oml')
-}
-
-/*
- * A task to generate Bikeshed specification for the OML catalog
- */
-task copyDiagrams(type: Copy) {
-    from 'diagrams'
-    into file("$bikeshed/diagrams")
-}
-
-task omlToBikeshed(type: io.opencaesar.oml.bikeshed.Oml2BikeshedTask, group:"oml", dependsOn: [downloadDependencies, copyDiagrams]) {
-    // OML catalog
-    inputCatalogPath = file('catalog.xml')
-    // OML catalog title
-    inputCatalogTitle = project.title
-    // OML catalog version
-    inputCatalogVersion = project.version
-    // OWL folder
-    outputFolderPath = file("$bikeshed")
-    // Publish URL
-    publishUrl = "$dataset_publishUrl".toString()
-}
-
-/*
- * A task to generate the model documentation in HTML
- */
-task generateDocs(type: Exec, dependsOn: omlToBikeshed) {
-	inputs.files(fileTree("$bikeshed").include('**/*.bs'))
-	outputs.files(fileTree("$bikeshed").include('**/*.html'))
-	if (org.gradle.internal.os.OperatingSystem.current().isWindows()) {
-		commandLine "$bikeshed/publish.bat"
-	} else {
-		commandLine "$bikeshed/publish.sh"
-	}
 }
 
 /*
@@ -161,6 +113,22 @@ task owlReasonCompleteDescription(type:io.opencaesar.owl.reason.OwlReasonTask, d
   	]
   	// Junit error report
   	reportPath = file('build/reports/owl/complete-description-bundle/reasoning.xml')
+}
+
+/*
+ * A task to generate documentation for the OWL catalog
+ */
+task generateDocs (type: io.opencaesar.owl.doc.OwlDocTask, dependsOn: build) {
+    // OWL catalog
+    inputCatalogPath = file('build/owl/catalog.xml')
+    // OWL catalog title
+    inputCatalogTitle = project.title
+    // OWL catalog version
+    inputCatalogVersion = project.version
+    // Output folder
+    outputFolderPath = file('build/doc')
+    // Output case sensitivie path
+    outputCaseSensitive = org.gradle.internal.os.OperatingSystem.current().isLinux()
 }
 
 /*

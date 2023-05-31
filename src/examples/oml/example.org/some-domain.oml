@@ -22,16 +22,16 @@ vocabulary <http://example.org/some-domain#> as some-domain {
   scalar property name [ domain IdentifiedElement range xsd:string functional ]
   
   @rdfs:label "Component"
-  concept Component :> IdentifiedElement
+  concept Component < IdentifiedElement
   
-  concept Function :> IdentifiedElement
+  concept Function < IdentifiedElement
   
-  relation entity Performs :> IdentifiedElement [
+  relation entity Performs [
     from Component
     to Function
     forward performs
     inverse functional
-  ]
+  ] < IdentifiedElement
   
   relation entity IsPerformedBy  [
     from Function 
