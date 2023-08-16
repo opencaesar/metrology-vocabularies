@@ -33,7 +33,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	@rdfs:label "Rational Exponent"
 	@iso-1087-1:Characteristic
 	aspect RationalExponent < [
-		restricts scalar property exponent to exactly 1 owl:rational
+		restricts exponent to exactly 1 owl:rational
 	]
 
 	@rdfs:label "exponent"
@@ -115,7 +115,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	@rdfs:isDefinedBy "[VIM4 CD: 6.2]"
 	@iso-1087-1:Concept
 	concept IndividualNominalProperty < IndividualProperty [
-		restricts all relation instantiates to GeneralNominalProperty
+		restricts all instantiates to GeneralNominalProperty
 	]
 
 	@rdfs:label "individual quantity"
@@ -123,7 +123,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	@dc:^description "instance of a general quantity"
 	@iso-1087-1:Concept
 	aspect IndividualQuantity < IndividualProperty [
-		restricts all relation instantiates to GeneralQuantity
+		restricts all instantiates to GeneralQuantity
 	]
 
 	@rdfs:label "individual unitary quantity"
@@ -131,7 +131,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	@dc:^description "instance of a general unitary quantity"
 	@iso-1087-1:Concept
 	concept IndividualUnitaryQuantity < IndividualQuantity [
-		restricts all relation instantiates to GeneralUnitaryQuantity
+		restricts all instantiates to GeneralUnitaryQuantity
 	]
 
 	@rdfs:label "individual ordinal quantity"
@@ -139,7 +139,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	@dc:^description "instance of a general ordinal quantity"
 	@iso-1087-1:Concept
 	concept IndividualOrdinalQuantity < IndividualQuantity [
-		restricts all relation instantiates to GeneralOrdinalQuantity
+		restricts all instantiates to GeneralOrdinalQuantity
 	]
 
 	@rdfs:label "Instantiates"
@@ -249,7 +249,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
     defined in accordance with given rules, for a given system of quantities."""
 	@iso-1087-1:Concept
 	concept SystemOfUnits < IdentifiedElement, HasCoherence [
-		restricts relation given to exactly 1 SystemOfQuantities
+		restricts given to exactly 1 SystemOfQuantities
 	]
 
 	// See https://github.com/opencaesar/oml/issues/90
@@ -322,29 +322,29 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	@rdfs:isDefinedBy "[VIM4 CD: 1.31]"
 	@iso-1087-1:Concept
 	concept InherentOrdinalQuantity < IndividualOrdinalQuantity [
-		restricts relation characterizes to exactly 1 Object
+		restricts characterizes to exactly 1 Object
 	]
 
 	@rdfs:label "OrdinalQuantityValue"
 	@rdfs:isDefinedBy "[VIM4 CD: 1.33]"
 	@iso-1087-1:Concept
 	concept OrdinalQuantityValue < IndividualOrdinalQuantity, QuantityValue [
-		restricts all relation isAttributedTo to InherentOrdinalQuantity
+		restricts all isAttributedTo to InherentOrdinalQuantity
 	]
 
 	@rdfs:label "InherentUnitaryQuantity"
 	@rdfs:isDefinedBy "[VIM4 CD: 1.2 except for the cases of Note 1]"
 	@iso-1087-1:Concept
 	concept InherentUnitaryQuantity < IndividualUnitaryQuantity [
-		restricts relation characterizes to exactly 1 Object
+		restricts characterizes to exactly 1 Object
 	]
 
 	@rdfs:label "UnitaryQuantityValue"
 	@rdfs:isDefinedBy "[VIM4 CD: 1.20 for an IndividualUnitaryQuantity]"
 	@iso-1087-1:Concept
 	concept UnitaryQuantityValue < IndividualUnitaryQuantity, QuantityValue [
-		restricts relation unit to exactly 1 MeasurementUnit
-		restricts all relation isAttributedTo to InherentUnitaryQuantity
+		restricts unit to exactly 1 MeasurementUnit
+		restricts all isAttributedTo to InherentUnitaryQuantity
 	]
 
 	@rdfs:label "HasUnit"
@@ -380,7 +380,7 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	@rdfs:isDefinedBy "[VIM4 CD: 1.9]"
 	@iso-1087-1:Concept
 	concept MeasurementUnit < IndividualUnitaryQuantity, IdentifiedElement [
-		restricts relation characterizes to exactly 0 Object
+		restricts characterizes to exactly 0 Object
 	]
 
 	@rdfs:label "Multiple"
@@ -416,16 +416,16 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	@rdfs:isDefinedBy "[VIM4 CD: 1.9 except for 1.17 and 1.18]"
 	@iso-1087-1:Concept
 	concept UnprefixedMeasurementUnit < MeasurementUnit [
-		restricts relation hasMultiple to exactly 0 Multiple
-		restricts relation isMultipleOf to exactly 0 MeasurementUnit
+		restricts hasMultiple to exactly 0 Multiple
+		restricts isMultipleOf to exactly 0 MeasurementUnit
 	]
 
 	@rdfs:label "PrefixedMeasurementUnit"
 	@rdfs:isDefinedBy "[VIM4 CD: 1.17 or 1.18]"
 	@iso-1087-1:Concept
 	concept PrefixedMeasurementUnit < MeasurementUnit [
-		restricts relation hasMultiple to exactly 1 Multiple
-		restricts relation isMultipleOf to exactly 1 MeasurementUnit
+		restricts hasMultiple to exactly 1 Multiple
+		restricts isMultipleOf to exactly 1 MeasurementUnit
 	]
 
 	@rdfs:label "System Has Unit"
@@ -512,21 +512,21 @@ vocabulary <http://bipm.org/jcgm/vim4#> as vim4 {
 	@rdfs:isDefinedBy "[VIM4 CD: 1.19]"
 	@iso-1087-1:Concept
 	concept UnitaryScale < MeasurementScale [
-		restricts all relation ^includes to UnitaryQuantityValue
+		restricts all ^includes to UnitaryQuantityValue
 	]
 
 	@rdfs:label "OrdinalScale"
 	@rdfs:isDefinedBy "[VIM4 CD: 1.32]"
 	@iso-1087-1:Concept
 	concept OrdinalScale < MeasurementScale [
-		restricts all relation ^includes to OrdinalQuantityValue
+		restricts all ^includes to OrdinalQuantityValue
 	]
 
 	@rdfs:label "ReferenceSet"
 	@rdfs:isDefinedBy "[VIM4 CD: 6.3]"
 	@iso-1087-1:Concept
 	concept ReferenceSet < MeasurementScale [
-		restricts all relation ^includes to IndividualNominalProperty
+		restricts all ^includes to IndividualNominalProperty
 	]
 
 	@rdfs:label "Measurement"

@@ -4,7 +4,7 @@
 ext.title = 'Metrology Vocabularies'
 description ='Metrology vocabularies from bipm.org, iso/iec iso-80000, and supporting ISO-704, ISO-1087 terminological analysis'
 group = 'io.opencaesar.ontologies'
-version = '6.2.0'
+version = '7.0.0'
 
 apply from: "${rootDir}/gradle/maven-deployment.gradle"
 
