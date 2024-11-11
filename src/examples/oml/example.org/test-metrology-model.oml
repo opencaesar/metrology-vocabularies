@@ -10,7 +10,7 @@ description <http://example.org/test-metrology-model#> as test-metrology-model {
   
   extends <http://example.org/simple-mass-management#> as simple-mass-management
   
-  instance camera1 : some-domain:Component 
+  instance camera1 : some-domain:Component
   [ some-domain:name "camera1" ]
   
   

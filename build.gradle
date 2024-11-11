@@ -4,7 +4,7 @@
 ext.title = 'Metrology Vocabularies'
 description ='Metrology vocabularies from bipm.org, iso/iec iso-80000, and supporting ISO-704, ISO-1087 terminological analysis'
 group = 'io.opencaesar.ontologies'
-version = '7.0.0'
+version = '7.1.0'
 
 apply from: "${rootDir}/gradle/maven-deployment.gradle"
 
@@ -126,7 +126,7 @@ task generateDocs (type: io.opencaesar.owl.doc.OwlDocTask, dependsOn: build) {
     // OWL catalog version
     inputCatalogVersion = project.version
     // Output folder
-    outputFolderPath = file('build/doc')
+    outputFolderPath = file('build/docs')
     // Output case sensitivie path
     outputCaseSensitive = org.gradle.internal.os.OperatingSystem.current().isLinux()
 }

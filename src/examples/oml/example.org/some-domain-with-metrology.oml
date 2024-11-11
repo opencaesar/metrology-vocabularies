@@ -4,7 +4,7 @@ vocabulary <http://example.org/some-domain-with-metrology#> as some-domain-with-
   extends <http://bipm.org/jcgm/vim4#> as vim4
   
   // Allows a vim4:IndividualProperty to vim4:characterize a Component.
-  ref concept some-domain:Component < vim4:Object
+  ref concept some-domain:Component < vim4:Object, vim4:IdentifiedElement
   
   ref scalar property some-domain:name < vim4:id
   

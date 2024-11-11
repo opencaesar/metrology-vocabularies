@@ -1,8 +1,8 @@
 # Metrology Vocabulary
 
-[![Build Status](https://app.travis-ci.com/opencaesar/metrology-vocabularies.svg?branch=master)](https://app.travis-ci.com/github/opencaesar/metrology-vocabularies)
-[![Release](https://img.shields.io/github/v/tag/opencaesar/metrology-vocabularies?label=release)](https://github.com/opencaesar/metrology-vocabularies/releases/latest)
-[![Documentation](https://img.shields.io/badge/Documentation-HTML-orange)](https://opencaesar.github.io/metrology-vocabularies/) 
+[![Build Status](https://github.com/opencaesar/metrology-vocabularies/actions/workflows/ci.yml/badge.svg)](https://github.com/opencaesar/metrology-vocabularies/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/opencaesar/metrology-vocabularies?label=Release)](https://github.com/opencaesar/metrology-vocabularies/releases/latest)
+[![Documentation](https://img.shields.io/badge/Documentation-HTML-orange)](https://www.opencaesar.io/metrology-vocabularies/) 
 
 This vocabulary was originally based on VIM3 (see https://jcgm.bipm.org/vim/en/info.html); 
 however, the VIM3 distinction between quantity [VIM3: 1.1] and
