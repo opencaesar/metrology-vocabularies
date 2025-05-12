@@ -8,18 +8,18 @@ WHERE {
     a vim4:SystemOfQuantities .
   
   ?sqd 
-    a vim4:SystemHasDerivedUnitaryQuantity ;
+    a vim4:SystemHasDerivedQuantity ;
     oml:hasSource ?sq ;
     oml:hasTarget ?dq .
 
   ?sqf
-    a vim4:HasPowerOfUnitaryQuantityFactor ;
+    a vim4:HasPowerOfQuantityFactor ;
     oml:hasSource ?sqd ;
     oml:hasTarget ?sfq ;
     vim4:exponent ?e .
   
   ?sfq
-    a vim4:SystemHasUnitaryQuantity ;
+    a vim4:SystemHasRatioQuantity ;
     oml:hasSource ?sq ;
     oml:hasTarget ?fq .
 }

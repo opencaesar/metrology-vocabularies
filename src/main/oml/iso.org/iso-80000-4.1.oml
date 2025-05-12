@@ -10,15 +10,15 @@ description <http://iso.org/iso-80000-4.1#> as iso-80000-4.1 {
   extends <http://iso.org/iso-80000-1#> as iso-80000-1
   
   @dc:source "4-1"
-  instance mass : vim4:GeneralUnitaryQuantity 
+  instance mass : vim4:GeneralRatioQuantity 
   [ vim4:id "mass" ]
   
   relation instance ISQ7-mass 
-  : vim4:SystemHasBaseUnitaryQuantity 
+  : vim4:SystemHasBaseQuantity 
   [ from iso-80000-1:ISQ7 to mass vim4:dimensionSymbol "M" ]
   
   relation instance ISQ8-mass 
-  : vim4:SystemHasBaseUnitaryQuantity 
+  : vim4:SystemHasBaseQuantity 
   [ from iso-80000-1:ISQ8 to mass vim4:dimensionSymbol "M" ]
   
   // -------------------------------------------------------

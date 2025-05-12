@@ -16,23 +16,23 @@ description <http://iso.org/iso-80000-3.15#> as iso-80000-3.15 {
   extends <http://iso.org/iso-80000-3.14#> as iso-80000-3.14
   
   @dc:source "3-15.1"
-  instance frequency : vim4:GeneralUnitaryQuantity
+  instance frequency : vim4:GeneralRatioQuantity
   [ vim4:id "frequency" ]
   
   relation instance ISQ7-frequency
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to frequency vim4:isDimensionless "false"^^xsd:boolean ]
 
   relation instance ISQ7-frequency.per.period-duration
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-frequency to iso-80000-3.12:ISQ7-period-duration vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-frequency
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to frequency vim4:isDimensionless "false"^^xsd:boolean ]
 
   relation instance ISQ8-frequency.per.period-duration
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-frequency to iso-80000-3.12:ISQ8-period-duration vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------
@@ -58,31 +58,31 @@ description <http://iso.org/iso-80000-3.15#> as iso-80000-3.15 {
   // -------------------------------------------------------
   
   @dc:source "3-15.2"
-  instance rotational-frequency : vim4:GeneralUnitaryQuantity
+  instance rotational-frequency : vim4:GeneralRatioQuantity
   [ vim4:id "rotational-frequency" ]
   
   relation instance ISQ7-rotational-frequency
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to rotational-frequency vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-rotational-frequency.rotation
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-rotational-frequency to iso-80000-3.14:ISQ7-rotation vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-rotational-frequency.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-rotational-frequency to iso-80000-3.7:ISQ7-time vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-rotational-frequency
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to rotational-frequency vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-rotational-frequency.rotation
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-rotational-frequency to iso-80000-3.14:ISQ8-rotation vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-rotational-frequency.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-rotational-frequency to iso-80000-3.7:ISQ8-time vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------

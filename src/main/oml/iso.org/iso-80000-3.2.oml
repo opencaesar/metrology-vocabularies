@@ -13,23 +13,23 @@ description <http://iso.org/iso-80000-3.2#> as iso-80000-3.2 {
   extends <http://iso.org/iso-80000-3.1#> as iso-80000-3.1
   
   @dc:source "3-2"
-  instance curvature : vim4:GeneralUnitaryQuantity
+  instance curvature : vim4:GeneralRatioQuantity
   [ vim4:id "curvature" ]
   
   relation instance ISQ7-curvature
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to curvature vim4:isDimensionless "false"^^xsd:boolean]
   
   relation instance ISQ7-curvature.length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-curvature to iso-80000-3.1:ISQ7-length vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-curvature
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to curvature vim4:isDimensionless "false"^^xsd:boolean]
   
   relation instance ISQ8-curvature.length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-curvature to iso-80000-3.1:ISQ8-length vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------

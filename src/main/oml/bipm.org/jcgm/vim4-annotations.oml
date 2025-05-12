@@ -9,8 +9,8 @@ vocabulary <http://bipm.org/jcgm/vim4-annotations#> as vim4-annotations {
 	extends <http://www.w3.org/2000/01/rdf-schema#> as rdfs
 
 	@rdfs:label "generalQuantity"
-	@dc:^description """Annotation subject is a scalar property; annotation object is an ISO/IEC vim4:GeneralUnitaryQuantity instance."""
-	@rdfs:comment """The annotated scalar property corresponds to a vim4:IndividualUnitaryQuantity that vim4:characterizes a vim4:Object corresponding to the domain of the annotated scalar property."""
+	@dc:^description """Annotation subject is a scalar property; annotation object is an ISO/IEC vim4:GeneralRatioQuantity instance."""
+	@rdfs:comment """The annotated scalar property corresponds to a vim4:IndividualRatioQuantity that vim4:characterizes a vim4:Object corresponding to the domain of the annotated scalar property."""
 	annotation property generalQuantity
 
 	@rdfs:label "measurementUnit"

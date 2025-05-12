@@ -14,39 +14,39 @@ description <http://iso.org/iec-80000-6.21#> as iec-80000-6.21 {
   extends <http://iso.org/iec-80000-6.2#> as iec-80000-6.2
   
   @dc:source "6-21"
-  instance magnetic-flux-density : vim4:GeneralUnitaryQuantity 
+  instance magnetic-flux-density : vim4:GeneralRatioQuantity 
   [ vim4:id "magnetic-flux-density" ]
   
   relation instance ISQ7-magnetic-flux-density 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to magnetic-flux-density ]
   
   relation instance ISQ7-magnetic-flux-density.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-magnetic-flux-density to iso-80000-4.9:ISQ7-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-magnetic-flux-density.per.electric-charge
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-magnetic-flux-density to iec-80000-6.2:ISQ7-electric-charge vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ7-magnetic-flux-density.per.velocity
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-magnetic-flux-density to iso-80000-3.8:ISQ7-velocity vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-magnetic-flux-density 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to magnetic-flux-density ]
   
   relation instance ISQ8-magnetic-flux-density.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-magnetic-flux-density to iso-80000-4.9:ISQ8-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-magnetic-flux-density.per.electric-charge
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-magnetic-flux-density to iec-80000-6.2:ISQ8-electric-charge vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-magnetic-flux-density.per.velocity
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-magnetic-flux-density to iso-80000-3.8:ISQ8-velocity vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------

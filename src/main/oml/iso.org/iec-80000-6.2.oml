@@ -13,31 +13,31 @@ description <http://iso.org/iec-80000-6.2#> as iec-80000-6.2 {
   extends <http://iso.org/iec-80000-6.1#> as iec-80000-6.1
   
   @dc:source "6-2"
-  instance electric-charge : vim4:GeneralUnitaryQuantity 
+  instance electric-charge : vim4:GeneralRatioQuantity 
   [ vim4:id "electric-charge" ]
   
   relation instance ISQ7-electric-charge 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to electric-charge ]
   
   relation instance ISQ7-electric-charge.electric-current
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-electric-charge to iec-80000-6.1:ISQ7-electric-current vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-electric-charge.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-electric-charge to iso-80000-3.7:ISQ7-time vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-electric-charge 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to electric-charge ]
   
   relation instance ISQ8-electric-charge.electric-current
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-electric-charge to iec-80000-6.1:ISQ8-electric-current vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-electric-charge.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-electric-charge to iso-80000-3.7:ISQ8-time vim4:exponent "1/1"^^owl:rational ]
   
   // -------------------------------------------------------

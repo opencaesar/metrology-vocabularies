@@ -10,15 +10,15 @@ description <http://iso.org/iso-80000-5.1#> as iso-80000-5.1 {
   extends <http://iso.org/iso-80000-1#> as iso-80000-1
   
   @dc:source "5-1"
-  instance thermodynamic-temperature : vim4:GeneralUnitaryQuantity 
+  instance thermodynamic-temperature : vim4:GeneralRatioQuantity 
   [ vim4:id "thermodynamic-temperature" ]
   
   relation instance ISQ7-thermodynamic-temperature 
-  : vim4:SystemHasBaseUnitaryQuantity 
+  : vim4:SystemHasBaseQuantity 
   [ from iso-80000-1:ISQ7 to thermodynamic-temperature vim4:dimensionSymbol "\Theta" ]
   
   relation instance ISQ8-thermodynamic-temperature 
-  : vim4:SystemHasBaseUnitaryQuantity 
+  : vim4:SystemHasBaseQuantity 
   [ from iso-80000-1:ISQ8 to thermodynamic-temperature vim4:dimensionSymbol "\Theta" ]
   
   // -------------------------------------------------------

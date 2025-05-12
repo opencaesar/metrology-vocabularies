@@ -2,25 +2,25 @@ PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
 
 SELECT DISTINCT ?v ?u ?ga ?iq ?gb
 WHERE {
-  # A UnitaryQuantityValue, ?v, could potentially 
+  # A RatioQuantityValue, ?v, could potentially 
   # be related to two GeneralUnitaryQuantities.
   
   ?v vim4:unit ?u ;
      vim4:isAttributedTo ?iq .
      
-  # 1) the most general GeneralUnitaryQuantity that 
+  # 1) the most general GeneralRatioQuantity that 
   # the value's MeasurementUnit instantiates.
   
   ?u vim4:isMultipleOf* / vim4:instantiates / vim4:specializes* ?ga .
   FILTER NOT EXISTS { ?ga vim4:specializes ?ga3 }
   
-  # 2) the most general GeneralUnitaryQuantity that 
+  # 2) the most general GeneralRatioQuantity that 
   # the value's attribution to an IndividualQuantity instantiates.
   ?iq vim4:instantiates / vim4:specializes* ?gb .
   FILTER NOT EXISTS { ?gb vim4:specializes ?gb3 }
   
   # An inconsistency corresponds to a solution with different most general 
-  # GeneralUnitaryQuantity reached from the same UnitaryQuantityValue.
+  # GeneralRatioQuantity reached from the same RatioQuantityValue.
   
   FILTER(?ga != ?gb)
 }

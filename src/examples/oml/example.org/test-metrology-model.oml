@@ -10,56 +10,62 @@ description <http://example.org/test-metrology-model#> as test-metrology-model {
   
   extends <http://example.org/simple-mass-management#> as simple-mass-management
   
+  // Note: Unique Name Assumption: 'camera1' would be insufficiently unique, see test-property-values.oml
   instance camera1 : some-domain:Component
-  [ some-domain:name "camera1" ]
+  [ some-domain:name "test-metrology-model/camera1" ]
   
   
-  instance camera1.mass.basic.constraint : vim4:InherentUnitaryQuantityValue [
+  instance camera1.mass.basic.constraint : vim4:InherentRatioQuantityValue [
+    vim4:id "camera1.mass.basic.constraint"
     vim4:hasDoubleNumber "3.103"^^xsd:double
     vim4:unit iso-80000-4.1:kilogram
     vim4:characterizes camera1
   ]
   
-  instance camera1.mass.basic : vim4:IndividualUnitaryQuantity [
+  instance camera1.mass.basic : vim4:IndividualRatioQuantity [
     vim4:instantiates simple-mass-management:mass.basic
     vim4:characterizes camera1
   ]
   
-  instance camera1.mass.basic.manufacturer : vim4:UnitaryQuantityValue [
+  instance camera1.mass.basic.manufacturer : vim4:RatioQuantityValue [
+    vim4:id "camera1.mass.basic.manufacturer"
     vim4:hasDoubleNumber "0.3"^^xsd:double
     vim4:isReferenceValue "true"^^xsd:boolean
     vim4:isAttributedTo camera1.mass.basic
     vim4:unit iso-80000-4.1:kilogram
   ]
   
-  instance camera1.mass.basic.value : vim4:UnitaryQuantityValue [
+  instance camera1.mass.basic.value : vim4:RatioQuantityValue [
+    vim4:id "camera1.mass.basic.value"
     vim4:hasDoubleNumber "0.31"^^xsd:double
     vim4:isReferenceValue "false"^^xsd:boolean
     vim4:isAttributedTo camera1.mass.basic
     vim4:unit iso-80000-4.1:kilogram
   ]
   
-  instance camera1.mass.allocation : vim4:IndividualUnitaryQuantity [
+  instance camera1.mass.allocation : vim4:IndividualRatioQuantity [
     vim4:instantiates simple-mass-management:mass.allocation
     vim4:characterizes camera1
   ]
   
+  // Note: Unique Name Assumption: 'camera2' would be insufficiently unique, see test-property-values.oml
   instance camera2 : some-domain:Component
-  [ some-domain:name "camera2" ]
+  [ some-domain:name "test-metrology-model/camera2" ]
   
-  instance camera2.mass.basic : vim4:IndividualUnitaryQuantity [
+  instance camera2.mass.basic : vim4:IndividualRatioQuantity [
     vim4:instantiates simple-mass-management:mass.basic
     vim4:characterizes camera1
   ]
   
-  instance camera2.mass.basic.value : vim4:UnitaryQuantityValue [
+  instance camera2.mass.basic.value : vim4:RatioQuantityValue [
+    vim4:id "camera2.mass.basic.value"
     vim4:hasDoubleNumber "0.31"^^xsd:double
     vim4:isReferenceValue "false"^^xsd:boolean
     vim4:isAttributedTo camera2.mass.basic
     vim4:unit iso-80000-4.2:kilogram-per-cubic_metre
   ]
   
-  instance camera2.mass.allocation : vim4:IndividualUnitaryQuantity [
+  instance camera2.mass.allocation : vim4:IndividualRatioQuantity [
     vim4:instantiates simple-mass-management:mass.allocation
     vim4:characterizes camera2
   ]

@@ -13,31 +13,31 @@ description <http://iso.org/iec-80000-6.10#> as iec-80000-6.10 {
   extends <http://iso.org/iec-80000-6.2#> as iec-80000-6.2
   
   @dc:source "6-10"
-  instance electric-field-strength : vim4:GeneralUnitaryQuantity 
+  instance electric-field-strength : vim4:GeneralRatioQuantity 
   [ vim4:id "electric-field-strength" ]
   
   relation instance ISQ7-electric-field-strength 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to electric-field-strength ]
   
   relation instance ISQ7-electric-field-strength.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-electric-field-strength to iso-80000-4.9:ISQ7-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-electric-field-strength.per.electric-charge
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-electric-field-strength to iec-80000-6.2:ISQ7-electric-charge vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-electric-field-strength 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to electric-field-strength ]
   
   relation instance ISQ8-electric-field-strength.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-electric-field-strength to iso-80000-4.9:ISQ8-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-electric-field-strength.per.electric-charge
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-electric-field-strength to iec-80000-6.2:ISQ8-electric-charge vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------

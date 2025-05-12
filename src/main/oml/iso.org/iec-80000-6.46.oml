@@ -13,31 +13,31 @@ description <http://iso.org/iec-80000-6.46#> as iec-80000-6.46 {
   extends <http://iso.org/iec-80000-6.11#> as iec-80000-6.11
   
   @dc:source "6-46"
-  instance resistance : vim4:GeneralUnitaryQuantity 
+  instance resistance : vim4:GeneralRatioQuantity 
   [ vim4:id "resistance" ]
   
   relation instance ISQ7-resistance 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to resistance ]
   
   relation instance ISQ7-resistance.voltage
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-resistance to iec-80000-6.11:ISQ7-voltage vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-resistance.per.electric-current
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-resistance to iec-80000-6.1:ISQ7-electric-current vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-resistance 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to resistance ]
   
   relation instance ISQ8-resistance.voltage
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-resistance to iec-80000-6.11:ISQ8-voltage vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-resistance.per.electric-current
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-resistance to iec-80000-6.1:ISQ8-electric-current vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------

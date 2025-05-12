@@ -12,15 +12,15 @@ description <http://iso.org/iso-80000-3.7#> as iso-80000-3.7 {
   extends <http://iso.org/iso-80000-1#> as iso-80000-1
   
   @dc:source "3-7"
-  instance time : vim4:GeneralUnitaryQuantity
+  instance time : vim4:GeneralRatioQuantity
   [ vim4:id "time" ]
 
   relation instance ISQ7-time 
-  : vim4:SystemHasBaseUnitaryQuantity 
+  : vim4:SystemHasBaseQuantity 
   [ from iso-80000-1:ISQ7 to time vim4:dimensionSymbol "T" ]
   
   relation instance ISQ8-time 
-  : vim4:SystemHasBaseUnitaryQuantity 
+  : vim4:SystemHasBaseQuantity 
   [ from iso-80000-1:ISQ8 to time vim4:dimensionSymbol "T" ]
   
   // -------------------------------------------------------

@@ -15,31 +15,31 @@ description <http://iso.org/iso-80000-3.8#> as iso-80000-3.8 {
   extends <http://iso.org/iso-80000-3.7#> as iso-80000-3.7
   
   @dc:source "3-8.1"
-  instance velocity : vim4:GeneralUnitaryQuantity 
+  instance velocity : vim4:GeneralRatioQuantity 
   [ vim4:id "velocity" ]
   
   relation instance ISQ7-velocity
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to velocity vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-velocity.length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-velocity to iso-80000-3.1:ISQ7-length vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-velocity.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-velocity to iso-80000-3.7:ISQ7-time vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-velocity
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to velocity vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-velocity.length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-velocity to iso-80000-3.1:ISQ8-length vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-velocity.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-velocity to iso-80000-3.7:ISQ8-time vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------
@@ -76,7 +76,7 @@ description <http://iso.org/iso-80000-3.8#> as iso-80000-3.8 {
   
   relation instance SI7-kilometre-per-hour
   : vim4:SystemHasDerivedUnit
-  [ from iso-80000-1:SI7 to metre-per-second vim4:isOffSystemUnit "true"^^xsd:boolean ]
+  [ from iso-80000-1:SI7 to kilometre-per-hour vim4:isOffSystemUnit "true"^^xsd:boolean ]
   
   relation instance SI7-kilometre-per-hour.kilometre : vim4:HasPowerOfUnitFactor
   [ from SI7-kilometre-per-hour  to iso-80000-3.1:SI7-kilometre vim4:exponent "1/1"^^owl:rational ]
@@ -86,7 +86,7 @@ description <http://iso.org/iso-80000-3.8#> as iso-80000-3.8 {
   
   relation instance SI8-kilometre-per-hour
   : vim4:SystemHasDerivedUnit
-  [ from iso-80000-1:SI8 to metre-per-second vim4:isOffSystemUnit "true"^^xsd:boolean ]
+  [ from iso-80000-1:SI8 to kilometre-per-hour vim4:isOffSystemUnit "true"^^xsd:boolean ]
   
   relation instance SI8-kilometre-per-hour.kilometre : vim4:HasPowerOfUnitFactor
   [ from SI8-kilometre-per-hour  to iso-80000-3.1:SI8-kilometre vim4:exponent "1/1"^^owl:rational ]

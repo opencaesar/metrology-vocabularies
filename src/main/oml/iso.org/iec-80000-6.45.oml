@@ -13,31 +13,31 @@ description <http://iso.org/iec-80000-6.45#> as iec-80000-6.45 {
   extends <http://iso.org/iec-80000-6.11#> as iec-80000-6.11
   
   @dc:source "6-45"
-  instance power : vim4:GeneralUnitaryQuantity 
+  instance power : vim4:GeneralRatioQuantity 
   [ vim4:id "electrical-power" ]
   
   relation instance ISQ7-power 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to power ]
   
   relation instance ISQ7-power.voltage
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-power to iec-80000-6.11:ISQ7-voltage vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-power.electric-current
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-power to iec-80000-6.1:ISQ7-electric-current vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-power 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to power ]
   
   relation instance ISQ8-power.voltage
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-power to iec-80000-6.11:ISQ8-voltage vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-power.electric-current
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-power to iec-80000-6.1:ISQ8-electric-current vim4:exponent "1/1"^^owl:rational ]
   
   // -------------------------------------------------------

@@ -1,0 +1,9 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+PREFIX oml: <http://opencaesar.io/oml#>
+
+SELECT DISTINCT ?qv ?iq
+WHERE {
+  ?qv rdf:type vim4:QuantityValue .
+  ?iq rdf:type vim4:IndividualQuantity .
+}

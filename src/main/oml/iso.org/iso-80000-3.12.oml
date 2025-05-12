@@ -16,23 +16,23 @@ description <http://iso.org/iso-80000-3.12#> as iso-80000-3.12 {
   
   @dc:source "3-12"
   @rdfs:comment """T is the duration of 1 cycle."""
-  instance period-duration : vim4:GeneralUnitaryQuantity 
+  instance period-duration : vim4:GeneralRatioQuantity 
   [ vim4:id "period-duration" ]
   
   relation instance ISQ7-period-duration
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to period-duration vim4:isDimensionless "false"^^xsd:boolean]
   
   relation instance ISQ7-period-duration.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-period-duration to iso-80000-3.7:ISQ7-time vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-period-duration
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to period-duration vim4:isDimensionless "false"^^xsd:boolean]
   
   relation instance ISQ8-period-duration.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-period-duration to iso-80000-3.7:ISQ8-time vim4:exponent "1/1"^^owl:rational ]
   
 }

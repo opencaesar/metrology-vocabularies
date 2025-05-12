@@ -14,31 +14,31 @@ description <http://iso.org/iso-80000-4.8#> as iso-80000-4.8 {
   extends <http://iso.org/iso-80000-4.1#> as iso-80000-4.1
   
   @dc:source "4-8"
-  instance momentum : vim4:GeneralUnitaryQuantity
+  instance momentum : vim4:GeneralRatioQuantity
   [ vim4:id "momentum" ]
   
   relation instance ISQ7-momentum
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to momentum vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-momentum.mass
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-momentum to iso-80000-4.1:ISQ7-mass vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-momentum.velocity
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-momentum to iso-80000-3.8:ISQ7-velocity vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-momentum
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to momentum vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-momentum.mass
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-momentum to iso-80000-4.1:ISQ8-mass vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-momentum.velocity
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-momentum to iso-80000-3.8:ISQ8-velocity vim4:exponent "1/1"^^owl:rational ]
   
   // -------------------------------------------------------

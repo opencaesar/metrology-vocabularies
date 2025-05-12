@@ -13,23 +13,23 @@ description <http://iso.org/iso-80000-3.4#> as iso-80000-3.4 {
   extends <http://iso.org/iso-80000-3.1#> as iso-80000-3.1
   
   @dc:source "3-4"
-  instance volume : vim4:GeneralUnitaryQuantity
+  instance volume : vim4:GeneralRatioQuantity
   [ vim4:id "volume" ]
   
   relation instance ISQ7-volume
-  : vim4:SystemHasDerivedUnitaryQuantity
+  : vim4:SystemHasDerivedQuantity
   [ from iso-80000-1:ISQ7 to volume vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-volume-length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-volume to iso-80000-3.1:ISQ7-length vim4:exponent "3/1"^^owl:rational ]
   
   relation instance ISQ8-volume
-  : vim4:SystemHasDerivedUnitaryQuantity
+  : vim4:SystemHasDerivedQuantity
   [ from iso-80000-1:ISQ8 to volume vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-volume-length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-volume to iso-80000-3.1:ISQ8-length vim4:exponent "3/1"^^owl:rational ]
   
   // -------------------------------------------------------

@@ -4,24 +4,24 @@ PREFIX oml: <http://opencaesar.io/oml#>
 
 # Without bundle closure, an OWL2-DL reasoner allows 
 # an instance, ?q, to be classified as both 
-# vim4:SystemHasUnitaryQuantity and vim4:GeneralUnitaryQuantity.
+# vim4:SystemHasRatioQuantity and vim4:GeneralRatioQuantity.
 # This happens when the factor of a derived quantity is mistakenly
 # a quantity instead of the membership of that quantity in a system of quantities.
 # That is, the ill-formed derived quantity factor pattern looks like this:
 #
-# ?qf rdf:type vim4:SystemHasDerivedUnitaryQuantity 
+# ?qf rdf:type vim4:SystemHasDerivedQuantity 
 # ?qf oml:hasTarget ?q
-# ?q rdf:type vim4:SystemHasUnitaryQuantity 
-# ?q rdf:type vim4:GeneralUnitaryQuantity 
+# ?q rdf:type vim4:SystemHasRatioQuantity 
+# ?q rdf:type vim4:GeneralRatioQuantity 
 #
-# OML bundle closure forces vim4:SystemHasUnitaryQuantity and vim4:GeneralUnitaryQuantity 
+# OML bundle closure forces vim4:SystemHasRatioQuantity and vim4:GeneralRatioQuantity 
 # to be disjoint. This makes the above pattern logically inconsistent since ?q
 # cannot belong to a type and its complement.
 
 SELECT ?qf ?q
 WHERE {
-  ?qf rdf:type vim4:HasPowerOfUnitaryQuantityFactor ;
+  ?qf rdf:type vim4:HasPowerOfQuantityFactor ;
       oml:hasTarget ?q .
-  ?q rdf:type vim4:SystemHasUnitaryQuantity ;
-     rdf:type vim4:GeneralUnitaryQuantity .
+  ?q rdf:type vim4:SystemHasRatioQuantity ;
+     rdf:type vim4:GeneralRatioQuantity .
 }

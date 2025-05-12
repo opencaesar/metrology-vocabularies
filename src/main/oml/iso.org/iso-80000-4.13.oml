@@ -14,31 +14,31 @@ description <http://iso.org/iso-80000-4.13#> as iso-80000-4.13 {
   extends <http://iso.org/iso-80000-4.9#> as iso-80000-4.9
   
   @dc:source "4-13.1"
-  instance moment-of-force : vim4:GeneralUnitaryQuantity
+  instance moment-of-force : vim4:GeneralRatioQuantity
   [ vim4:id "moment-of-force" ]
   
   relation instance ISQ7-moment-of-force
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to moment-of-force vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-moment-of-force.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-moment-of-force to iso-80000-4.9:ISQ7-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-moment-of-force.position-vector
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-moment-of-force to iso-80000-3.1:ISQ7-position-vector vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-moment-of-force
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to moment-of-force vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-moment-of-force.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-moment-of-force to iso-80000-4.9:ISQ8-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-moment-of-force.position-vector
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-moment-of-force to iso-80000-3.1:ISQ8-position-vector vim4:exponent "1/1"^^owl:rational ]
   
   // -------------------------------------------------------
@@ -72,23 +72,23 @@ description <http://iso.org/iso-80000-4.13#> as iso-80000-4.13 {
   // -------------------------------------------------------
   
   @dc:source "4-13.2"
-  instance torque : vim4:GeneralUnitaryQuantity 
+  instance torque : vim4:GeneralRatioQuantity 
   [ vim4:id "torque" ]
   
   relation instance ISQ7-torque 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to torque ]
   
   relation instance ISQ7-torque.length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-torque to ISQ7-moment-of-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-torque 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to torque ]
   
   relation instance ISQ8-torque.length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-torque to ISQ8-moment-of-force vim4:exponent "1/1"^^owl:rational ]
   
 }
