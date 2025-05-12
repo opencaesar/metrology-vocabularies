@@ -18,31 +18,31 @@ description <http://iso.org/iso-80000-3.10#> as iso-80000-3.10 {
   @dc:source "3-10"
   @rdfs:seeAlso "https://iopscience.iop.org/article/10.1088/1681-7575/abe0fc"
   @rdfs:comment "\omega = d\phi / dt"
-  instance angular-velocity : vim4:GeneralUnitaryQuantity 
+  instance angular-velocity : vim4:GeneralRatioQuantity 
   [ vim4:id "angular-velocity" ]
 
   relation instance ISQ7-angular-velocity
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to angular-velocity vim4:isDimensionless "false"^^xsd:boolean]
   
   relation instance ISQ7-angular-velocity.plane-angle
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-angular-velocity to iso-80000-3.5:ISQ7-plane-angle vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-angular-velocity.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-angular-velocity to iso-80000-3.7:ISQ7-time vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-angular-velocity
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to angular-velocity vim4:isDimensionless "false"^^xsd:boolean]
   
   relation instance ISQ8-angular-velocity.plane-angle
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-angular-velocity to iso-80000-3.5:ISQ8-plane-angle vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-angular-velocity.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-angular-velocity to iso-80000-3.7:ISQ8-time vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------

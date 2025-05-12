@@ -14,31 +14,31 @@ description <http://iso.org/iso-80000-4.9#> as iso-80000-4.9 {
   extends <http://iso.org/iso-80000-4.8#> as iso-80000-4.8
   
   @dc:source "4-9.1"
-  instance force : vim4:GeneralUnitaryQuantity
+  instance force : vim4:GeneralRatioQuantity
   [ vim4:id "force" ]
   
   relation instance ISQ7-force
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to force vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-force.momentum
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-force to iso-80000-4.8:ISQ7-momentum vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-force.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-force to iso-80000-3.7:ISQ7-time vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-force
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to force vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-force.momentum
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-force to iso-80000-4.8:ISQ8-momentum vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-force.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-force to iso-80000-3.7:ISQ8-time vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------

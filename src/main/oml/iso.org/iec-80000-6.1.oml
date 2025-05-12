@@ -10,15 +10,15 @@ description <http://iso.org/iec-80000-6.1#> as iec-80000-6.1 {
   extends <http://iso.org/iso-80000-1#> as iso-80000-1
   
   @dc:source "6-1"
-  instance electric-current : vim4:GeneralUnitaryQuantity 
+  instance electric-current : vim4:GeneralRatioQuantity 
   [ vim4:id "electric-current" ]
   
   relation instance ISQ7-electric-current 
-  : vim4:SystemHasBaseUnitaryQuantity 
+  : vim4:SystemHasBaseQuantity 
   [ from iso-80000-1:ISQ7 to electric-current vim4:dimensionSymbol "I" ]
   
   relation instance ISQ8-electric-current 
-  : vim4:SystemHasBaseUnitaryQuantity 
+  : vim4:SystemHasBaseQuantity 
   [ from iso-80000-1:ISQ8 to electric-current vim4:dimensionSymbol "I" ]
   
   // -------------------------------------------------------

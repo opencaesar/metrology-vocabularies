@@ -14,52 +14,52 @@ description <http://iso.org/iso-80000-4.2#> as iso-80000-4.2 {
   extends <http://iso.org/iso-80000-3.4#> as iso-80000-3.4
   
   @dc:source "4-2"
-  instance mass-density : vim4:GeneralUnitaryQuantity 
+  instance mass-density : vim4:GeneralRatioQuantity 
   [ vim4:id "mass-density" ]
   
   relation instance ISQ7-mass-density 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to mass-density vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-mass-density.mass
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-mass-density to iso-80000-4.1:ISQ7-mass vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-mass-density.per.volume
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-mass-density to iso-80000-3.4:ISQ7-volume vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-mass-density 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to mass-density vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-mass-density.mass
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-mass-density to iso-80000-4.1:ISQ8-mass vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-mass-density.per.volume
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-mass-density to iso-80000-3.4:ISQ8-volume vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------
   
-  instance reference-mass-density : vim4:GeneralUnitaryQuantity 
+  instance reference-mass-density : vim4:GeneralRatioQuantity 
   [ vim4:id "reference-mass-density" ]
   
   relation instance ISQ7-reference-mass-density 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to reference-mass-density vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-reference-mass-density.mass-density
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-reference-mass-density to ISQ7-mass-density vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-reference-mass-density 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to reference-mass-density vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-reference-mass-density.mass-density
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-reference-mass-density to ISQ8-mass-density vim4:exponent "1/1"^^owl:rational ]
   
   // -------------------------------------------------------

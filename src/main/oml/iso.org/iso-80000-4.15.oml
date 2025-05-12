@@ -14,31 +14,31 @@ description <http://iso.org/iso-80000-4.15#> as iso-80000-4.15 {
   extends <http://iso.org/iso-80000-4.9#> as iso-80000-4.9
   
   @dc:source "4-15.1"
-  instance pressure : vim4:GeneralUnitaryQuantity
+  instance pressure : vim4:GeneralRatioQuantity
   [ vim4:id "pressure" ]
   
   relation instance ISQ7-pressure
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to pressure vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-pressure.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-pressure to iso-80000-4.9:ISQ7-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-pressure.area
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-pressure to iso-80000-3.3:ISQ7-area vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-pressure
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to pressure vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-pressure.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-pressure to iso-80000-4.9:ISQ8-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-pressure.area
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-pressure to iso-80000-3.3:ISQ8-area vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------

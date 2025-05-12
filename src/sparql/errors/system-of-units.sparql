@@ -1,0 +1,19 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX vim4:  <http://bipm.org/jcgm/vim4#>
+PREFIX oml: <http://opencaesar.io/oml#>
+
+SELECT DISTINCT ?su ?shu1 ?shu2 ?mu
+WHERE {
+  ?su rdf:type vim4:SystemOfUnits .
+  ?mu rdf:type vim4:MeasurementUnit .
+  
+  ?shu1 rdf:type vim4:SystemHasUnit .
+  ?shu1 oml:hasSource ?su .
+  ?shu1 oml:hasTarget ?mu .
+  
+  ?shu2 rdf:type vim4:SystemHasUnit .
+  ?shu2 oml:hasSource ?su .
+  ?shu2 oml:hasTarget ?mu .
+  
+  FILTER ( !sameTerm(?shu1, ?shu2) )
+}

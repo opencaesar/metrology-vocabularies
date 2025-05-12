@@ -17,28 +17,28 @@ description <http://iso.org/iso-80000-3.6#> as iso-80000-3.6 {
   extends <http://iso.org/iso-80000-3.5#> as iso-80000-3.5
   
   @dc:source "3-6"
-  instance solid-angle : vim4:GeneralUnitaryQuantity
+  instance solid-angle : vim4:GeneralRatioQuantity
   [ vim4:id "solid-angle" ]
   
   relation instance ISQ7-solid-angle
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to solid-angle vim4:isDimensionless "true"^^xsd:boolean ]
   
   relation instance ISQ7-solid-angle.area
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-solid-angle to iso-80000-3.3:ISQ7-area vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-solid-angle.per.radius
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-solid-angle to iso-80000-3.1:ISQ7-radius vim4:exponent "-2/1"^^owl:rational ]
   
   @rdfs:seeAlso "https://iopscience.iop.org/article/10.1088/1681-7575/abe0fc"
   relation instance ISQ8-solid-angle
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to solid-angle vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-solid-angle.angle
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-solid-angle to iso-80000-3.5:ISQ8-plane-angle vim4:exponent "2/1"^^owl:rational ]
   
   // -------------------------------------------------------

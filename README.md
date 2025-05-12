@@ -18,6 +18,57 @@ available with the objective of providing additional input to the upcoming
 25th meeting of the JCGM scheduled for 05 December 2022 with respect
 to publication options considered for VIM4 (see 'Development Line 2: adding machine readability' in Report from WG2 [JCGM/2020-07](https://www.bipm.org/en/search?p_p_id=search_portlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=%2Fdownload%2Fpublication&p_p_cacheability=cacheLevelPage&_search_portlet_dlFileId=53507162&p_p_lifecycle=1&_search_portlet_javax.portlet.action=search&_search_portlet_page=next&_search_portlet_operation=changePage)).
 
+Update from VIM4 Committee Draft of July 31, 2023.
+
+- Whereas the VIM4 CD1 made an explicit distinction between 'general quantity' (VIM4 CD1: 1.1) and 
+  'individual quantity' (VIM4 CD1: 1.2), VIM4 CD2 removes this distinction altogether. This OML vocabulary
+  retains this important distinction largely from VIM4 CD1 to support asserting that an individual quantity
+  is an instance of a general quantity (see VIM4 CD1: 1.1, Note 2 and VIM4 CD2: 1.1, Note 2).
+
+- Whereas the VIM4 CD1 made distinctions among ratio, ordinal and interval quantities sometimes in notes
+  and sometimes in definitions, the VIM4 CD2 defines the three categories of quantities explicitly
+  (VIM4 CD2: 1.3, 1.4, 1.33). Moreover, VIM4 CD2 broadens the notion of 'system of quantities' (VIM4 CD2: 1.5 vs. VIM4 CD1: 1.3) where the scope of quantities in a system excludes ordinal quantities 
+  but includes ratio and interval quantities (see VIM4 CD2: 1.5, Note).
+
+- Both VIM4 CD1 and CD2 define 'quantity dimension' (VIM4 CD1: 1.7 and VIM4 CD2: 1.9)
+  via an implicit reference to the dimensional calculus where base quantities are 
+  raised to a power.
+
+### Changes since version 7
+
+- Modified `vim4:IndividualProperty` (added `key instantiates, characterizes`)
+
+- Renamed `vim4:GeneralUnitaryQuantity` to `vim4:GeneralRatioQuantity`
+- Added `vim4:GeneralSystemQuantity < vim4:GeneralQuantity`
+- Added `vim4:GeneralRatioQuantity < vim4:GeneralSystemQuantity`
+- Added `vim4:GeneralIntervalQuantity < vim4:GeneralSystemQuantity`
+
+- Added `vim4:IndividualSystemQuantity < vim4:IndividualQuantity`
+- Renamed `vim4:IndividualUnitaryQuantity` to `vim4:IndividualRatioQuantity`
+- Added `vim4:IndividualRatioQuantity < vim4:IndividualSystemQuantity`
+- Added `Vim4:IndividualIntervalQuantity < vim4:IndividualSystemQuantity`
+
+- Renamed `vim4:SystemHasUnitaryQuantity` to `vim4:SystemHasQuantity`
+- Renamed `vim4:SystemHasBaseUnitaryQuantity` to `vim4:SystemHasBaseQuantity`
+
+- Renamed `vim4:HasPowerOfUnitaryQuantityFactor` to `vim4:HasPowerOfQuantityFactor`
+
+- Renamed `vim4:InherentUnitaryQuantity` to `vim4:InherentRatioQuantity`
+
+- Renamed `vim4:UnitaryQuantityValue` to `vim4:RatioQuantityValue`
+
+- Renamed `vim4:InherentUnitaryQuantityValue` to `vim4:InherentRatioQuantityValue`
+
+- Renamed `vim4:InherentUnitaryQuantityValueReflexiveAttribution` to `vim4:InherentRatioQuantityValueReflexiveAttribution`
+
+- Modified: `vim4:MeasurementUnit` (removed `restricts characterizes to exactly 0 Object`)
+
+- Added `vim4:incoherent-derived-unit-implies-incoherent-system-of-units`
+
+- Added `vim4:key_of_SystemHasQuantity`
+- Added `vim4:key_of_SystemHasUnit`
+
+- Modified `vim4:QuantityValue` (added `key isAttributedTo, id`)
 
 ## The following diagrams summarize the formalization of VIM4
 

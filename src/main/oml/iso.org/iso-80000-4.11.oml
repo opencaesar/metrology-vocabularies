@@ -14,31 +14,31 @@ description <http://iso.org/iso-80000-4.11#> as iso-80000-4.11 {
   extends <http://iso.org/iso-80000-4.9#> as iso-80000-4.9
   
   @dc:source "4-11"
-  instance inpulse : vim4:GeneralUnitaryQuantity
+  instance inpulse : vim4:GeneralRatioQuantity
   [ vim4:id "impulse" ]
   
   relation instance ISQ7-inpulse
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to inpulse vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-inpulse.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-inpulse to iso-80000-4.9:ISQ7-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-inpulse.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-inpulse to iso-80000-3.7:ISQ7-time vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-inpulse
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to inpulse vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-inpulse.force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-inpulse to iso-80000-4.9:ISQ8-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-inpulse.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-inpulse to iso-80000-3.7:ISQ8-time vim4:exponent "1/1"^^owl:rational ]
   
   // -------------------------------------------------------

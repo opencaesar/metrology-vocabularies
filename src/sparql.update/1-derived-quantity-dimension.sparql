@@ -86,20 +86,20 @@ INSERT {
 WHERE {
   ?sq a vim4:SystemOfQuantities .
   GRAPH ?gd {
-    ?sdq a vim4:SystemHasDerivedUnitaryQuantity; oml:hasSource ?sq; oml:hasTarget ?dq .
-    ?hasP1 a vim4:HasPowerOfUnitaryQuantityFactor; oml:hasSource ?sdq; oml:hasTarget ?sq1; vim4:exponent ?ed1 .
+    ?sdq a vim4:SystemHasDerivedQuantity; oml:hasSource ?sq; oml:hasTarget ?dq .
+    ?hasP1 a vim4:HasPowerOfQuantityFactor; oml:hasSource ?sdq; oml:hasTarget ?sq1; vim4:exponent ?ed1 .
     FILTER NOT EXISTS {
-      ?pf a vim4:HasPowerOfUnitaryQuantityFactor; oml:hasSource ?sdq.
+      ?pf a vim4:HasPowerOfQuantityFactor; oml:hasSource ?sdq.
       FILTER(?pf != ?hasP1)
     }
   }
   GRAPH ?gd1 {
-    { ?sq1 a vim4:SystemHasBaseUnitaryQuantity } UNION { ?sq1 a vim4:SystemHasDerivedUnitaryQuantity }
+    { ?sq1 a vim4:SystemHasBaseQuantity } UNION { ?sq1 a vim4:SystemHasDerivedQuantity }
     ?sq1 oml:hasSource ?sq.
     ?qf1 a vim4:HasQuantityDimensionFactor; oml:hasSource ?sq1; oml:hasTarget ?sqb1; vim4:exponent ?eb1 .
   }
   GRAPH ?gb1 {
-    ?sqb1 a vim4:SystemHasBaseUnitaryQuantity; oml:hasSource ?sq; oml:hasTarget ?qb1 .
+    ?sqb1 a vim4:SystemHasBaseQuantity; oml:hasSource ?sq; oml:hasTarget ?qb1 .
   }
   GRAPH ?gd {
     FILTER NOT EXISTS {

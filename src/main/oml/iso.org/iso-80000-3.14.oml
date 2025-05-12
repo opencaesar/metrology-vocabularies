@@ -14,31 +14,31 @@ description <http://iso.org/iso-80000-3.14#> as iso-80000-3.14 {
   extends <http://iso.org/iso-80000-3.5#> as iso-80000-3.5
   
   @dc:source "3-14"
-  instance rotation : vim4:GeneralUnitaryQuantity 
+  instance rotation : vim4:GeneralRatioQuantity 
   [ vim4:id "rotation" ]
   
   relation instance ISQ7-rotation
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to rotation vim4:isDimensionless "true"^^xsd:boolean ]
   
   relation instance ISQ7-rotation.plane-angle
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-rotation to iso-80000-3.5:ISQ7-plane-angle vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-rotation.per.2pi-plane-angle
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-rotation to iso-80000-3.5:ISQ7-2pi-plane-angle vim4:exponent "-1/1"^^owl:rational ]
 
   relation instance ISQ8-rotation
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to rotation vim4:isDimensionless "true"^^xsd:boolean ]
   
   relation instance ISQ8-rotation.plane-angle
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-rotation to iso-80000-3.5:ISQ8-plane-angle vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-rotation.per.2pi-plane-angle
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-rotation to iso-80000-3.5:ISQ8-2pi-plane-angle vim4:exponent "-1/1"^^owl:rational ]
 
   // -------------------------------------------------------

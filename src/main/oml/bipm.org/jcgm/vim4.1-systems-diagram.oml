@@ -15,19 +15,31 @@ vocabulary <http://bipm.org/jcgm/vim4.1-systems-diagram#> as vim4.1-systems-diag
 	ref aspect vim4:GeneralQuantity
 
 	@iso-1087-1:Shows
+	ref aspect vim4:GeneralSystemQuantity
+
+	@iso-1087-1:Shows
 	ref aspect vim4:IndividualProperty
 
 	@iso-1087-1:Shows
 	ref aspect vim4:IndividualQuantity
 
 	@iso-1087-1:Shows
+	ref aspect vim4:IndividualSystemQuantity
+
+	@iso-1087-1:Shows
 	ref aspect vim4:HasCoherence
 
 	@iso-1087-1:Shows
-	ref concept vim4:GeneralUnitaryQuantity
+	ref concept vim4:GeneralIntervalQuantity
 
 	@iso-1087-1:Shows
-	ref concept vim4:IndividualUnitaryQuantity
+	ref concept vim4:GeneralRatioQuantity
+
+	@iso-1087-1:Shows
+	ref concept vim4:IndividualIntervalQuantity
+
+	@iso-1087-1:Shows
+	ref concept vim4:IndividualRatioQuantity
 
 	@iso-1087-1:Shows
 	ref relation entity vim4:Instantiates
@@ -45,13 +57,13 @@ vocabulary <http://bipm.org/jcgm/vim4.1-systems-diagram#> as vim4.1-systems-diag
 	ref relation entity vim4:Given
 
 	@iso-1087-1:Shows
-	ref relation entity vim4:SystemHasUnitaryQuantity
+	ref relation entity vim4:SystemHasQuantity
 
 	@iso-1087-1:Shows
-	ref relation entity vim4:SystemHasBaseUnitaryQuantity
+	ref relation entity vim4:SystemHasBaseQuantity
 
 	@iso-1087-1:Shows
-	ref relation entity vim4:SystemHasDerivedUnitaryQuantity
+	ref relation entity vim4:SystemHasDerivedQuantity
 
 	@iso-1087-1:Shows
 	ref relation entity vim4:SystemHasUnit

@@ -14,31 +14,31 @@ description <http://iso.org/iso-80000-4.14#> as iso-80000-4.14 {
   extends <http://iso.org/iso-80000-4.13#> as iso-80000-4.13
   
   @dc:source "4-14"
-  instance angular-inpulse : vim4:GeneralUnitaryQuantity
+  instance angular-inpulse : vim4:GeneralRatioQuantity
   [ vim4:id "angular-inpulse" ]
   
   relation instance ISQ7-angular-inpulse
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to angular-inpulse vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-angular-inpulse.moment-of-force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-angular-inpulse to iso-80000-4.13:ISQ7-moment-of-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-angular-inpulse.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-angular-inpulse to iso-80000-3.7:ISQ7-time vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-angular-inpulse
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to angular-inpulse vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-angular-inpulse.moment-of-force
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-angular-inpulse to iso-80000-4.13:ISQ8-moment-of-force vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-angular-inpulse.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-angular-inpulse to iso-80000-3.7:ISQ8-time vim4:exponent "1/1"^^owl:rational ]
   
   // -------------------------------------------------------

@@ -13,31 +13,31 @@ description <http://iso.org/iec-80000-6.11#> as iec-80000-6.11 {
   extends <http://iso.org/iec-80000-6.10#> as iec-80000-6.10
   
   @dc:source "6-11.1"
-  instance electric-potential : vim4:GeneralUnitaryQuantity 
+  instance electric-potential : vim4:GeneralRatioQuantity 
   [ vim4:id "electric-potential" ]
   
   relation instance ISQ7-electric-potential 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to electric-potential ]
   
   relation instance ISQ7-electric-field-strength.electric-field-strength
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-electric-potential to iec-80000-6.10:ISQ7-electric-field-strength vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-electric-potential.length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-electric-potential to iso-80000-3.1:ISQ7-length vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-electric-potential 
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to electric-potential ]
   
   relation instance ISQ8-electric-field-strength.electric-field-strength
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-electric-potential to iec-80000-6.10:ISQ8-electric-field-strength vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-electric-potential.length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-electric-potential to iso-80000-3.1:ISQ8-length vim4:exponent "1/1"^^owl:rational ]
   
   // -------------------------------------------------------
@@ -71,23 +71,23 @@ description <http://iso.org/iec-80000-6.11#> as iec-80000-6.11 {
   // -------------------------------------------------------
   
   @dc:source "6-11.3"
-  instance voltage : vim4:GeneralUnitaryQuantity 
+  instance voltage : vim4:GeneralRatioQuantity 
   [ vim4:id "voltage" ]
   
   relation instance ISQ7-voltage
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to voltage ]
   
   relation instance ISQ7-voltage.electric-potential
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-voltage to ISQ7-electric-potential vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-voltage
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to voltage ]
   
   relation instance ISQ8-voltage.electric-potential
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-voltage to ISQ8-electric-potential vim4:exponent "1/1"^^owl:rational ]
   
 }

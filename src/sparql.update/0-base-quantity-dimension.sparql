@@ -14,7 +14,7 @@ INSERT {
 WHERE {
   ?sq a vim4:SystemOfQuantities .
   GRAPH ?g {
-    ?sbq a vim4:SystemHasBaseUnitaryQuantity ;
+    ?sbq a vim4:SystemHasBaseQuantity ;
          oml:hasSource ?sq ;
          oml:hasTarget ?bq .
     FILTER NOT EXISTS {

@@ -14,49 +14,49 @@ description <http://iso.org/iso-80000-3.5#> as iso-80000-3.5 {
   extends <http://iso.org/iso-80000-3.1#> as iso-80000-3.1
   
   @dc:source "3-5"
-  instance plane-angle : vim4:GeneralUnitaryQuantity 
+  instance plane-angle : vim4:GeneralRatioQuantity 
   [ vim4:id "plane-angle" ]
   
   @rdfs:comment "plane angle (angular measure in ISO-80000-3:2019) is derived in ISQ7"
   @rdfs:seeAlso "https://www.iso.org/obp/ui/#iso:std:iso:80000:-3:ed-2:v1:en"
   relation instance ISQ7-plane-angle
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to plane-angle vim4:isDimensionless "true"^^xsd:boolean  ]
   
   relation instance ISQ7-plane-angle.arc-length
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-plane-angle to iso-80000-3.1:ISQ7-length-of-path vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-plane-angle.per.radius
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-plane-angle to iso-80000-3.1:ISQ7-radius vim4:exponent "-1/1"^^owl:rational ]
   
   @rdfs:comment "Leonard's proposal with plane angle as a base quantity in ISQ8"
   @rdfs:seeAlso "https://iopscience.iop.org/article/10.1088/1681-7575/abe0fc"
   relation instance ISQ8-plane-angle
-  : vim4:SystemHasBaseUnitaryQuantity 
+  : vim4:SystemHasBaseQuantity 
   [ from iso-80000-1:ISQ8 to plane-angle vim4:dimensionSymbol "A" ]
   
   // -------------------------------------------------------
   
   @rdfs:comment """2Pi is the plane angle corresponding to 1 revolution."""
-  instance 2pi-plane-angle : vim4:GeneralUnitaryQuantity 
+  instance 2pi-plane-angle : vim4:GeneralRatioQuantity 
   [ vim4:id "2pi-plane-angle" ]
   
   relation instance ISQ7-2pi-plane-angle
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to 2pi-plane-angle ]
   
   relation instance ISQ7-2pi-plane-angle.plane-angle 
-  : vim4:HasPowerOfUnitaryQuantityFactor 
+  : vim4:HasPowerOfQuantityFactor 
   [ from ISQ7-2pi-plane-angle to ISQ7-plane-angle vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-2pi-plane-angle
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to 2pi-plane-angle ]
   
   relation instance ISQ8-2pi-plane-angle.plane-angle 
-  : vim4:HasPowerOfUnitaryQuantityFactor 
+  : vim4:HasPowerOfQuantityFactor 
   [ from ISQ8-2pi-plane-angle to ISQ8-plane-angle vim4:exponent "1/1"^^owl:rational ]
   
   // -------------------------------------------------------

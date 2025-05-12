@@ -15,31 +15,31 @@ description <http://iso.org/iso-80000-3.9#> as iso-80000-3.9 {
   extends <http://iso.org/iso-80000-3.8#> as iso-80000-3.8
 
   @dc:source "3-9.1"
-  instance acceleration : vim4:GeneralUnitaryQuantity 
+  instance acceleration : vim4:GeneralRatioQuantity 
   [ vim4:id "acceleration" ]
   
   relation instance ISQ7-acceleration
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ7 to acceleration vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ7-acceleration.velocity
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-acceleration to iso-80000-3.8:ISQ7-velocity vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ7-acceleration.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ7-acceleration to iso-80000-3.7:ISQ7-time vim4:exponent "-1/1"^^owl:rational ]
   
   relation instance ISQ8-acceleration
-  : vim4:SystemHasDerivedUnitaryQuantity 
+  : vim4:SystemHasDerivedQuantity 
   [ from iso-80000-1:ISQ8 to acceleration vim4:isDimensionless "false"^^xsd:boolean ]
   
   relation instance ISQ8-acceleration.velocity
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-acceleration to iso-80000-3.8:ISQ8-velocity vim4:exponent "1/1"^^owl:rational ]
   
   relation instance ISQ8-acceleration.per.time
-  : vim4:HasPowerOfUnitaryQuantityFactor
+  : vim4:HasPowerOfQuantityFactor
   [ from ISQ8-acceleration to iso-80000-3.7:ISQ8-time vim4:exponent "-1/1"^^owl:rational ]
   
   // -------------------------------------------------------
