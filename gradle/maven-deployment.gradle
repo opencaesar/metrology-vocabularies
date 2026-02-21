@@ -74,7 +74,3 @@ signing {
     useInMemoryPgpKeys(pgpSigningKey, pgpSigningPassword)
     sign publishing.publications.maven
 }
-
-gradle.taskGraph.whenReady { taskGraph ->
-	signMavenPublication.onlyIf { taskGraph.hasTask("${project.path}:publishMavenPublicationToOssrh-staging-apiRepository") }
-}
