@@ -31,6 +31,12 @@ jobs:
         ORG_GRADLE_PROJECT_pgpSigningKey: ${{ secrets.PGPSIGNINGKEY }}
         ORG_GRADLE_PROJECT_pgpSigningPassword: ${{ secrets.PGPSIGNINGPASSWORD }}
 
+    - name: Push to Central Portal
+      run: |
+        curl -sS -u "${{ secrets.OSSRHUSERNAME }}:${{ secrets.OSSRHPASSWORD }}" \
+          -X POST \
+          "https://ossrh-staging-api.central.sonatype.com/manual/upload/defaultRepository/io.opencaesar"
+
     - name: Generate Docs
       run: ./gradlew generateDocs
 
